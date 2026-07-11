@@ -9,23 +9,24 @@ export function Hero() {
           src="/images/hero-bg.png"
           alt=""
           fill
-          className="-scale-x-100 object-cover object-bottom"
+          className="object-cover object-bottom"
           priority
         />
       </div>
       <div className="relative mx-auto flex max-w-[1200px] flex-col gap-8">
         <div className="flex max-w-[560px] flex-col items-start gap-6">
           <h1 className="text-4xl font-semibold leading-[1.2] text-black sm:text-[55px]">
-            Launch Your Startup MVP App Without Code
+            A Software Partner For Small Businesses And Founders
           </h1>
           <p className="text-lg font-medium leading-[1.3] text-brand-gray sm:text-[22px]">
-            From idea to a live MVP Application in weeks — we help design and
-            develop on Bubble, focused on getting real users and feedback
-            fast.
+            Custom apps and business tools — designed, built, and launched in
+            weeks. From booking systems and client portals to internal tools
+            and full products. Built using Bubble, AI, and modern no-code
+            tools.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <button className="bg-brand-gradient flex h-[60px] items-center rounded-full px-[30px] text-lg font-medium text-white transition-opacity hover:opacity-90 sm:text-[25px]">
-              Start Your MVP
+              Start Your Project
             </button>
             <button className="flex h-[60px] items-center rounded-full border border-black bg-black px-[30px] text-lg font-medium text-white transition-opacity hover:opacity-90">
               Book a Consultation
