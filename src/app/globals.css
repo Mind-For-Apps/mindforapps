@@ -5,22 +5,56 @@
   --foreground: #171717;
 }
 
+@theme {
+  --color-brand-purple: #6f2fef;
+  --color-brand-indigo: #413ecf;
+  --color-brand-blue: #1f78ff;
+  --color-brand-accent: #325ffe;
+  --color-brand-gray: #767676;
+  --color-brand-gray-dark: #585858;
+  --color-brand-surface: #f4f4f4;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-poppins);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-brand-gradient {
+  background-image: linear-gradient(
+    220deg,
+    var(--color-brand-purple) 6%,
+    var(--color-brand-indigo) 49%,
+    var(--color-brand-blue) 93%
+  );
+}
+
+.text-brand-gradient {
+  background-image: linear-gradient(
+    220deg,
+    var(--color-brand-purple) 6%,
+    var(--color-brand-indigo) 49%,
+    var(--color-brand-blue) 93%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
 }

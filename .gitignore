@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# local raw asset staging (source files get copied into public/images)
+/Assets/
+
 # claude code local settings
 .claude/settings.local.json
 
