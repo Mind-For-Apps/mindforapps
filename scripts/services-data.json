@@ -1,0 +1,38 @@
+[
+  {
+    "uniqueId": "1773330929566x408293427741449860",
+    "title": "Product Strategy & Consulting",
+    "description": "Build the right product — before building it fast. We help shape your idea, validate assumptions",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1773330926328x179667464108151700/Group.svg",
+    "picture": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776715775611x299535245147839700/Product%20Strategy%20%26%20Consulting.jpg",
+    "tags": "MVP , Discovery , AI , Strategy , Automation",
+    "whatsIncluded": "Product strategy & discovery workshops , User flows and feature mapping , Technical architecture for no-code & AI , MVP scope definition , Cost & timeline planning , Market and competitor review"
+  },
+  {
+    "uniqueId": "1773331011591x640742166257394400",
+    "title": "UX/UI Design & Branding",
+    "description": "Design that feels effortless for users and powerful for your brand. We create intuitive interfaces, high-fidelity prototypes, and visual identities that strengthen your product and improve conversion.",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1773331008343x820035931637093800/Group%20%281%29.svg",
+    "picture": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776715789032x459657031481997000/UXUI%20Design%20%26%20Branding.png",
+    "tags": "MVP , Discovery , AI , Strategy , Automation",
+    "whatsIncluded": "UX research & wireframes , UI design systems & high-fidelity screens , Brand identity & visual language , Micro-animations & design guidelines , Mobile-first, responsive layouts"
+  },
+  {
+    "uniqueId": "1773677009740x925225904762772000",
+    "title": "Web & Mobile app Development",
+    "description": "Fast, scalable apps built on Bubble and modern AI tools. From MVPs to complex platforms — we build custom no-code solutions with clean logic and seamless integrations.",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1773939203229x549426177409879000/Group%20%286%29.svg",
+    "picture": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1777572417072x753292703720281900/Rectangle%20161126392.png",
+    "tags": "Bubble , Webflow , App Development , Integrations , AI , Automation",
+    "whatsIncluded": "Web & mobile apps (Bubble) , Custom API integrations , AI features , Database architecture , Workflows, logic, roles & permissions"
+  },
+  {
+    "uniqueId": "1779802745456x951495644010427600",
+    "title": "AI Features & Automation",
+    "description": "We embed AI features — automation, chatbots, semantic search, recommendations — directly into your no-code product by connecting it to OpenAI, Claude, n8n, and more, with no months of engineering. Ideal for personalization, automation, and intelligent decision-making in your workflows.",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1779802659614x920411702022254600/Group%208854.svg",
+    "picture": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1779802741080x729928769277583500/Mask%20group.png",
+    "tags": "AI , ChatGPT , Claude , Automation , Embeddings , Smart Search",
+    "whatsIncluded": "AI chatbots & virtual assistants , Content generation workflows , Document processing & AI forms , Prompt automations & scheduled AI tasks , LLM integrations (OpenAI, Claude, Gemini)"
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "school-readiness-edtech-platform": [
+    { "title": "Dual user flows (Parents/Settings)", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776944449145x926269421238497900/01.svg" },
+    { "title": "Development Assessment Tool", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776944473169x486171047759780240/02.svg" },
+    { "title": "Priority area logic engine", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776944529012x179337584275063970/03.svg" },
+    { "title": "Personalized weekly plan builder", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776944532840x362473206948739000/04.svg" },
+    { "title": "Progress tracking & completion logic", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776944536481x180152895052591230/05.svg" },
+    { "title": "Expert scheduling integration", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776944539958x235658353788989570/06.svg" },
+    { "title": "Activity & resource management", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776944543916x495258013041905700/07.svg" },
+    { "title": "Mobile App (iOS & Android)", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776944548034x936686268124633500/08.svg" }
+  ],
+  "amalfi-boat-rental-marketplace": [
+    { "title": "Discovery & Search", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967756946x272581066895758880/01.svg" },
+    { "title": "Dual-Mode Booking Flow", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967761249x771874615845597800/02.svg" },
+    { "title": "Tour Catalog", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967764842x857070918582985200/03.svg" },
+    { "title": "Booking Options UI", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967771544x812096785157079300/04.svg" },
+    { "title": "Last-Minute Offers", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967778584x233528002664399780/05.svg" },
+    { "title": "Admin Dashboard", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967784798x648416394672376700/06.svg" },
+    { "title": "Multi-Role Access", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967788373x224707703289752640/07.svg" },
+    { "title": "Stripe Payments", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967791514x966453171549052800/08.svg" }
+  ],
+  "parenting-community-platform": [
+    { "title": "Invite & Sponsor Flow", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967946825x328193801474509200/01.svg" },
+    { "title": "Topic-Tagged Social Feed", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967951418x635697082981708200/02.svg" },
+    { "title": "Post & Recommendation System", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967954744x894035156415347700/03.svg" },
+    { "title": "Comments & Reactions", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967958369x396846295994300400/04.svg" },
+    { "title": "Save & Bookmark", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967961825x582868052095658000/05.svg" },
+    { "title": "Member Profiles", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967966568x585690721195822200/06.svg" },
+    { "title": "Admin Dashboard", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967970109x370184573005374100/07.svg" },
+    { "title": "Content Moderation Tools", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967974111x924050582401572200/08.svg" }
+  ],
+  "digital-therapy-platform": [
+    { "title": "Dual-role user system (Therapist / Client)", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968032779x761409346799030100/01.svg" },
+    { "title": "Digital Deck Library", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968036937x818803207712475200/02.svg" },
+    { "title": "Interactive Card Exercises", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968041261x554794940886846200/03.svg" },
+    { "title": "Structured Quizzes", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968044824x218387131166819070/04.svg" },
+    { "title": "Client Invitations & Management", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968048871x797309800031919000/05.svg" },
+    { "title": "Secure Journal System", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968053605x999254500997166100/06.svg" },
+    { "title": "Subscription Plans", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968056483x791409592230053200/07.svg" },
+    { "title": "Mobile App (iOS & Android)", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968059688x824322258733976000/08.svg" }
+  ],
+  "luxury-car-rental": [
+    { "title": "Vehicle Catalog & Search", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968122615x303520803034835100/01.svg" },
+    { "title": "Booking Flow with Instant Confirmation", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968127128x162815204320591940/02.svg" },
+    { "title": "Car Owner Portal", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968130517x753209491892907700/03.svg" },
+    { "title": "Availability Calendar", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968134998x601296044352234600/04.svg" },
+    { "title": "Experience Packages", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968139718x485256140781570560/05.svg" },
+    { "title": "Promo & Voucher System", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968144678x337402021979757600/06.svg" },
+    { "title": "Admin Analytics Dashboard", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968148535x432724867660382500/07.svg" },
+    { "title": "Reviews & Ratings", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968153530x449891886043963140/08.svg" }
+  ],
+  "pet-care-marketplace-eu": [
+    { "title": "Search-First Home", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968186998x727918618594862700/01.svg" },
+    { "title": "Smart Search Results", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968194232x299138586615232500/02.svg" },
+    { "title": "Dual Booking Flow", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968197918x585010194901161700/03.svg" },
+    { "title": "Stripe Connect Payments", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968201594x981113798103293300/04.svg" },
+    { "title": "Yotpo Loyalty Redemption", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968207378x655073160990291000/05.svg" },
+    { "title": "Shelter Module", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968210964x422898555346369340/06.svg" },
+    { "title": "Directory & Claim Flow", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968214264x861688049374447600/07.svg" },
+    { "title": "In-App Messaging & Notifications", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968217831x862587416513842700/08.svg" },
+    { "title": "Reviews & Ratings", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968220993x842717716793013100/09.svg" },
+    { "title": "Multi-Language UI", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968224621x133171203310296750/10.svg" }
+  ]
+}
