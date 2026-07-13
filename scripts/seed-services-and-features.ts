@@ -25,8 +25,10 @@ const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
 function splitList(value: string | undefined): string[] {
   if (!value) return [];
+  // Bubble's list export separator is " , " (space-comma-space) — a plain
+  // "," split breaks list items that themselves contain a comma.
   return value
-    .split(",")
+    .split(" , ")
     .map((v) => v.trim())
     .filter(Boolean);
 }
@@ -95,21 +97,32 @@ async function seedServices() {
       uploadImage(service.picture, `services/${slug}/picture.jpg`),
     ]);
 
-    const { data, error } = await supabase
+    const { data: existing } = await supabase
       .from("services")
-      .insert({
-        name: service.title,
-        description: service.description,
-        icon_url: iconUrl,
-        picture_url: pictureUrl,
-        tags: splitList(service.tags),
-        whats_included: splitList(service.whatsIncluded),
-      })
       .select("id")
-      .single();
+      .eq("name", service.title)
+      .maybeSingle();
+
+    const payload = {
+      name: service.title,
+      description: service.description,
+      icon_url: iconUrl,
+      picture_url: pictureUrl,
+      tags: splitList(service.tags),
+      whats_included: splitList(service.whatsIncluded),
+    };
+
+    const { data, error } = existing
+      ? await supabase
+          .from("services")
+          .update(payload)
+          .eq("id", existing.id)
+          .select("id")
+          .single()
+      : await supabase.from("services").insert(payload).select("id").single();
 
     if (error || !data) {
-      console.error(`  ! failed to insert service "${service.title}": ${error?.message}`);
+      console.error(`  ! failed to save service "${service.title}": ${error?.message}`);
       continue;
     }
 

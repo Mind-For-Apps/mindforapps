@@ -4,6 +4,9 @@ import { CaseStudies } from "@/components/sections/CaseStudies";
 import { Solutions } from "@/components/sections/Solutions";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
 import { WithMindforapps } from "@/components/sections/WithMindforapps";
+import { Services } from "@/components/sections/Services";
+import { AddOns } from "@/components/sections/AddOns";
+import { Templates } from "@/components/sections/Templates";
 
 export default function Home() {
   return (
@@ -15,6 +18,9 @@ export default function Home() {
         <Solutions />
         <FeatureGrid />
         <WithMindforapps />
+        <Services />
+        <AddOns />
+        <Templates />
       </main>
     </>
   );

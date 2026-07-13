@@ -55,6 +55,39 @@ export function TextAreaField({
   );
 }
 
+export function SelectField({
+  name,
+  label,
+  defaultValue,
+  options,
+}: {
+  name: string;
+  label: string;
+  defaultValue?: string | null;
+  options: string[];
+}) {
+  return (
+    <div className="flex flex-col gap-1.5">
+      <label htmlFor={name} className="text-sm font-medium text-black">
+        {label}
+      </label>
+      <select
+        id={name}
+        name={name}
+        defaultValue={defaultValue ?? ""}
+        className="rounded-lg border border-black/15 bg-white px-3 py-2 text-sm outline-none focus:border-brand-accent"
+      >
+        <option value="">—</option>
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
 export function FormSection({
   title,
   children,

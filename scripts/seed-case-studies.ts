@@ -28,8 +28,11 @@ type RawCaseStudy = Record<string, string>;
 
 function splitList(value: string | undefined): string[] {
   if (!value) return [];
+  // Bubble's list export separator is " , " (space-comma-space) — a plain
+  // "," split breaks list items that themselves contain a comma (e.g.
+  // "Predictable, fixed pricing" is one item, not two).
   return value
-    .split(",")
+    .split(" , ")
     .map((v) => v.trim())
     .filter(Boolean);
 }

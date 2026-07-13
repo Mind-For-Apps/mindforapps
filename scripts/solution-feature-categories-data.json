@@ -1,0 +1,62 @@
+[
+  {
+    "Category": "Listings & property management",
+    "images": "",
+    "labels": "Property listings page , Gallery and media uploads , Advanced property search with filters , Map-based search , Property comparison tool , Saved searches and new listing alerts , Virtual property tour integration",
+    "order": "1"
+  },
+  {
+    "Category": "Branding & design",
+    "images": "",
+    "labels": "Branded landing page , Custom domain and favicon , Colour scheme and font customisation , Custom page layouts , Advanced graphics and imagery , Interactive floor plan mapping",
+    "order": "2"
+  },
+  {
+    "Category": "Payments & transactions",
+    "images": "",
+    "labels": "Stripe payment integration , Listing fees and subscriptions , Agent commission management , Mortgage / affordability calculator",
+    "order": "3"
+  },
+  {
+    "Category": "Marketing & SEO",
+    "images": "",
+    "labels": "SEO optimisation — meta, schema, sitemap , Blog and content management , Social sharing integration , Content scenarios and recommendations , Email campaign integration",
+    "order": "4"
+  },
+  {
+    "Category": "CRM & lead management",
+    "images": "",
+    "labels": "CRM with buyer and seller pipelines , Lead capture forms , Lead routing and auto-assignment , Contact history and notes , Pipeline status tracking , Lead source tracking",
+    "order": "5"
+  },
+  {
+    "Category": "Communication & messaging",
+    "images": "",
+    "labels": "In-app messaging system , Unified inbox — WhatsApp, email, SMS , Email notification automation , Automated follow-up sequences , Custom notification triggers",
+    "order": "6"
+  },
+  {
+    "Category": "Integrations & automations",
+    "images": "",
+    "labels": "Custom workflow automation , Social login — Google, Facebook, Apple , API integrations hub — Zapier, MLS, CRMs , Calendar and scheduling integrations , Webhook support for third-party tools",
+    "order": "7"
+  },
+  {
+    "Category": "Agent & team tools",
+    "images": "",
+    "labels": "Admin dashboard , Role-based access (agent, manager, admin) , Agent profiles and listings assignment  , Appointment and viewing scheduler , Activity feed and task management",
+    "order": "8"
+  },
+  {
+    "Category": "Analytics & reporting",
+    "images": "",
+    "labels": "Analytics dashboard , Advanced analytics and reporting , Lead and conversion tracking  , Listing performance metrics , Agent performance reporting",
+    "order": "9"
+  },
+  {
+    "Category": "Localisation & accessibility",
+    "images": "",
+    "labels": "Multi-language support , Full UI translation — up to 5 languages , Mobile-optimised experience , Accessibility compliance (WCAG 2.1)",
+    "order": "10"
+  }
+]

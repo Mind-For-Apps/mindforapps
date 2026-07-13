@@ -36,3 +36,23 @@ export async function deleteLookupItem(table: string, id: string) {
   await supabase.from(table).delete().eq("id", id);
   revalidatePath("/admin/reference");
 }
+
+export async function addCategory(formData: FormData) {
+  const title = (formData.get("title") as string)?.trim();
+  if (!title) return;
+  const shortTitle = (formData.get("short_title") as string)?.trim() || title;
+  const iconUrl = (formData.get("icon_url") as string) || null;
+
+  const supabase = await createClient();
+  await supabase
+    .from("categories")
+    .insert({ title, short_title: shortTitle, icon_url: iconUrl });
+
+  revalidatePath("/admin/reference");
+}
+
+export async function deleteCategory(id: string) {
+  const supabase = await createClient();
+  await supabase.from("categories").delete().eq("id", id);
+  revalidatePath("/admin/reference");
+}

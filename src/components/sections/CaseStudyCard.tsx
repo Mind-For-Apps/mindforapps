@@ -46,11 +46,11 @@ export function CaseStudyCard({ slide }: { slide: CaseStudySlide }) {
                 {slide.serviceNames}
               </p>
             </div>
-            <div>
+            <div className="min-w-0">
               <p className="text-sm tracking-[-0.27px] text-black/40">
                 Tools
               </p>
-              <div className="mt-1 flex items-center gap-2">
+              <div className="mt-1 flex flex-wrap items-center gap-2">
                 {slide.tools.map(
                   (tool) =>
                     tool.icon_url && (

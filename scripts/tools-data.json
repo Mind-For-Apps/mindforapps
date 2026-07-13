@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Stripe",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774012668037x690932171160379100/image%20183.svg"
+  },
+  {
+    "title": "Twilio",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1777358491724x970552203341802100/twilio-icon.svg"
+  },
+  {
+    "title": "Google",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1773940244092x408334855633946750/google.svg"
+  },
+  {
+    "title": "Zoom",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1773940235276x644952358051749100/zoom.svg"
+  },
+  {
+    "title": "IOS",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1773940224081x920228223163359200/ios.svg"
+  },
+  {
+    "title": "CRM",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1773940081032x290960632092951600/crm-3%201.svg"
+  },
+  {
+    "title": "API integrations",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1773940071681x878238501008694600/api.svg"
+  },
+  {
+    "title": "Figma",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1773940063970x781535367407571000/figma.svg"
+  },
+  {
+    "title": "Bubble.io",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1779813922030x550171351492226200/bubble-icon-seeklogo.svg"
+  },
+  {
+    "title": "Android",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774020204405x130192083744884440/Android_robot.svg.png"
+  },
+  {
+    "title": "RevenueCat",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774020230811x395071629908940900/fe14d69d-5e60-4a91-9524-918816c1a50c.svg"
+  },
+  {
+    "title": "Natively",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774020247894x115398308871384350/iduyMtTchp.png"
+  },
+  {
+    "title": "Daily",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774020259580x382199602826460700/daily-logo-png_seeklogo-438924.png"
+  },
+  {
+    "title": "Brevo",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774020272891x297117778793158000/brevo-986a3808.png"
+  },
+  {
+    "title": "Microsoft Entra ID",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774020287931x632404743858718000/Microsoft_Entra_ID_color_icon.svg.png"
+  },
+  {
+    "title": "DeepL",
+    "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774020304731x355857443650883000/deepl-color.png"
+  }
+]

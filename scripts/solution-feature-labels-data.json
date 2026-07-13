@@ -1,0 +1,262 @@
+[
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Property listings page"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Gallery and media uploads"
+  },
+  {
+    "bg color": "#CBCAFF",
+    "color": "#3635CF",
+    "title": "Advanced property search with filters"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Map-based search"
+  },
+  {
+    "bg color": "#BAD6FF",
+    "color": "#0A4AA7",
+    "title": "Property comparison tool"
+  },
+  {
+    "bg color": "#BAD6FF",
+    "color": "#0A4AA7",
+    "title": "Saved searches and new listing alerts"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Virtual property tour integration"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "CRM with buyer and seller pipelines"
+  },
+  {
+    "bg color": "#BAD6FF",
+    "color": "#0A4AA7",
+    "title": "Lead capture forms"
+  },
+  {
+    "bg color": "#BAD6FF",
+    "color": "#0A4AA7",
+    "title": "Lead routing and auto-assignment"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Contact history and notes"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Pipeline status tracking"
+  },
+  {
+    "bg color": "#BAD6FF",
+    "color": "#0A4AA7",
+    "title": "Lead source tracking"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Branded landing page"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Custom domain and favicon"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Colour scheme and font customisation"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Custom page layouts"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Advanced graphics and imagery"
+  },
+  {
+    "bg color": "#CBCAFF",
+    "color": "#3635CF",
+    "title": "Interactive floor plan mapping"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Stripe payment integration"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Listing fees and subscriptions"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Agent commission management"
+  },
+  {
+    "bg color": "#BAD6FF",
+    "color": "#0A4AA7",
+    "title": "Mortgage / affordability calculator"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "SEO optimisation — meta, schema, sitemap"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Blog and content management"
+  },
+  {
+    "bg color": "#CBCAFF",
+    "color": "#3635CF",
+    "title": "Social sharing integration"
+  },
+  {
+    "bg color": "#BAD6FF",
+    "color": "#0A4AA7",
+    "title": "Content scenarios and recommendations"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Email campaign integration"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "In-app messaging system"
+  },
+  {
+    "bg color": "#CBCAFF",
+    "color": "#3635CF",
+    "title": "Unified inbox — WhatsApp, email, SMS"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Email notification automation"
+  },
+  {
+    "bg color": "#BAD6FF",
+    "color": "#0A4AA7",
+    "title": "Automated follow-up sequences"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Custom notification triggers"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Custom workflow automation"
+  },
+  {
+    "bg color": "#CBCAFF",
+    "color": "#3635CF",
+    "title": "Social login — Google, Facebook, Apple"
+  },
+  {
+    "bg color": "#CBCAFF",
+    "color": "#3635CF",
+    "title": "API integrations hub — Zapier, MLS, CRMs"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Calendar and scheduling integrations"
+  },
+  {
+    "bg color": "#CBCAFF",
+    "color": "#3635CF",
+    "title": "Webhook support for third-party tools"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Admin dashboard"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Role-based access (agent, manager, admin)"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Agent profiles and listings assignment "
+  },
+  {
+    "bg color": "#BAD6FF",
+    "color": "#0A4AA7",
+    "title": "Appointment and viewing scheduler"
+  },
+  {
+    "bg color": "#BAD6FF",
+    "color": "#0A4AA7",
+    "title": "Activity feed and task management"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Analytics dashboard"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Advanced analytics and reporting"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Lead and conversion tracking "
+  },
+  {
+    "bg color": "#BAD6FF",
+    "color": "#0A4AA7",
+    "title": "Listing performance metrics"
+  },
+  {
+    "bg color": "#CBCAFF",
+    "color": "#3635CF",
+    "title": "Agent performance reporting"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Multi-language support"
+  },
+  {
+    "bg color": "",
+    "color": "",
+    "title": "Full UI translation — up to 5 languages"
+  },
+  {
+    "bg color": "#CBCAFF",
+    "color": "#3635CF",
+    "title": "Mobile-optimised experience"
+  },
+  {
+    "bg color": "#BAD6FF",
+    "color": "#0A4AA7",
+    "title": "Accessibility compliance (WCAG 2.1)"
+  }
+]

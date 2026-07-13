@@ -13,14 +13,16 @@ export function Header() {
   return (
     <header className="bg-white flex items-center justify-center px-6 pt-10 pb-5 sm:px-[100px]">
       <nav className="bg-white flex h-20 w-full max-w-[1200px] items-center justify-between gap-4 rounded-[50px] px-6 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.14)] sm:px-[30px]">
-        <Image
-          src="/images/logo.svg"
-          alt="Mind For Apps"
-          width={231}
-          height={32}
-          className="h-8 w-auto shrink-0"
-          priority
-        />
+        <Link href="/" className="shrink-0">
+          <Image
+            src="/images/logo.svg"
+            alt="Mind For Apps"
+            width={231}
+            height={32}
+            className="h-8 w-auto"
+            priority
+          />
+        </Link>
 
         <div className="hidden items-center gap-4 lg:flex xl:gap-6">
           <ul className="flex items-center gap-4 xl:gap-8">

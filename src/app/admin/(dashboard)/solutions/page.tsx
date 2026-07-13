@@ -6,7 +6,7 @@ export default async function SolutionsListPage() {
   const supabase = await createClient();
   const { data: solutions } = await supabase
     .from("solutions")
-    .select("id, title, is_published")
+    .select("id, title, is_published, main_image_url")
     .order("sort_order");
 
   return (
@@ -28,6 +28,16 @@ export default async function SolutionsListPage() {
             className="flex items-center justify-between gap-3 rounded-xl border border-black/10 bg-white px-5 py-3"
           >
             <div className="flex items-center gap-3">
+              {s.main_image_url ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={s.main_image_url}
+                  alt=""
+                  className="size-10 shrink-0 rounded-lg object-cover"
+                />
+              ) : (
+                <div className="size-10 shrink-0 rounded-lg bg-brand-surface" />
+              )}
               <span className="text-sm font-medium text-black">{s.title}</span>
               {!s.is_published && (
                 <span className="rounded-full bg-brand-surface px-2 py-0.5 text-xs text-brand-gray">
