@@ -1,4 +1,5 @@
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { CaseStudies } from "@/components/sections/CaseStudies";
 import { Solutions } from "@/components/sections/Solutions";
@@ -7,6 +8,7 @@ import { WithMindforapps } from "@/components/sections/WithMindforapps";
 import { Services } from "@/components/sections/Services";
 import { AddOns } from "@/components/sections/AddOns";
 import { Templates } from "@/components/sections/Templates";
+import { FAQ } from "@/components/sections/FAQ";
 
 export default function Home() {
   return (
@@ -21,7 +23,9 @@ export default function Home() {
         <Services />
         <AddOns />
         <Templates />
+        <FAQ />
       </main>
+      <Footer />
     </>
   );
 }

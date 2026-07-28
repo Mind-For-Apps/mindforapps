@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { CaseStudySlide } from "@/lib/case-studies";
 
 export function CaseStudyCard({ slide }: { slide: CaseStudySlide }) {
@@ -97,6 +98,12 @@ export function CaseStudyCard({ slide }: { slide: CaseStudySlide }) {
             />
           )}
         </div>
+        <Link
+          href={`/case-studies/${slide.slug}`}
+          className="flex h-14 w-full items-center justify-center rounded-full border border-black text-sm font-medium uppercase tracking-[0.1em] text-black transition-colors hover:bg-black hover:text-white sm:w-[270px]"
+        >
+          View Case Study
+        </Link>
       </div>
       {slide.mainImageUrl && (
         <div className="relative h-[400px] w-full lg:h-auto lg:w-[540px] lg:min-h-[709px]">

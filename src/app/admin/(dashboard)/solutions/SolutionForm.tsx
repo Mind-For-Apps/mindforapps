@@ -4,11 +4,18 @@ import { CheckboxGroup } from "@/components/admin/CheckboxGroup";
 import { TextField, TextAreaField, FormSection } from "@/components/admin/FormField";
 import { TextListRepeater } from "@/components/admin/TextListRepeater";
 import { SolutionFeaturesRepeater } from "./SolutionFeaturesRepeater";
+import { IncludedFeaturesRepeater } from "./IncludedFeaturesRepeater";
 
 type LookupOption = { id: string; name: string };
 
 type FeatureLabel = { title: string; color: string; bgColor: string };
 type FeatureCategory = { name: string; labels: FeatureLabel[] };
+type IncludedFeature = {
+  title: string;
+  subtitle: string;
+  iconUrl: string;
+  tags: string;
+};
 
 type SolutionRow = {
   id: string;
@@ -41,6 +48,9 @@ type SolutionRow = {
   seo_description: string | null;
   is_published: boolean;
   sort_order: number;
+  build_price_low: number | null;
+  build_price_high: number | null;
+  build_checklist: string[];
 };
 
 export function SolutionForm({
@@ -49,12 +59,14 @@ export function SolutionForm({
   tools,
   selectedToolIds,
   featureCategories,
+  includedFeatures,
 }: {
   action: (formData: FormData) => void;
   solution?: SolutionRow;
   tools: LookupOption[];
   selectedToolIds: string[];
   featureCategories: FeatureCategory[];
+  includedFeatures: IncludedFeature[];
 }) {
   const s = solution;
   const idPrefix = s?.id ?? "new";
@@ -103,6 +115,28 @@ export function SolutionForm({
           defaultValue={s?.more_count ?? 0}
         />
         <TextListRepeater name="designed_for" label="Designed for" defaultValues={s?.designed_for} />
+      </FormSection>
+
+      <FormSection title="Build Track Pricing (detail page)">
+        <div className="grid grid-cols-2 gap-4">
+          <TextField
+            name="build_price_low"
+            label="Build price — low"
+            type="number"
+            defaultValue={s?.build_price_low ?? ""}
+          />
+          <TextField
+            name="build_price_high"
+            label="Build price — high"
+            type="number"
+            defaultValue={s?.build_price_high ?? ""}
+          />
+        </div>
+        <TextListRepeater
+          name="build_checklist"
+          label="Build track — what's included"
+          defaultValues={s?.build_checklist}
+        />
       </FormSection>
 
       <FormSection title="With MFA vs. Without MFA">
@@ -163,6 +197,13 @@ export function SolutionForm({
 
       <FormSection title="Feature Categories">
         <SolutionFeaturesRepeater defaultValues={featureCategories} />
+      </FormSection>
+
+      <FormSection title="What's Included">
+        <IncludedFeaturesRepeater
+          defaultValues={includedFeatures}
+          pathPrefix={`solutions/${idPrefix}/included-features`}
+        />
       </FormSection>
 
       <FormSection title="SEO">

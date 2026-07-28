@@ -25,12 +25,18 @@ export function Hero() {
             tools.
           </p>
           <div className="flex flex-wrap items-center gap-3">
-            <button className="bg-brand-gradient flex h-[60px] items-center rounded-full px-[30px] text-lg font-medium text-white transition-opacity hover:opacity-90 sm:text-[25px]">
+            <a
+              href="#start-your-project"
+              className="bg-brand-gradient flex h-[60px] items-center rounded-full px-[30px] text-lg font-medium text-white transition-opacity hover:opacity-90 sm:text-[25px]"
+            >
               Start Your Project
-            </button>
-            <button className="flex h-[60px] items-center rounded-full border border-black bg-black px-[30px] text-lg font-medium text-white transition-opacity hover:opacity-90">
+            </a>
+            <a
+              href="#start-your-project"
+              className="flex h-[60px] items-center rounded-full border border-black bg-black px-[30px] text-lg font-medium text-white transition-opacity hover:opacity-90"
+            >
               Book a Consultation
-            </button>
+            </a>
           </div>
         </div>
         <TrustCarousel />

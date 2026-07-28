@@ -17,6 +17,7 @@ export default async function NewCaseStudyPage() {
         selectedToolIds={[]}
         selectedTeamIds={[]}
         keyFeatures={[]}
+        webArchitecture={[]}
       />
     </div>
   );

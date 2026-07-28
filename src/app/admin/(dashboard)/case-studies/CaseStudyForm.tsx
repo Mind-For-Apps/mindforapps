@@ -4,6 +4,7 @@ import { CheckboxGroup } from "@/components/admin/CheckboxGroup";
 import { TextField, TextAreaField, FormSection } from "@/components/admin/FormField";
 import { TextListRepeater } from "@/components/admin/TextListRepeater";
 import { KeyFeaturesRepeater } from "./KeyFeaturesRepeater";
+import { WebArchitectureRepeater } from "./WebArchitectureRepeater";
 
 type LookupOption = { id: string; name: string };
 
@@ -29,7 +30,6 @@ type CaseStudyRow = {
   the_challenge_was: string[];
   project_based_collaboration: string[];
   suitable_for: string[];
-  web_architecture: string[];
   header_images: string[];
   progress_images: string[];
   text_1: string | null;
@@ -58,6 +58,7 @@ export function CaseStudyForm({
   selectedToolIds,
   selectedTeamIds,
   keyFeatures,
+  webArchitecture,
 }: {
   action: (formData: FormData) => void;
   caseStudy?: CaseStudyRow;
@@ -68,6 +69,7 @@ export function CaseStudyForm({
   selectedToolIds: string[];
   selectedTeamIds: string[];
   keyFeatures: { label: string; iconUrl: string }[];
+  webArchitecture: { label: string; iconUrl: string }[];
 }) {
   const cs = caseStudy;
   const idPrefix = cs?.id ?? "new";
@@ -110,7 +112,6 @@ export function CaseStudyForm({
           defaultValues={cs?.project_based_collaboration}
         />
         <TextListRepeater name="suitable_for" label="Suitable For" defaultValues={cs?.suitable_for} />
-        <TextListRepeater name="web_architecture" label="Web Architecture" defaultValues={cs?.web_architecture} />
       </FormSection>
 
       <FormSection title="Highlights">
@@ -186,6 +187,13 @@ export function CaseStudyForm({
         <KeyFeaturesRepeater
           defaultValues={keyFeatures}
           pathPrefix={`case-studies/${idPrefix}/features`}
+        />
+      </FormSection>
+
+      <FormSection title="What Was Built">
+        <WebArchitectureRepeater
+          defaultValues={webArchitecture}
+          pathPrefix={`case-studies/${idPrefix}/web-architecture`}
         />
       </FormSection>
 

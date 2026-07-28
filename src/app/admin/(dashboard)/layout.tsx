@@ -6,6 +6,9 @@ const navLinks = [
   { label: "Solutions", href: "/admin/solutions" },
   { label: "Templates", href: "/admin/templates" },
   { label: "Reference Data", href: "/admin/reference" },
+  { label: "Testimonials", href: "/admin/testimonials" },
+  { label: "FAQs", href: "/admin/faqs" },
+  { label: "Inquiries", href: "/admin/inquiries" },
 ];
 
 export default function AdminDashboardLayout({

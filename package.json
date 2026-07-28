@@ -13,7 +13,10 @@
     "seed:solutions": "node --env-file=.env.local --experimental-strip-types scripts/seed-solutions.ts",
     "seed:solution-features": "node --env-file=.env.local --experimental-strip-types scripts/seed-solution-features.ts",
     "seed:categories": "node --env-file=.env.local --experimental-strip-types scripts/seed-categories.ts",
-    "seed:templates": "node --env-file=.env.local --experimental-strip-types scripts/seed-templates.ts"
+    "seed:templates": "node --env-file=.env.local --experimental-strip-types scripts/seed-templates.ts",
+    "seed:web-architecture": "node --env-file=.env.local --experimental-strip-types scripts/seed-case-study-web-architecture.ts",
+    "seed:testimonials": "node --env-file=.env.local --experimental-strip-types scripts/seed-testimonials.ts",
+    "seed:faqs": "node --env-file=.env.local --experimental-strip-types scripts/seed-faqs.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.0",

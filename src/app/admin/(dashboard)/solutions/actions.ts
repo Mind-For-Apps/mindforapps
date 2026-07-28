@@ -43,6 +43,13 @@ function getSolutionFields(formData: FormData) {
     seo_description: (formData.get("seo_description") as string) || null,
     is_published: formData.get("is_published") === "on",
     sort_order: Number(formData.get("sort_order") ?? 0),
+    build_price_low: formData.get("build_price_low")
+      ? Number(formData.get("build_price_low"))
+      : null,
+    build_price_high: formData.get("build_price_high")
+      ? Number(formData.get("build_price_high"))
+      : null,
+    build_checklist: getTextArray(formData, "build_checklist"),
   };
 }
 
@@ -101,6 +108,43 @@ async function syncRelations(solutionId: string, formData: FormData) {
     if (labels.length > 0) {
       await supabase.from("solution_feature_labels").insert(labels);
     }
+  }
+
+  await supabase
+    .from("solution_included_features")
+    .delete()
+    .eq("solution_id", solutionId);
+
+  const includedTitles = formData.getAll("included_feature_title") as string[];
+  const includedSubtitles = formData.getAll(
+    "included_feature_subtitle",
+  ) as string[];
+  const includedIcons = formData.getAll("included_feature_icon") as string[];
+  const includedTags = formData.getAll("included_feature_tags") as string[];
+
+  const includedFeatures = includedTitles
+    .map((title, i) => ({
+      title: title.trim(),
+      subtitle: includedSubtitles[i]?.trim() || null,
+      icon_url: includedIcons[i] || null,
+      tags: (includedTags[i] ?? "")
+        .split(",")
+        .map((t) => t.trim())
+        .filter(Boolean),
+    }))
+    .filter((f) => f.title);
+
+  if (includedFeatures.length > 0) {
+    await supabase.from("solution_included_features").insert(
+      includedFeatures.map((f, i) => ({
+        solution_id: solutionId,
+        title: f.title,
+        subtitle: f.subtitle,
+        icon_url: f.icon_url,
+        tags: f.tags,
+        sort_order: i,
+      })),
+    );
   }
 }
 

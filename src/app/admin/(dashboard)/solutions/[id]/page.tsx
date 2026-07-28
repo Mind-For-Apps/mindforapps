@@ -16,6 +16,7 @@ export default async function EditSolutionPage({
     { data: solution },
     { data: solutionTools },
     { data: categories },
+    { data: includedFeaturesRows },
     tools,
   ] = await Promise.all([
     supabase.from("solutions").select("*").eq("id", id).single(),
@@ -23,6 +24,11 @@ export default async function EditSolutionPage({
     supabase
       .from("solution_feature_categories")
       .select("id, name, sort_order, solution_feature_labels(title, color, bg_color, sort_order)")
+      .eq("solution_id", id)
+      .order("sort_order"),
+    supabase
+      .from("solution_included_features")
+      .select("title, subtitle, icon_url, tags")
       .eq("solution_id", id)
       .order("sort_order"),
     getToolOptions(),
@@ -43,6 +49,13 @@ export default async function EditSolutionPage({
       })),
   }));
 
+  const includedFeatures = (includedFeaturesRows ?? []).map((f) => ({
+    title: f.title,
+    subtitle: f.subtitle ?? "",
+    iconUrl: f.icon_url ?? "",
+    tags: (f.tags ?? []).join(", "),
+  }));
+
   return (
     <div className="flex flex-col gap-6">
       <h1 className="text-2xl font-semibold text-black">Edit Solution</h1>
@@ -52,6 +65,7 @@ export default async function EditSolutionPage({
         tools={tools}
         selectedToolIds={(solutionTools ?? []).map((t) => t.tool_id)}
         featureCategories={featureCategories}
+        includedFeatures={includedFeatures}
       />
     </div>
   );

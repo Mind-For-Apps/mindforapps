@@ -1,0 +1,44 @@
+{
+  "school-readiness-edtech-platform": [
+    { "title": "Investors create projects", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774437335703x514166838040913000/Group%20%287%29.svg" },
+    { "title": "Architects apply to projects", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774437347900x609618408544490500/Group%20%288%29.svg" },
+    { "title": "Users can switch roles inside one account", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774437359049x212830659069497280/Group%20%289%29.svg" },
+    { "title": "Messaging and proposal system included", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774437379947x455750882242341060/_x33_0_Chat.svg" },
+    { "title": "Admin dashboard for moderation and control", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1774437464799x232296280142933120/Group%20%2810%29.svg" }
+  ],
+  "amalfi-boat-rental-marketplace": [
+    { "title": "Public-facing website with tour discovery, search, and booking", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967847572x916667265114883700/02.svg" },
+    { "title": "Tourist portal with booking history and upcoming trips", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967843242x684149633755604100/03.svg" },
+    { "title": "Host portal for listing management and availability", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967840168x716203283707444600/04.svg" },
+    { "title": "Admin dashboard with bookings, revenue, and occupancy analytics", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967899533x295622053117003970/06.svg" },
+    { "title": "Mobile-responsive design for on-the-go bookings", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967833217x759131091628526600/06.svg" }
+  ],
+  "luxury-car-rental": [
+    { "title": "Consumer-facing marketplace with vehicle catalog, search, and booking flow", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968160157x966191258451965400/01.svg" },
+    { "title": "Car owner portal for listing management, pricing, availability calendar, and booking overview", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968163726x603585979572250500/02.svg" },
+    { "title": "Experience packages (e.g. Through the Furka Pass, Switzerland's Peaks) linking curated routes to available cars", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968167624x907983942353544100/03.svg" },
+    { "title": "Admin analytics dashboard with income, revenue, user activity, and content engagement metrics", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968171217x425511418549555000/04.svg" },
+    { "title": "Mobile-responsive design for on-the-go browsing and booking", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968174230x863890110793148000/05.svg" }
+  ],
+  "parenting-community-platform": [
+    { "title": "Invite-only onboarding with sponsor vouching flow — new members require 3 existing member approvals", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967980045x752845846810099600/01.svg" },
+    { "title": "Social feed with topic-tagged posts (childcare, health, activities) and comment threads", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967984602x321158911987963460/02.svg" },
+    { "title": "Save & organise feature for bookmarking recommendations", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776967993770x712443316729816300/03.svg" },
+    { "title": "Admin dashboard with user metrics, post analytics, daily activity charts, and top content rankings", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968003712x324542550827793500/04.svg" },
+    { "title": "Mobile-responsive design optimised for quick browsing and posting on the go", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968008218x659235967913922300/05.svg" }
+  ],
+  "pet-care-marketplace-eu": [
+    { "title": "Search-first consumer app with real-time service and location filtering", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968232763x505764524365265700/01.svg" },
+    { "title": "Provider portal for listings, availability, and Stripe Connect payouts", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968236683x825035944342911000/02.svg" },
+    { "title": "Shelter module with animal listings and contact-event tracking", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968240184x692767993885112800/03.svg" },
+    { "title": "Non-partner provider directory with claim flow", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968243355x833125992843614100/04.svg" },
+    { "title": "Multi-language UI across 6 EU languages with language switcher", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968246862x384868079299409500/05.svg" }
+  ],
+  "digital-therapy-platform": [
+    { "title": "Therapists manage card decks", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968069242x838986198006263800/01.svg" },
+    { "title": "Clients access exercises during and between sessions", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968078262x954891474612205000/02.svg" },
+    { "title": "Role-based access for therapists and clients", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968082907x791651082288427000/03.svg" },
+    { "title": "Interactive card flows replace static PDFs", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968087362x313010938416320000/04.svg" },
+    { "title": "Subscription-based access model", "icon": "//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1776968091632x790700047754191200/05.svg" }
+  ]
+}

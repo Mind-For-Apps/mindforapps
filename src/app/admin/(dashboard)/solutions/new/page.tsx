@@ -13,6 +13,7 @@ export default async function NewSolutionPage() {
         tools={tools}
         selectedToolIds={[]}
         featureCategories={[]}
+        includedFeatures={[]}
       />
     </div>
   );

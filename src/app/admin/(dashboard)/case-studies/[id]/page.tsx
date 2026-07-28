@@ -18,6 +18,7 @@ export default async function EditCaseStudyPage({
     { data: tools },
     { data: teamInvolvement },
     { data: keyFeatures },
+    { data: webArchitecture },
     lookupOptions,
   ] = await Promise.all([
     supabase.from("case_studies").select("*").eq("id", id).single(),
@@ -29,6 +30,11 @@ export default async function EditCaseStudyPage({
       .eq("case_study_id", id),
     supabase
       .from("case_study_key_features")
+      .select("label, icon_url")
+      .eq("case_study_id", id)
+      .order("sort_order"),
+    supabase
+      .from("case_study_web_architecture")
       .select("label, icon_url")
       .eq("case_study_id", id)
       .order("sort_order"),
@@ -54,6 +60,10 @@ export default async function EditCaseStudyPage({
         keyFeatures={(keyFeatures ?? []).map((f) => ({
           label: f.label,
           iconUrl: f.icon_url ?? "",
+        }))}
+        webArchitecture={(webArchitecture ?? []).map((w) => ({
+          label: w.label,
+          iconUrl: w.icon_url ?? "",
         }))}
       />
     </div>

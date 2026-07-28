@@ -22,7 +22,7 @@ export async function Templates() {
         </p>
       </div>
 
-      <TemplatesBrowser categories={categories} templates={templates} />
+      <TemplatesBrowser categories={categories} templates={templates} limit={4} />
     </section>
   );
 }

@@ -9,15 +9,19 @@ import type { TemplateCardData } from "@/lib/templates";
 export function TemplatesBrowser({
   categories,
   templates,
+  limit,
 }: {
   categories: CategoryData[];
   templates: TemplateCardData[];
+  limit?: number;
 }) {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   const filtered = activeId
     ? templates.filter((t) => t.categoryIds.includes(activeId))
     : templates;
+
+  const visible = limit ? filtered.slice(0, limit) : filtered;
 
   return (
     <div className="flex w-full max-w-[1200px] flex-col items-center gap-10">
@@ -57,7 +61,7 @@ export function TemplatesBrowser({
         <p className="text-white/70">No templates in this category yet.</p>
       ) : (
         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
-          {filtered.map((template) => (
+          {visible.map((template) => (
             <Link
               key={template.id}
               href={template.shopUrl || template.demoPreviewUrl || "#"}
@@ -95,6 +99,15 @@ export function TemplatesBrowser({
             </Link>
           ))}
         </div>
+      )}
+
+      {limit && filtered.length > limit && (
+        <Link
+          href="/templates"
+          className="rounded-full border border-white px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-black"
+        >
+          Show more
+        </Link>
       )}
     </div>
   );

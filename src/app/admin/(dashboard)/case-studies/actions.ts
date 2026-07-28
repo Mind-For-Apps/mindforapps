@@ -36,7 +36,6 @@ function getCaseStudyFields(formData: FormData) {
       "project_based_collaboration",
     ),
     suitable_for: getTextArray(formData, "suitable_for"),
-    web_architecture: getTextArray(formData, "web_architecture"),
     header_images: getTextArray(formData, "header_images"),
     progress_images: getTextArray(formData, "progress_images"),
     text_1: (formData.get("text_1") as string) || null,
@@ -65,6 +64,12 @@ async function syncRelations(caseStudyId: string, formData: FormData) {
   const teamIds = formData.getAll("team_involvement_ids") as string[];
   const featureLabels = formData.getAll("key_feature_label") as string[];
   const featureIcons = formData.getAll("key_feature_icon") as string[];
+  const webArchitectureLabels = formData.getAll(
+    "web_architecture_label",
+  ) as string[];
+  const webArchitectureIcons = formData.getAll(
+    "web_architecture_icon",
+  ) as string[];
 
   await Promise.all([
     supabase
@@ -78,6 +83,10 @@ async function syncRelations(caseStudyId: string, formData: FormData) {
       .eq("case_study_id", caseStudyId),
     supabase
       .from("case_study_key_features")
+      .delete()
+      .eq("case_study_id", caseStudyId),
+    supabase
+      .from("case_study_web_architecture")
       .delete()
       .eq("case_study_id", caseStudyId),
   ]);
@@ -110,6 +119,23 @@ async function syncRelations(caseStudyId: string, formData: FormData) {
         case_study_id: caseStudyId,
         label: f.label,
         icon_url: f.icon_url,
+        sort_order: i,
+      })),
+    );
+  }
+
+  const webArchitecture = webArchitectureLabels
+    .map((label, i) => ({
+      label: label.trim(),
+      icon_url: webArchitectureIcons[i] || null,
+    }))
+    .filter((item) => item.label);
+  if (webArchitecture.length > 0) {
+    await supabase.from("case_study_web_architecture").insert(
+      webArchitecture.map((item, i) => ({
+        case_study_id: caseStudyId,
+        label: item.label,
+        icon_url: item.icon_url,
         sort_order: i,
       })),
     );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { CaseStudyCard } from "@/components/sections/CaseStudyCard";
 import { getCaseStudySlides } from "@/lib/case-studies";
 
@@ -36,6 +37,7 @@ export default async function CaseStudiesPage() {
           )}
         </section>
       </main>
+      <Footer />
     </>
   );
 }
