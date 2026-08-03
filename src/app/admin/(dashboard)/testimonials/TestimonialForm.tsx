@@ -8,6 +8,8 @@ type TestimonialRow = {
   company: string | null;
   quote: string;
   photo_url: string | null;
+  project_image_url: string | null;
+  project_logo_url: string | null;
   is_published: boolean;
   sort_order: number;
 };
@@ -37,6 +39,30 @@ export function TestimonialForm({
           defaultValue={t?.photo_url}
           pathPrefix={`testimonials/${idPrefix}`}
         />
+      </FormSection>
+
+      <FormSection title="Project showcase (optional)">
+        <p className="text-sm text-brand-gray">
+          Shown on the homepage Testimonials card alongside the company
+          tagline above. Leave blank to hide it for this testimonial.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <ImageUploadField
+            name="project_image_url"
+            label="Project screenshot"
+            defaultValue={t?.project_image_url}
+            pathPrefix={`testimonials/${idPrefix}`}
+          />
+          <ImageUploadField
+            name="project_logo_url"
+            label="Client logo"
+            defaultValue={t?.project_logo_url}
+            pathPrefix={`testimonials/${idPrefix}`}
+          />
+        </div>
+      </FormSection>
+
+      <FormSection title="Publishing">
         <div className="grid grid-cols-2 gap-4">
           <TextField name="sort_order" label="Sort order" type="number" defaultValue={t?.sort_order ?? 0} />
           <label className="flex items-center gap-2 self-end pb-2 text-sm font-medium text-black">

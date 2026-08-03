@@ -1,10 +1,11 @@
 // One-off data migration: seeds the shared "testimonials" table from the
 // client's real feedback (exported from the old Bubble.io app), re-uploading
-// each client's photo to Storage.
+// each client's photo, project logo, and project screenshot to Storage.
 //
 // Requires SUPABASE_SERVICE_ROLE_KEY temporarily in .env.local (see
-// seed-case-studies.ts for where to find it). Requires migration
-// 0010_solution_detail_page.sql to have been run first.
+// seed-case-studies.ts for where to find it). Requires migrations
+// 0010_solution_detail_page.sql and 0012_testimonial_project_showcase.sql
+// to have been run first.
 //
 // Run with:
 //   node --env-file=.env.local --experimental-strip-types scripts/seed-testimonials.ts
@@ -67,6 +68,8 @@ type TestimonialRow = {
   company: string;
   quote: string;
   photo: string;
+  logo: string;
+  project_image: string;
 };
 
 async function main() {
@@ -82,6 +85,19 @@ async function main() {
       `testimonials/${slugify(t.name)}.${ext}`,
     );
 
+    const logoExt = t.logo.split(".").pop()?.split("?")[0] ?? "svg";
+    const logoUrl = await uploadImage(
+      t.logo,
+      `testimonials/${slugify(t.name)}-project-logo.${logoExt}`,
+    );
+
+    const projectImageExt =
+      t.project_image.split(".").pop()?.split("?")[0] ?? "png";
+    const projectImageUrl = await uploadImage(
+      t.project_image,
+      `testimonials/${slugify(t.name)}-project-image.${projectImageExt}`,
+    );
+
     const { data: existing } = await supabase
       .from("testimonials")
       .select("id")
@@ -94,6 +110,8 @@ async function main() {
       company: t.company,
       quote: t.quote,
       photo_url: photoUrl,
+      project_logo_url: logoUrl,
+      project_image_url: projectImageUrl,
       sort_order: i,
     };
 

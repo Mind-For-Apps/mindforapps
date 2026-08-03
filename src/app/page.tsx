@@ -8,6 +8,8 @@ import { WithMindforapps } from "@/components/sections/WithMindforapps";
 import { Services } from "@/components/sections/Services";
 import { AddOns } from "@/components/sections/AddOns";
 import { Templates } from "@/components/sections/Templates";
+import { WhyUs } from "@/components/sections/WhyUs";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 
 export default function Home() {
@@ -23,6 +25,8 @@ export default function Home() {
         <Services />
         <AddOns />
         <Templates />
+        <WhyUs />
+        <Testimonials />
         <FAQ />
       </main>
       <Footer />

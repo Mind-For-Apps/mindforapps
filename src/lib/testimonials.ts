@@ -7,6 +7,8 @@ export type Testimonial = {
   company: string | null;
   quote: string;
   photoUrl: string | null;
+  projectImageUrl: string | null;
+  projectLogoUrl: string | null;
 };
 
 export async function getTestimonials(): Promise<Testimonial[]> {
@@ -25,5 +27,7 @@ export async function getTestimonials(): Promise<Testimonial[]> {
     company: row.company,
     quote: row.quote,
     photoUrl: row.photo_url,
+    projectImageUrl: row.project_image_url,
+    projectLogoUrl: row.project_logo_url,
   }));
 }

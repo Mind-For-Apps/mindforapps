@@ -1,46 +1,40 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type AddOn = {
-  title: string;
-  icon: string;
-  href: string;
-  description?: string;
-  ctaLabel?: string;
-};
-
-const featuredAddOn: AddOn = {
+const featuredAddOn = {
   title: "Template Customization",
-  icon: "template-customization",
   href: "#",
+  image: "/images/addons/template-customization.png",
   description:
     "Turn any template into a fully branded, high-performing product. Whether you're using a Bubble or Webflow template, we adapt it to fit your business — updating structure, design, logic, and integrations so it looks custom-built and works seamlessly.",
-  ctaLabel: "View Templates",
 };
 
-const addOns: AddOn[] = [
-  { title: "Plugins Development", icon: "plugins-development", href: "#" },
-  { title: "QA & Audit", icon: "qa-audit", href: "#" },
-  {
-    title: "Ongoing Support & Feature Development",
-    icon: "ongoing-support",
-    href: "#",
-  },
+const pluginIcons = [
+  "/images/addons/plugins-1.png",
+  "/images/addons/plugins-2.png",
+  "/images/addons/plugins-3.png",
+  "/images/addons/plugins-4.png",
 ];
 
-function AddOnIcon({ icon }: { icon: string }) {
-  return (
-    <div className="flex size-14 shrink-0 items-center justify-center rounded-xl border border-black/10">
-      <Image
-        src={`/images/addons/${icon}.svg`}
-        alt=""
-        width={26}
-        height={26}
-        className="size-6 object-contain"
-      />
-    </div>
-  );
-}
+const plugins = {
+  title: "Plugins Development",
+  href: "#",
+  description: "We develop custom plugins and integrations.",
+};
+
+const qaAudit = {
+  title: "QA & Audit",
+  href: "#",
+  image: "/images/addons/qa-audit.png",
+  description: "Make your app stable, fast, and scalable.",
+};
+
+const ongoingSupport = {
+  title: "Ongoing Support & Feature Development",
+  href: "#",
+  image: "/images/addons/ongoing-support-photo.png",
+  description: "We keep your product growing — even after launch.",
+};
 
 export function AddOns() {
   return (
@@ -56,43 +50,98 @@ export function AddOns() {
       </div>
 
       <div className="w-full max-w-[1200px] rounded-[33px] bg-[#e9e9e9] p-4 sm:p-6">
-        <div className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2">
+        <div className="flex flex-col gap-4">
           <Link
             href={featuredAddOn.href}
-            className="flex flex-col gap-6 rounded-[25px] border-2 border-transparent bg-white p-6 transition-colors hover:border-brand-accent sm:p-8"
+            className="flex flex-col items-center gap-6 rounded-[25px] border-2 border-transparent bg-white p-6 transition-colors hover:border-brand-accent sm:p-8 lg:flex-row lg:gap-[61px]"
           >
-            <AddOnIcon icon={featuredAddOn.icon} />
+            <div className="relative h-[225px] w-full max-w-[324px] shrink-0 lg:w-[324px]">
+              <Image
+                src={featuredAddOn.image}
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
 
-            {/* TODO: swap for the real photo once it's uploaded */}
-            <div className="h-[220px] w-full rounded-2xl bg-brand-surface" />
-
-            <div className="flex flex-col gap-3">
-              <h3 className="text-2xl font-bold text-black sm:text-3xl">
+            <div className="flex min-w-0 flex-1 flex-col gap-3 sm:gap-[14px]">
+              <h3 className="text-2xl font-bold text-black sm:text-[35px] sm:tracking-[-0.665px]">
                 {featuredAddOn.title}
               </h3>
-              <p className="text-sm text-brand-gray sm:text-base">
+              <p className="text-sm text-brand-gray sm:text-base sm:tracking-[-0.176px]">
                 {featuredAddOn.description}
               </p>
             </div>
-
-            <span className="self-start rounded-full bg-black px-6 py-3 text-sm font-medium text-white">
-              {featuredAddOn.ctaLabel}
-            </span>
           </Link>
 
-          <div className="flex flex-col gap-4">
-            {addOns.map((addOn) => (
-              <Link
-                key={addOn.title}
-                href={addOn.href}
-                className="flex flex-1 flex-col justify-center gap-4 rounded-[25px] border-2 border-transparent bg-white p-6 transition-colors hover:border-brand-accent sm:p-8"
-              >
-                <AddOnIcon icon={addOn.icon} />
-                <h3 className="text-xl font-bold text-black sm:text-2xl">
-                  {addOn.title}
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <Link
+              href={plugins.href}
+              className="flex flex-col items-start gap-4 rounded-[25px] border-2 border-transparent bg-white p-6 transition-colors hover:border-brand-accent sm:p-8"
+            >
+              <div className="grid shrink-0 grid-cols-2 gap-2">
+                {pluginIcons.map((icon) => (
+                  <div
+                    key={icon}
+                    className="relative size-14 shrink-0 overflow-hidden rounded-full"
+                  >
+                    <Image src={icon} alt="" fill className="object-cover" />
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-xl font-bold text-black sm:text-2xl sm:tracking-[-0.456px]">
+                  {plugins.title}
                 </h3>
-              </Link>
-            ))}
+                <p className="text-sm text-brand-gray sm:text-base sm:tracking-[-0.176px]">
+                  {plugins.description}
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              href={qaAudit.href}
+              className="flex flex-col items-start gap-4 rounded-[25px] border-2 border-transparent bg-white p-6 transition-colors hover:border-brand-accent sm:p-8 lg:flex-row lg:items-center"
+            >
+              <div className="relative h-[213px] w-[120px] shrink-0">
+                <Image
+                  src={qaAudit.image}
+                  alt=""
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex min-w-0 flex-1 flex-col gap-2">
+                <h3 className="text-xl font-bold text-black sm:text-2xl sm:tracking-[-0.456px]">
+                  {qaAudit.title}
+                </h3>
+                <p className="text-sm text-brand-gray sm:text-base sm:tracking-[-0.176px]">
+                  {qaAudit.description}
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              href={ongoingSupport.href}
+              className="flex flex-col items-start gap-4 rounded-[25px] border-2 border-transparent bg-white p-6 transition-colors hover:border-brand-accent sm:p-8"
+            >
+              <div className="flex flex-col items-start gap-3 lg:flex-row lg:items-center lg:gap-[22px]">
+                <div className="relative h-[152px] w-[118px] shrink-0 overflow-hidden rounded-[15px]">
+                  <Image
+                    src={ongoingSupport.image}
+                    alt=""
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="min-w-0 flex-1 text-xl font-bold text-black sm:text-2xl sm:tracking-[-0.456px]">
+                  {ongoingSupport.title}
+                </h3>
+              </div>
+              <p className="text-sm text-brand-gray sm:text-base sm:tracking-[-0.176px]">
+                {ongoingSupport.description}
+              </p>
+            </Link>
           </div>
         </div>
       </div>

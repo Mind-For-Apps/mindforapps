@@ -11,6 +11,8 @@ function getTestimonialFields(formData: FormData) {
     company: (formData.get("company") as string) || null,
     quote: (formData.get("quote") as string)?.trim(),
     photo_url: (formData.get("photo_url") as string) || null,
+    project_image_url: (formData.get("project_image_url") as string) || null,
+    project_logo_url: (formData.get("project_logo_url") as string) || null,
     is_published: formData.get("is_published") === "on",
     sort_order: Number(formData.get("sort_order") ?? 0),
   };
@@ -26,6 +28,7 @@ export async function createTestimonial(formData: FormData) {
 
   revalidatePath("/admin/testimonials");
   revalidatePath("/solutions");
+  revalidatePath("/");
   redirect("/admin/testimonials");
 }
 
@@ -40,6 +43,7 @@ export async function updateTestimonial(id: string, formData: FormData) {
 
   revalidatePath("/admin/testimonials");
   revalidatePath("/solutions");
+  revalidatePath("/");
   redirect("/admin/testimonials");
 }
 
@@ -48,4 +52,5 @@ export async function deleteTestimonial(id: string) {
   await supabase.from("testimonials").delete().eq("id", id);
   revalidatePath("/admin/testimonials");
   revalidatePath("/solutions");
+  revalidatePath("/");
 }
