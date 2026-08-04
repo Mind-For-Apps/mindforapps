@@ -62,6 +62,11 @@ Marketing site + admin CMS for a no-code/MVP development agency. Content (case s
 - After any change, run `npm run build` to catch type/lint errors before calling something done — this project has caught several real bugs this way (e.g. Tailwind `@theme` circular reference, JSX escaped-quote parse error).
 - **Any script that splits a Bubble "list of X" export field must split on `" , "` (space-comma-space), never bare `","`** — see Gotchas below. This bit us once already (see Known gaps / history) and every seed script's `splitList` helper now does this correctly.
 
+## Git workflow
+
+- Collaborator access on `Mind-For-Apps/mindforapps` (not a personal fork) — `origin` points straight at the org repo, confirmed `push: true`.
+- **This is specifically how this user contributes** — not a team-wide policy being imposed on other developers, who keep working however they already do. When making changes for this user: branch → push → open a PR, and **never merge it** — someone else on the team reviews and merges. This is the opposite of solo-repo projects where the same agent both opens and merges; don't carry that habit over here.
+
 ## Gotchas learned the hard way
 
 - **Figma's `fill="var(--fill-0, black)"` SVG export pattern only works if the SVG is inlined into the DOM** (e.g. as JSX or via `dangerouslySetInnerHTML`) — it does nothing when the file is loaded through `next/image`/`<img src="...">`, which is how every icon/logo in this codebase is used. Setting the CSS custom property on a parent element (even via a Tailwind arbitrary property like `[--fill-0:white]`) has zero effect, because an `<img>`-loaded SVG renders in its own isolated context that doesn't inherit the host page's CSS. To get a differently-colored version of an existing logo/icon SVG (e.g. white-on-dark), make an actual separate file with the color hardcoded (see `public/images/logo-white.svg`) — don't try to theme it via CSS variables from outside.
