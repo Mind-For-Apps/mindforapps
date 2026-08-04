@@ -2,38 +2,25 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
+import "swiper/css";
 import type { ServiceCardData } from "@/lib/services";
 
 export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  function getStep() {
-    const el = scrollRef.current;
-    if (!el) return 400;
-    const card = el.querySelector<HTMLElement>("[data-card]");
-    const gap = 24;
-    return card ? card.getBoundingClientRect().width + gap : 400;
-  }
-
-  function scroll(direction: 1 | -1) {
-    scrollRef.current?.scrollBy({
-      left: direction * getStep(),
-      behavior: "smooth",
-    });
-  }
+  const swiperRef = useRef<SwiperRef>(null);
 
   return (
     <>
-      <div className="flex w-full max-w-[1200px] items-center justify-center gap-2 sm:gap-[19px]">
+      <div className="flex w-full max-w-300 items-center justify-center gap-2 sm:gap-4.75">
         <button
           type="button"
-          onClick={() => scroll(-1)}
+          onClick={() => swiperRef.current?.swiper.slidePrev()}
           aria-label="Previous service"
           disabled={services.length < 2}
           className="hidden shrink-0 sm:block disabled:opacity-30"
         >
           <Image
-            src="/images/arrow-left.svg"
+            src="/images/nav-arrow-left.svg"
             alt=""
             width={59}
             height={161}
@@ -44,20 +31,20 @@ export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
           <h2 className="text-3xl font-semibold text-black sm:text-[40px]">
             Services
           </h2>
-          <p className="max-w-[700px] text-base text-brand-gray sm:text-lg">
+          <p className="max-w-175 text-base text-brand-gray sm:text-lg">
             End-to-end no-code development services. From product discovery
             and UX/UI design to MVP development and scalable app growth.
           </p>
         </div>
         <button
           type="button"
-          onClick={() => scroll(1)}
+          onClick={() => swiperRef.current?.swiper.slideNext()}
           aria-label="Next service"
           disabled={services.length < 2}
           className="hidden shrink-0 sm:block disabled:opacity-30"
         >
           <Image
-            src="/images/arrow-right.svg"
+            src="/images/nav-arrow-right.svg"
             alt=""
             width={59}
             height={161}
@@ -66,88 +53,90 @@ export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
         </button>
       </div>
 
-      <div
-        ref={scrollRef}
-        className="scrollbar-hide flex w-full snap-x snap-mandatory gap-6 overflow-x-auto px-6 sm:px-[100px]"
+      <Swiper
+        ref={swiperRef}
+        loop
+        loopAdditionalSlides={1}
+        speed={1000}
+        slidesPerView="auto"
+        spaceBetween={24}
+        className="w-full! px-6! sm:px-25!"
       >
         {services.map((service) => (
-          <div
-            key={service.id}
-            data-card
-            className="flex w-[320px] shrink-0 snap-start gap-4 rounded-[25px] bg-white p-3 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.08)] sm:w-[620px] sm:gap-6 sm:p-4"
-          >
-            <div className="flex w-16 shrink-0 items-start justify-center rounded-2xl bg-brand-gradient pt-6 sm:w-20">
-              {service.iconUrl && (
-                <div className="flex size-11 items-center justify-center rounded-full bg-white/20">
+          <SwiperSlide key={service.id} style={{ width: "auto", height: "auto" }}>
+            <div className="flex h-full w-[320px] gap-4 rounded-[25px] bg-white p-3 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.08)] sm:w-200 sm:gap-6 sm:p-4">
+              <div className="flex w-16 shrink-0 items-start justify-center rounded-2xl bg-brand-gradient pt-6 sm:w-20 sm:pt-8">
+                {service.iconUrl && (
                   <Image
                     src={service.iconUrl}
                     alt=""
-                    width={24}
-                    height={24}
-                    className="size-6 object-contain"
+                    width={40}
+                    height={40}
+                    className="size-8 object-contain sm:size-9"
                   />
-                </div>
-              )}
-            </div>
-
-            <div className="flex flex-1 flex-col gap-4 py-4 pr-2 sm:flex-row sm:gap-6 sm:py-6 sm:pr-4">
-              <div className="flex flex-1 flex-col gap-3">
-                <h3 className="text-xl font-bold tracking-[-0.4px] text-black sm:text-2xl">
-                  {service.name}
-                </h3>
-                {service.description && (
-                  <p className="text-sm text-brand-gray sm:text-base">
-                    {service.description}
-                  </p>
                 )}
-                {service.whatsIncluded.length > 0 && (
-                  <div className="flex flex-col gap-2">
-                    <p className="text-sm font-semibold text-black sm:text-base">
-                      What&apos;s included:
+              </div>
+
+              <div className="flex flex-1 flex-col gap-4 py-4 pr-2 sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:py-6 sm:pr-6">
+                <div className="flex flex-1 flex-col gap-3 sm:gap-4">
+                  <h3 className="text-xl font-bold tracking-[-0.4px] text-black sm:text-3xl">
+                    {service.name}
+                  </h3>
+                  {service.description && (
+                    <p className="text-sm text-brand-gray sm:text-base">
+                      {service.description}
                     </p>
-                    <ul className="flex flex-col gap-1.5">
-                      {service.whatsIncluded.map((item) => (
-                        <li
-                          key={item}
-                          className="flex items-start gap-2 text-sm text-brand-gray sm:text-base"
-                        >
-                          <span className="mt-2 size-1 shrink-0 rounded-full bg-brand-gray" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
+                  )}
+                  {service.whatsIncluded.length > 0 && (
+                    <div className="flex flex-col gap-2 sm:gap-3">
+                      <p className="text-sm font-semibold text-black sm:text-base">
+                        What&apos;s included:
+                      </p>
+                      <ul className="flex flex-col gap-1.5 sm:gap-2">
+                        {service.whatsIncluded.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-2 text-sm text-brand-gray sm:text-base"
+                          >
+                            <span className="mt-2 size-1 shrink-0 rounded-full bg-brand-gray" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
 
-              <div className="flex shrink-0 flex-col items-center gap-3 sm:w-[190px]">
-                {service.pictureUrl && (
-                  <div className="relative h-[130px] w-full overflow-hidden rounded-2xl bg-brand-surface">
-                    <Image
-                      src={service.pictureUrl}
-                      alt=""
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                )}
-                {service.tags.length > 0 && (
-                  <div className="grid w-full grid-cols-2 gap-2">
-                    {service.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-brand-surface px-3 py-1.5 text-center text-xs font-medium text-black sm:text-sm"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
+                <div className="flex shrink-0 flex-col items-center gap-3 sm:w-56 sm:gap-3">
+                  {service.pictureUrl && (
+                    <div className="relative h-32.5 w-full overflow-hidden rounded-2xl bg-brand-surface sm:h-40">
+                      <Image
+                        src={service.pictureUrl}
+                        alt=""
+                        fill
+                        sizes="(min-width: 640px) 224px, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
+                  {service.tags.length > 0 && (
+                    <div className="grid w-full grid-cols-2 gap-2 sm:gap-2.5">
+                      {service.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-brand-surface px-3 py-1.5 text-center text-xs font-medium text-black sm:px-3.5 sm:py-2 sm:text-sm sm:font-semibold"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </>
   );
 }
