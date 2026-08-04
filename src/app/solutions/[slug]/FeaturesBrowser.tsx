@@ -13,7 +13,7 @@ export function FeaturesBrowser({
   const active = categories[activeIndex];
 
   return (
-    <div className="grid w-full max-w-[1200px] grid-cols-1 gap-8 lg:grid-cols-[1fr_1.4fr]">
+    <div className="grid w-full max-w-300 grid-cols-1 gap-8 lg:grid-cols-[1fr_1.4fr]">
       <div className="flex flex-col gap-3">
         {categories.map((category, i) => (
           <button

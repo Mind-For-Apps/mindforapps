@@ -24,7 +24,7 @@ export function TemplatesBrowser({
   const visible = limit ? filtered.slice(0, limit) : filtered;
 
   return (
-    <div className="flex w-full max-w-[1200px] flex-col items-center gap-10">
+    <div className="flex w-full max-w-300 flex-col items-center gap-10">
       <div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-4">
         {categories.map((category) => {
           const isActive = category.id === activeId;

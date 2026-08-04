@@ -65,8 +65,8 @@ export default async function SolutionDetailPage({
     <>
       <Header />
       <main id="top" className="flex flex-1 flex-col">
-        <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 sm:px-[100px]">
-          <div className="mx-auto grid w-full max-w-[1200px] grid-cols-1 items-center gap-10 lg:grid-cols-2">
+        <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 sm:px-25">
+          <div className="mx-auto grid w-full max-w-300 grid-cols-1 items-center gap-10 lg:grid-cols-2">
             <div className="flex flex-col gap-6">
               <h1 className="text-4xl font-semibold leading-[1.2] text-black sm:text-[50px]">
                 {solution.titleLong ?? solution.title}
@@ -84,27 +84,27 @@ export default async function SolutionDetailPage({
                 </div>
               )}
               {solution.text0 && (
-                <p className="max-w-[540px] text-lg text-black/70">
+                <p className="max-w-135 text-lg text-black/70">
                   {solution.text0}
                 </p>
               )}
               <div className="flex flex-wrap items-center gap-3">
                 <a
                   href="#pricing"
-                  className="bg-brand-gradient flex h-[60px] items-center rounded-full px-8 text-base font-medium text-white transition-opacity hover:opacity-90"
+                  className="bg-brand-gradient flex h-15 items-center rounded-full px-8 text-base font-medium text-white transition-opacity hover:opacity-90"
                 >
                   Book a Free Strategy Call
                 </a>
                 <a
                   href="#pricing"
-                  className="flex h-[60px] items-center rounded-full bg-black px-8 text-base font-medium text-white transition-opacity hover:opacity-90"
+                  className="flex h-15 items-center rounded-full bg-black px-8 text-base font-medium text-white transition-opacity hover:opacity-90"
                 >
                   Pricing
                 </a>
               </div>
             </div>
             {solution.mainImageUrl && (
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white">
+              <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl bg-white">
                 <Image
                   src={solution.mainImageUrl}
                   alt={solution.title}
@@ -123,29 +123,29 @@ export default async function SolutionDetailPage({
         {(solution.text1 || solution.designedFor.length > 0) && (
           <section
             id="why-us"
-            className="relative overflow-hidden bg-brand-surface px-6 py-16 sm:px-[100px]"
+            className="relative overflow-hidden bg-brand-surface px-6 py-16 sm:px-25"
           >
             <Image
               src="/images/solution-ribbon-bg.png"
               alt=""
               width={1500}
               height={620}
-              className="pointer-events-none absolute right-0 top-0 hidden w-[55%] max-w-[900px] opacity-90 lg:block"
+              className="pointer-events-none absolute right-0 top-0 hidden w-[55%] max-w-225 opacity-90 lg:block"
             />
-            <div className="relative mx-auto flex max-w-[1200px] flex-col gap-8">
+            <div className="relative mx-auto flex max-w-300 flex-col gap-8">
               <div className="flex flex-col gap-3">
                 {solution.text1 && (
                   <>
                     <p className="text-sm font-semibold uppercase tracking-wide text-brand-accent">
                       Who it&rsquo;s built for
                     </p>
-                    <h2 className="max-w-[700px] text-3xl font-bold text-black sm:text-[40px]">
+                    <h2 className="max-w-175 text-3xl font-bold text-black sm:text-[40px]">
                       {solution.text1}
                     </h2>
                   </>
                 )}
                 {solution.text2 && (
-                  <p className="max-w-[600px] text-base text-black/70 sm:text-lg">
+                  <p className="max-w-150 text-base text-black/70 sm:text-lg">
                     {solution.text2}
                   </p>
                 )}
@@ -176,7 +176,7 @@ export default async function SolutionDetailPage({
                   {solution.imagesCover.map((url, i) => (
                     <div
                       key={url}
-                      className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white"
+                      className="relative aspect-4/3 overflow-hidden rounded-2xl bg-white"
                     >
                       <Image
                         src={url}
@@ -192,8 +192,8 @@ export default async function SolutionDetailPage({
           </section>
         )}
 
-        <section className="bg-brand-surface px-6 pb-16 sm:px-[100px]">
-          <div className="mx-auto flex max-w-[1200px] flex-col items-start gap-4 rounded-[25px] bg-white p-8 sm:flex-row sm:items-center sm:justify-between">
+        <section className="bg-brand-surface px-6 pb-16 sm:px-25">
+          <div className="mx-auto flex max-w-300 flex-col items-start gap-4 rounded-[25px] bg-white p-8 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-col gap-1">
               <p className="text-xl font-bold text-brand-accent">
                 Building for clients?
@@ -214,22 +214,22 @@ export default async function SolutionDetailPage({
         </section>
 
         {(solution.text6 || solution.withMfa.length > 0) && (
-          <section className="flex flex-col items-center gap-10 bg-black px-6 py-16 text-center sm:px-[100px]">
+          <section className="flex flex-col items-center gap-10 bg-black px-6 py-16 text-center sm:px-25">
             <div className="flex flex-col items-center gap-4">
               {solution.text6 && (
-                <h2 className="max-w-[800px] text-3xl font-bold text-white sm:text-[40px]">
+                <h2 className="max-w-200 text-3xl font-bold text-white sm:text-[40px]">
                   {solution.text6}
                 </h2>
               )}
               {solution.text3 && (
-                <p className="max-w-[700px] text-base text-white/70 sm:text-lg">
+                <p className="max-w-175 text-base text-white/70 sm:text-lg">
                   {solution.text3}
                 </p>
               )}
             </div>
-            <div className="grid w-full max-w-[1000px] grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="grid w-full max-w-250 grid-cols-1 gap-6 sm:grid-cols-2">
               {solution.withoutMfa.length > 0 && (
-                <div className="flex flex-col gap-4 rounded-2xl bg-gradient-to-br from-[#7a3d5e] to-[#3d2a4a] p-6 text-left">
+                <div className="flex flex-col gap-4 rounded-2xl bg-linear-to-br from-[#7a3d5e] to-[#3d2a4a] p-6 text-left">
                   <p className="text-lg font-semibold text-white">
                     ✕ Without MindForApps
                   </p>
@@ -247,7 +247,7 @@ export default async function SolutionDetailPage({
                 </div>
               )}
               {solution.withMfa.length > 0 && (
-                <div className="flex flex-col gap-4 rounded-2xl bg-gradient-to-br from-[#3d5ea3] to-[#4fb8d8] p-6 text-left">
+                <div className="flex flex-col gap-4 rounded-2xl bg-linear-to-br from-[#3d5ea3] to-[#4fb8d8] p-6 text-left">
                   <p className="text-lg font-semibold text-white">
                     ✓ With MindForApps
                   </p>
@@ -271,7 +271,7 @@ export default async function SolutionDetailPage({
         {solution.featureCategories.length > 0 && (
           <section
             id="features"
-            className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-[100px]"
+            className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25"
           >
             <div className="flex flex-col items-center gap-3">
               <h2 className="text-3xl font-bold text-black sm:text-[40px]">
@@ -279,7 +279,7 @@ export default async function SolutionDetailPage({
                 <span className="text-brand-accent">One solution.</span>
               </h2>
               {solution.text4 && (
-                <p className="max-w-[700px] text-base text-black/60 sm:text-lg">
+                <p className="max-w-175 text-base text-black/60 sm:text-lg">
                   {solution.text4}
                 </p>
               )}
@@ -288,15 +288,15 @@ export default async function SolutionDetailPage({
           </section>
         )}
 
-        <section className="relative overflow-hidden bg-brand-surface px-6 py-16 sm:px-[100px]">
+        <section className="relative overflow-hidden bg-brand-surface px-6 py-16 sm:px-25">
           <Image
             src="/images/solution-ribbon-bg.png"
             alt=""
             width={1500}
             height={620}
-            className="pointer-events-none absolute -left-32 bottom-0 hidden w-[60%] max-w-[900px] rotate-180 opacity-80 lg:block"
+            className="pointer-events-none absolute -left-32 bottom-0 hidden w-[60%] max-w-225 rotate-180 opacity-80 lg:block"
           />
-          <div className="relative mx-auto flex max-w-[1200px] flex-col items-center gap-10 text-center">
+          <div className="relative mx-auto flex max-w-300 flex-col items-center gap-10 text-center">
             <div className="flex flex-col items-center gap-3">
               <p className="text-sm font-semibold uppercase tracking-wide text-brand-accent">
                 Real platforms. Real results.
@@ -304,11 +304,11 @@ export default async function SolutionDetailPage({
               <h2 className="text-3xl font-bold text-black sm:text-[40px]">
                 Numbers we&rsquo;ve shipped — not estimates.
               </h2>
-              <p className="max-w-[500px] text-base text-black/60">
+              <p className="max-w-125 text-base text-black/60">
                 Metrics from real projects. Not projections.
               </p>
             </div>
-            <div className="grid w-full max-w-[900px] grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="grid w-full max-w-225 grid-cols-2 gap-4 sm:grid-cols-4">
               {[
                 { value: "4 weeks", label: "Average time to launch" },
                 {
@@ -332,8 +332,8 @@ export default async function SolutionDetailPage({
           </div>
         </section>
 
-        <section className="bg-brand-surface px-6 pb-16 sm:px-[100px]">
-          <div className="mx-auto flex max-w-[1200px] flex-col items-start gap-4 rounded-[25px] bg-white p-8 sm:flex-row sm:items-center sm:justify-between">
+        <section className="bg-brand-surface px-6 pb-16 sm:px-25">
+          <div className="mx-auto flex max-w-300 flex-col items-start gap-4 rounded-[25px] bg-white p-8 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xl font-bold text-brand-accent">
               Want to speak to a past client before committing?
             </p>
@@ -348,7 +348,7 @@ export default async function SolutionDetailPage({
 
         <section
           id="process"
-          className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-[100px]"
+          className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25"
         >
           <div className="flex flex-col items-center gap-3">
             <p className="text-sm font-semibold uppercase tracking-wide text-brand-accent">
@@ -357,12 +357,12 @@ export default async function SolutionDetailPage({
             <h2 className="text-3xl font-bold text-black sm:text-[40px]">
               From brief to live in 3 steps.
             </h2>
-            <p className="max-w-[600px] text-base text-black/60">
+            <p className="max-w-150 text-base text-black/60">
               Three steps. Clarity and support on each step. Every stage has a
               clear deliverable. You always know what comes next.
             </p>
           </div>
-          <div className="flex w-full max-w-[1200px] flex-col gap-4">
+          <div className="flex w-full max-w-300 flex-col gap-4">
             {[
               {
                 n: 1,
@@ -447,7 +447,7 @@ export default async function SolutionDetailPage({
         </section>
 
         {solution.tools.length > 0 && (
-          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-[100px]">
+          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25">
             <div className="flex flex-col items-center gap-3">
               <p className="text-sm font-semibold uppercase tracking-wide text-brand-accent">
                 Built with
@@ -455,12 +455,12 @@ export default async function SolutionDetailPage({
               <h2 className="text-3xl font-bold text-black sm:text-[40px]">
                 Tools you can trust. Stack you own.
               </h2>
-              <p className="max-w-[600px] text-base text-black/60">
+              <p className="max-w-150 text-base text-black/60">
                 Every tool in your platform is enterprise-grade, widely
                 supported, and fully transferable.
               </p>
             </div>
-            <div className="grid w-full max-w-[1200px] grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="grid w-full max-w-300 grid-cols-2 gap-4 sm:grid-cols-4">
               {solution.tools.map((tool) => (
                 <div
                   key={tool.name}
@@ -488,7 +488,7 @@ export default async function SolutionDetailPage({
         )}
 
         {solution.includedFeatures.length > 0 && (
-          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-[100px]">
+          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25">
             <div className="flex flex-col items-center gap-3">
               <p className="text-sm font-semibold uppercase tracking-wide text-brand-accent">
                 What&rsquo;s included
@@ -497,13 +497,13 @@ export default async function SolutionDetailPage({
                 Everything ready on day one.
               </h2>
               {solution.text8 && (
-                <p className="max-w-[600px] text-base text-black/60">
+                <p className="max-w-150 text-base text-black/60">
                   No loose ends, no setup left for you to figure out. Your
                   platform launches complete.
                 </p>
               )}
             </div>
-            <div className="grid w-full max-w-[1200px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid w-full max-w-300 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {solution.includedFeatures.map((feature, i) => (
                 <div
                   key={feature.title}
@@ -549,8 +549,8 @@ export default async function SolutionDetailPage({
         )}
 
         {testimonials.length > 0 && (
-          <section className="flex flex-col items-center gap-10 bg-black px-6 py-16 text-center sm:px-[100px]">
-            <h2 className="max-w-[700px] text-3xl font-bold text-white sm:text-[40px]">
+          <section className="flex flex-col items-center gap-10 bg-black px-6 py-16 text-center sm:px-25">
+            <h2 className="max-w-175 text-3xl font-bold text-white sm:text-[40px]">
               What our clients say about working with us:
             </h2>
             <TestimonialsCarousel items={testimonials} />
@@ -558,12 +558,12 @@ export default async function SolutionDetailPage({
         )}
 
         {faqs.length > 0 && (
-          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 sm:px-[100px]">
+          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 sm:px-25">
             <div className="flex flex-col items-center gap-3 text-center">
               <h2 className="text-3xl font-bold text-black sm:text-[40px]">
                 FAQ
               </h2>
-              <p className="max-w-[600px] text-base text-black/60">
+              <p className="max-w-150 text-base text-black/60">
                 Clear answers about no-code app development, Bubble services,
                 timelines, pricing, and scalability.
               </p>
@@ -574,19 +574,19 @@ export default async function SolutionDetailPage({
 
         <section
           id="pricing"
-          className="flex flex-col items-center gap-10 bg-white px-6 py-16 text-center sm:px-[100px]"
+          className="flex flex-col items-center gap-10 bg-white px-6 py-16 text-center sm:px-25"
         >
           <div className="flex flex-col items-center gap-3">
             <h2 className="text-3xl font-bold text-black sm:text-[40px]">
               Transparent pricing. No surprises.
             </h2>
-            <p className="max-w-[600px] text-base text-black/60">
+            <p className="max-w-150 text-base text-black/60">
               Two tracks — one for getting your platform live, one for
               growing it after launch. Every quote is fixed and confirmed in
               writing before we start.
             </p>
           </div>
-          <div className="grid w-full max-w-[1000px] grid-cols-1 gap-6 bg-gradient-to-br from-[#e0e4ff] to-[#dff0ff] p-1 sm:grid-cols-2">
+          <div className="grid w-full max-w-250 grid-cols-1 gap-6 bg-linear-to-br from-[#e0e4ff] to-[#dff0ff] p-1 sm:grid-cols-2">
             <div className="flex flex-col gap-4 rounded-2xl bg-white p-8 text-left">
               <span className="w-fit rounded-full bg-[#e0e4ff] px-4 py-1.5 text-sm font-medium text-brand-accent">
                 Build track
@@ -675,23 +675,23 @@ export default async function SolutionDetailPage({
 
         <section
           id="contact"
-          className="relative overflow-hidden bg-brand-surface px-6 py-16 sm:px-[100px]"
+          className="relative overflow-hidden bg-brand-surface px-6 py-16 sm:px-25"
         >
           <Image
             src="/images/solution-cta-ribbon.webp"
             alt=""
             width={800}
             height={800}
-            className="pointer-events-none absolute -left-20 bottom-0 hidden w-[300px] lg:block"
+            className="pointer-events-none absolute -left-20 bottom-0 hidden w-75 lg:block"
           />
           <Image
             src="/images/solution-cta-ribbon.webp"
             alt=""
             width={800}
             height={800}
-            className="pointer-events-none absolute -right-20 top-0 hidden w-[300px] scale-x-[-1] lg:block"
+            className="pointer-events-none absolute -right-20 top-0 hidden w-75 scale-x-[-1] lg:block"
           />
-          <div className="relative mx-auto flex max-w-[800px] flex-col items-center gap-3 text-center">
+          <div className="relative mx-auto flex max-w-200 flex-col items-center gap-3 text-center">
             <h2 className="text-3xl font-bold text-black sm:text-[40px]">
               Ready to launch your {solution.title} platform?
             </h2>
@@ -699,7 +699,7 @@ export default async function SolutionDetailPage({
               Tell us about your project — we&rsquo;ll map the full scope.
             </p>
           </div>
-          <div className="relative mx-auto mt-10 max-w-[700px]">
+          <div className="relative mx-auto mt-10 max-w-175">
             <CalendlyWidget />
           </div>
         </section>

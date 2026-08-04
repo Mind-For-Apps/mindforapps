@@ -162,7 +162,7 @@ export function TemplatesPageBrowser({
   ]);
 
   return (
-    <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-8">
+    <div className="mx-auto flex w-full max-w-300 flex-col gap-8">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <div className="flex flex-1 items-center gap-3 rounded-full border border-black/15 bg-white px-6 py-3">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">

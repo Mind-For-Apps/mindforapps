@@ -7,7 +7,7 @@ export async function Services() {
   if (services.length === 0) return null;
 
   return (
-    <section className="flex flex-col items-center gap-8 bg-brand-surface py-16 sm:py-[60px]">
+    <section className="flex flex-col items-center gap-8 bg-brand-surface py-16 sm:py-15">
       <ServicesSlider services={services} />
     </section>
   );

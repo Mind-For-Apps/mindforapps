@@ -59,8 +59,8 @@ function FeatureIcon({ icon }: { icon: string | null }) {
 
 export function FeatureGrid() {
   return (
-    <section className="flex flex-col items-center gap-6 bg-gradient-to-b from-[#e4e4e4] to-[#d8d8d8] px-6 py-16 sm:px-[100px]">
-      <div className="grid w-full max-w-[1200px] grid-cols-2 gap-4 sm:grid-cols-3 lg:hidden">
+    <section className="flex flex-col items-center gap-6 bg-gradient-to-b from-[#e4e4e4] to-[#d8d8d8] px-6 py-16 sm:px-25">
+      <div className="grid w-full max-w-300 grid-cols-2 gap-4 sm:grid-cols-3 lg:hidden">
         {features.map((feature) => (
           <div
             key={feature.label}
@@ -74,7 +74,7 @@ export function FeatureGrid() {
         ))}
       </div>
 
-      <div className="hidden w-full max-w-[1200px] grid-cols-7 grid-rows-5 gap-3 lg:grid">
+      <div className="hidden w-full max-w-300 grid-cols-7 grid-rows-5 gap-3 lg:grid">
         {features.map((feature) => (
           <div
             key={feature.label}

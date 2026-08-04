@@ -3,7 +3,7 @@ import { TrustCarousel } from "./TrustCarousel";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white px-6 py-16 sm:px-[100px] lg:flex lg:h-[725px] lg:items-center lg:py-0">
+    <section className="relative overflow-hidden bg-white px-6 py-16 sm:px-25 lg:flex lg:h-181.25 lg:items-center lg:py-0">
       <div className="pointer-events-none absolute inset-0">
         <Image
           src="/images/hero-bg.png"
@@ -13,8 +13,8 @@ export function Hero() {
           priority
         />
       </div>
-      <div className="relative mx-auto flex max-w-[1200px] flex-col gap-8">
-        <div className="flex max-w-[560px] flex-col items-start gap-6">
+      <div className="relative mx-auto flex max-w-300 flex-col gap-8">
+        <div className="flex max-w-140 flex-col items-start gap-6">
           <h1 className="text-4xl font-semibold leading-[1.2] text-black sm:text-[55px]">
             A Software Partner For Small Businesses And Founders
           </h1>
@@ -27,13 +27,13 @@ export function Hero() {
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="#start-your-project"
-              className="bg-brand-gradient flex h-[60px] items-center rounded-full px-[30px] text-lg font-medium text-white transition-opacity hover:opacity-90 sm:text-[25px]"
+              className="bg-brand-gradient flex h-15 items-center rounded-full px-7.5 text-lg font-medium text-white transition-opacity hover:opacity-90 sm:text-[25px]"
             >
               Start Your Project
             </a>
             <a
               href="#start-your-project"
-              className="flex h-[60px] items-center rounded-full border border-black bg-black px-[30px] text-lg font-medium text-white transition-opacity hover:opacity-90"
+              className="flex h-15 items-center rounded-full border border-black bg-black px-7.5 text-lg font-medium text-white transition-opacity hover:opacity-90"
             >
               Book a Consultation
             </a>

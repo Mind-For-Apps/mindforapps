@@ -8,12 +8,12 @@ export async function FAQ() {
   if (faqs.length === 0) return null;
 
   return (
-    <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-[100px]">
+    <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25">
       <div className="flex flex-col items-center gap-3">
         <h2 className="text-3xl font-bold text-black sm:text-[40px]">
           Frequently Asked Questions
         </h2>
-        <p className="max-w-[600px] text-base text-black/60 sm:text-lg">
+        <p className="max-w-150 text-base text-black/60 sm:text-lg">
           Clear answers about no-code app development, Bubble services,
           timelines, pricing, and scalability.
         </p>

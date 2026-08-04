@@ -48,8 +48,8 @@ export default async function CaseStudyDetailPage({
     <>
       <Header />
       <main className="flex flex-1 flex-col">
-        <section className="flex flex-col items-center gap-3 bg-brand-surface px-6 py-16 text-center sm:px-[100px]">
-          <h1 className="max-w-[900px] text-3xl font-semibold text-black sm:text-[45px]">
+        <section className="flex flex-col items-center gap-3 bg-brand-surface px-6 py-16 text-center sm:px-25">
+          <h1 className="max-w-225 text-3xl font-semibold text-black sm:text-[45px]">
             {caseStudy.title}
           </h1>
           {caseStudy.tags.length > 0 && (
@@ -64,7 +64,7 @@ export default async function CaseStudyDetailPage({
           )}
         </section>
 
-        <section className="flex flex-wrap items-center justify-between gap-8 bg-black px-6 py-10 sm:px-[100px]">
+        <section className="flex flex-wrap items-center justify-between gap-8 bg-black px-6 py-10 sm:px-25">
           {caseStudy.serviceNames.length > 0 && (
             <div>
               <p className="text-sm text-white/40">Services</p>
@@ -135,12 +135,12 @@ export default async function CaseStudyDetailPage({
         </section>
 
         {caseStudy.headerImages.length > 0 && (
-          <section className="bg-brand-surface px-6 py-10 sm:px-[100px]">
-            <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-4 sm:grid-cols-3">
+          <section className="bg-brand-surface px-6 py-10 sm:px-25">
+            <div className="mx-auto grid max-w-300 grid-cols-1 gap-4 sm:grid-cols-3">
               {caseStudy.headerImages.map((url, i) => (
                 <div
                   key={url}
-                  className="relative aspect-[4/3] overflow-hidden rounded-2xl"
+                  className="relative aspect-4/3 overflow-hidden rounded-2xl"
                 >
                   <Image
                     src={url}
@@ -155,12 +155,12 @@ export default async function CaseStudyDetailPage({
         )}
 
         {caseStudy.progressImages.length > 0 && (
-          <section className="bg-brand-surface px-6 pb-10 sm:px-[100px]">
-            <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-4 sm:grid-cols-3">
+          <section className="bg-brand-surface px-6 pb-10 sm:px-25">
+            <div className="mx-auto grid max-w-300 grid-cols-1 gap-4 sm:grid-cols-3">
               {caseStudy.progressImages.map((url, i) => (
                 <div
                   key={url}
-                  className="relative aspect-[4/3] overflow-hidden rounded-2xl"
+                  className="relative aspect-4/3 overflow-hidden rounded-2xl"
                 >
                   <Image
                     src={url}
@@ -180,8 +180,8 @@ export default async function CaseStudyDetailPage({
           caseStudy.projectBasedCollaboration.length > 0 ||
           caseStudy.clientGoal.length > 0 ||
           caseStudy.solution) && (
-          <section className="bg-brand-surface px-6 py-16 sm:px-[100px]">
-            <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 lg:grid-cols-2">
+          <section className="bg-brand-surface px-6 py-16 sm:px-25">
+            <div className="mx-auto grid max-w-300 grid-cols-1 gap-10 lg:grid-cols-2">
               <div className="flex flex-col gap-4 lg:sticky lg:top-24 lg:self-start">
                 <h2 className="text-3xl font-bold text-black sm:text-[40px]">
                   Problem &amp; Context
@@ -234,18 +234,18 @@ export default async function CaseStudyDetailPage({
         )}
 
         {caseStudy.webArchitecture.length > 0 && (
-          <section className="flex flex-col items-center gap-10 bg-black px-6 py-16 text-center sm:px-[100px]">
+          <section className="flex flex-col items-center gap-10 bg-black px-6 py-16 text-center sm:px-25">
             <div className="flex flex-col items-center gap-3">
               <h2 className="text-3xl font-bold text-white sm:text-[40px]">
                 What Was Built
               </h2>
               {caseStudy.textWhatWasBuilt && (
-                <p className="max-w-[700px] text-base text-white/70 sm:text-lg">
+                <p className="max-w-175 text-base text-white/70 sm:text-lg">
                   {caseStudy.textWhatWasBuilt}
                 </p>
               )}
             </div>
-            <div className="grid w-full max-w-[1200px] grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
+            <div className="grid w-full max-w-300 grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
               {caseStudy.webArchitecture.map((item) => (
                 <div key={item.label} className="flex flex-col items-center gap-4">
                   <div className="flex size-16 items-center justify-center rounded-full bg-white/10">
@@ -267,18 +267,18 @@ export default async function CaseStudyDetailPage({
         )}
 
         {caseStudy.keyFeatures.length > 0 && (
-          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-[100px]">
+          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25">
             <div className="flex flex-col items-center gap-3">
               <h2 className="text-3xl font-bold text-black sm:text-[40px]">
                 Key Features Delivered
               </h2>
               {caseStudy.textFeatures && (
-                <p className="max-w-[700px] text-base text-black/60 sm:text-lg">
+                <p className="max-w-175 text-base text-black/60 sm:text-lg">
                   {caseStudy.textFeatures}
                 </p>
               )}
             </div>
-            <div className="grid w-full max-w-[1200px] grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="grid w-full max-w-300 grid-cols-2 gap-4 sm:grid-cols-4">
               {caseStudy.keyFeatures.map((feature) => (
                 <div
                   key={feature.label}
@@ -305,18 +305,18 @@ export default async function CaseStudyDetailPage({
         )}
 
         {caseStudy.tools.length > 0 && (
-          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-[100px]">
+          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25">
             <div className="flex flex-col items-center gap-3">
               <h2 className="text-3xl font-bold text-black sm:text-[40px]">
                 Platform &amp; Tools Used
               </h2>
               {caseStudy.textTools && (
-                <p className="max-w-[700px] text-base text-black/60 sm:text-lg">
+                <p className="max-w-175 text-base text-black/60 sm:text-lg">
                   {caseStudy.textTools}
                 </p>
               )}
             </div>
-            <div className="grid w-full max-w-[900px] grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="grid w-full max-w-225 grid-cols-2 gap-4 sm:grid-cols-4">
               {caseStudy.tools.map((tool) => (
                 <div
                   key={tool.name}
@@ -341,8 +341,8 @@ export default async function CaseStudyDetailPage({
         )}
 
         {highlightStats.length > 0 && (
-          <section className="bg-brand-surface px-6 py-16 sm:px-[100px]">
-            <div className="mx-auto flex max-w-[1200px] flex-col gap-10 lg:flex-row lg:items-start">
+          <section className="bg-brand-surface px-6 py-16 sm:px-25">
+            <div className="mx-auto flex max-w-300 flex-col gap-10 lg:flex-row lg:items-start">
               <h2 className="shrink-0 text-3xl font-bold text-black sm:text-[40px] lg:w-[260px]">
                 Outcome &amp; Impact
               </h2>
@@ -361,14 +361,14 @@ export default async function CaseStudyDetailPage({
         )}
 
         {caseStudy.clientFeedback && (
-          <section className="relative overflow-hidden bg-black px-6 py-16 sm:px-[100px]">
+          <section className="relative overflow-hidden bg-black px-6 py-16 sm:px-25">
             <Image
               src="/images/case-study-detail/feedback-background.png"
               alt=""
               fill
               className="object-cover"
             />
-            <div className="relative z-10 mx-auto flex max-w-[1200px] flex-col gap-10 lg:flex-row lg:items-center">
+            <div className="relative z-10 mx-auto flex max-w-300 flex-col gap-10 lg:flex-row lg:items-center">
               <h2 className="shrink-0 text-3xl font-bold text-white sm:text-[40px] lg:w-[280px]">
                 Client Feedback
               </h2>
@@ -436,8 +436,8 @@ export default async function CaseStudyDetailPage({
         )}
 
         {caseStudy.teamInvolvement.length > 0 && (
-          <section className="bg-brand-surface px-6 py-16 sm:px-[100px]">
-            <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 lg:grid-cols-[275px_1fr]">
+          <section className="bg-brand-surface px-6 py-16 sm:px-25">
+            <div className="mx-auto grid max-w-300 grid-cols-1 gap-10 lg:grid-cols-[275px_1fr]">
               <div className="flex flex-col gap-6">
                 <h2 className="text-3xl font-bold text-black sm:text-[40px]">
                   Team Involvement
@@ -465,11 +465,11 @@ export default async function CaseStudyDetailPage({
         )}
 
         {caseStudy.suitableFor.length > 0 && (
-          <section className="flex flex-col items-center gap-8 bg-brand-surface px-6 py-16 text-center sm:px-[100px]">
+          <section className="flex flex-col items-center gap-8 bg-brand-surface px-6 py-16 text-center sm:px-25">
             <h2 className="text-3xl font-bold text-black sm:text-[40px]">
               Suitable For:
             </h2>
-            <div className="grid w-full max-w-[900px] grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="grid w-full max-w-225 grid-cols-1 gap-4 sm:grid-cols-2">
               {caseStudy.suitableFor.map((item) => (
                 <div
                   key={item}

@@ -16,7 +16,7 @@ export function TestimonialsCarousel({ items }: { items: Testimonial[] }) {
   );
 
   return (
-    <div className="flex w-full max-w-[1200px] flex-col gap-8">
+    <div className="flex w-full max-w-300 flex-col gap-8">
       <div className="flex items-center justify-between">
         <button
           type="button"

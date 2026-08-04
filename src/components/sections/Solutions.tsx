@@ -13,7 +13,7 @@ export async function Solutions() {
 
   return (
     <section className="flex flex-col items-center gap-8 pt-16">
-      <div className="flex flex-col items-center gap-8 px-6 sm:px-[100px]">
+      <div className="flex flex-col items-center gap-8 px-6 sm:px-25">
         <div className="flex h-[87px] items-center rounded-full border-[3px] border-brand-purple px-8 sm:px-11">
           <span className="text-brand-gradient text-2xl font-medium sm:text-[45px]">
             Solutions

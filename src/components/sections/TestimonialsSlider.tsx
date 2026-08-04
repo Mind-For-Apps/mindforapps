@@ -23,7 +23,7 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
 
   return (
     <>
-      <div className="flex w-full max-w-[1200px] items-center justify-center gap-2 sm:gap-[19px]">
+      <div className="flex w-full max-w-300 items-center justify-center gap-2 sm:gap-4.75">
         <button
           type="button"
           onClick={goPrev}
@@ -32,7 +32,7 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
           className="hidden shrink-0 sm:block disabled:opacity-30"
         >
           <Image
-            src="/images/arrow-left.svg"
+            src="/images/nav-arrow-left.svg"
             alt=""
             width={59}
             height={161}
@@ -54,7 +54,7 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
           className="hidden shrink-0 sm:block disabled:opacity-30"
         >
           <Image
-            src="/images/arrow-right.svg"
+            src="/images/nav-arrow-right.svg"
             alt=""
             width={59}
             height={161}
@@ -63,7 +63,7 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
         </button>
       </div>
 
-      <div className="grid w-full max-w-[1200px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid w-full max-w-300 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {shown.map((t) => (
           <div
             key={t.id}

@@ -22,17 +22,17 @@ export default async function TemplatesPage() {
     <>
       <Header />
       <main className="flex flex-1 flex-col">
-        <section className="flex flex-col items-center gap-3 bg-brand-surface px-6 py-16 text-center sm:px-[100px]">
+        <section className="flex flex-col items-center gap-3 bg-brand-surface px-6 py-16 text-center sm:px-25">
           <h1 className="text-3xl font-bold text-black sm:text-[45px]">
             Bubble &amp; No-Code App Templates
           </h1>
-          <p className="max-w-[600px] text-base text-black/60 sm:text-lg">
+          <p className="max-w-150 text-base text-black/60 sm:text-lg">
             Ready-made Bubble templates and no-code app templates designed for
             fast product launch and easy customization.
           </p>
         </section>
 
-        <section className="bg-brand-surface px-6 pb-16 sm:px-[100px]">
+        <section className="bg-brand-surface px-6 pb-16 sm:px-25">
           <TemplatesPageBrowser
             categories={categories}
             featureTags={featureTags}

@@ -203,7 +203,7 @@ export function Footer() {
     <footer>
       <section
         id="start-your-project"
-        className="relative overflow-hidden bg-[#e9edf1] px-6 py-16 sm:px-[100px]"
+        className="relative overflow-hidden bg-[#e9edf1] px-6 py-16 sm:px-25"
       >
         <Image
           src="/images/footer-top-wave.png"
@@ -211,7 +211,7 @@ export function Footer() {
           fill
           className="object-cover object-top opacity-70"
         />
-        <div className="relative mx-auto flex max-w-[1200px] flex-col gap-8 rounded-[25px] bg-white/90 p-6 shadow-[0px_20px_60px_rgba(0,0,0,0.08)] sm:p-12">
+        <div className="relative mx-auto flex max-w-300 flex-col gap-8 rounded-[25px] bg-white/90 p-6 shadow-[0px_20px_60px_rgba(0,0,0,0.08)] sm:p-12">
           <div className="flex flex-col items-center gap-2 text-center">
             <h2 className="text-3xl font-bold text-black sm:text-[40px]">
               Start Your Project
@@ -357,7 +357,7 @@ export function Footer() {
         </div>
       </section>
 
-      <div className="flex flex-col items-center gap-10 bg-black px-6 py-16 sm:px-[100px]">
+      <div className="flex flex-col items-center gap-10 bg-black px-6 py-16 sm:px-25">
         <div className="flex flex-col items-center gap-3">
           <Image
             src="/images/logo-white.svg"
@@ -368,7 +368,7 @@ export function Footer() {
           />
         </div>
 
-        <div className="flex w-full max-w-[1200px] flex-col items-center justify-between gap-10 sm:flex-row sm:items-start">
+        <div className="flex w-full max-w-300 flex-col items-center justify-between gap-10 sm:flex-row sm:items-start">
           <ul className="flex flex-col items-center gap-4 sm:items-start">
             {NAV_LEFT.map((link) => (
               <li key={link.href}>

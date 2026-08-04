@@ -10,7 +10,7 @@ const LINKS = [
 
 export function StickyNav() {
   return (
-    <nav className="sticky top-0 z-30 flex items-center justify-between gap-4 border-b border-black/10 bg-white/95 px-6 py-4 backdrop-blur sm:px-[100px]">
+    <nav className="sticky top-0 z-30 flex items-center justify-between gap-4 border-b border-black/10 bg-white/95 px-6 py-4 backdrop-blur sm:px-25">
       <a href="#top" aria-label="Back to top" className="shrink-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/logo-icon.svg" alt="" className="h-7 w-auto" />

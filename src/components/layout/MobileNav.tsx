@@ -57,7 +57,7 @@ export function MobileNav({ navLinks }: { navLinks: NavLink[] }) {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="bg-gradient-to-b from-black to-[#0c0c0c] mt-2 rounded-full px-[30px] py-3 text-center text-base font-medium text-white transition-opacity hover:opacity-90"
+            className="bg-gradient-to-b from-black to-[#0c0c0c] mt-2 rounded-full px-7.5 py-3 text-center text-base font-medium text-white transition-opacity hover:opacity-90"
           >
             Contact Us
           </Link>
