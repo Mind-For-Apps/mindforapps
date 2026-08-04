@@ -1,4 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, FreeMode } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/autoplay";
 
 type Pill = {
   title: string;
@@ -67,11 +74,22 @@ function PillCard({ pill }: { pill: Pill }) {
 export function TrustCarousel() {
   return (
     <div className="w-full overflow-hidden pt-6 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
-      <div className="flex w-max animate-marquee gap-4 hover:[animation-play-state:paused]">
-        {[...pills, ...pills].map((pill, i) => (
-          <PillCard key={i} pill={pill} />
+      <Swiper
+        modules={[Autoplay, FreeMode]}
+        loop
+        freeMode
+        slidesPerView="auto"
+        spaceBetween={16}
+        speed={2000}
+        autoplay={{ delay: 1, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        allowTouchMove
+      >
+        {pills.map((pill, i) => (
+          <SwiperSlide key={i} style={{ width: "auto" }}>
+            <PillCard pill={pill} />
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 }
