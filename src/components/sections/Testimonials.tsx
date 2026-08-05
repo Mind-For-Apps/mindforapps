@@ -7,7 +7,7 @@ export async function Testimonials() {
   if (testimonials.length === 0) return null;
 
   return (
-    <section className="flex flex-col items-center gap-8 bg-black px-6 py-16 sm:px-[100px]">
+    <section className="flex flex-col items-center gap-8 bg-black px-6 py-16 sm:px-25">
       <TestimonialsSlider items={testimonials} />
     </section>
   );

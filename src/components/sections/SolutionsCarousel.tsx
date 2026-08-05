@@ -155,13 +155,13 @@ export function SolutionsCarousel({
         onMouseMove={handlePointerMove}
         onMouseUp={endDrag}
         onClickCapture={handleCardClickCapture}
-        className="scrollbar-hide flex w-full cursor-grab snap-x snap-mandatory gap-6 overflow-x-auto px-6 select-none active:cursor-grabbing sm:px-[100px]"
+        className="scrollbar-hide flex w-full cursor-grab snap-x snap-mandatory gap-6 overflow-x-auto px-6 select-none active:cursor-grabbing sm:px-25"
       >
         {solutions.map((solution) => (
           <div
             key={solution.id}
             data-card
-            className="flex w-[300px] shrink-0 snap-start flex-col gap-6 rounded-t-[25px] bg-black px-8 py-9 sm:w-[380px]"
+            className="flex w-75 shrink-0 snap-start flex-col gap-6 rounded-t-[25px] bg-black px-8 py-9 sm:w-[380px]"
           >
             <div className="flex flex-col gap-1">
               <p className="text-3xl font-bold tracking-[-0.77px] text-white">
@@ -204,7 +204,7 @@ export function SolutionsCarousel({
         disabled={solutions.length < 2}
         className="absolute left-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-white p-2 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.14)] disabled:opacity-30 sm:block"
       >
-        <Image src="/images/arrow-left.svg" alt="" width={20} height={20} className="size-5" />
+        <Image src="/images/nav-arrow-left.svg" alt="" width={20} height={20} className="size-5" />
       </button>
       <button
         type="button"
@@ -213,7 +213,7 @@ export function SolutionsCarousel({
         disabled={solutions.length < 2}
         className="absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-white p-2 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.14)] disabled:opacity-30 sm:block"
       >
-        <Image src="/images/arrow-right.svg" alt="" width={20} height={20} className="size-5 -scale-x-100" />
+        <Image src="/images/nav-arrow-right.svg" alt="" width={20} height={20} className="size-5 -scale-x-100" />
       </button>
     </div>
   );

@@ -17,7 +17,7 @@ export default async function CaseStudiesPage() {
     <>
       <Header />
       <main className="flex flex-1 flex-col">
-        <section className="flex flex-col items-center gap-3 bg-brand-surface px-6 py-16 text-center sm:px-[100px]">
+        <section className="flex flex-col items-center gap-3 bg-brand-surface px-6 py-16 text-center sm:px-25">
           <h1 className="text-3xl font-semibold text-black sm:text-[45px]">
             No-Code App &amp; MVP Case Studies
           </h1>
@@ -27,7 +27,7 @@ export default async function CaseStudiesPage() {
           </p>
         </section>
 
-        <section className="flex flex-col items-center gap-8 bg-black px-6 py-16 sm:px-[100px]">
+        <section className="flex flex-col items-center gap-8 bg-black px-6 py-16 sm:px-25">
           {slides.length === 0 ? (
             <p className="text-white">No case studies published yet.</p>
           ) : (

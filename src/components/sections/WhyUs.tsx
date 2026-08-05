@@ -21,7 +21,7 @@ const outcomes = [
 
 export function WhyUs() {
   return (
-    <section className="relative flex flex-col items-center gap-8 overflow-hidden bg-white px-6 py-16 sm:px-[100px]">
+    <section className="relative flex flex-col items-center gap-8 overflow-hidden bg-white px-6 py-16 sm:px-25">
       <Image
         src="/images/why-us/wave-bg-illustration.png"
         alt=""
@@ -33,13 +33,13 @@ export function WhyUs() {
         <h2 className="text-3xl font-bold text-black sm:text-[40px]">
           Why Us
         </h2>
-        <p className="max-w-[600px] text-base text-black sm:text-lg">
+        <p className="max-w-150 text-base text-black sm:text-lg">
           An experienced no-code team with certified Bubble developers,
           transparent processes, and proven expertise.
         </p>
       </div>
 
-      <div className="relative w-full max-w-[1200px] rounded-[4px] bg-[rgba(233,233,233,0.7)] p-4 sm:p-6">
+      <div className="relative w-full max-w-300 rounded-[4px] bg-[rgba(233,233,233,0.7)] p-4 sm:p-6">
         <div className="grid gap-4 lg:grid-cols-2">
           <div className="flex flex-col gap-6 rounded-[4px] bg-white p-6 sm:p-9">
             <div className="flex items-center gap-4">

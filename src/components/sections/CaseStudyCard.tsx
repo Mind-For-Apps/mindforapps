@@ -4,7 +4,7 @@ import type { CaseStudySlide } from "@/lib/case-studies";
 
 export function CaseStudyCard({ slide }: { slide: CaseStudySlide }) {
   return (
-    <div className="flex w-full max-w-[1200px] flex-col overflow-hidden lg:flex-row">
+    <div className="flex w-full max-w-300 flex-col overflow-hidden lg:flex-row">
       <div className="flex flex-col gap-10 bg-white p-8 sm:p-[50px]">
         <div className="flex w-[560px] max-w-full flex-col gap-6">
           <h3 className="max-w-[410px] text-2xl font-medium text-black sm:text-[35px]">

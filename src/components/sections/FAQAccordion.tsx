@@ -9,7 +9,7 @@ export function FAQAccordion({ items }: { items: Faq[] }) {
   if (items.length === 0) return null;
 
   return (
-    <div className="flex w-full max-w-[1000px] flex-col gap-4">
+    <div className="flex w-full max-w-250 flex-col gap-4">
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (

@@ -17,12 +17,12 @@ export default async function FaqPage() {
     <>
       <Header />
       <main className="flex flex-1 flex-col">
-        <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 sm:px-[100px]">
+        <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 sm:px-25">
           <div className="flex flex-col items-center gap-3 text-center">
             <h1 className="text-3xl font-bold text-black sm:text-[45px]">
               Frequently Asked Questions
             </h1>
-            <p className="max-w-[600px] text-base text-black/60 sm:text-lg">
+            <p className="max-w-150 text-base text-black/60 sm:text-lg">
               Clear answers about no-code app development, Bubble services,
               timelines, pricing, and scalability.
             </p>

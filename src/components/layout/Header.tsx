@@ -11,8 +11,8 @@ const navLinks = [
 
 export function Header() {
   return (
-    <header className="bg-white flex items-center justify-center px-6 pt-10 pb-5 sm:px-[100px]">
-      <nav className="bg-white flex h-20 w-full max-w-[1200px] items-center justify-between gap-4 rounded-[50px] px-6 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.14)] sm:px-[30px]">
+    <header className="bg-white flex items-center justify-center px-6 pt-10 pb-5 sm:px-25">
+      <nav className="bg-white flex h-20 w-full max-w-300 items-center justify-between gap-4 rounded-[50px] px-6 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.14)] sm:px-7.5">
         <Link href="/" className="shrink-0">
           <Image
             src="/images/logo.svg"
@@ -59,7 +59,7 @@ export function Header() {
             </Link>
             <Link
               href="/contact"
-              className="bg-gradient-to-b from-black to-[#0c0c0c] whitespace-nowrap rounded-full px-5 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 xl:px-[30px] xl:text-lg"
+              className="bg-gradient-to-b from-black to-[#0c0c0c] whitespace-nowrap rounded-full px-5 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 xl:px-7.5 xl:text-lg"
             >
               Contact Us
             </Link>

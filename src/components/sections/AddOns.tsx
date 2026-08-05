@@ -38,18 +38,18 @@ const ongoingSupport = {
 
 export function AddOns() {
   return (
-    <section className="flex flex-col items-center gap-8 bg-brand-surface px-6 py-16 sm:px-[100px]">
+    <section className="flex flex-col items-center gap-8 bg-brand-surface px-6 py-16 sm:px-25">
       <div className="flex flex-col items-center gap-3 text-center">
         <h2 className="text-3xl font-bold text-black sm:text-[40px]">
           Add-ons
         </h2>
-        <p className="max-w-[700px] text-base text-brand-gray sm:text-lg">
+        <p className="max-w-175 text-base text-brand-gray sm:text-lg">
           Extend your product with integrations, API development,
           optimization, QA, and ongoing support for long-term scalability.
         </p>
       </div>
 
-      <div className="w-full max-w-[1200px] rounded-[33px] bg-[#e9e9e9] p-4 sm:p-6">
+      <div className="w-full max-w-300 rounded-[33px] bg-[#e9e9e9] p-4 sm:p-6">
         <div className="flex flex-col gap-4">
           <Link
             href={featuredAddOn.href}
