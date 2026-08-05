@@ -342,6 +342,7 @@ export function TemplatesPageBrowser({
                         src={template.imageUrl}
                         alt={template.title}
                         fill
+                        sizes="(min-width: 640px) 50vw, 100vw"
                         className="object-cover"
                       />
                     </div>

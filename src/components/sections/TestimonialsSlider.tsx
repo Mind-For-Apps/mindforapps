@@ -107,19 +107,22 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
                         src={t.projectImageUrl}
                         alt=""
                         fill
+                        sizes="101px"
                         className="object-cover"
                       />
                     </div>
                   )}
                   <div className="flex min-w-0 flex-1 flex-col gap-1">
                     {t.projectLogoUrl && (
-                      <Image
-                        src={t.projectLogoUrl}
-                        alt=""
-                        width={90}
-                        height={24}
-                        className="h-6 w-auto object-contain object-left"
-                      />
+                      <div className="relative h-6 w-22.5">
+                        <Image
+                          src={t.projectLogoUrl}
+                          alt=""
+                          fill
+                          sizes="90px"
+                          className="object-contain object-left"
+                        />
+                      </div>
                     )}
                     {t.company && (
                       <p className="text-sm font-medium text-brand-accent sm:text-base">

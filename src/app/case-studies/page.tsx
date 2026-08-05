@@ -21,7 +21,7 @@ export default async function CaseStudiesPage() {
           <h1 className="text-3xl font-semibold text-black sm:text-[45px]">
             No-Code App &amp; MVP Case Studies
           </h1>
-          <p className="max-w-[608px] text-base text-brand-gray sm:text-lg">
+          <p className="max-w-152 text-base text-brand-gray sm:text-lg">
             Real case studies showcasing no-code success stories, project
             examples, and proven client results across industries.
           </p>
@@ -31,8 +31,8 @@ export default async function CaseStudiesPage() {
           {slides.length === 0 ? (
             <p className="text-white">No case studies published yet.</p>
           ) : (
-            slides.map((slide) => (
-              <CaseStudyCard key={slide.id} slide={slide} />
+            slides.map((slide, i) => (
+              <CaseStudyCard key={slide.id} slide={slide} priority={i === 0} />
             ))
           )}
         </section>

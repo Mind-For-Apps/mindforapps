@@ -1,28 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 import type { CaseStudySlide } from "@/lib/case-studies";
 import { CaseStudyCard } from "./CaseStudyCard";
 
 export function CaseStudySlider({ slides }: { slides: CaseStudySlide[] }) {
-  const [index, setIndex] = useState(0);
-  const slide = slides[index];
-
-  function goPrev() {
-    setIndex((i) => (i - 1 + slides.length) % slides.length);
-  }
-
-  function goNext() {
-    setIndex((i) => (i + 1) % slides.length);
-  }
+  const swiperRef = useRef<SwiperRef>(null);
 
   return (
     <>
-      <div className="flex w-full max-w-300 items-center justify-center gap-2 sm:gap-4.75">
+      <div className="flex w-full max-w-300 items-center justify-center gap-2 px-6 sm:gap-4.75 sm:px-25">
         <button
           type="button"
-          onClick={goPrev}
+          onClick={() => swiperRef.current?.swiper.slidePrev()}
           aria-label="Previous case study"
           disabled={slides.length < 2}
           className="hidden shrink-0 sm:block disabled:opacity-30"
@@ -39,14 +33,14 @@ export function CaseStudySlider({ slides }: { slides: CaseStudySlide[] }) {
           <p className="text-2xl text-white sm:text-[32px]">
             Bubble No-Code Case Studies with Proven Business Results
           </p>
-          <p className="max-w-[608px] text-base text-white sm:text-lg">
+          <p className="max-w-152 text-base text-white sm:text-lg">
             Real case studies showcasing no-code success stories, project
             examples, and proven client results across industries.
           </p>
         </div>
         <button
           type="button"
-          onClick={goNext}
+          onClick={() => swiperRef.current?.swiper.slideNext()}
           aria-label="Next case study"
           disabled={slides.length < 2}
           className="hidden shrink-0 sm:block disabled:opacity-30"
@@ -61,7 +55,28 @@ export function CaseStudySlider({ slides }: { slides: CaseStudySlide[] }) {
         </button>
       </div>
 
-      <CaseStudyCard slide={slide} />
+      <Swiper
+        ref={swiperRef}
+        modules={[Autoplay]}
+        loop
+        loopAdditionalSlides={0}
+        speed={1000}
+        autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        slidesPerView={1}
+        spaceBetween={20}
+        centeredSlides={true}
+        breakpoints={{
+          1500: { slidesPerView: 1.2, spaceBetween: 40 },
+          1800: { slidesPerView: 1.5, spaceBetween: 80 },
+        }}
+        className="w-full! px-6! sm:px-5!"
+      >
+        {slides.map((slide, i) => (
+          <SwiperSlide key={slide.id} style={{ height: "auto" }}>
+            <CaseStudyCard slide={slide} priority={i === 0} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </>
   );
 }

@@ -53,7 +53,7 @@ export default async function CaseStudyDetailPage({
             {caseStudy.title}
           </h1>
           {caseStudy.tags.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-3 text-sm font-medium text-black sm:gap-[15px] sm:text-lg">
+            <div className="flex flex-wrap items-center justify-center gap-3 text-sm font-medium text-black sm:gap-3.75 sm:text-lg">
               {caseStudy.tags.map((tag, i) => (
                 <span key={tag} className="flex items-center gap-3">
                   {i > 0 && <span className="text-black/40">|</span>}
@@ -68,7 +68,7 @@ export default async function CaseStudyDetailPage({
           {caseStudy.serviceNames.length > 0 && (
             <div>
               <p className="text-sm text-white/40">Services</p>
-              <p className="mt-1 max-w-[240px] text-lg font-medium text-white">
+              <p className="mt-1 max-w-60 text-lg font-medium text-white">
                 {caseStudy.serviceNames.join(", ")}
               </p>
             </div>
@@ -76,7 +76,7 @@ export default async function CaseStudyDetailPage({
           {caseStudy.deliverables && (
             <div>
               <p className="text-sm text-white/40">Deliverables</p>
-              <p className="mt-1 max-w-[280px] text-lg font-medium text-white">
+              <p className="mt-1 max-w-70 text-lg font-medium text-white">
                 {caseStudy.deliverables}
               </p>
             </div>
@@ -146,6 +146,7 @@ export default async function CaseStudyDetailPage({
                     src={url}
                     alt={`${caseStudy.title} screenshot ${i + 1}`}
                     fill
+                    sizes="(min-width: 640px) 33vw, 100vw"
                     className="object-cover"
                   />
                 </div>
@@ -166,6 +167,7 @@ export default async function CaseStudyDetailPage({
                     src={url}
                     alt={`${caseStudy.title} progress ${i + 1}`}
                     fill
+                    sizes="(min-width: 640px) 33vw, 100vw"
                     className="object-cover"
                   />
                 </div>
@@ -186,7 +188,7 @@ export default async function CaseStudyDetailPage({
                 <h2 className="text-3xl font-bold text-black sm:text-[40px]">
                   Problem &amp; Context
                 </h2>
-                <p className="max-w-[420px] text-base text-black/70 sm:text-lg">
+                <p className="max-w-105 text-base text-black/70 sm:text-lg">
                   {[caseStudy.problem, caseStudy.context]
                     .filter(Boolean)
                     .join(" ")}
@@ -343,7 +345,7 @@ export default async function CaseStudyDetailPage({
         {highlightStats.length > 0 && (
           <section className="bg-brand-surface px-6 py-16 sm:px-25">
             <div className="mx-auto flex max-w-300 flex-col gap-10 lg:flex-row lg:items-start">
-              <h2 className="shrink-0 text-3xl font-bold text-black sm:text-[40px] lg:w-[260px]">
+              <h2 className="shrink-0 text-3xl font-bold text-black sm:text-[40px] lg:w-65">
                 Outcome &amp; Impact
               </h2>
               <div className="grid flex-1 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -366,10 +368,11 @@ export default async function CaseStudyDetailPage({
               src="/images/case-study-detail/feedback-background.png"
               alt=""
               fill
+              sizes="100vw"
               className="object-cover"
             />
             <div className="relative z-10 mx-auto flex max-w-300 flex-col gap-10 lg:flex-row lg:items-center">
-              <h2 className="shrink-0 text-3xl font-bold text-white sm:text-[40px] lg:w-[280px]">
+              <h2 className="shrink-0 text-3xl font-bold text-white sm:text-[40px] lg:w-70">
                 Client Feedback
               </h2>
               <div className="flex w-full flex-col gap-6 rounded-[25px] border border-white/15 bg-[#123250]/95 p-8 sm:p-10">
@@ -410,19 +413,22 @@ export default async function CaseStudyDetailPage({
                           src={caseStudy.mainImageUrl}
                           alt=""
                           fill
+                          sizes="64px"
                           className="object-cover"
                         />
                       </div>
                     )}
                     <div className="flex flex-col gap-1">
                       {caseStudy.logoUrl && (
-                        <Image
-                          src={caseStudy.logoUrl}
-                          alt=""
-                          width={90}
-                          height={26}
-                          className="h-6 w-auto object-contain"
-                        />
+                        <div className="relative h-6 w-22.5">
+                          <Image
+                            src={caseStudy.logoUrl}
+                            alt=""
+                            fill
+                            sizes="90px"
+                            className="object-contain object-left"
+                          />
+                        </div>
                       )}
                       <p className="text-base font-medium text-white">
                         {caseStudy.title}

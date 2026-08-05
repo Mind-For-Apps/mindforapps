@@ -60,6 +60,7 @@ export function AddOns() {
                 src={featuredAddOn.image}
                 alt=""
                 fill
+                sizes="(min-width: 1024px) 324px, 100vw"
                 className="object-contain"
               />
             </div>
@@ -85,7 +86,13 @@ export function AddOns() {
                     key={icon}
                     className="relative size-14 shrink-0 overflow-hidden rounded-full"
                   >
-                    <Image src={icon} alt="" fill className="object-cover" />
+                    <Image
+                      src={icon}
+                      alt=""
+                      fill
+                      sizes="56px"
+                      className="object-cover"
+                    />
                   </div>
                 ))}
               </div>
@@ -108,6 +115,7 @@ export function AddOns() {
                   src={qaAudit.image}
                   alt=""
                   fill
+                  sizes="120px"
                   className="object-contain"
                 />
               </div>
@@ -131,6 +139,7 @@ export function AddOns() {
                     src={ongoingSupport.image}
                     alt=""
                     fill
+                    sizes="118px"
                     className="object-cover"
                   />
                 </div>

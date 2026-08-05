@@ -44,22 +44,22 @@ function FeatureIcon({ icon }: { icon: string | null }) {
         alt=""
         width={26}
         height={26}
-        className="size-[26px]"
+        className="size-6.5"
       />
     );
   }
   return (
-    <div className="flex h-[26px] items-end gap-[3px]">
-      <span className="h-[19px] w-[5px] rounded-[1px] border border-[#585858]" />
-      <span className="h-[12px] w-[6px] rounded-[1px] border border-[#585858]" />
-      <span className="h-[22px] w-[5px] rounded-[1px] border border-[#585858]" />
+    <div className="flex h-6.5 items-end gap-0.75">
+      <span className="h-4.75 w-1.25 rounded-[1px] border border-brand-gray-dark" />
+      <span className="h-3 w-1.5 rounded-[1px] border border-brand-gray-dark" />
+      <span className="h-5.5 w-1.25 rounded-[1px] border border-brand-gray-dark" />
     </div>
   );
 }
 
 export function FeatureGrid() {
   return (
-    <section className="flex flex-col items-center gap-6 bg-gradient-to-b from-[#e4e4e4] to-[#d8d8d8] px-6 py-16 sm:px-25">
+    <section className="flex flex-col items-center gap-6 bg-linear-to-b from-[#e4e4e4] to-[#d8d8d8] px-6 py-16 sm:px-25">
       <div className="grid w-full max-w-300 grid-cols-2 gap-4 sm:grid-cols-3 lg:hidden">
         {features.map((feature) => (
           <div
@@ -67,7 +67,7 @@ export function FeatureGrid() {
             className="flex flex-col items-center justify-center gap-3 rounded-[25px] border border-[#e4e4e4] bg-white px-6 py-8"
           >
             <FeatureIcon icon={feature.icon} />
-            <p className="text-base text-[#585858] tracking-[-0.35px]">
+            <p className="text-base text-brand-gray-dark tracking-[-0.35px]">
               {feature.label}
             </p>
           </div>
@@ -82,7 +82,7 @@ export function FeatureGrid() {
             className="flex flex-col items-center justify-center gap-4 rounded-[33px] border border-[#e4e4e4] bg-white px-2 py-8"
           >
             <FeatureIcon icon={feature.icon} />
-            <p className="text-center text-sm text-[#585858] tracking-[-0.396px] xl:text-lg">
+            <p className="text-center text-sm text-brand-gray-dark tracking-[-0.396px] xl:text-lg">
               {feature.label}
             </p>
           </div>
@@ -90,12 +90,13 @@ export function FeatureGrid() {
 
         <div
           style={{ gridColumn: "3 / span 3", gridRow: "2 / span 3" }}
-          className="relative flex items-center justify-center overflow-hidden rounded-[33px] bg-gradient-to-b from-[#0461f7] via-[#2c2f9d] to-[#091069]"
+          className="relative flex items-center justify-center overflow-hidden rounded-[33px] bg-linear-to-b from-[#0461f7] via-[#2c2f9d] to-[#091069]"
         >
           <Image
             src="/images/union-bg.svg"
             alt=""
             fill
+            sizes="(min-width: 1024px) 43vw, 100vw"
             className="object-cover"
           />
           <div className="relative flex flex-col items-center gap-6 px-8 text-center">
@@ -122,7 +123,7 @@ export function FeatureGrid() {
               width={97}
               height={55}
             />
-            <p className="max-w-[430px] text-sm text-white sm:text-base">
+            <p className="max-w-107.5 text-sm text-white sm:text-base">
               Using proven best practices from each industry, we created
               universal ready-to-launch solutions with core features and
               flexible personalization.
@@ -134,7 +135,7 @@ export function FeatureGrid() {
                 width={38}
                 height={102}
               />
-              <button className="rounded-[44px] bg-white px-8 py-3 text-xl font-medium text-black sm:px-[61px] sm:text-[32px]">
+              <button className="rounded-[44px] bg-white px-8 py-3 text-xl font-medium text-black sm:px-15.25 sm:text-[32px]">
                 Explore
               </button>
               <Image
