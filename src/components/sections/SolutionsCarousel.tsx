@@ -161,7 +161,7 @@ export function SolutionsCarousel({
           <div
             key={solution.id}
             data-card
-            className="flex w-75 shrink-0 snap-start flex-col gap-6 rounded-t-[25px] bg-black px-8 py-9 sm:w-[380px]"
+            className="flex w-75 shrink-0 snap-start flex-col gap-6 rounded-t-[25px] bg-black px-8 py-9 sm:w-95"
           >
             <div className="flex flex-col gap-1">
               <p className="text-3xl font-bold tracking-[-0.77px] text-white">
