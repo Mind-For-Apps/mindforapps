@@ -14,17 +14,17 @@ export async function Solutions() {
   return (
     <section className="flex flex-col items-center gap-8 pt-16">
       <div className="flex flex-col items-center gap-8 px-6 sm:px-25">
-        <div className="flex h-[87px] items-center rounded-full border-[3px] border-brand-purple px-8 sm:px-11">
+        <div className="flex h-21.75 items-center rounded-full border-[3px] border-brand-purple px-8 sm:px-11">
           <span className="text-brand-gradient text-2xl font-medium sm:text-[45px]">
             Solutions
           </span>
         </div>
 
         <div className="flex flex-col items-center gap-3 text-center">
-          <p className="max-w-[962px] text-2xl text-black sm:text-[32px]">
+          <p className="max-w-240.5 text-2xl text-black sm:text-[32px]">
             Industry-specific MVP App Solutions built to launch fast
           </p>
-          <p className="max-w-[608px] text-base text-black sm:text-lg">
+          <p className="max-w-152 text-base text-black sm:text-lg">
             Select your industry framework, apply your branding, connect your
             tools and integrations and go live within 3 weeks
           </p>
