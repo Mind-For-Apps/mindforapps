@@ -20,7 +20,7 @@ const valueProps = [
 
 export function WithMindforapps() {
   return (
-    <section className="relative flex flex-col items-center gap-10 overflow-hidden bg-gradient-to-b from-black to-[#0c0c0c] px-6 py-20 sm:px-25">
+    <section className="relative flex flex-col items-center gap-10 overflow-hidden bg-gradient-to-b from-black to-[#0c0c0c] px-6 py-20 sm:px-25 -top-7.5">
       <div className="pointer-events-none absolute inset-0">
         <Image
           src="/images/cta-wave-bg.png"

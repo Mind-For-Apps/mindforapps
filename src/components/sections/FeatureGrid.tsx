@@ -67,10 +67,15 @@ function FeatureIcon({ icon }: { icon: string | null }) {
 
 export function FeatureGrid() {
   return (
-    <section className="flex flex-col items-center gap-6 bg-linear-to-b from-[#e4e4e4] to-[#d8d8d8] px-4">
+    // <section className="relative z-10 -mt-20 flex flex-col items-center gap-6 bg-linear-to-b from-[#e4e4e4] to-[#d8d8d8] px-4">
+    <section className="relative z-10 -mt-35 flex flex-col items-center gap-6 from-[#e4e4e4] to-[#d8d8d8]">
       <div
         className="grid w-full justify-center grid-cols-[0px_0px_1fr_1fr_1fr_0px_0px] grid-rows-[175px_150px_150px_150px_175px] min-[750px]:grid-cols-[0px_minmax(150px,300px)_minmax(142.33px,200px)_minmax(142.33px,200px)_minmax(142.33px,200px)_minmax(150px,300px)_0px] min-[900px]:grid-rows-[175px_175px_175px_175px_175px] min-[1200px]:grid-cols-[minmax(150px,250px)_minmax(150px,300px)_200px_200px_200px_minmax(150px,300px)_minmax(150px,250px)]"
       >
+        <div
+          style={{ gridColumn: "1 / -1", gridRow: "2 / -1", marginTop: "-50px", marginBottom: "50px" }}
+          className="bg-[#eaeaea]"
+        />
         {features.map((feature) => (
           <div
             key={feature.label}
