@@ -50,7 +50,7 @@ export function SolutionCard({ solution }: { solution: SolutionCardData }) {
       )}
 
       {solution.titleForCards && (
-        <p className="text-base leading-[1.5] text-black">
+        <p className="text-base leading-normal text-black">
           <span className="line-clamp-3">{solution.titleForCards}</span>{" "}
           <Link
             href={href}
@@ -66,7 +66,7 @@ export function SolutionCard({ solution }: { solution: SolutionCardData }) {
           {solution.imagesCover.map((url, i) => (
             <div
               key={url}
-              className="relative h-[180px] flex-1 overflow-hidden rounded-2xl bg-brand-surface"
+              className="relative h-45 flex-1 overflow-hidden rounded-2xl bg-brand-surface"
             >
               <Image
                 src={url}
@@ -81,7 +81,7 @@ export function SolutionCard({ solution }: { solution: SolutionCardData }) {
 
       <Link
         href={href}
-        className="flex h-14 items-center justify-center rounded-full border border-black text-sm font-medium uppercase tracking-[0.1em] text-black transition-colors hover:bg-black hover:text-white"
+        className="flex h-14 items-center justify-center rounded-full border border-black text-sm font-medium uppercase tracking-widest text-black transition-colors hover:bg-black hover:text-white"
       >
         View Solution
       </Link>

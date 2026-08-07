@@ -53,9 +53,10 @@ export function AddOns() {
         <div className="flex flex-col gap-4">
           <Link
             href={featuredAddOn.href}
-            className="flex flex-col items-center gap-6 rounded-[25px] border-2 border-transparent bg-white p-6 transition-colors hover:border-brand-accent sm:p-8 lg:flex-row lg:gap-[61px]"
+            className="flex flex-col items-center gap-6 rounded-[25px] border-2 border-transparent bg-white p-6 transition-colors hover:border-brand-accent sm:p-8 lg:flex-row lg:gap-15.25
+            "
           >
-            <div className="relative h-[225px] w-full max-w-[324px] shrink-0 lg:w-[324px]">
+            <div className="relative h-56.25 w-full max-w-81 shrink-0 lg:w-81">
               <Image
                 src={featuredAddOn.image}
                 alt=""
@@ -65,7 +66,7 @@ export function AddOns() {
               />
             </div>
 
-            <div className="flex min-w-0 flex-1 flex-col gap-3 sm:gap-[14px]">
+            <div className="flex min-w-0 flex-1 flex-col gap-3 sm:gap-3.5">
               <h3 className="text-2xl font-bold text-black sm:text-[35px] sm:tracking-[-0.665px]">
                 {featuredAddOn.title}
               </h3>
@@ -110,7 +111,7 @@ export function AddOns() {
               href={qaAudit.href}
               className="flex flex-col items-start gap-4 rounded-[25px] border-2 border-transparent bg-white p-6 transition-colors hover:border-brand-accent sm:p-8 lg:flex-row lg:items-center"
             >
-              <div className="relative h-[213px] w-[120px] shrink-0">
+              <div className="relative h-53.25 w-30 shrink-0">
                 <Image
                   src={qaAudit.image}
                   alt=""
@@ -133,8 +134,8 @@ export function AddOns() {
               href={ongoingSupport.href}
               className="flex flex-col items-start gap-4 rounded-[25px] border-2 border-transparent bg-white p-6 transition-colors hover:border-brand-accent sm:p-8"
             >
-              <div className="flex flex-col items-start gap-3 lg:flex-row lg:items-center lg:gap-[22px]">
-                <div className="relative h-[152px] w-[118px] shrink-0 overflow-hidden rounded-[15px]">
+              <div className="flex flex-col items-start gap-3 lg:flex-row lg:items-center lg:gap-5.5">
+                <div className="relative h-38 w-29 shrink-0 overflow-hidden rounded-[15px]">
                   <Image
                     src={ongoingSupport.image}
                     alt=""
