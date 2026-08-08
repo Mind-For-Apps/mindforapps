@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const valueProps = [
   {
@@ -22,7 +23,7 @@ export function WithMindforapps() {
   return (
     <>
       {/* <section className="relative flex flex-col items-center gap-6 overflow-hidden bg-linear-to-b from-black to-[#0c0c0c] px-6 pt-14 pb-10 sm:px-25 -top-7.5"> */}
-      <section className="relative flex flex-col items-center gap-6 bg-linear-to-b from-black to-[#0c0c0c] px-6 pt-14 pb-10 sm:px-25 -top-7.5">
+      <section className="relative flex flex-col items-center gap-6 bg-linear-to-b from-black to-[#0c0c0c] px-6 pt-14 pb-30 sm:px-25 -top-7.5">
         <div className="pointer-events-none absolute inset-0">
           <Image
             src="/images/cta-wave-bg-3.png"
@@ -69,9 +70,12 @@ export function WithMindforapps() {
           ))}
         </div>
 
-        <button className="relative rounded-[30px] bg-linear-to-r from-black to-[#0c0c0c] px-8 py-2.5 text-lg font-medium tracking-[-0.38px] text-white transition-opacity hover:opacity-90">
+        <Link
+          href="/about"
+          className="relative rounded-[30px] bg-linear-to-r from-black to-[#0c0c0c] px-8 py-2.5 text-lg font-medium tracking-[-0.38px] text-white transition-[background] duration-300 hover:bg-linear-45 hover:from-brand-blue hover:via-brand-indigo hover:to-brand-purple"
+        >
           Start Your MVP
-        </button>
+        </Link>
       </div>
     </>
   );
