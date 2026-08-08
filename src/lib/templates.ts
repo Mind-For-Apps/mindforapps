@@ -6,7 +6,7 @@ export type TemplateCardData = {
   title: string;
   descriptionShort: string | null;
   price: number | null;
-  imageUrl: string | null;
+  images: string[];
   shopUrl: string | null;
   demoPreviewUrl: string | null;
   categoryIds: string[];
@@ -37,7 +37,7 @@ function mapTemplate(template: {
     title: template.title,
     descriptionShort: template.description_short,
     price: template.price,
-    imageUrl: (template.images ?? [])[0] ?? null,
+    images: template.images ?? [],
     shopUrl: template.shop_url,
     demoPreviewUrl: template.demo_preview_url,
     categoryIds: (template.template_categories ?? []).map(

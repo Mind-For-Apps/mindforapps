@@ -41,7 +41,7 @@ export function SolutionsCarousel({
         speed={800}
         slidesPerView={1}
         spaceBetween={40}
-        // autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
         breakpoints={{
           800: { slidesPerView: 1.5 },
           1000: { slidesPerView: 2 },
