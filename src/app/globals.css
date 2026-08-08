@@ -17,7 +17,7 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-background: var(--background-body);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-poppins);
 }
