@@ -59,7 +59,7 @@ export function Header() {
             </Link>
             <Link
               href="/contact"
-              className="bg-gradient-to-b from-black to-[#0c0c0c] whitespace-nowrap rounded-full px-5 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 xl:px-7.5 xl:text-lg"
+              className="whitespace-nowrap rounded-full bg-black px-5 py-3 text-sm font-medium text-white transition-[background] duration-300 hover:bg-[radial-gradient(ellipse_farthest-corner_at_10%_10%,var(--color-brand-blue),var(--color-brand-indigo),var(--color-brand-purple))] xl:px-15 xl:text-lg"
             >
               Contact Us
             </Link>
