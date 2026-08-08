@@ -73,20 +73,21 @@ function PillCard({ pill }: { pill: Pill }) {
 
 export function TrustCarousel() {
   return (
-    <div className="w-full overflow-hidden pt-6 mask-[linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+    <div className="w-full overflow-hidden pt-15 mask-[linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
       <Swiper
+        // className="p-3.75"
         modules={[Autoplay, FreeMode]}
         loop
-        freeMode
-        loopAdditionalSlides={1}
+        // freeMode
+        loopAdditionalSlides={4}
         slidesPerView="auto"
-        spaceBetween={16}
-        speed={2000}
-        autoplay={{ delay: 1, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        // spaceBetween={16}
+        speed={800}
+        autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
         allowTouchMove
       >
         {pills.map((pill, i) => (
-          <SwiperSlide key={i} style={{ width: "auto" }}>
+          <SwiperSlide key={i} style={{ width: "auto", padding: "15px" }}>
             <PillCard pill={pill} />
           </SwiperSlide>
         ))}
