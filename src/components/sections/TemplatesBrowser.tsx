@@ -47,10 +47,10 @@ export function TemplatesBrowser({
                   alt=""
                   width={36}
                   height={36}
-                  className={`size-9 object-contain ${isActive ? "invert" : ""}`}
+                  className={`size-9 shrink-0 object-contain ${isActive ? "invert" : ""}`}
                 />
               )}
-              <p className="text-lg font-bold tracking-[-0.35px] sm:text-xl">
+              <p className="min-w-0 text-lg font-bold tracking-[-0.35px] sm:text-xl">
                 {category.title}
               </p>
             </button>

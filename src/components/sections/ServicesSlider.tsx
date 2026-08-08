@@ -64,8 +64,8 @@ export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
       >
         {services.map((service) => (
           <SwiperSlide key={service.id} style={{ width: "auto", height: "auto" }}>
-            <div className="flex h-full w-[320px] gap-4 rounded-[25px] bg-white p-3 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.08)] sm:w-200 sm:gap-6 sm:p-4">
-              <div className="flex w-16 shrink-0 items-start justify-center rounded-2xl bg-brand-gradient pt-6 sm:w-20 sm:pt-8">
+            <div className="flex h-full w-[320px] gap-4 rounded-[5px] bg-white p-3 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.08)] sm:w-200 sm:gap-6 sm:p-4">
+              <div className="flex w-16 shrink-0 items-start justify-center rounded bg-brand-gradient pt-6 sm:w-20 sm:pt-8">
                 {service.iconUrl && (
                   <Image
                     src={service.iconUrl}

@@ -20,47 +20,45 @@ const valueProps = [
 
 export function WithMindforapps() {
   return (
-    <section className="relative flex flex-col items-center gap-10 overflow-hidden bg-linear-to-b from-black to-[#0c0c0c] px-6 py-20 sm:px-25 -top-7.5">
-      <div className="pointer-events-none absolute inset-0">
-        <Image
-          src="/images/cta-wave-bg.png"
-          alt=""
-          fill
-          className="rotate-180 object-cover opacity-30"
-        />
-      </div>
-
-      <div className="relative flex flex-col items-center gap-8 text-center">
-        <div className="flex size-27 items-center justify-center rounded-full bg-white">
+    <>
+      {/* <section className="relative flex flex-col items-center gap-6 overflow-hidden bg-linear-to-b from-black to-[#0c0c0c] px-6 pt-14 pb-10 sm:px-25 -top-7.5"> */}
+      <section className="relative flex flex-col items-center gap-6 bg-linear-to-b from-black to-[#0c0c0c] px-6 pt-14 pb-10 sm:px-25 -top-7.5">
+        <div className="pointer-events-none absolute inset-0">
           <Image
-            src="/images/checkmark-icon.svg"
+            src="/images/cta-wave-bg-3.png"
             alt=""
-            width={38}
-            height={27}
+            fill
+            className="object-cover h-auto!"
           />
         </div>
-        <h2 className="text-3xl font-semibold text-white sm:text-[40px]">
-          With Mindforapps
-        </h2>
-        <p className="text-lg text-white sm:text-xl">
-          Tailored features built specifically for your niche, not a generic
-          template.
-        </p>
-      </div>
 
-      <div className="relative flex w-full max-w-287.5 flex-col items-center gap-10 rounded-[25px] bg-white px-8 py-10 shadow-[0px_4px_9.65px_rgba(0,0,0,0.14)] sm:flex-row sm:justify-center sm:gap-10.25 sm:px-15">
-        {valueProps.map((item, i) => (
-          <div key={item.title} className="flex items-center gap-10.25">
-            {i > 0 && (
-              <Image
-                src="/images/divider-2.svg"
-                alt=""
-                width={1}
-                height={117}
-                className="hidden h-29.25 sm:block"
-              />
-            )}
-            <div className="flex w-67.5 flex-col items-start gap-4.75 text-left">
+        <div className="relative flex flex-col items-center gap-6 text-center">
+          <div className="flex size-27 items-center justify-center rounded-full bg-white">
+            <Image
+              src="/images/checkmark-icon.svg"
+              alt=""
+              width={38}
+              height={27}
+            />
+          </div>
+          <h2 className="text-3xl font-semibold text-white sm:text-[40px]">
+            With Mindforapps
+          </h2>
+          <p className="text-lg text-white sm:text-xl">
+            Tailored features built specifically for your niche, not a
+            generic template.
+          </p>
+        </div>
+      </section>
+
+      {/* <div className="relative z-10 -mt-16 flex flex-col items-center gap-8 px-6 pb-14 sm:px-25"> */}
+      <div className="relative z-10 -mt-25 flex flex-col items-center gap-8 px-6 sm:px-25">
+        <div className="flex w-full max-w-287.5 flex-wrap gap-10.25 rounded-[25px] bg-white px-8 py-10 shadow-[0px_4px_9.65px_rgba(0,0,0,0.14)] sm:px-15">
+          {valueProps.map((item) => (
+            <div
+              key={item.title}
+              className="flex min-h-23.75 min-w-50 flex-1 flex-col items-start gap-3 border-l-4 border-brand-accent pl-6 text-left"
+            >
               <p className="text-xl font-semibold tracking-[-0.253px] text-black sm:text-[23px]">
                 {item.title}
               </p>
@@ -68,13 +66,13 @@ export function WithMindforapps() {
                 {item.description}
               </p>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <button className="relative rounded-[30px] bg-linear-to-r from-black to-[#0c0c0c] px-8 py-2.5 text-lg font-medium tracking-[-0.38px] text-white transition-opacity hover:opacity-90">
-        Start Your MVP
-      </button>
-    </section>
+        <button className="relative rounded-[30px] bg-linear-to-r from-black to-[#0c0c0c] px-8 py-2.5 text-lg font-medium tracking-[-0.38px] text-white transition-opacity hover:opacity-90">
+          Start Your MVP
+        </button>
+      </div>
+    </>
   );
 }
