@@ -11,7 +11,7 @@ export async function Templates() {
   if (categories.length === 0) return null;
 
   return (
-    <section className="flex flex-col items-center gap-8 bg-black px-6 py-16 sm:px-25">
+    <section className="flex flex-col items-center gap-8 bg-black px-5 py-16">
       <div className="flex flex-col items-center gap-3 text-center">
         <h2 className="text-3xl font-semibold text-white sm:text-[45px]">
           Templates

@@ -1,10 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import type { CategoryData } from "@/lib/categories";
 import type { FeatureTag, TemplateCardData } from "@/lib/templates";
+import { TemplateGalleryImage } from "@/components/sections/TemplateGalleryImage";
 
 const PLATFORM_TYPES = [
   "Marketplace",
@@ -330,23 +330,17 @@ export function TemplatesPageBrowser({
           {filtered.length === 0 ? (
             <p className="text-black/60">No templates match these filters.</p>
           ) : (
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-6 min-[900px]:grid-cols-2">
               {filtered.map((template) => (
                 <div
                   key={template.id}
-                  className="flex flex-col overflow-hidden rounded-[25px] bg-white"
+                  // className="flex flex-col overflow-hidden rounded-[25px] bg-white"
+                  className="flex flex-col overflow-hidden bg-white"
                 >
-                  {template.imageUrl && (
-                    <div className="relative aspect-video w-full bg-brand-surface">
-                      <Image
-                        src={template.imageUrl}
-                        alt={template.title}
-                        fill
-                        sizes="(min-width: 640px) 50vw, 100vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  )}
+                  <TemplateGalleryImage
+                    images={template.images}
+                    title={template.title}
+                  />
                   <div className="flex flex-1 flex-col gap-3 p-6">
                     <p className="text-lg font-bold text-black sm:text-xl">
                       {template.title}
