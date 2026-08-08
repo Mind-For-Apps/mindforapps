@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --background-body: #f4f4f4;
 }
 
 @theme {
@@ -22,7 +23,7 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--background-body);
   color: var(--foreground);
 }
 
@@ -53,4 +54,27 @@ body {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* ===== Firefox ===== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(118, 118, 118, 0.5) rgba(118, 118, 118, 0.15);
+}
+
+/* ===== Chrome, Safari, Edge, Opera ===== */
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+*::-webkit-scrollbar-track {
+  background: rgba(118, 118, 118, 0.15);
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(118, 118, 118, 0.5);
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(88, 88, 88, 0.7);
 }
