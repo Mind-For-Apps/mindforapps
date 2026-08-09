@@ -11,7 +11,7 @@ import { getRealEstateFaqs } from "@/lib/faqs";
 import { StickyNav } from "./StickyNav";
 import { FeaturesBrowser } from "./FeaturesBrowser";
 import { TestimonialsCarousel } from "./TestimonialsCarousel";
-import { CalendlyWidget } from "./CalendlyWidget";
+import { CalendlyWidget } from "@/components/CalendlyWidget";
 
 const AUDIENCE_ICONS = ["onboarding", "community", "roles", "map"];
 const INCLUDED_FEATURE_ICONS = [

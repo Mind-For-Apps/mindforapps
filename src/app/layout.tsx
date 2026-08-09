@@ -21,6 +21,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} h-full antialiased`}>
+      <link rel="preconnect" href="https://assets.calendly.com" />
+      <link rel="preconnect" href="https://calendly.com" />
       <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );
