@@ -69,39 +69,39 @@ export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
             className="border-2 border-transparent transition-colors hover:border-2 hover:border-brand-accent"
           >
             {/* <div className="flex h-full w-[320px] gap-4 rounded-[5px] bg-white p-3 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.08)] sm:w-200 sm:gap-6 sm:p-4"> */}
-            <div className="flex h-full w-[320px] gap-4 bg-white p-3 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.08)] sm:w-200 sm:gap-6 sm:p-4">
-              <div className="flex w-16 shrink-0 items-start justify-center rounded bg-brand-gradient pt-6 sm:w-20 sm:pt-8">
+            <div className="@container flex h-full w-[clamp(300px,60vw,800px)] min-w-0 gap-4 bg-white p-3 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.08)] min-[800px]:min-h-127.5 @min-[600px]:gap-6 @min-[600px]:p-4">
+              <div className="flex w-16 shrink-0 items-start justify-center rounded bg-brand-gradient pt-6 @min-[600px]:w-20 @min-[600px]:pt-8">
                 {service.iconUrl && (
                   <Image
                     src={service.iconUrl}
                     alt=""
                     width={40}
                     height={40}
-                    className="size-8 object-contain sm:size-9"
+                    className="size-8 object-contain @min-[600px]:size-9"
                   />
                 )}
               </div>
 
-              <div className="flex flex-1 flex-col gap-4 py-4 pr-2 sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:py-6 sm:pr-6">
-                <div className="flex flex-1 flex-col gap-3 sm:gap-4">
-                  <h3 className="text-xl font-bold tracking-[-0.4px] text-black sm:text-3xl">
+              <div className="flex min-w-0 flex-1 flex-col gap-4 py-4 pr-2 @min-[600px]:flex-row @min-[600px]:items-start @min-[600px]:justify-between @min-[600px]:gap-6 @min-[600px]:py-6 @min-[600px]:pr-6">
+                <div className="flex min-w-0 flex-1 flex-col gap-3 @min-[600px]:gap-4">
+                  <h3 className="text-xl font-bold tracking-[-0.4px] text-black @min-[600px]:text-3xl">
                     {service.name}
                   </h3>
                   {service.description && (
-                    <p className="text-sm text-brand-gray sm:text-base">
+                    <p className="text-sm text-brand-gray @min-[600px]:text-base">
                       {service.description}
                     </p>
                   )}
                   {service.whatsIncluded.length > 0 && (
-                    <div className="flex flex-col gap-2 sm:gap-3">
-                      <p className="text-sm font-semibold text-black sm:text-base">
+                    <div className="flex flex-col gap-2 @min-[600px]:gap-3">
+                      <p className="text-sm font-semibold text-black @min-[600px]:text-base">
                         What&apos;s included:
                       </p>
-                      <ul className="flex flex-col gap-1.5 sm:gap-2">
+                      <ul className="flex flex-col gap-1.5 @min-[600px]:gap-2">
                         {service.whatsIncluded.map((item) => (
                           <li
                             key={item}
-                            className="flex items-start gap-2 text-sm text-brand-gray sm:text-base"
+                            className="flex items-start gap-2 text-sm text-brand-gray @min-[600px]:text-base"
                           >
                             <span className="mt-2 size-1 shrink-0 rounded-full bg-brand-gray" />
                             {item}
@@ -112,9 +112,9 @@ export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
                   )}
                 </div>
 
-                <div className="flex shrink-0 flex-col items-center gap-3 sm:w-56 sm:gap-3">
+                <div className="flex shrink-0 flex-col items-center justify-center gap-6 @min-[600px]:w-56 @min-[600px]:gap-6">
                   {service.pictureUrl && (
-                    <div className="relative h-32.5 w-full overflow-hidden rounded-2xl bg-brand-surface sm:h-40">
+                    <div className="relative aspect-233/174 w-full shrink-0 overflow-hidden rounded-2xl bg-brand-surface max-w-75">
                       <Image
                         src={service.pictureUrl}
                         alt=""
@@ -125,11 +125,11 @@ export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
                     </div>
                   )}
                   {service.tags.length > 0 && (
-                    <div className="grid w-full grid-cols-2 gap-2 sm:gap-2.5">
+                    <div className="grid w-full grid-cols-2 gap-2 @min-[600px]:gap-2.5">
                       {service.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-brand-surface px-3 py-1.5 text-center text-xs font-medium text-black sm:px-3.5 sm:py-2 sm:text-sm sm:font-semibold"
+                          className="rounded-full bg-brand-surface px-3 py-1.5 text-center text-xs font-medium text-black @min-[600px]:px-3.5 @min-[600px]:py-2 @min-[600px]:text-sm @min-[600px]:font-semibold"
                         >
                           {tag}
                         </span>
