@@ -3,6 +3,7 @@
 import { useId, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { BookConsultationButton } from "@/components/BookConsultationButton";
 import { createClient } from "@/lib/supabase/client";
 import { submitProjectInquiry } from "./inquiry-actions";
 
@@ -416,12 +417,9 @@ export function Footer() {
           >
             Start Your Project
           </a>
-          <a
-            href="#"
-            className="rounded-full border border-white px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-black"
-          >
+          <BookConsultationButton className="rounded-full border border-white px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-black">
             Book a Consultation
-          </a>
+          </BookConsultationButton>
         </div>
       </div>
     </footer>
