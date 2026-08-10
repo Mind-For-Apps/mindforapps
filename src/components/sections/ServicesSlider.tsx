@@ -24,7 +24,7 @@ export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
             alt=""
             width={59}
             height={161}
-            className="h-24 w-auto"
+            className="h-30 w-auto"
           />
         </button>
         <div className="flex flex-col items-center gap-3 py-5 text-center">
@@ -48,7 +48,7 @@ export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
             alt=""
             width={59}
             height={161}
-            className="h-24 w-auto -scale-x-100"
+            className="h-30 w-auto -scale-x-100"
           />
         </button>
       </div>
