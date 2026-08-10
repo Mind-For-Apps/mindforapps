@@ -11,6 +11,8 @@ import { Templates } from "@/components/sections/Templates";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
+import { Blog } from "@/components/sections/Blog";
+import { FreeAudit } from "@/components/sections/FreeAudit";
 
 export default function Home() {
   return (
@@ -28,6 +30,8 @@ export default function Home() {
         <WhyUs />
         <Testimonials />
         <FAQ />
+        <Blog />
+        <FreeAudit />
       </main>
       <Footer />
     </>

@@ -27,7 +27,22 @@ export function CalendlyWidget({ height = 700 }: { height?: number }) {
   };
 
   useEffect(() => {
-    if (window.Calendly) initWidget();
+    if (window.Calendly) {
+      initWidget();
+      return;
+    }
+
+    // next/script's onLoad can be silently skipped when several <Script>
+    // instances with the same src mount together (its dedup cache can mark
+    // the src as loaded before the network load actually completes), so
+    // don't rely on it — poll for the global instead.
+    const interval = setInterval(() => {
+      if (window.Calendly) {
+        clearInterval(interval);
+        initWidget();
+      }
+    }, 100);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -36,7 +51,6 @@ export function CalendlyWidget({ height = 700 }: { height?: number }) {
       <Script
         src="https://assets.calendly.com/assets/external/widget.js"
         strategy="afterInteractive"
-        onLoad={initWidget}
       />
     </>
   );

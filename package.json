@@ -16,7 +16,8 @@
     "seed:templates": "node --env-file=.env.local --experimental-strip-types scripts/seed-templates.ts",
     "seed:web-architecture": "node --env-file=.env.local --experimental-strip-types scripts/seed-case-study-web-architecture.ts",
     "seed:testimonials": "node --env-file=.env.local --experimental-strip-types scripts/seed-testimonials.ts",
-    "seed:faqs": "node --env-file=.env.local --experimental-strip-types scripts/seed-faqs.ts"
+    "seed:faqs": "node --env-file=.env.local --experimental-strip-types scripts/seed-faqs.ts",
+    "seed:blog": "node --env-file=.env.local --experimental-strip-types scripts/seed-blog.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.0",

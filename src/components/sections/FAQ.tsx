@@ -21,9 +21,11 @@ export async function FAQ() {
       <FAQAccordion items={faqs} />
       <Link
         href="/faq"
-        className="text-sm font-medium text-brand-accent hover:underline"
+        // className="text-lg font-semibold text-brand-accent hover:underline"
+        className="text-lg font-medium hover:underline"
       >
-        View all FAQ&rsquo;s
+        {/* View all FAQ&rsquo;s */}
+        See All
       </Link>
     </section>
   );
