@@ -361,7 +361,7 @@ export function Footer() {
       <div className="flex flex-col items-center gap-10 bg-black px-6 py-16 sm:px-25">
         <div className="flex flex-col items-center gap-3">
           <Image
-            src="/images/logo-white.svg"
+            src="/images/mfa-logo-with-text.svg"
             alt="Mind For Apps"
             width={180}
             height={25}

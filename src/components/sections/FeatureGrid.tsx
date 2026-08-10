@@ -91,7 +91,7 @@ export function FeatureGrid() {
         />
         {features.map((feature) => (
           <div
-            key={feature.label}
+            key={`${feature.col}-${feature.row}`}
             style={{ gridColumn: feature.col, gridRow: feature.row }}
             className={`h-full flex-col items-center justify-center gap-4 rounded-[33px] border border-[#e4e4e4] bg-white px-2 transition-colors hover:bg-[#eaeffe] ${ringVisibility[feature.ring]}`}
           >
