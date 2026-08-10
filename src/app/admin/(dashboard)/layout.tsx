@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Reference Data", href: "/admin/reference" },
   { label: "Testimonials", href: "/admin/testimonials" },
   { label: "FAQs", href: "/admin/faqs" },
+  { label: "Blog", href: "/admin/blog" },
   { label: "Inquiries", href: "/admin/inquiries" },
 ];
 
