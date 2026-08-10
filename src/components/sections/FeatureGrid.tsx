@@ -151,7 +151,7 @@ export function FeatureGrid() {
             </p>
             <Link
               href="/solutions"
-              className="rounded-[44px] bg-white px-10 py-2.5 text-xl font-semibold text-black transition-colors hover:text-brand-accent sm:px-19 sm:text-[32px]"
+              className="rounded-[44px] bg-white px-10 py-2.5 text-xl font-medium text-black transition-colors hover:text-brand-accent sm:px-19 sm:text-[28px]"
             >
               Explore
             </Link>

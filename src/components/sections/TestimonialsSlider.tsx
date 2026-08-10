@@ -25,11 +25,11 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
             alt=""
             width={59}
             height={161}
-            className="h-24 w-auto"
+            className="h-30 w-auto"
           />
         </button>
         <div className="flex flex-col items-center gap-3 py-5 text-center">
-          <h2 className="text-2xl text-white sm:text-[32px]">Testimonials</h2>
+          <h2 className="text-2xl text-white sm:text-[40px] font-semibold">Testimonials</h2>
           <p className="max-w-152 text-base text-white sm:text-lg">
             Client reviews and real customer testimonials from startups and
             companies trusted worldwide.
@@ -47,7 +47,7 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
             alt=""
             width={59}
             height={161}
-            className="h-24 w-auto -scale-x-100"
+            className="h-30 w-auto -scale-x-100"
           />
         </button>
       </div>

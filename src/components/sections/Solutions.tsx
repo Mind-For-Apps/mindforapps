@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { SolutionsCarousel } from "./SolutionsCarousel";
 
@@ -14,10 +15,13 @@ export async function Solutions() {
   return (
     <section className="flex flex-col items-center gap-8 pt-16">
       <div className="flex flex-col items-center gap-8 px-6 sm:px-25">
-        <div className="flex h-21.75 items-center rounded-full border-[3px] border-brand-purple px-8 sm:px-11">
-          <span className="text-brand-gradient text-2xl font-medium sm:text-[45px]">
+        <div className="flex h-15 items-center rounded-full border-[3px] border-brand-purple px-8 sm:px-7 max-w-51">
+          <Link
+            href="/solutions"
+            className="text-brand-gradient cursor-pointer text-2xl font-medium sm:text-[31px]"
+          >
             Solutions
-          </span>
+          </Link>
         </div>
 
         <div className="flex flex-col items-center gap-3 text-center">

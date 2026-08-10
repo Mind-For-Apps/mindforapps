@@ -13,7 +13,7 @@ export async function Templates() {
   return (
     <section className="flex flex-col items-center gap-8 bg-black px-5 py-16">
       <div className="flex flex-col items-center gap-3 text-center">
-        <h2 className="text-3xl font-semibold text-white sm:text-[45px]">
+        <h2 className="text-3xl font-semibold text-white sm:text-[40px]">
           Templates
         </h2>
         <p className="max-w-175 text-base text-white/70 sm:text-lg">

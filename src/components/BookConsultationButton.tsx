@@ -15,7 +15,11 @@ export function BookConsultationButton({
 
   return (
     <>
-      <button type="button" onClick={() => setOpen(true)} className={className}>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className={`cursor-pointer ${className ?? ""}`}
+      >
         {children}
       </button>
       <CalendlyModal open={open} onClose={() => setOpen(false)} />
