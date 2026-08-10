@@ -6,39 +6,52 @@ type FeatureItem = {
   icon: string | null;
   col: number;
   row: number;
-  ring: "outer" | "middle" | "inner";
+  ring: "far" | "outer" | "middle" | "inner";
 };
 
 const features: FeatureItem[] = [
-  { label: "Support", icon: "support", col: 1, row: 1, ring: "outer" },
-  { label: "Subscriptions", icon: "subscriptions", col: 2, row: 1, ring: "middle" },
-  { label: "Admin", icon: "admin", col: 3, row: 1, ring: "inner" },
-  { label: "Scheduling", icon: "scheduling", col: 4, row: 1, ring: "inner" },
-  { label: "Reviews", icon: "reviews", col: 5, row: 1, ring: "inner" },
-  { label: "Notifications", icon: "notifications", col: 6, row: 1, ring: "middle" },
-  { label: "Analytics", icon: null, col: 7, row: 1, ring: "outer" },
-  { label: "Integrations", icon: "integrations", col: 1, row: 2, ring: "outer" },
-  { label: "Certificates", icon: "certificates", col: 2, row: 2, ring: "middle" },
-  { label: "Listings", icon: "listings", col: 6, row: 2, ring: "middle" },
-  { label: "Dashboard", icon: null, col: 7, row: 2, ring: "outer" },
-  { label: "Security", icon: "security", col: 1, row: 3, ring: "outer" },
-  { label: "Mobile", icon: "mobile", col: 2, row: 3, ring: "middle" },
-  { label: "Booking", icon: "booking", col: 6, row: 3, ring: "middle" },
-  { label: "Payments", icon: "payments", col: 7, row: 3, ring: "outer" },
-  { label: "Community", icon: "community", col: 1, row: 4, ring: "outer" },
-  { label: "Map", icon: "map", col: 2, row: 4, ring: "middle" },
-  { label: "Calendar", icon: "calendar", col: 6, row: 4, ring: "middle" },
-  { label: "Search", icon: "search", col: 7, row: 4, ring: "outer" },
-  { label: "Invoicing", icon: "invoicing", col: 1, row: 5, ring: "outer" },
-  { label: "Onboarding", icon: "onboarding", col: 2, row: 5, ring: "middle" },
-  { label: "Filtering", icon: "filtering", col: 3, row: 5, ring: "inner" },
-  { label: "Roles", icon: "roles", col: 4, row: 5, ring: "inner" },
-  { label: "Reports", icon: "reports", col: 5, row: 5, ring: "inner" },
-  { label: "Profiles", icon: "profiles", col: 6, row: 5, ring: "middle" },
-  { label: "Messaging", icon: "messaging", col: 7, row: 5, ring: "outer" },
+  { label: "Listings", icon: "listings", col: 1, row: 1, ring: "far" },
+  { label: "Reviews", icon: "reviews", col: 1, row: 2, ring: "far" },
+  { label: "Messaging", icon: "messaging", col: 1, row: 3, ring: "far" },
+  { label: "Analytics", icon: "analytics", col: 1, row: 4, ring: "far" },
+  { label: "Payments", icon: "payments", col: 1, row: 5, ring: "far" },
+
+  { label: "Support", icon: "support", col: 2, row: 1, ring: "outer" },
+  { label: "Subscriptions", icon: "subscriptions", col: 3, row: 1, ring: "middle" },
+  { label: "Admin", icon: "admin", col: 4, row: 1, ring: "inner" },
+  { label: "Scheduling", icon: "scheduling", col: 5, row: 1, ring: "inner" },
+  { label: "Reviews", icon: "reviews", col: 6, row: 1, ring: "inner" },
+  { label: "Notifications", icon: "notifications", col: 7, row: 1, ring: "middle" },
+  { label: "Analytics", icon: null, col: 8, row: 1, ring: "outer" },
+  { label: "Integrations", icon: "integrations", col: 2, row: 2, ring: "outer" },
+  { label: "Certificates", icon: "certificates", col: 3, row: 2, ring: "middle" },
+  { label: "Listings", icon: "listings", col: 7, row: 2, ring: "middle" },
+  { label: "Dashboard", icon: null, col: 8, row: 2, ring: "outer" },
+  { label: "Security", icon: "security", col: 2, row: 3, ring: "outer" },
+  { label: "Mobile", icon: "mobile", col: 3, row: 3, ring: "middle" },
+  { label: "Booking", icon: "booking", col: 7, row: 3, ring: "middle" },
+  { label: "Payments", icon: "payments", col: 8, row: 3, ring: "outer" },
+  { label: "Community", icon: "community", col: 2, row: 4, ring: "outer" },
+  { label: "Map", icon: "map", col: 3, row: 4, ring: "middle" },
+  { label: "Calendar", icon: "calendar", col: 7, row: 4, ring: "middle" },
+  { label: "Search", icon: "search", col: 8, row: 4, ring: "outer" },
+  { label: "Invoicing", icon: "invoicing", col: 2, row: 5, ring: "outer" },
+  { label: "Onboarding", icon: "onboarding", col: 3, row: 5, ring: "middle" },
+  { label: "Filtering", icon: "filtering", col: 4, row: 5, ring: "inner" },
+  { label: "Roles", icon: "roles", col: 5, row: 5, ring: "inner" },
+  { label: "Reports", icon: "reports", col: 6, row: 5, ring: "inner" },
+  { label: "Profiles", icon: "profiles", col: 7, row: 5, ring: "middle" },
+  { label: "Messaging", icon: "messaging", col: 8, row: 5, ring: "outer" },
+
+  { label: "Analytics", icon: "analytics", col: 9, row: 1, ring: "far" },
+  { label: "Dashboard", icon: "dashboard", col: 9, row: 2, ring: "far" },
+  { label: "Payments", icon: "payments", col: 9, row: 3, ring: "far" },
+  { label: "Search", icon: "search", col: 9, row: 4, ring: "far" },
+  { label: "Messaging", icon: "messaging", col: 9, row: 5, ring: "far" },
 ];
 
 const ringVisibility: Record<FeatureItem["ring"], string> = {
+  far: "hidden min-[1650px]:flex",
   outer: "hidden min-[1200px]:flex",
   middle: "hidden min-[750px]:flex",
   inner: "flex",
@@ -70,7 +83,7 @@ export function FeatureGrid() {
     // <section className="relative z-10 -mt-20 flex flex-col items-center gap-6 bg-linear-to-b from-[#e4e4e4] to-[#d8d8d8] px-4">
     <section className="relative z-10 -mt-35 flex flex-col items-center gap-6 from-[#e4e4e4] to-[#d8d8d8]">
       <div
-        className="grid w-full justify-center grid-cols-[0px_0px_1fr_1fr_1fr_0px_0px] grid-rows-[175px_150px_150px_150px_175px] min-[750px]:grid-cols-[0px_minmax(150px,300px)_minmax(142.33px,200px)_minmax(142.33px,200px)_minmax(142.33px,200px)_minmax(150px,300px)_0px] min-[900px]:grid-rows-[175px_175px_175px_175px_175px] min-[1200px]:grid-cols-[minmax(150px,250px)_minmax(150px,300px)_200px_200px_200px_minmax(150px,300px)_minmax(150px,250px)]"
+        className="grid w-full justify-center grid-cols-[0px_0px_0px_1fr_1fr_1fr_0px_0px_0px] grid-rows-[175px_150px_150px_150px_175px] min-[750px]:grid-cols-[0px_0px_minmax(150px,300px)_minmax(142.33px,200px)_minmax(142.33px,200px)_minmax(142.33px,200px)_minmax(150px,300px)_0px_0px] min-[900px]:grid-rows-[175px_175px_175px_175px_175px] min-[1200px]:grid-cols-[0px_minmax(150px,250px)_minmax(150px,300px)_200px_200px_200px_minmax(150px,300px)_minmax(150px,250px)_0px] min-[1650px]:grid-cols-[minmax(150px,1fr)_minmax(150px,300px)_minmax(150px,300px)_200px_200px_200px_minmax(150px,300px)_minmax(150px,300px)_minmax(150px,1fr)]"
       >
         <div
           style={{ gridColumn: "1 / -1", gridRow: "2 / -1", marginTop: "-50px", marginBottom: "50px" }}
@@ -90,7 +103,7 @@ export function FeatureGrid() {
         ))}
 
         <div
-          style={{ gridColumn: "3 / span 3", gridRow: "2 / span 3" }}
+          style={{ gridColumn: "4 / span 3", gridRow: "2 / span 3" }}
           className="group relative flex h-112.5 w-full min-[900px]:h-131.75 items-center justify-center overflow-hidden rounded-[33px] bg-linear-to-b"
         >
           <Image
