@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import { CalendlyWidget } from "./CalendlyWidget";
 
 export function CalendlyModal({
@@ -27,7 +28,7 @@ export function CalendlyModal({
 
   if (!open) return null;
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
       onClick={(e) => {
@@ -48,6 +49,7 @@ export function CalendlyModal({
           <CalendlyWidget height={900} />
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

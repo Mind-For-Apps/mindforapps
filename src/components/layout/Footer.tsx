@@ -170,7 +170,8 @@ export function Footer() {
     <footer>
       <section
         id="start-your-project"
-        className="relative bg-[#e9edf1] px-6 py-16 sm:px-25"
+        // className="relative bg-[#e9edf1] px-6 py-16 sm:px-25"
+        className="relative px-6 py-16 sm:px-25"
       >
         <Image
           // src="/images/footer-top-wave.png"
@@ -195,7 +196,7 @@ export function Footer() {
               touch shortly.
             </p>
           ) : (
-            <form action={handleSubmit} className="flex flex-col gap-8 max-w-[995px]">
+            <form action={handleSubmit} className="flex flex-col gap-8 max-w-248.75 ">
               <input type="hidden" name="stage" value={stage ?? ""} />
               <input type="hidden" name="budget" value={budget ?? ""} />
               {filePaths.map((path) => (

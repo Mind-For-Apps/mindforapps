@@ -1,11 +1,51 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import type { Testimonial } from "@/lib/testimonials";
+
+function TestimonialQuote({ quote }: { quote: string }) {
+  const [expanded, setExpanded] = useState(false);
+
+  const words = quote.trim().split(/\s+/);
+  const canSplit = words.length > 30;
+  const mid = Math.ceil(words.length / 2);
+  const firstHalf = canSplit ? `${words.slice(0, mid).join(" ")}…` : quote;
+  const secondHalf = canSplit ? `…${words.slice(mid).join(" ")}` : null;
+
+  return (
+    <div className="flex flex-col gap-2">
+      <p className="line-clamp-4 text-sm leading-relaxed text-black sm:text-base">
+        {expanded && secondHalf ? secondHalf : firstHalf}
+      </p>
+      {canSplit && (
+        <button
+          type="button"
+          onClick={() => setExpanded((e) => !e)}
+          aria-label={expanded ? "Show previous part" : "Show more"}
+          className="self-end text-black transition-opacity hover:opacity-70"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={expanded ? "-scale-x-100" : ""}
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </button>
+      )}
+    </div>
+  );
+}
 
 export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
   const swiperRef = useRef<SwiperRef>(null);
@@ -95,9 +135,7 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
                     )}
                   </div>
                 </div>
-                <p className="line-clamp-4 text-sm leading-relaxed text-black sm:text-base">
-                  {t.quote}
-                </p>
+                <TestimonialQuote quote={t.quote} />
               </div>
               {t.projectImageUrl || t.projectLogoUrl ? (
                 <div className="flex items-center gap-4">

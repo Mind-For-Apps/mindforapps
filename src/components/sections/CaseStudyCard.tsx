@@ -10,9 +10,33 @@ export function CaseStudyCard({
   priority?: boolean;
 }) {
   return (
-    <div className="flex w-full flex-col overflow-hidden lg:h-180 lg:flex-row">
-      {/* <div className="flex h-125 flex-col gap-6 overflow-y-auto bg-white p-8 sm:p-12.5 lg:h-full lg:flex-1"> */}
-      <div className="flex h-200 flex-col gap-6 overflow-y-auto bg-white p-8 sm:p-12.5 lg:h-full lg:flex-1">
+    // <div className="flex w-full flex-col overflow-hidden lg:h-180 lg:flex-row">
+    <div className="
+    flex 
+    w-full 
+    flex-col 
+    overflow-hidden 
+    lg:flex-row
+    lg:h-180 
+
+    ">
+      <div className="
+      flex 
+      flex-col 
+      gap-6 
+      overflow-y-auto 
+      bg-white 
+      p-8 
+      sm:p-12.5 
+      lg:h-full 
+      lg:flex-1 
+      h-200 
+      min-[883px]:max-[1023px]:h-160
+      min-[530px]:max-[882px]:h-170
+      // min-[1024px]:max-[1160px]:gap-1
+      min-[1100px]:max-[1180px]:p-3!
+      min-[1024px]:max-[1101px]:p-2!
+      ">
         {slide.logoUrl && (
           <div className="inline-flex w-fit items-center rounded-full bg-brand-surface px-8 py-5">
             <div className="relative h-10 w-37.5 sm:h-12 sm:w-45">
@@ -139,7 +163,7 @@ export function CaseStudyCard({
             alt={slide.title}
             fill
             priority={priority}
-            sizes="100vw"
+            sizes="(min-width: 640px) calc(100vw - 40px), calc(100vw - 48px)"
             className="object-contain"
           />
         </div>

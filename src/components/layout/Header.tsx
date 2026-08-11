@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MobileNav } from "./MobileNav";
 
 const navLinks = [
@@ -10,8 +13,13 @@ const navLinks = [
 ];
 
 export function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
-    <header className="bg-white flex items-center justify-center px-6 pt-10 pb-5 sm:px-25">
+    <header
+      className={`flex items-center justify-center px-6 pt-10 pb-5 sm:px-25 ${isHome ? "bg-white" : "bg-transparent"}`}
+    >
       <nav className="bg-white flex h-20 w-full max-w-300 items-center justify-between gap-4 rounded-[50px] px-6 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.14)] sm:px-7.5">
         <Link href="/" className="shrink-0">
           <Image
