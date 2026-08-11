@@ -75,7 +75,10 @@ export function CaseStudySlider({ slides }: { slides: CaseStudySlide[] }) {
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={slide.id} style={{ height: "auto" }}>
-            <CaseStudyCard slide={slide} priority={i === 0} />
+            <CaseStudyCard
+              slide={slide}
+              priority={i === 0 || i === slides.length - 1}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -69,28 +69,32 @@ export function TemplatesBrowser({
               target="_blank"
               rel="noopener noreferrer"
               // className="flex flex-col overflow-hidden rounded-[25px] bg-white"
-              className="flex flex-col overflow-hidden bg-white"
+              className="group flex flex-col overflow-hidden bg-white"
             >
               <TemplateGalleryImage
                 images={template.images}
                 title={template.title}
               />
               <div className="flex items-center justify-between gap-4 p-6">
-                <div className="flex flex-col gap-1">
-                  <p className="text-lg font-bold text-black sm:text-xl">
-                    {template.title}
-                  </p>
-                  {template.descriptionShort && (
-                    <p className="line-clamp-2 text-sm text-brand-gray">
-                      {template.descriptionShort}
-                    </p>
-                  )}
+                <p className="text-lg font-bold text-black sm:text-xl">
+                  {template.title}
+                </p>
+                <div className="relative size-16 shrink-0">
+                  <Image
+                    src="/images/templates-browser/Group-1.1.svg"
+                    alt=""
+                    fill
+                    sizes="64px"
+                    className="object-contain transition-opacity group-hover:opacity-0"
+                  />
+                  <Image
+                    src="/images/templates-browser/Group-1.2.svg"
+                    alt=""
+                    fill
+                    sizes="64px"
+                    className="object-contain opacity-0 transition-opacity group-hover:opacity-100"
+                  />
                 </div>
-                {template.price !== null && (
-                  <span className="shrink-0 rounded-full bg-brand-surface px-4 py-2 text-sm font-semibold text-black">
-                    ${template.price}
-                  </span>
-                )}
               </div>
             </Link>
           ))}

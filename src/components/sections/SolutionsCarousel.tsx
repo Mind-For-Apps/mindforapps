@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { BookConsultationButton } from "@/components/BookConsultationButton";
 
 type SolutionPill = {
   id: string;
@@ -65,9 +66,9 @@ export function SolutionsCarousel({
                   </p>
                 )}
                 {solution.is_estimate_link && (
-                  <p className="text-lg font-medium tracking-[-0.22px] text-brand-accent underline">
+                  <BookConsultationButton className="self-start text-lg font-medium tracking-[-0.22px] text-brand-accent underline">
                     Get Your Estimation
-                  </p>
+                  </BookConsultationButton>
                 )}
               </div>
               <div className="flex flex-wrap items-center gap-2">
