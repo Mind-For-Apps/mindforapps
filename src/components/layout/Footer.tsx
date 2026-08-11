@@ -10,18 +10,7 @@ import { submitProjectInquiry } from "./inquiry-actions";
 type Stage = {
   value: string;
   description: string;
-  icon: React.ReactNode;
-};
-
-const ICON_PROPS = {
-  width: 24,
-  height: 24,
-  viewBox: "0 0 24 24",
-  fill: "none",
-  stroke: "currentColor",
-  strokeWidth: 1.5,
-  strokeLinecap: "round" as const,
-  strokeLinejoin: "round" as const,
+  icon: string;
 };
 
 const STAGES: Stage[] = [
@@ -29,46 +18,23 @@ const STAGES: Stage[] = [
     value: "Exploring",
     description:
       "I know the problem I'm solving — I need help building the solution.",
-    icon: (
-      <svg {...ICON_PROPS}>
-        <path d="M9 18h6" />
-        <path d="M10 22h4" />
-        <path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z" />
-      </svg>
-    ),
+    icon: "/images/Exploring.svg",
   },
   {
     value: "Project Brief",
     description: "You have a brief — we'll turn it into a Bubble build plan.",
-    icon: (
-      <svg {...ICON_PROPS}>
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
-        <path d="M14 2v6h6" />
-        <path d="M9 13h6" />
-        <path d="M9 17h6" />
-      </svg>
-    ),
+    icon: "/images/Project-Brief.svg",
   },
   {
     value: "Full Requirements",
     description:
       "Requirements defined — we'll handle UX/UI and Bubble development.",
-    icon: (
-      <svg {...ICON_PROPS}>
-        <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5Z" />
-        <path d="m9 12 2 2 4-4" />
-      </svg>
-    ),
+    icon: "/images/Full-Requirements.svg",
   },
   {
     value: "Full Designs",
     description: "Designs handed off — we will help you bring it to life.",
-    icon: (
-      <svg {...ICON_PROPS}>
-        <path d="M11 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" />
-        <path d="M18.4 2.6a2 2 0 0 1 2.83 2.83L12 14.7l-4 1 1-4Z" />
-      </svg>
-    ),
+    icon: "/images/Full-Designs.svg",
   },
 ];
 
@@ -94,7 +60,7 @@ const SOCIAL_LINKS = [
   {
     label: "LinkedIn",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
         <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6v8.2h-4v-7.3c0-1.7 0-4-2.4-4s-2.8 1.9-2.8 3.9V21h-4V9Z" />
       </svg>
     ),
@@ -102,7 +68,7 @@ const SOCIAL_LINKS = [
   {
     label: "YouTube",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
         <path d="M22 12s0-3.4-.4-5a2.8 2.8 0 0 0-2-2C17.9 4.5 12 4.5 12 4.5s-5.9 0-7.6.5a2.8 2.8 0 0 0-2 2C2 8.6 2 12 2 12s0 3.4.4 5a2.8 2.8 0 0 0 2 2c1.7.5 7.6.5 7.6.5s5.9 0 7.6-.5a2.8 2.8 0 0 0 2-2c.4-1.6.4-5 .4-5ZM10 15.5v-7l6 3.5-6 3.5Z" />
       </svg>
     ),
@@ -110,7 +76,7 @@ const SOCIAL_LINKS = [
   {
     label: "Pinterest",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2a10 10 0 0 0-3.6 19.3c0-.8 0-1.8.2-2.6l1.4-6s-.3-.7-.3-1.7c0-1.6.9-2.8 2.1-2.8 1 0 1.5.7 1.5 1.6 0 1-.6 2.5-1 3.9-.2 1.1.6 2 1.7 2 2.1 0 3.5-2.6 3.5-5.8 0-2.4-1.6-4.2-4.6-4.2-3.3 0-5.4 2.5-5.4 5.2 0 1 .3 1.6.7 2.2.2.2.2.3.1.5l-.3 1c-.1.3-.3.4-.6.3-1.5-.6-2.2-2.3-2.2-4.2 0-3.1 2.6-6.9 7.8-6.9 4.2 0 6.9 3 6.9 6.3 0 4.3-2.4 7.6-5.9 7.6-1.2 0-2.3-.6-2.6-1.4l-.7 2.8c-.3 1-.9 2.2-1.3 3A10 10 0 1 0 12 2Z" />
       </svg>
     ),
@@ -118,7 +84,7 @@ const SOCIAL_LINKS = [
   {
     label: "Behance",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
         <path d="M6.9 9.6H3v9h4c2.2 0 3.8-1 3.8-2.9 0-1.3-.7-2.1-1.7-2.5.7-.4 1.2-1.1 1.2-2.1 0-1.7-1.4-2.5-3.4-2.5Zm-.5 3.6H5v-1.8h1.4c.8 0 1.2.3 1.2.9 0 .6-.4.9-1.2.9Zm.2 3.7H5v-2h1.6c.9 0 1.4.4 1.4 1 0 .6-.5 1-1.4 1ZM15.5 9.3c-2.3 0-4 1.6-4 4.1s1.7 4 4.1 4c1.7 0 2.9-.7 3.5-2h-1.9c-.3.4-.9.7-1.6.7-1 0-1.8-.6-1.9-1.7h5.6c0-2.7-1.2-5.1-3.8-5.1Zm-1.8 3.4c.1-.9.7-1.6 1.7-1.6.9 0 1.5.6 1.6 1.6h-3.3ZM12.5 7h6v1.2h-6z" />
       </svg>
     ),
@@ -126,7 +92,7 @@ const SOCIAL_LINKS = [
   {
     label: "Dribbble",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.7 4.6a8.3 8.3 0 0 1 1.8 5c-.3 0-2.7-.5-5.4-.2-.1-.3-.2-.5-.4-.8l-.4-.9c2.9-1.2 4.2-2.9 4.4-3.1ZM12 3.7c1.9 0 3.7.7 5 1.9-.2.2-1.3 1.8-4.1 2.8a34.6 34.6 0 0 0-3.2-5.3c.7-.3 1.5-.4 2.3-.4Zm-3.8 1a33 33 0 0 1 3.2 5.3c-4 1.1-7.6 1-8 1a8.4 8.4 0 0 1 4.8-6.3Zm-4.9 7.4v-.3c.4 0 4.5.1 8.8-1.2.2.5.4 1 .6 1.4l-.3.1c-4.5 1.5-6.9 5.5-7.1 5.8a8.3 8.3 0 0 1-2-5.8Zm8.7 8.3c-1.9 0-3.6-.6-5-1.7.1-.3 2-3.8 6.9-5.6h.1c1.2 3.3 1.7 6 1.9 6.9-1.2.6-2.5.9-3.9.9v-.5Zm5.3-1.4c-.1-.6-.6-3.2-1.7-6.4 2.5-.4 4.7.3 5 .4a8.4 8.4 0 0 1-3.3 6Z" />
       </svg>
     ),
@@ -204,20 +170,21 @@ export function Footer() {
     <footer>
       <section
         id="start-your-project"
-        className="relative overflow-hidden bg-[#e9edf1] px-6 py-16 sm:px-25"
+        className="relative bg-[#e9edf1] px-6 py-16 sm:px-25"
       >
         <Image
-          src="/images/footer-top-wave.png"
+          // src="/images/footer-top-wave.png"
+          src="/images/footer-1400.webp"
           alt=""
           fill
-          className="object-cover object-top opacity-70"
+          className="object-cover object-top opacity-90"
         />
-        <div className="relative mx-auto flex max-w-300 flex-col gap-8 rounded-[25px] bg-white/90 p-6 shadow-[0px_20px_60px_rgba(0,0,0,0.08)] sm:p-12">
+        <div className="relative z-10 mx-auto -mb-40 flex items-center max-w-300 flex-col gap-8 rounded-[15px] bg-white/90 p-6 shadow-[0px_20px_60px_rgba(0,0,0,0.08)] sm:p-12">
           <div className="flex flex-col items-center gap-2 text-center">
-            <h2 className="text-3xl font-bold text-black sm:text-[40px]">
+            <h2 className="text-3xl font-semibold text-black sm:text-[40px] py-5">
               Start Your Project
             </h2>
-            <p className="text-lg text-black/70 sm:text-xl">
+            <p className="text-lg text-black/70 text-[32px] font-medium pb-5">
               What stage are you on?
             </p>
           </div>
@@ -228,7 +195,7 @@ export function Footer() {
               touch shortly.
             </p>
           ) : (
-            <form action={handleSubmit} className="flex flex-col gap-8">
+            <form action={handleSubmit} className="flex flex-col gap-8 max-w-[995px]">
               <input type="hidden" name="stage" value={stage ?? ""} />
               <input type="hidden" name="budget" value={budget ?? ""} />
               {filePaths.map((path) => (
@@ -241,15 +208,15 @@ export function Footer() {
                     key={s.value}
                     type="button"
                     onClick={() => setStage(s.value)}
-                    className={`flex flex-col items-start gap-3 rounded-2xl border bg-white p-6 text-left transition-colors ${
+                    className={`flex flex-col items-start gap-3 rounded-[30px] border-2 bg-white p-6 text-left transition-colors ${
                       stage === s.value
                         ? "border-brand-accent"
                         : "border-black/10 hover:border-black/30"
                     }`}
                   >
-                    <span className="text-black">{s.icon}</span>
-                    <span className="font-semibold text-black">{s.value}</span>
-                    <span className="text-sm text-black/50">
+                    <Image src={s.icon} alt="" width={36} height={36} className="h-9 w-9" />
+                    <span className="font-semibold text-black text-lg">{s.value}</span>
+                    <span className="text-sm/4.5 text-black/50">
                       {s.description}
                     </span>
                   </button>
@@ -347,7 +314,7 @@ export function Footer() {
                   <button
                     type="submit"
                     disabled={status === "submitting" || uploading}
-                    className="rounded-full bg-black px-8 py-4 text-base font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+                    className="rounded-full bg-black px-8 py-4 text-base font-medium text-white transition-opacity hover:opacity-100 disabled:opacity-50"
                   >
                     {status === "submitting" ? "Sending…" : "Send & Book a meeting"}
                   </button>
@@ -358,19 +325,9 @@ export function Footer() {
         </div>
       </section>
 
-      <div className="flex flex-col items-center gap-10 bg-black px-6 py-16 sm:px-25">
-        <div className="flex flex-col items-center gap-3">
-          <Image
-            src="/images/mfa-logo-with-text.svg"
-            alt="Mind For Apps"
-            width={180}
-            height={25}
-            className="h-6 w-auto"
-          />
-        </div>
-
-        <div className="flex w-full max-w-300 flex-col items-center justify-between gap-10 sm:flex-row sm:items-start">
-          <ul className="flex flex-col items-center gap-4 sm:items-start">
+      <div className="relative flex flex-col items-center gap-10 bg-black px-6 pt-42 pb-34 sm:px-25">
+        <div className="flex w-full max-w-245 flex-col items-center gap-10 sm:flex-row sm:items-end sm:justify-between">
+          <ul className="flex flex-col items-center gap-3 leading-tight sm:items-start">
             {NAV_LEFT.map((link) => (
               <li key={link.href}>
                 <Link
@@ -383,20 +340,29 @@ export function Footer() {
             ))}
           </ul>
 
-          <div className="flex items-center gap-5">
-            {SOCIAL_LINKS.map((social) => (
-              <a
-                key={social.label}
-                href="#"
-                aria-label={social.label}
-                className="text-white/70 transition-colors hover:text-white"
-              >
-                {social.icon}
-              </a>
-            ))}
+          <div className="flex flex-col items-center gap-10">
+            <Image
+              src="/images/mfa-logo-with-text.svg"
+              alt="Mind For Apps"
+              width={247}
+              height={114}
+              className="h-28 w-auto"
+            />
+            <div className="flex items-center gap-6">
+              {SOCIAL_LINKS.map((social) => (
+                <a
+                  key={social.label}
+                  href="#"
+                  aria-label={social.label}
+                  className="text-white/70 transition-colors hover:text-white"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
 
-          <ul className="flex flex-col items-center gap-4 sm:items-end">
+          <ul className="flex flex-col items-center gap-3 leading-tight sm:items-end">
             {NAV_RIGHT.map((link) => (
               <li key={link.href}>
                 <Link
