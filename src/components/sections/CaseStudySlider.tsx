@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -10,6 +10,7 @@ import { CaseStudyCard } from "./CaseStudyCard";
 
 export function CaseStudySlider({ slides }: { slides: CaseStudySlide[] }) {
   const swiperRef = useRef<SwiperRef>(null);
+  const [ready, setReady] = useState(false);
 
   return (
     <>
@@ -61,7 +62,7 @@ export function CaseStudySlider({ slides }: { slides: CaseStudySlide[] }) {
         loop
         loopAdditionalSlides={0}
         speed={1000}
-        autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        // autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
         slidesPerView={1}
         spaceBetween={20}
         centeredSlides={true}
@@ -69,7 +70,8 @@ export function CaseStudySlider({ slides }: { slides: CaseStudySlide[] }) {
           1500: { slidesPerView: 1.2, spaceBetween: 40 },
           1800: { slidesPerView: 1.5, spaceBetween: 80 },
         }}
-        className="w-full! px-6! sm:px-5!"
+        onInit={() => setReady(true)}
+        className={`w-full! px-6! sm:px-5! transition-opacity duration-300 ${ready ? "opacity-100" : "opacity-0"}`}
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={slide.id} style={{ height: "auto" }}>

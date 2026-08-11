@@ -16,6 +16,7 @@ export type CaseStudySlide = {
   logoUrl: string | null;
   clientName: string | null;
   mainImageUrl: string | null;
+  headerImages: string[];
 };
 
 export type CaseStudyDetail = {
@@ -110,6 +111,7 @@ export async function getCaseStudySlides(): Promise<CaseStudySlide[]> {
       logoUrl: caseStudy.logo_url,
       clientName: caseStudy.client_name,
       mainImageUrl: caseStudy.main_image_url,
+      headerImages: caseStudy.header_images ?? [],
     };
   });
 }
