@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import type { ServiceCardData } from "@/lib/services";
 
@@ -55,9 +56,11 @@ export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
 
       <Swiper
         ref={swiperRef}
+        modules={[Autoplay]}
         loop
         loopAdditionalSlides={1}
         speed={1000}
+        autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
         slidesPerView="auto"
         spaceBetween={24}
         className="w-full! px-6! sm:px-25!"
