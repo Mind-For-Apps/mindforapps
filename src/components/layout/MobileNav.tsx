@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type NavLink = { label: string; href: string };
 
 export function MobileNav({ navLinks }: { navLinks: NavLink[] }) {
   const [open, setOpen] = useState(false);
+  const isContact = usePathname() === "/contact";
 
   return (
     <div className="relative lg:hidden">
@@ -54,13 +56,15 @@ export function MobileNav({ navLinks }: { navLinks: NavLink[] }) {
           >
             Admin panel
           </Link>
-          <Link
-            href="/contact"
-            onClick={() => setOpen(false)}
-            className="bg-gradient-to-b from-black to-[#0c0c0c] mt-2 rounded-full px-7.5 py-3 text-center text-base font-medium text-white transition-opacity hover:opacity-90"
-          >
-            Contact Us
-          </Link>
+          {!isContact && (
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="bg-gradient-to-b from-black to-[#0c0c0c] mt-2 rounded-full px-7.5 py-3 text-center text-base font-medium text-white transition-opacity hover:opacity-90"
+            >
+              Contact Us
+            </Link>
+          )}
         </div>
       )}
     </div>

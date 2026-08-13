@@ -118,9 +118,15 @@ function CloudUploadIcon() {
   );
 }
 
-export function Footer() {
+export function Footer({
+  openContactForm = false,
+}: {
+  openContactForm?: boolean;
+}) {
   const messageId = useId();
-  const [stage, setStage] = useState<string | null>(null);
+  const [stage, setStage] = useState<string | null>(
+    openContactForm ? STAGES[0].value : null,
+  );
   const [budget, setBudget] = useState<string | null>(null);
   const [filePaths, setFilePaths] = useState<string[]>([]);
   const [fileNames, setFileNames] = useState<string[]>([]);

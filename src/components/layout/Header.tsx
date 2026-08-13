@@ -15,6 +15,7 @@ const navLinks = [
 export function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isContact = pathname === "/contact";
 
   return (
     <header
@@ -65,12 +66,14 @@ export function Header() {
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
             </Link>
-            <Link
-              href="/contact"
-              className="whitespace-nowrap rounded-full bg-black px-5 py-3 text-sm font-medium text-white transition-[background] duration-300 hover:bg-[radial-gradient(ellipse_farthest-corner_at_10%_10%,var(--color-brand-blue),var(--color-brand-indigo),var(--color-brand-purple))] xl:px-15 xl:text-lg"
-            >
-              Contact Us
-            </Link>
+            {!isContact && (
+              <Link
+                href="/contact"
+                className="whitespace-nowrap rounded-full bg-black px-5 py-3 text-sm font-medium text-white transition-[background] duration-300 hover:bg-[radial-gradient(ellipse_farthest-corner_at_10%_10%,var(--color-brand-blue),var(--color-brand-indigo),var(--color-brand-purple))] xl:px-15 xl:text-lg"
+              >
+                Contact Us
+              </Link>
+            )}
           </div>
         </div>
 
