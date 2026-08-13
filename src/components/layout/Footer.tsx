@@ -177,7 +177,8 @@ export function Footer({
       <section
         id="start-your-project"
         // className="relative bg-[#e9edf1] px-6 py-16 sm:px-25"
-        className="relative px-6 py-16 sm:px-25"
+        // className="relative px-6 py-16 sm:px-25"
+        className="relative px-6 pb-16 mt-8.5"
       >
         <Image
           // src="/images/footer-top-wave.png"
@@ -186,7 +187,9 @@ export function Footer({
           fill
           className="object-cover object-top opacity-90"
         />
-        <div className="relative z-10 mx-auto -mb-40 flex items-center max-w-300 flex-col gap-8 rounded-[15px] bg-white/90 p-6 shadow-[0px_20px_60px_rgba(0,0,0,0.08)] sm:p-12">
+        {/* <div className="relative z-10 mx-auto -mb-40 flex items-center max-w-300 flex-col gap-8 rounded-[15px] bg-white/90 p-6 shadow-[0px_20px_60px_rgba(0,0,0,0.08)] sm:py-12"> */}
+        {/* <div className="relative z-10 mx-auto -mb-40 flex items-center max-w-300 flex-col gap-8 rounded-[15px] p-6 shadow-[0px_20px_60px_rgba(0,0,0,0.08)] sm:py-12 bg-[#eef2f4f2]"> */}
+        <div className="relative z-10 mx-auto -mb-40 flex items-center max-w-300 flex-col gap-8 rounded-[15px] p-6 shadow-[0px_-3px_59px_0px_rgba(0,0,0,0.11)] sm:py-12 bg-[#eef2f4f2]">
           <div className="flex flex-col items-center gap-2 text-center">
             <h2 className="text-3xl font-semibold text-black sm:text-[40px] py-5">
               Start Your Project

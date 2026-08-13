@@ -62,7 +62,7 @@ export function CaseStudySlider({ slides }: { slides: CaseStudySlide[] }) {
         loop
         loopAdditionalSlides={0}
         speed={1000}
-        // autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
         slidesPerView={1}
         spaceBetween={20}
         centeredSlides={true}

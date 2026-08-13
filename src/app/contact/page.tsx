@@ -6,8 +6,8 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="flex flex-1 flex-col items-center px-12.5">
-        <div className="flex min-h-47.5 min-w-70 w-full max-w-none flex-col gap-6 bg-brand-accent my-6.25 px-7.5 min-[675px]:flex-row min-[675px]:items-center min-[675px]:justify-between min-[800px]:max-w-300 min-[800px]:px-5">
+      <main className="flex flex-1 flex-col items-center px-5">
+        <div className="flex min-h-47.5 min-w-70 w-full max-w-none flex-col items-center gap-6 bg-brand-accent my-6.25 px-7.5 min-[675px]:flex-row min-[675px]:items-center min-[675px]:justify-between min-[800px]:max-w-300 min-[800px]:px-12.5 py-5">
           <div className="flex min-h-10 min-w-50 flex-col justify-center min-[450px]:min-w-70">
             <p className="mb-5 text-[22px] font-semibold text-[#59FBFA] min-[350px]:text-[25px] min-[850px]:text-[30px]">
               Not sure what to build yet?
@@ -22,7 +22,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <BookConsultationButton className="flex min-h-[53px] min-w-50 max-w-none shrink-0 items-center justify-center rounded-full bg-white px-6 text-center text-[18px] font-medium text-black transition-colors hover:bg-black hover:text-white min-[480px]:max-w-50 min-[800px]:max-w-[255px] min-[800px]:text-[20px]">
+          <BookConsultationButton className="flex min-h-13.25 w-63.75 min-w-55 max-w-none shrink-0 items-center justify-center rounded-full bg-white px-6 text-center text-[18px] font-medium text-black transition-colors hover:bg-black hover:text-white min-[480px]:max-w-50 min-[800px]:max-w-63.75 min-[800px]:text-[20px]">
             Book a Free Audit
           </BookConsultationButton>
         </div>

@@ -11,7 +11,7 @@ export function MobileNav({ navLinks }: { navLinks: NavLink[] }) {
   const isContact = usePathname() === "/contact";
 
   return (
-    <div className="relative lg:hidden">
+    <div className="relative min-[865px]:hidden">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -60,7 +60,7 @@ export function MobileNav({ navLinks }: { navLinks: NavLink[] }) {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="bg-gradient-to-b from-black to-[#0c0c0c] mt-2 rounded-full px-7.5 py-3 text-center text-base font-medium text-white transition-opacity hover:opacity-90"
+              className="bg-linear-to-b from-black to-[#0c0c0c] mt-2 rounded-full px-7.5 py-3 text-center text-base font-medium text-white transition-opacity hover:opacity-90"
             >
               Contact Us
             </Link>
