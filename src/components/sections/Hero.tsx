@@ -4,18 +4,18 @@ import { TrustCarousel } from "./TrustCarousel";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-white px-6 py-16 sm:px-25 lg:flex lg:h-170 lg:items-center lg:py-0">
-      <div className="pointer-events-none absolute inset-0"  
-            style={{
-              backgroundImage: 'url(/images/Frame.png)', 
-              maxWidth: 'unset', 
-              maxHeight: 'unset', 
-              backgroundColor: 'rgba(255, 255, 255, 0)', 
-              backgroundRepeat: 'no-repeat', 
-              backgroundPosition: 'center center', 
-              backgroundSize: 'cover', 
-              height: 'auto',
-              top: '-100px'
-              }}>
+      <div className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage: 'url(/images/Frame.png)',
+          maxWidth: 'unset',
+          maxHeight: 'unset',
+          backgroundColor: 'rgba(255, 255, 255, 0)',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center center',
+          backgroundSize: 'cover',
+          height: 'auto',
+          top: '-100px'
+        }}>
       </div>
       <div className="relative mx-auto flex max-w-300 flex-col gap-2">
         <div className="flex max-w-150 flex-col items-start gap-0">
@@ -40,7 +40,9 @@ export function Hero() {
             </BookConsultationButton>
           </div>
         </div>
-        <TrustCarousel />
+        <div className="pt-15">
+          <TrustCarousel />
+        </div>
       </div>
     </section>
   );
