@@ -9,8 +9,10 @@ import { getSolutionBySlug } from "@/lib/solutions";
 import { getTestimonials } from "@/lib/testimonials";
 import { getRealEstateFaqs } from "@/lib/faqs";
 import { StickyNav } from "./StickyNav";
+import { ImagesSlider } from "./ImagesSlider";
+import { ToolsSlider } from "./ToolsSlider";
 import { FeaturesBrowser } from "./FeaturesBrowser";
-import { TestimonialsCarousel } from "./TestimonialsCarousel";
+import { TestimonialsSlider } from "@/components/sections/TestimonialsSlider";
 import { CalendlyWidget } from "@/components/CalendlyWidget";
 
 const AUDIENCE_ICONS = ["onboarding", "community", "roles", "map"];
@@ -65,10 +67,13 @@ export default async function SolutionDetailPage({
     <>
       <Header />
       <main id="top" className="flex flex-1 flex-col">
-        <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 sm:px-25">
-          <div className="mx-auto grid w-full max-w-300 grid-cols-1 items-center gap-10 lg:grid-cols-2">
-            <div className="flex flex-col gap-6">
-              <h1 className="text-4xl font-semibold leading-[1.2] text-black sm:text-[50px]">
+        {/* <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-8.5 sm:px-25"> */}
+        <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 pt-8.5">
+          {/* <div className="mx-auto grid w-full max-w-300 grid-cols-1 items-center gap-10 lg:grid-cols-2"> */}
+          <div className="mx-auto grid w-full grid-cols-1 items-start lg:grid-cols-2 max-w-308.75">
+            <div className="flex flex-col gap-5">
+              {/* <h1 className="text-4xl font-medium sm:text-[45px] max-[1199px]:text-[35px] max-[799px]:text-[30px] leading-[1.3] text-black"> */}
+              <h1 className="text-[30px] min-[800px]:max-[1199px]:text-[35px] min-[1200px]:text-[45px] font-medium leading-[1.3] text-black">
                 {solution.titleLong ?? solution.title}
               </h1>
               {solution.tags.length > 0 && (
@@ -76,7 +81,7 @@ export default async function SolutionDetailPage({
                   {solution.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-[#e0e4ff] px-4 py-2 text-sm font-medium text-brand-accent"
+                      className="rounded-full bg-[#e0e4ff] px-4 py-2 text-base font-medium text-brand-accent"
                     >
                       {tag}
                     </span>
@@ -84,27 +89,28 @@ export default async function SolutionDetailPage({
                 </div>
               )}
               {solution.text0 && (
-                <p className="max-w-135 text-lg text-black/70">
+                <p className="text-xl font-normal text-black/70">
                   {solution.text0}
                 </p>
               )}
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-4 pt-1">
                 <a
                   href="#pricing"
-                  className="bg-brand-gradient flex h-15 items-center rounded-full px-8 text-base font-medium text-white transition-opacity hover:opacity-90"
+                  className="bg-brand-gradient flex h-15 items-center rounded-full px-9 text-[25px] font-medium text-white transition-opacity hover:opacity-90"
                 >
                   Book a Free Strategy Call
                 </a>
                 <a
                   href="#pricing"
-                  className="flex h-15 items-center rounded-full bg-black px-8 text-base font-medium text-white transition-opacity hover:opacity-90"
+                  className="flex h-15 w-47.5 max-[1139px]:w-37.5 items-center rounded-full bg-black px-9 text-[25px] font-medium text-white transition-opacity hover:opacity-90"
                 >
                   Pricing
                 </a>
               </div>
             </div>
             {solution.mainImageUrl && (
-              <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl bg-white">
+              // <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
+              <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
                 <Image
                   src={solution.mainImageUrl}
                   alt={solution.title}
@@ -120,19 +126,22 @@ export default async function SolutionDetailPage({
 
         <StickyNav />
 
-        {(solution.text1 || solution.designedFor.length > 0) && (
+        {(solution.text1 ||
+          solution.designedFor.length > 0 ||
+          solution.images.length > 0) && (
           <section
             id="why-us"
-            className="relative overflow-hidden bg-brand-surface px-6 py-16 sm:px-25"
+            className="relative overflow-hidden bg-brand-surface py-16"
           >
             <Image
-              src="/images/solution-ribbon-bg.png"
+              src="/images/magnific_a-bright-blue.png"
               alt=""
-              width={1500}
-              height={620}
+              width={2560}
+              height={1973}
               className="pointer-events-none absolute right-0 top-0 hidden w-[55%] max-w-225 opacity-90 lg:block"
             />
-            <div className="relative mx-auto flex max-w-300 flex-col gap-8">
+            {/* <div className="relative mx-auto flex max-w-300 flex-col gap-8 px-6 sm:px-25"> */}
+            <div className="relative mx-auto flex max-w-300 flex-col gap-8 px-6">
               <div className="flex flex-col gap-3">
                 {solution.text1 && (
                   <>
@@ -152,11 +161,11 @@ export default async function SolutionDetailPage({
               </div>
 
               {solution.designedFor.length > 0 && (
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid max-w-305 min-h-45 grid-cols-1 gap-4 min-[450px]:grid-cols-2 min-[650px]:grid-cols-3 min-[850px]:grid-cols-4">
                   {solution.designedFor.map((item, i) => (
                     <div
                       key={item}
-                      className="flex flex-col gap-3 rounded-2xl bg-white p-6"
+                      className="flex min-h-45 min-w-10 flex-col gap-3 rounded-[30px] border border-transparent bg-white p-6 shadow-[0px_4px_7px_0px_rgba(0,0,0,0.14)] transition-colors hover:border-black min-[450px]:max-w-72.5"
                     >
                       <Image
                         src={`/images/icons/${AUDIENCE_ICONS[i % AUDIENCE_ICONS.length]}.svg`}
@@ -170,25 +179,13 @@ export default async function SolutionDetailPage({
                   ))}
                 </div>
               )}
-
-              {solution.imagesCover.length > 0 && (
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {solution.imagesCover.map((url, i) => (
-                    <div
-                      key={url}
-                      className="relative aspect-4/3 overflow-hidden rounded-2xl bg-white"
-                    >
-                      <Image
-                        src={url}
-                        alt={`${solution.title} preview ${i + 1}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
+
+            {solution.images.length > 0 && (
+              <div className="relative mt-17.5">
+                <ImagesSlider images={solution.images} />
+              </div>
+            )}
           </section>
         )}
 
@@ -460,29 +457,8 @@ export default async function SolutionDetailPage({
                 supported, and fully transferable.
               </p>
             </div>
-            <div className="grid w-full max-w-300 grid-cols-2 gap-4 sm:grid-cols-4">
-              {solution.tools.map((tool) => (
-                <div
-                  key={tool.name}
-                  className="flex flex-col items-center gap-4 rounded-2xl bg-white p-6"
-                >
-                  {tool.icon_url && (
-                    <Image
-                      src={tool.icon_url}
-                      alt=""
-                      width={40}
-                      height={40}
-                      className="size-10 object-contain"
-                    />
-                  )}
-                  <div className="flex flex-col gap-1">
-                    <p className="text-xs text-black/50">Built with</p>
-                    <p className="text-sm font-semibold text-black">
-                      {tool.name}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="w-full max-w-300">
+              <ToolsSlider tools={solution.tools} />
             </div>
           </section>
         )}
@@ -549,11 +525,8 @@ export default async function SolutionDetailPage({
         )}
 
         {testimonials.length > 0 && (
-          <section className="flex flex-col items-center gap-10 bg-black px-6 py-16 text-center sm:px-25">
-            <h2 className="max-w-175 text-3xl font-bold text-white sm:text-[40px]">
-              What our clients say about working with us:
-            </h2>
-            <TestimonialsCarousel items={testimonials} />
+          <section className="flex flex-col items-center gap-8 bg-black py-16">
+            <TestimonialsSlider items={testimonials} />
           </section>
         )}
 

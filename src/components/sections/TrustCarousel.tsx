@@ -73,7 +73,8 @@ function PillCard({ pill }: { pill: Pill }) {
 
 export function TrustCarousel() {
   return (
-    <div className="w-full overflow-hidden pt-15 mask-[linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+    // <div className="w-full overflow-hidden pt-15 mask-[linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+    <div className="w-full overflow-hidden mask-[linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
       <Swiper
         // className="p-3.75"
         modules={[Autoplay, FreeMode]}
