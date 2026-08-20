@@ -9,6 +9,7 @@ import { getSolutionBySlug } from "@/lib/solutions";
 import { getTestimonials } from "@/lib/testimonials";
 import { getRealEstateFaqs } from "@/lib/faqs";
 import { StickyNav } from "./StickyNav";
+import { ComparisonBlock } from "./ComparisonBlock";
 import { ImagesSlider } from "./ImagesSlider";
 import { ToolsSlider } from "./ToolsSlider";
 import { FeaturesBrowser } from "./FeaturesBrowser";
@@ -189,157 +190,161 @@ export default async function SolutionDetailPage({
           </section>
         )}
 
-        <section className="bg-brand-surface px-6 pb-16 sm:px-25">
-          <div className="mx-auto flex max-w-300 flex-col items-start gap-4 rounded-[25px] bg-white p-8 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex flex-col gap-1">
-              <p className="text-xl font-bold text-brand-accent">
-                Building for clients?
-              </p>
-              <p className="text-base text-black/70">
-                Our platform is built for white-labelling — resell it under
-                your own brand, domain, and colour scheme. Ask us how on the{" "}
-                <a
-                  href="#start-your-project"
-                  className="font-medium text-brand-accent underline"
-                >
-                  strategy call
-                </a>
-                .
-              </p>
-            </div>
-          </div>
+        <section className="bg-brand-surface px-6 pb-16 sm:px-25 my-5">
+          <a
+            href="#contact"
+            className="mx-auto flex max-w-300 flex-col items-center gap-2 rounded-[25px] bg-white p-8 text-center transition-opacity hover:opacity-90"
+          >
+            <p className="text-xl font-bold text-brand-accent">
+              Building for clients?
+            </p>
+            <p className="max-w-175 text-base text-black/70">
+              Our platform is built for white-labelling — resell it under
+              your own brand, domain, and colour scheme. Ask us how on the{" "}
+              <span className="font-medium text-brand-accent underline">
+                strategy call.
+              </span>
+            </p>
+          </a>
         </section>
 
         {(solution.text6 || solution.withMfa.length > 0) && (
-          <section className="flex flex-col items-center gap-10 bg-black px-6 py-16 text-center sm:px-25">
+          // <section className="flex flex-col items-center gap-10 bg-black px-6 py-16 text-center sm:px-25">
+          <section className="flex flex-col items-center gap-10 py-5 text-center">
+                <p className="max-w-175 text-base text-[#325ffe] font-semibold">
+                  WHAT PROBLEM IT SOLVES
+                </p>
             <div className="flex flex-col items-center gap-4">
               {solution.text6 && (
-                <h2 className="max-w-200 text-3xl font-bold text-white sm:text-[40px]">
+                // <h2 className="max-w-200 text-3xl font-bold text-white sm:text-[40px]">
+                <h2 className="max-w-275 text-3xl font-semibold sm:text-[40px] leading-[1.5]">
                   {solution.text6}
                 </h2>
               )}
               {solution.text3 && (
-                <p className="max-w-175 text-base text-white/70 sm:text-lg">
+                // <p className="max-w-175 text-base text-white/70 sm:text-lg">
+                <p className="max-w-175 text-base  sm:text-xl">
                   {solution.text3}
                 </p>
               )}
             </div>
-            <div className="grid w-full max-w-250 grid-cols-1 gap-6 sm:grid-cols-2">
-              {solution.withoutMfa.length > 0 && (
-                <div className="flex flex-col gap-4 rounded-2xl bg-linear-to-br from-[#7a3d5e] to-[#3d2a4a] p-6 text-left">
-                  <p className="text-lg font-semibold text-white">
-                    ✕ Without MindForApps
-                  </p>
-                  <ul className="flex flex-col gap-3">
-                    {solution.withoutMfa.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2 text-sm text-white/90"
-                      >
-                        <span>✕</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {solution.withMfa.length > 0 && (
-                <div className="flex flex-col gap-4 rounded-2xl bg-linear-to-br from-[#3d5ea3] to-[#4fb8d8] p-6 text-left">
-                  <p className="text-lg font-semibold text-white">
-                    ✓ With MindForApps
-                  </p>
-                  <ul className="flex flex-col gap-3">
-                    {solution.withMfa.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2 text-sm text-white/90"
-                      >
-                        <span>✓</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+            <ComparisonBlock
+              withoutItems={solution.withoutMfa}
+              withItems={solution.withMfa}
+            />
           </section>
         )}
 
-        {solution.featureCategories.length > 0 && (
-          <section
-            id="features"
-            className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25"
-          >
-            <div className="flex flex-col items-center gap-3">
-              <h2 className="text-3xl font-bold text-black sm:text-[40px]">
-                {solution.text7 ?? "Everything you need."}{" "}
-                <span className="text-brand-accent">One solution.</span>
-              </h2>
-              {solution.text4 && (
-                <p className="max-w-175 text-base text-black/60 sm:text-lg">
-                  {solution.text4}
-                </p>
-              )}
-            </div>
-            <FeaturesBrowser categories={solution.featureCategories} />
-          </section>
-        )}
-
-        <section className="relative overflow-hidden bg-brand-surface px-6 py-16 sm:px-25">
+        <section className="relative overflow-hidden bg-brand-surface py-16 px-5">
           <Image
             src="/images/solution-ribbon-bg.png"
             alt=""
             width={1500}
             height={620}
-            className="pointer-events-none absolute -left-32 bottom-0 hidden w-[60%] max-w-225 rotate-180 opacity-80 lg:block"
+            className="pointer-events-none absolute inset-x-0 bottom-0 hidden w-full opacity-80 lg:block"
           />
-          <div className="relative mx-auto flex max-w-300 flex-col items-center gap-10 text-center">
-            <div className="flex flex-col items-center gap-3">
-              <p className="text-sm font-semibold uppercase tracking-wide text-brand-accent">
+
+          {solution.featureCategories.length > 0 && (
+            <div
+              id="features"
+              className="relative mx-auto flex max-w-300 flex-col items-center gap-5 text-center"
+            >
+              <p className="max-w-175 text-base text-[#325ffe] font-semibold">
+                FEATURES
+              </p>
+              <div className="flex flex-col items-center gap-3">
+                <h2 className="text-3xl font-semibold text-black sm:text-4xl">
+                  {solution.text7 ?? "Everything you need."}{" "}
+                  <span className="text-brand-accent">One solution.</span>
+                </h2>
+                {solution.text4 && (
+                  <p className="max-w-175 text-base text-black/80 sm:text-xl">
+                    {solution.text4}
+                  </p>
+                )}
+              </div>
+              <div className="mt-10 w-full">
+                <FeaturesBrowser
+                  categories={solution.featureCategories}
+                  featuresImageUrl={solution.featuresImageUrl}
+                />
+              </div>
+            </div>
+          )}
+
+          <div className="relative mx-auto mt-16 grid max-w-300 grid-cols-1 items-center gap-10 min-[850px]:grid-cols-2">
+            <div className="flex flex-col items-start gap-3 text-left min-[850px]:order-last">
+              <h2 className="text-3xl font-bold text-black sm:text-[40px] min-[850px]:hidden">
+                Real platforms. Real results.
+              </h2>
+              <p className="max-w-125 text-base text-black/60 min-[850px]:hidden">
+                Numbers from projects we&rsquo;ve shipped, not just estimates.
+              </p>
+
+              <p className="hidden text-sm font-semibold uppercase tracking-wide text-brand-accent min-[850px]:block">
                 Real platforms. Real results.
               </p>
-              <h2 className="text-3xl font-bold text-black sm:text-[40px]">
+              <h2 className="hidden text-3xl font-bold text-black sm:text-[40px] min-[850px]:block">
                 Numbers we&rsquo;ve shipped — not estimates.
               </h2>
-              <p className="max-w-125 text-base text-black/60">
+              <p className="hidden max-w-125 text-base text-black/60 min-[850px]:block">
                 Metrics from real projects. Not projections.
               </p>
             </div>
-            <div className="grid w-full max-w-225 grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="grid grid-cols-1 gap-5 min-[470px]:grid-cols-2 min-[1200px]:gap-8">
               {[
-                { value: "4 weeks", label: "Average time to launch" },
+                {
+                  value: "4 weeks",
+                  label: "Average time to launch",
+                  corners: "min-[470px]:rounded-[60px_30px_4px_30px]",
+                },
                 {
                   value: "65%",
                   label: "Average time and budget saving vs custom development",
+                  corners: "min-[470px]:rounded-[30px_60px_30px_4px]",
                 },
-                { value: "100%", label: "Client ownership of the created platform" },
-                { value: "$50K+", label: "Average saving vs hiring a dev team" },
+                {
+                  value: "100%",
+                  label: "Client ownership of the created platform",
+                  corners: "min-[470px]:rounded-[30px_4px_30px_60px]",
+                },
+                {
+                  value: "$50K+",
+                  label: "Average saving vs hiring a dev team",
+                  corners: "min-[470px]:rounded-[4px_30px_60px_30px]",
+                },
               ].map((stat) => (
                 <div
                   key={stat.value}
-                  className="flex flex-col items-center gap-3 rounded-2xl bg-white p-5"
+                  className={`flex min-h-50 min-w-47.5 flex-col items-center gap-3 rounded-2xl ${stat.corners} bg-white p-5 text-center max-[530px]:p-[20px] max-[850px]:p-[40px] max-[1020px]:p-[20px] min-[1021px]:p-8 max-[429px]:min-h-0 max-[429px]:max-h-40`}
                 >
-                  <span className="rounded-full bg-brand-accent px-5 py-2 text-lg font-bold text-white">
+                  <span className="rounded-full bg-brand-accent px-6 py-3 font-bold text-white text-3xl max-[1080px]:text-[26px] max-[1020px]:text-[24px] max-[470px]:text-[30px] max-[470px]:w-full">
                     {stat.value}
                   </span>
-                  <span className="text-sm text-black/70">{stat.label}</span>
+                  <span className="text-sm text-black/70  max-[470px]:text-[18px]">{stat.label}</span>
                 </div>
               ))}
             </div>
           </div>
-        </section>
 
-        <section className="bg-brand-surface px-6 pb-16 sm:px-25">
-          <div className="mx-auto flex max-w-300 flex-col items-start gap-4 rounded-[25px] bg-white p-8 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xl font-bold text-brand-accent">
-              Want to speak to a past client before committing?
-            </p>
-            <a
-              href="#start-your-project"
-              className="bg-brand-gradient shrink-0 rounded-full px-8 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
-            >
-              Book a Free Strategy Call
-            </a>
+          <div className="relative mx-auto mt-16 max-w-300">
+            <div className="flex flex-col items-start gap-4 rounded-[25px] bg-white p-8 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col gap-2">
+                <p className="text-xl font-bold text-brand-accent">
+                  Want to speak to a past client before committing?
+                </p>
+                <p className="text-base text-black/60">
+                  Ask us on the strategy call, and we&rsquo;ll make the
+                  introduction.
+                </p>
+              </div>
+              <a
+                href="#contact"
+                className="bg-brand-gradient shrink-0 rounded-full px-8 py-4 text-base font-medium text-white transition-opacity hover:opacity-90"
+              >
+                Book a Free Strategy Call
+              </a>
+            </div>
           </div>
         </section>
 
@@ -672,7 +677,8 @@ export default async function SolutionDetailPage({
               Tell us about your project — we&rsquo;ll map the full scope.
             </p>
           </div>
-          <div className="relative mx-auto mt-10 max-w-175">
+          {/* <div className="relative mx-auto mt-10 max-w-175"> */}
+          <div className="relative mx-auto mt-10">
             <CalendlyWidget />
           </div>
         </section>
