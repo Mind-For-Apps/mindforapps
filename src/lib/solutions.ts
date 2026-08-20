@@ -69,6 +69,7 @@ export type SolutionDetail = {
   tags: string[];
   priceLabel: string | null;
   mainImageUrl: string | null;
+  featuresImageUrl: string | null;
   images: string[];
   imagesCover: string[];
   designedFor: string[];
@@ -164,6 +165,7 @@ export async function getSolutionBySlug(
     tags: solution.tags ?? [],
     priceLabel: solution.price_label,
     mainImageUrl: solution.main_image_url,
+    featuresImageUrl: solution.features_image_url,
     images: solution.images ?? [],
     imagesCover: solution.images_cover ?? [],
     designedFor: solution.designed_for ?? [],
