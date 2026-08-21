@@ -14,6 +14,7 @@ import { ImagesSlider } from "./ImagesSlider";
 import { ToolsSlider } from "./ToolsSlider";
 import { FeaturesBrowser } from "./FeaturesBrowser";
 import { TestimonialsSlider } from "@/components/sections/TestimonialsSlider";
+import { FreeAudit } from "@/components/sections/FreeAudit";
 import { CalendlyWidget } from "@/components/CalendlyWidget";
 
 const AUDIENCE_ICONS = ["onboarding", "community", "roles", "map"];
@@ -529,6 +530,30 @@ export default async function SolutionDetailPage({
           </section>
         )}
 
+        {solution.whatsIncludedIconUrl && (
+          <section className="flex flex-col items-center gap-3 bg-brand-surface px-6 pt-8 pb-20 text-center sm:px-25">
+            <p className="text-[30px] font-semibold text-brand-accent min-[500px]:text-[15px]">
+              WHAT&rsquo;S INCLUDED:
+            </p>
+            <h2 className="text-[25px] font-semibold text-black min-[400px]:text-[30px] min-[500px]:text-[35px] min-[700px]:text-[40px]">
+              Everything ready on day one.
+            </h2>
+            {solution.text5 && (
+              <p className="max-w-175 text-[18px] font-normal text-black/70 min-[500px]:text-[20px]">
+                {solution.text5}
+              </p>
+            )}
+            <div className="relative mt-10 aspect-1122/495 w-full max-w-280.5">
+              <Image
+                src={solution.whatsIncludedIconUrl}
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+          </section>
+        )}
+
         {testimonials.length > 0 && (
           <section className="flex flex-col items-center gap-8 bg-black py-16">
             <TestimonialsSlider items={testimonials} />
@@ -651,11 +676,13 @@ export default async function SolutionDetailPage({
           </div>
         </section>
 
+        <FreeAudit />
+
         <section
           id="contact"
-          className="relative overflow-hidden bg-brand-surface px-6 py-16 sm:px-25"
+          className="relative z-10 -mb-160 max-[1210px]:-mb-140 max-[1025px]:-mb-180 max-[640px]:-mb-250 max-[530px]:-mb-270 overflow-hidden bg-transparent px-6 py-16 sm:px-25"
         >
-          <Image
+          {/* <Image
             src="/images/solution-cta-ribbon.webp"
             alt=""
             width={800}
@@ -668,7 +695,7 @@ export default async function SolutionDetailPage({
             width={800}
             height={800}
             className="pointer-events-none absolute -right-20 top-0 hidden w-75 scale-x-[-1] lg:block"
-          />
+          /> */}
           <div className="relative mx-auto flex max-w-200 flex-col items-center gap-3 text-center">
             <h2 className="text-3xl font-bold text-black sm:text-[40px]">
               Ready to launch your {solution.title} platform?
@@ -683,7 +710,7 @@ export default async function SolutionDetailPage({
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer hideStartProjectCard />
     </>
   );
 }

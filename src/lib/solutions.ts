@@ -70,6 +70,7 @@ export type SolutionDetail = {
   priceLabel: string | null;
   mainImageUrl: string | null;
   featuresImageUrl: string | null;
+  whatsIncludedIconUrl: string | null;
   images: string[];
   imagesCover: string[];
   designedFor: string[];
@@ -83,6 +84,7 @@ export type SolutionDetail = {
   text2: string | null;
   text3: string | null;
   text4: string | null;
+  text5: string | null;
   text6: string | null;
   text7: string | null;
   text8: string | null;
@@ -166,6 +168,7 @@ export async function getSolutionBySlug(
     priceLabel: solution.price_label,
     mainImageUrl: solution.main_image_url,
     featuresImageUrl: solution.features_image_url,
+    whatsIncludedIconUrl: solution.whats_included_icon_url,
     images: solution.images ?? [],
     imagesCover: solution.images_cover ?? [],
     designedFor: solution.designed_for ?? [],
@@ -179,6 +182,7 @@ export async function getSolutionBySlug(
     text2: solution.text_2,
     text3: solution.text_3,
     text4: solution.text_4,
+    text5: solution.text_5,
     text6: solution.text_6,
     text7: solution.text_7,
     text8: solution.text_8,

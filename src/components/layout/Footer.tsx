@@ -120,8 +120,10 @@ function CloudUploadIcon() {
 
 export function Footer({
   openContactForm = false,
+  hideStartProjectCard = false,
 }: {
   openContactForm?: boolean;
+  hideStartProjectCard?: boolean;
 }) {
   const messageId = useId();
   const [stage, setStage] = useState<string | null>(
@@ -189,7 +191,9 @@ export function Footer({
         />
         {/* <div className="relative z-10 mx-auto -mb-40 flex items-center max-w-300 flex-col gap-8 rounded-[15px] bg-white/90 p-6 shadow-[0px_20px_60px_rgba(0,0,0,0.08)] sm:py-12"> */}
         {/* <div className="relative z-10 mx-auto -mb-40 flex items-center max-w-300 flex-col gap-8 rounded-[15px] p-6 shadow-[0px_20px_60px_rgba(0,0,0,0.08)] sm:py-12 bg-[#eef2f4f2]"> */}
-        <div className="relative z-10 mx-auto -mb-40 flex items-center max-w-300 flex-col gap-8 rounded-[15px] p-6 shadow-[0px_-3px_59px_0px_rgba(0,0,0,0.11)] sm:py-12 bg-[#eef2f4f2]">
+        <div
+          className={`relative z-10 mx-auto -mb-40 flex items-center max-w-300 flex-col gap-8 rounded-[15px] p-6 shadow-[0px_-3px_59px_0px_rgba(0,0,0,0.11)] sm:py-12 bg-[#eef2f4f2] ${hideStartProjectCard ? "invisible" : ""}`}
+        >
           <div className="flex flex-col items-center gap-2 text-center">
             <h2 className="text-3xl font-semibold text-black sm:text-[40px] py-5">
               Start Your Project
