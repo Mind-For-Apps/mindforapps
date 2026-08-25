@@ -40,10 +40,15 @@ export function ComparisonBlock({
 }) {
   if (withoutItems.length === 0 && withItems.length === 0) return null;
 
+  const withoutItemTextClass =
+    withoutItems.length > 5 ? "sm:text-[18px]" : "sm:text-[22px]";
+  const withItemTextClass =
+    withItems.length > 5 ? "sm:text-[18px]" : "sm:text-[22px]";
+
   return (
     <div className="relative grid w-full max-w-300 grid-cols-1 min-[800px]:grid-cols-2 min-[800px]:gap-18">
       {withoutItems.length > 0 && (
-        <div className="relative min-h-121.75 z-1 max-[800px]:min-h-150 max-[910px]:min-h-140 ml-2.5 max-[800px]:ml-0">
+        <div className="relative min-h-120 z-1 max-[800px]:min-h-150 max-[1108px]:min-h-140 ml-2.5 max-[800px]:ml-0">
           <Image
             src="/images/solutions/compare-red-narrow2.png"
             alt=""
@@ -56,7 +61,7 @@ export function ComparisonBlock({
             alt=""
             fill
             sizes="(min-width: 1000px) 590px, 50vw"
-            className="hidden object-fill min-[800px]:block rounded-3xl"
+            className="hidden object-cover min-[800px]:block rounded-3xl"
           />
           <div className="relative z-10 flex flex-col gap-8 p-3 pt-30 min-[800px]:pt-3">
             <div className="relative min-h-[91px] flex items-center w-full">
@@ -83,7 +88,7 @@ export function ComparisonBlock({
               {withoutItems.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-base text-white/90 sm:text-[22px]"
+                  className={`flex items-start gap-3 text-base text-white/90 ${withoutItemTextClass}`}
                 >
                   <XIcon className="mt-1.5 size-5 shrink-0 text-[#a02048]" />
                   <span>{item}</span>
@@ -96,7 +101,7 @@ export function ComparisonBlock({
 
       {withItems.length > 0 && (
         // <div className="relative min-h-121.75 max-[800px]:-mt-15">
-        <div className="relative min-h-121.75 max-[800px]:min-h-150 max-[910px]:min-h-140 max-[800px]:-mt-16.5 mr-2.5 max-[800px]:mr-0">
+        <div className="relative min-h-120 max-[800px]:min-h-150 max-[1108px]:min-h-140 max-[800px]:-mt-16.5 mr-2.5 max-[800px]:mr-0">
           <Image
             src="/images/solutions/compare-blue-narrow.png"
             alt=""
@@ -109,7 +114,7 @@ export function ComparisonBlock({
             alt=""
             fill
             sizes="(min-width: 1000px) 590px, 50vw"
-            className="hidden object-fill min-[800px]:block rounded-3xl"
+            className="hidden object-cover min-[800px]:block rounded-3xl"
           />
           <div className="relative z-10 flex flex-col gap-8 p-3 pt-30 min-[800px]:pt-3">
             {/* <div className="relative min-h-[84px] flex items-center w-full shadow-[0px_4px_12px_0px_rgba(0,0,0,0.15)]"> */}
@@ -137,7 +142,7 @@ export function ComparisonBlock({
               {withItems.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-base text-white/90 sm:text-[22px]"
+                  className={`flex items-start gap-3 text-base text-white/90 ${withItemTextClass}`}
                 >
                   <CheckIcon className="mt-1.5 size-5 shrink-0 text-white" />
                   <span>{item}</span>

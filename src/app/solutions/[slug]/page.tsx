@@ -317,12 +317,12 @@ export default async function SolutionDetailPage({
               ].map((stat) => (
                 <div
                   key={stat.value}
-                  className={`flex min-h-50 min-w-47.5 flex-col items-center gap-3 rounded-2xl ${stat.corners} bg-white p-5 text-center max-[530px]:p-[20px] max-[850px]:p-[40px] max-[1020px]:p-[20px] min-[1021px]:p-8 max-[429px]:min-h-0 max-[429px]:max-h-40`}
+                  className={`flex min-h-50 min-w-47.5 flex-col items-start gap-3 rounded-2xl ${stat.corners} bg-white p-5 text-center shadow-[7px_21px_19px_0px_rgba(50,95,254,0.1)] max-[530px]:p-[20px] max-[850px]:p-[40px] max-[1020px]:p-[20px] min-[1021px]:p-8 max-[429px]:min-h-0 max-[429px]:max-h-40`}
                 >
                   <span className="rounded-full bg-brand-accent px-6 py-3 font-bold text-white text-3xl max-[1080px]:text-[26px] max-[1020px]:text-[24px] max-[470px]:text-[30px] max-[470px]:w-full">
                     {stat.value}
                   </span>
-                  <span className="text-sm text-black/70  max-[470px]:text-[18px]">{stat.label}</span>
+                  <span className="text-base text-black  max-[470px]:text-[18px]">{stat.label}</span>
                 </div>
               ))}
             </div>
