@@ -31,11 +31,12 @@ export default async function SolutionsPage() {
           </p>
         </section>
 
-        <section className="bg-black px-6 py-16 sm:px-25">
+        {/* <section className="bg-black px-6 py-16 sm:px-25"> */}
+        <section className="bg-black px-6 py-16">
           {solutions.length === 0 ? (
             <p className="text-center text-white">No solutions published yet.</p>
           ) : (
-            <div className="mx-auto grid max-w-300 grid-cols-1 gap-8 sm:grid-cols-2">
+            <div className="mx-auto grid max-w-300 grid-cols-1 gap-8 min-[800px]:grid-cols-2">
               {solutions.map((solution) => (
                 <SolutionCard key={solution.id} solution={solution} />
               ))}

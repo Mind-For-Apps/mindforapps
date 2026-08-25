@@ -17,7 +17,7 @@ export async function getSolutionCards(): Promise<SolutionCardData[]> {
     .from("solutions")
     .select(`*, solution_tools(tools(name, icon_url))`)
     .eq("is_published", true)
-    .order("sort_order");
+    .order("title", { ascending: false });
 
   if (!solutions) return [];
 
