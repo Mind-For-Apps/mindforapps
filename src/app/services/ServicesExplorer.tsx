@@ -671,12 +671,12 @@ export function ServicesSidebar() {
                 {section.label}
               </button>
               {isOpen && (
-                <ul className="flex flex-col">
+                <ul className="flex flex-col text-sm">
                   {section.items.map((item, i) => (
                     <li key={item.id}>
                       <a
                         href={`#${item.id}`}
-                        className="block px-6 py-4 text-black/70 transition-colors hover:text-brand-accent"
+                        className="block px-6 py-2 text-black transition-colors hover:text-brand-accent"
                       >
                         {item.title}
                       </a>
@@ -692,7 +692,7 @@ export function ServicesSidebar() {
         })}
       </div>
 
-      <div className={`flex flex-col gap-6 rounded-[30px] ${gradientBg} p-8 text-white`}>
+      <div className={`flex flex-col gap-6 rounded-[30px] ${gradientBg} p-5 text-white`}>
         <p className="text-2xl leading-tight">
           One Complete
           <br />
