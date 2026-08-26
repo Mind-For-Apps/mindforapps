@@ -85,18 +85,15 @@ export default function ServicesPage() {
       </main>
 
       <ServicesActiveProvider>
-        <div className="relative z-10 mx-auto -mt-25 grid max-w-300 grid-cols-1 gap-8 px-6 text-left sm:px-10 lg:grid-cols-[380px_1fr] lg:grid-rows-[auto_auto] lg:gap-12 lg:px-0">
-          <div className="lg:sticky lg:top-8 lg:col-1 lg:row-[1/span_2] lg:self-start">
+        <div className="relative z-10 mx-auto -mt-25 grid max-w-300 grid-cols-1 gap-8 px-6 text-left sm:px-10 lg:grid-cols-[380px_1fr] lg:gap-12 lg:px-0 lg:items-start">
+          <div className="lg:sticky lg:top-8">
             <ServicesSidebar />
           </div>
-          <div className="relative z-10 lg:col-2 lg:row-1">
-            <ServicesContent />
-          </div>
-          <div className="relative z-10 bg-white lg:col-span-full lg:row-2">
-            <AllServicesIncluded />
-          </div>
+          <ServicesContent />
         </div>
       </ServicesActiveProvider>
+
+      <AllServicesIncluded />
 
       <Footer />
     </>

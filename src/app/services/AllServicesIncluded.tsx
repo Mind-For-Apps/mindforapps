@@ -22,7 +22,7 @@ const ICONS = [
 
 export function AllServicesIncluded() {
   return (
-    <section className="flex w-full flex-col gap-12 px-6 py-16 sm:px-10 lg:flex-row lg:items-center lg:gap-16 lg:px-0">
+    <section className="mx-auto flex w-full max-w-300 flex-col gap-12 px-6 py-16 sm:px-10 lg:flex-row lg:items-center lg:gap-16">
       <div className="flex flex-col gap-10 lg:w-1/2">
         <h2 className="text-3xl font-bold text-black sm:text-[45px] sm:leading-[1.15]">
           All our services included in a complete solution for your industry
