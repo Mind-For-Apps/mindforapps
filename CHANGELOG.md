@@ -1,6 +1,13 @@
 # Changelog
 
-## 2026-07-28 — New homepage "Testimonials" section (from Figma, reusing real data)
+## 2026-08-26 — New `/plugins` page (Bubble no-code plugin marketplace listings)
+
+### Added
+- New Supabase tables (`supabase/migrations/0014_plugins.sql`): `plugins` (name, slug, description, installation steps, demo/editor/market URLs, logo, monthly/one-time price, SEO fields) plus its own `plugin_categories` lookup + `plugin_category_links` junction — a **separate taxonomy from the existing `categories` table** (which is specific to Templates), since the plugin category set (Analytics, AI, Blog, Chart, Data (things), etc.) doesn't overlap it.
+- `scripts/seed-plugins.ts` + `scripts/plugins-data.csv` (32 real plugins from the client's Bubble plugin marketplace export) — upserts by slug, re-uploads each plugin's logo to the `case-study-media` Storage bucket, and finds-or-creates each category by title. Unlike the other seed scripts, this one parses the CSV directly (no pre-converted JSON source file existed for it) via a small inline RFC4180 parser, since no CSV library is in the project's dependencies.
+- `src/lib/plugins.ts` (`getPluginCards()`, `getPluginCategories()`) and `src/app/plugins/page.tsx` + `PluginsBrowser.tsx` — a client-side category filter (multi-select pills, `Filters`/`Reset`/`Hide` panel, mirroring `TemplatesPageBrowser`'s pattern) over a 2-column card grid. Each card is itself the link to that plugin's `Demo_URL` (opens in a new tab); the inline "view more" toggle on the description stops propagation so expanding text doesn't trigger navigation. Header/Footer reused as-is, same as `/templates`.
+- No admin CRUD for plugins yet (not requested) — content is only editable by re-running the seed script.
+
 
 ### Added
 - `src/components/sections/Testimonials.tsx` (server, fetches via the existing shared `getTestimonials()`) + `TestimonialsSlider.tsx` (client carousel), new homepage section placed after `WhyUs` and before `FAQ` (Figma frame node `158:454`, "Testimonials"): a black full-bleed section with a heading/subtitle flanked by prev/next arrows (reusing the project's existing `arrow-left.svg`/`arrow-right.svg` pair and the same "flip the left arrow via `-scale-x-100`" pattern already used by `CaseStudySlider` — no new arrow assets needed, same 59×161 size as the Figma frame's arrow images), and a 3-card row of white testimonial cards (avatar, name, role, quote, company tagline) that rotates one card at a time.

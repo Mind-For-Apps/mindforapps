@@ -1,0 +1,829 @@
+"Category","Demo_URL","Description","Editor_URL","Installation Steps","Logo","Market_URL","Name","New image","Price montly","Price one_time","SEO_description","SEO_title","Short_description"
+"Technical , Data (things) , Mobile , Containers , Media , Visual Elements , Image","https://advanced-image-slider-38537.bubbleapps.io/version-test/advanced_slider","Enhance your web or mobile app by adding a beautiful slider with text and URLs.Advanced Image Slider is a multioptional plugin that lets you easily create powerful sliders with attractive transition effects and customize each separate element to your liking.
+
+Attention!
+Starting from version 3.0.0 the plugin only supports the new responsive engine.
+
+Attention!
+Version 3 is not compatible with versions 2 and 1
+
+Features:
+
+Simple Captions with Url's.
+Add text or links to your slides with minimal effort
+
+Thumbnails.
+Use thumbnails for slider pagination, instead of bullets.
+
+Carousel.
+Turn your slider into a carousel, showing multiple slides at once.
+
+Lazy Loading for extremely fast page loading times.
+Images loads only when they are viewed
+
+Fully Responsive & ready for all devices.
+The slider will look great on every device including desktops, notebooks, tablets, and smartphones.
+
+Many Dot and Arrow Styles.
+Choose between different slide navigation dot and arrow styles.
+
+Demo:
+For details and demos please visit the plugin page at
+https://advanced-image-slider-38537.bubbleapps.io/version-test/advanced_slider
+
+
+Additional demo:
+https://advanced-image-slider-38537.bubbleapps.io/version-test/advanced_slider_addition","https://bubble.io/page?id=advanced-image-slider-38537&tab=Design&name=advanced_slider&type=page","Add the plugin to your app , Set the image gallery and configure the properties as you see fit. Hints are included","//s3.amazonaws.com/appforest_uf/f1552382913062x476884234918697660/slider-01.svg","https://bubble.io/plugin/advanced-image-slider-1542619534130x475716869344460800","Advanced image Slider","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752754444441x625191096989945500/slider-01.svg","7","30","Enhance your app with the Advanced Image Slider plugin. Create stunning sliders with text, URLs, thumbnails, and carousel modes. Enjoy fast loading times with lazy loading, and customize dot and arrow styles. Compatible with the new responsive engine.","Advanced Image Slider: Responsive Sliders with Custom Captions","Responsive slider with text, URLs, thumbnails, and carousel"
+"Technical , Visual Elements , Media , Containers , Data (things)","https://plugin-preview.bubbleapps.io/version-test/hover_3d","Now you can create astonishing new galleries and features for your app. Interactive parallax tilt effects that react to mouse movement.
+Hover3D is a plugin which applies an awesome interactive 3D hover effect to any image.
+
+Features:
+-Font, stroke, and shadows are customizable.
+-Can be used in a repeating group
+-The picture can be both static and dynamic.","https://bubble.io/page?type=page&name=hover_3d&id=plugin-preview&tab=tabs-1","Place the ""Hover3d"" element on the page , Connect an image using ""Static Image"" or ""Use Dynamic Image -> Image Source"" , The plugin is ready to use. , If necessary, connect additional data using the fields ""Image Link"", ""Title Settings -> Text"", ""Title Settings -> Text"" and make other additional settings.","//s3.amazonaws.com/appforest_uf/f1552382968050x660090039138026500/013-key-1-03.svg","https://bubble.io/plugin/hover-3d-1543489861619x429226183569702900","Hover 3d","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752754485346x612818981444943600/013-key-1-03.svg","3","15","Transform your galleries and features with the Hover 3D plugin. Create stunning interactive 3D hover effects that react to mouse movement. Customize fonts, strokes, and shadows, and use static or dynamic images.","Hover 3D Plugin: Interactive 3D Hover Effects for Images","Create interactive 3D hover effects for images with ease."
+"Technical , Data (things) , Social Network , Productivity , Visual Elements","https://plugin-preview.bubbleapps.io/version-test/password","Password Strength and Complexity
+This plugin is designed to evaluate password strength and will help you provide many features to strengthen your password.
+
+You can control the features like number of letters, upper and lower case letters and adding numbers.
+
+Features:
+- It shows a secure strength indicator to your users.
+- Your users can hide or see the password.
+- There is a password security indicator.
+- Multiple effects and style options.
+- Responsive design ready.
+","https://bubble.io/page?type=page&name=password&id=plugin-preview&tab=tabs-1","Place an ‚Äúinput‚Äù on the page that will serve as a password entry field and assign it an ‚ÄúID Attribute‚Äù , Place the ""PasswordValidator"" element on the page and in the ""Input Id"" field enter the identifier that you assigned to ""input"" in the first paragraph. , The plugin is ready to use. If necessary, you can make additional settings for the plugin in the editor.","//s3.amazonaws.com/appforest_uf/f1552382991734x529614616748383900/013-key-1-05.svg","https://bubble.io/plugin/password-validator-1547294014882x578996484766695400","Password Validator","//s3.amazonaws.com/appforest_uf/f1662474781692x296351810393871160/013-key-1-05____________.svg","4","19","Enhance password security with the Password Validator plugin. Evaluate password strength with customizable features like letter requirements, number inclusion, and case sensitivity. Includes secure strength indicators, visibility options, and responsive design.","Password Validator Plugin: Strength & Complexity Checker","Evaluate and enhance password strength with customizable options."
+"Productivity , Analytics , Compliance , Technical , Data (things) , Visual Elements","https://plugin-preview.bubbleapps.io/version-test/grid","Advanced Grid gives you the ability to display Data Tables as in Excel.
+
+Create interactive data tables using sorting, searching, pagination, filtering and more. This plugin is really easy for beginners.
+There are several ways of functional and visual customization of the tables.
+
+Features:
+
+- Columns can be switched places with drag and drop + the width of the columns can be controlled.
+- Different ways of searching.
+- You can save tables in Excel, PDF, and CSV.
+- You can also send it to print.
+- Add, edit, and remove lines.
+- Pagination + you can control the amount of pages that should be shown.
+- 20 different color schemes.","https://bubble.io/page?type=page&name=grid&id=plugin-preview&tab=tabs-1","Add the plugin to your app and configure the properties as you see fit. Hints are included","//s3.amazonaws.com/appforest_uf/f1552388749114x334770748977558400/grid-03.svg","https://bubble.io/plugin/advanced-grid-1551871414639x682026432359039000","Advanced Grid","//s3.amazonaws.com/appforest_uf/f1662474767587x881894939782596100/grid-03Advanced%20grid.svg","7","20","Create interactive data tables with the Advanced Grid plugin. Features include sorting, searching, pagination, and filtering. Customize visually and functionally, and export tables to Excel, PDF, or CSV. Supports drag-and-drop columns and multiple color schemes.","Advanced Grid Plugin: Interactive Data Tables with Customization","Interactive data tables with sorting, filtering, and exporting."
+"Technical , Blog , Containers , Mobile , Media , Visual Elements","https://plugin-preview.bubbleapps.io/version-test/text","Now you can create astonishing new animated typing effect for titles or sentences on your posts, images and even in repeating groups.
+
+You can change the color, boldness, font and all the other settings with Bubble's Rich text editor to produce the result you really expect. Adding images and links is also easy.
+
+Features:
+- Font settings, color, boldness - customizable.
+- Repeating group ready.
+- The picture can be both static and dynamic.
+- Multiple animated effects on the same page.
+- Responsive design ready.
+","https://bubble.io/page?type=page&name=text&id=plugin-preview&tab=tabs-1","Place the ""Typingeffect"" element on the page , In the ""string"" fields (at least in the ""string 1"" field) enter the text that should be animated. , This is the simplest connection diagram and the plugin is ready to work. , Next, using the plugin editor, you can make more detailed settings.","//s3.amazonaws.com/appforest_uf/f1552383091519x412726230734776960/013-key-1-09.svg","https://bubble.io/plugin/typing-effect-1544742643514x702459731154829300","Typing effect","//s3.amazonaws.com/appforest_uf/f1662474751758x379946488744874500/013-key-1-09Typing%20effect.svg","4","15","Add dynamic animated typing effects to your titles and sentences with our plugin. Fully customizable with font settings, colors, and boldness. Works with images, links, and repeating groups, and supports multiple effects on the same page.","Typing Effect Plugin: Animated Text for Posts, Images, & Repeating Groups","Animated typing effect for dynamic text in posts and images."
+"Technical , Containers , Media , Data (things) , Mobile , Visual Elements","https://plugin-preview.bubbleapps.io/version-test/pinterest","Do you want to create a masonry style gallery? Sometimes you need to display full-view thumbnails without cropping the height or width.
+Now, you can change the view of your repeating group with images to masonry style gallery. Plugin works by placing elements in optimal position based on available vertical space.
+
+To see the settings of the repeating group and the plugin in more detail, go to the demo page:
+https://plugin-preview.bubbleapps.io/version-test/pinterest
+and open the editor ( OPEN EDITOR )","https://bubble.io/page?type=page&name=pinterest&id=plugin-preview&test_plugin=1564735347736x451216312144494600_current&tab=tabs-1","Place a repeating group on the page, customize it and give it an ID. , Place the ""RG to Pinterest Grid"" element on the page. ,  In the ""Repeating Group ID"" field of the plugin, enter the ID of your repeating group.","//s3.amazonaws.com/appforest_uf/f1568808229814x475819252522841100/010-ui-6-03.svg","https://bubble.io/plugin/rg-to-pinterest-grid-1564735347736x451216312144494600","Pinterest Grid","//s3.amazonaws.com/appforest_uf/f1662474736944x581391080933098000/010-ui-6-03Pinterest%20grid.svg","5","15","Transform your image gallery into a masonry style layout with the Pinterest Grid plugin. Perfect for displaying full-view thumbnails without cropping, it optimally arranges elements based on available vertical space.","Pinterest Grid: Masonry Style Gallery Plugin for Optimal Image Display","Masonry style gallery for full-view thumbnails without cropping."
+"Technical , Data (things) , Mobile , Containers , Media , Visual Elements , Image","https://advanced-image-slider-38537.bubbleapps.io/version-test/simple_slider","This Simple Image Slider is a nice and convenient way to display many images on your site.  The big and small images will look nice on every device, which is essential for every website.
+
+Features:
+
+‚Ä¢ Carousel.
+Turn your slider into a carousel, showing multiple slides at once.
+
+Lazy Loading for extremely fast page loading times.
+Images loads only when they are viewed
+
+Fully Responsive & ready for all devices.
+The slider will look great on every device including desktops, notebooks, tablets, and smartphones.
+
+Many Dot and Arrow Styles.
+Choose between different slide navigation dot and arrow styles.
+","https://bubble.io/page?id=advanced-image-slider-38537&tab=Design&name=simple_slider&type=page","Add a plugin to your application. , Place a SimpleSlider element on the page. , Set up an image gallery (field ‚ÄúImage Gallery‚Äù) , Set the required slide proportions (W and H fields). This is very similar to the ""Aspect ratio"" field for the standard ""Image"" element. , If necessary, configure the desired properties as you wish. Hints included","//s3.amazonaws.com/appforest_uf/f1568808320374x451115958445723400/qqq.svg","https://bubble.io/plugin/simple-image-slider-1564440454726x155476765802496000","Simple Image Slider","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752754619581x762531815289962500/qqq.svg","4","19","Enhance your site with our Simple Image Slider. Featuring carousel mode, lazy loading for fast performance, and a variety of dot and arrow styles. Fully responsive on all devices.","Simple Image Slider: Responsive Carousel with Lazy Loading","Responsive image slider with carousel and lazy loading."
+"Technical , Containers , Media , Compliance , Visual Elements","https://plugin-preview.bubbleapps.io/version-test/parallax","Parallax plugin allows you to create an interactive multi-layered parallax effect responding that responds to mouse movement.
+
+It can also be used on your mobile phone. It reacts to the orientation of your smart device, offsetting layers depending on their depth within a scene...
+
+Features:
+You can configure different speed levels of objects
+You can add animation for objects, for example - rotate them around their axis or a given point.","https://bubble.io/page?type=page&name=parallax&id=plugin-preview&tab=tabs-1","Set the attribute to to the object you want to use , Add PARALLAX element to the page and set object id in elementID field , Customize the object as you wish","//s3.amazonaws.com/appforest_uf/f1568808399122x554836356943520640/www.svg","https://bubble.io/plugin/parallax-1564466329399x128981534971002880","Parallax","//s3.amazonaws.com/appforest_uf/f1662474711132x866375436483490900/GroupParallax.svg","5","19","Create stunning interactive parallax effects with our plugin. Customize object speeds, add animations, and enjoy responsive designs on both web and mobile devices.","Parallax Plugin: Interactive Multi-Layered Effects for Web & Mobile","Interactive parallax effects with customizable animations."
+"Technical , Containers , Mobile , Media , Visual Elements","https://advanced-image-slider-38537.bubbleapps.io/version-test/before-after","Before-After Plugin is an easy to use and quite visually appealing tool that allows you to compare two different images in one slider is several ways.
+
+Features:
+
+-Working in all of main browsers
+-It‚Äôs possible to set any colors for cursor and line and to change the size of cursor and line
+-Fully responsive for all mobile devices.","https://bubble.io/page?id=advanced-image-slider-38537&test_plugin=1564735446905x647596372178239500_current&tab=Design&name=before-after&type=page","Place a ""before-after"" element on the page. , Connect an image gallery (a field from the database containing images) , or if you want to use separate single, then check the ‚ÄúOr use Single Images‚Äù checkbox and include at least the ‚ÄúBefore image_1‚Äù and ‚ÄúAfter image_1‚Äù fields , Using the settings in the ""BASIC SETTINGS"" section, define the ""W"", ""H"" and ""Fit"" parameters in order to determine how the slider will behave when the width changes. , If necessary, define other parameters. Under each parameter there is a necessary description.","//s3.amazonaws.com/appforest_uf/f1609257439068x609346034456216700/Before%20After%20LOGO.svg","https://bubble.io/plugin/before-after-slider-1564735446905x647596372178239500","Before-after slider","//s3.amazonaws.com/appforest_uf/f1662474692418x381600289648534000/_657360312before%20after.svg","4","15","Before-After Slider Plugin allows you to visually compare two images with a slider. Customize cursor and line colors, sizes, and enjoy full responsiveness across all devices and browsers.","Before-After Slider Plugin - Compare Two Images with Ease","Compare two images easily with a customizable slider."
+"Technical , Media , Containers , Data (things) , Visual Elements , Image","https://plugin-preview.bubbleapps.io/version-test/group_2_image","  The ""Group 2 image"" plugin is designed to simplify the process of converting the contents of Bubble application groups into images. With this plugin, users can easily create PNG or JPEG images from any group in the Bubble app, making them easy to share, print, and archive.
+
+This plugin works by taking the contents of a bubble group and converting it into an image. Users can simply select the bubble group they want and the plugin will generate an image reflecting the contents of that group. You can also exclude some objects (text, buttons, inputs, etc.) from the final image.","https://bubble.io/page?type=page&name=group_2_image&id=plugin-preview&tab=tabs-1","Select on the page the group that you want to convert into an image and assign it an identifier (field ""ID Attribute"") , Place the ""Group2Image"" element on the page , Set up a workflow (for example, by clicking a button) that will launch the ‚ÄúgetImage‚Äù action. In the ""getImage"" element in the ""Group ID"" field, you must specify the group ID from step 1 , When the image conversion is completed, the ""Conversion is complete"" event will be fired. , Set up a workflow for the ""Conversion is complete"" event where you can get the url of the finished image loaded into your application (the ""img S3 link"" parameter) , More details can be found on the demo page (OPEN IN EDITOR)","//s3.amazonaws.com/appforest_uf/f1609257524598x420274122198848200/plugin%20logo_glue_2-01.svg","https://bubble.io/plugin/group-2-image-1570718668361x814620532276461600","Group 2 Image","//s3.amazonaws.com/appforest_uf/f1662474676503x137081918462648830/_781611704group2%20image.svg","5","25","Group 2 Image Plugin simplifies converting Bubble application groups into PNG or JPEG images. Easily create shareable, printable, and archivable images from any group, with options to exclude specific elements.","Group 2 Image Plugin - Convert Bubble Groups to PNG/JPEG Images","Convert Bubble groups into shareable PNG/JPEG images easily."
+"Technical , Media , Blog , Mobile , Data (things) , Visual Elements","https://pinterest-65085.bubbleapps.io/version-test/lightbox","Repeating Group Lightbox plugin provides several options of an image galleries for your app. It includes several visual effects and  a useful interface to customize the plugin to your requirements.
+
+Features:
+- Thumbnail Navigation.
+- Slideshow.
+- Fullscreen Mode.
+- Mouse & Keyboard Navigation.
+- Fully responsive & ready for all devices.
+- Each element can have a title, a description, and an author associated.","https://bubble.io/page?id=pinterest-65085&test_plugin=1564735347736x451216312144494600_current&tab=Design&name=lightbox&type=page","Create a repeating group with the necessary images.  , Place the plugin on the page.  , Place all the text fields that you want to display in the RG Lightbox, in the cell.  , Set ID for all objects (including the repeating group) and write these ID's in the plugin.  , If you need, you can hide unnecessary text fields using the plugin.","//s3.amazonaws.com/appforest_uf/f1609257578182x613322364575859500/collage.svg","https://bubble.io/plugin/rg-lightbox-1566842799501x841247558400999400","RG Lightbox","//s3.amazonaws.com/appforest_uf/f1662474661101x517209780873578050/collageRG%20Lightbox.svg","4","15","RG Lightbox Plugin offers versatile image gallery options with thumbnail navigation, slideshow, fullscreen mode, and responsive design. Customize your gallery with titles, descriptions, and author details.","RG Lightbox Plugin - Interactive Image Galleries with Customizable Effects","Create interactive image galleries with customizable effects and responsive design."
+"Technical , Media , Mobile , Containers , Visual Elements","https://scrollable-animation-plugin.bubbleapps.io/version-test/scroll_animation_1","Scrollable Animation helps you to easily react to the user's current scroll position.
+
+It's the perfect library for you, if you want to ...
+
+- animate based on scroll position ‚Äî either trigger an animation or synchronize it to the scrollbar movement (like a playback scrub control).
+
+- pin an element starting at a specific scroll position ‚Äî either indefinitely or for a limited amount of scroll progress (sticky elements).
+
+- toggle custom CSS of elements on and off based on scroll position.
+
+- decorate and animate text blocks.
+
+- effortlessly add parallax effects to your website.
+
+ScrollMagic Javascript library was used when creating this plugin
+
+Demo:
+For details and demos visit the demo and documentation pages:
+
+https://scrollable-animation-plugin.bubbleapps.io/version-test/scroll_animation_1
+https://scrollable-animation-plugin.bubbleapps.io/version-test/scroll_animation_2
+https://scrollable-animation-plugin.bubbleapps.io/version-test/scroll_animation_manual_1
+https://scrollable-animation-plugin.bubbleapps.io/version-test/scroll_animation_manual_2
+https://scrollable-animation-plugin.bubbleapps.io/version-test/scroll_animation_guide_general
+https://scrollable-animation-plugin.bubbleapps.io/version-test/scroll_animation_guide_pin
+https://scrollable-animation-plugin.bubbleapps.io/version-test/scroll_animation_guide_stagger
+https://scrollable-animation-plugin.bubbleapps.io/version-test/scroll_animation_guide_text
+https://scrollable-animation-plugin.bubbleapps.io/version-test/scroll_animation_guide_filters
+https://scrollable-animation-plugin.bubbleapps.io/version-test/scroll_animation_guide_customcss
+https://scrollable-animation-plugin.bubbleapps.io/version-test/scroll_animation_tools","https://bubble.io/page?type=page&name=scroll_animation_1&id=scrollable-animation-plugin&test_plugin=1585659573453x857343877726076900_current&tab=tabs-1","Select a group on the page that will act as a trigger and assign it an ID Attribute.   The animation of the target element will start when the trigger scrolls to a certain offset (specified in the settings) , Select the target element to which the animation will be applied and assign it an ID Attribute. It's best if you place the target element inside the group from step 1 (trigger). , Place the ""ScrollAnimation-Scene"" element on the page and in the ""triggerElements"" field specify the identifier of the trigger element from step 1 , In workflows, select the ""Page is loaded"" event and launch the ""Tween ScrollAnimation-Scene"" action where in the ""TargetElements"" field you must specify the target element identifier from step 2 , Configure the desired animation in the ""Tween"" element and the ""ScrollAnimation-Scene"" trigger element","//s3.amazonaws.com/appforest_uf/f1609257652738x592839093152033500/1-04.svg","https://bubble.io/plugin/scrollable-animation-1585659573453x857343877726076900","Scrollable Animation","//s3.amazonaws.com/appforest_uf/f1662474644328x146498661670509280/Group%201scroll%20animation.svg","7","29","Scrollable Animation Plugin allows you to animate elements, pin items, toggle CSS, and add parallax effects based on user scroll position. Built with the ScrollMagic library for dynamic web interactions.","Scrollable Animation Plugin - Animate and Control Elements Based on Scroll","Animate and control elements based on scroll position with this versatile plugin."
+"Technical , Containers , Media , Mobile , Visual Elements","https://plugin-preview.bubbleapps.io/version-test/unite_img_video_gallery","The Unite Gallery is multipurpose javascript gallery based on jquery library. It's built with a modular technique for ease of use and customization. The gallery supports displaying images and videos (YouTube videos, HTML5 video (.mp4, .ogv, .webm) and Vimeo video). You can use either a separate gallery with images or with some specific video format, or mixed galleries with images and video together.
+
+
+Features
+The gallery plays VIDEO from: Youtube, Vimeo, HTML5, and Images(not a video but still )
+
+Responsive - fits to every screen with automatic ratio preserve
+Touch Enabled - Every gallery parts can be controlled by the touch on touch enabled devices
+
+Responsive - The gallery can fit every screen size, and can respond to a screen size change.
+
+Themable - The gallery has various of themes, each theme has it's own options and features, but it uses gallery core objects
+
+Zoom Effect - The gallery has unique zoom effect that could be applied within buttons, mouse wheel or pinch gesture on touch - enabled devices
+
+Gallery Buttons - The gallery has buttons on it, like full screen or play/pause that optimized for touch devices access
+
+Keyboard controls - The gallery could be controlled by keyboard (left, right arrows)
+
+Tons of options. The gallery has huge amount of options for every gallery object that make the customization process easy and fun.","https://bubble.io/page?type=page&name=unite_img_video_gallery&id=plugin-preview&tab=tabs-1","Add the plugin to your app, set the image gallery and configure the properties as you see fit. See instructions on demo page","//s3.amazonaws.com/appforest_uf/f1609257723916x401626220711961860/1-03%20%281%29.svg","https://bubble.io/plugin/unite-image--video-gallery-1598707190591x443306801914183700","Unite Gallery","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752754799601x128877428746577920/1-03%20%281%29.svg","6","39","Unite Gallery is a flexible JavaScript gallery solution supporting images and videos from YouTube, Vimeo, and HTML5. Features include responsive design, touch support, zoom effects, and extensive customization options.","Unite Gallery - Versatile JavaScript Gallery for Images & Videos","Versatile gallery plugin supporting images and videos with responsive design and extensive customization."
+"Technical , Analytics , Compliance , Data (things) , Productivity , Visual Elements","https://plugin-preview-2.bubbleapps.io/version-test/01_tabulator_demo_r","Tabulator allows you to create highly functional interactive tables.
+Extensive Feature Set
+Configure your tables to meet the needs of your users
+Tabulator has an enormous number of features to help customize your table experience to your needs
+
+     Unfortunately, at the moment the design features of the plugin do not allow working with linked tables. Those. All data must be in one database table.
+
+
+- Columns.
+Unlimited number of connected columns. Each column is connected and configured separately.
+- Filters
+Filter data to display only what you need to
+- Sorting
+Sort data however you like, by any value or data type
+- Formatting
+Create custom formatters to graphically display data
+- Editing
+Edit table data directly in the table. Then return the result
+- Pagination
+Automatic local and remote data pagination
+- Packaged Themes
+Five Prepackaged themes straight out the box
+- Freeze Data
+Freeze columns and rows in place while scrolling
+- Download Data
+Download data directly from the table to a CSV, PDF, HTML or XLSX File
+- Layout
+Customise the layout of Tabulator to meet your needs
+- Responsive Layout
+Automatically hide & show data to fit table size
+- Persistent Configuration
+Remember layout, sort and filter config between visits
+- Navigation
+Navigate focus around the table with keyboard and functions
+- And much more.
+For more information on features and functions, see the documentation and demo pages.
+
+Demo and manuals:
+https://plugin-preview-2.bubbleapps.io/version-test/01_tabulator_demo_r
+https://plugin-preview-2.bubbleapps.io/version-test/02_tabulator_themes_r
+https://plugin-preview-2.bubbleapps.io/version-test/03_tabulator_main_column_type_r
+https://plugin-preview-2.bubbleapps.io/version-test/04_tabulatot_text_r
+https://plugin-preview-2.bubbleapps.io/version-test/05_tabulatot_number_r
+https://plugin-preview-2.bubbleapps.io/version-test/06_tabulatot_date_r
+https://plugin-preview-2.bubbleapps.io/version-test/07_tabulatot_boolean_r
+https://plugin-preview-2.bubbleapps.io/version-test/08_tabulatot_image_rownum_r
+https://plugin-preview-2.bubbleapps.io/version-test/09_tabulator_custom_filter_r
+https://plugin-preview-2.bubbleapps.io/version-test/10_add_change_delete_r
+","https://bubble.io/page?type=page&name=01_tabulator_demo&id=plugin-preview-2&tab=tabs-1","See these page for documentation and additional examples:  https://plugin-preview-2.bubbleapps.io/version-test/01_tabulator_demo","//s3.amazonaws.com/appforest_uf/f1609258142549x761656645961157400/table1-01.svg","https://bubble.io/plugin/table--grid-tabulator-1605734492800x188796299305025540","Table / Grid ""Tabulator""","//s3.amazonaws.com/appforest_uf/f1662474624448x768924667519072100/table1-01Tabulator.svg","7","25","Create highly functional interactive tables with Tabulator. Customize columns, filters, sorting, and more. Features include data editing, pagination, downloadable files, and responsive layouts.","Tabulator - Advanced Interactive Tables with Customizable Features","Build interactive tables with extensive customization and functionality using Tabulator."
+"Technical , Media , Ecommerce , Social Network , Mobile , Visual Elements","https://plugin-preview-2.bubbleapps.io/version-test/zoom_magnifier_01_demo","Zoom Magnifier is a plugin that allows you to use the magnifying glass effect on images.
+Easily add hover zoom to your site images.
+Ideal for For e-commerce sites.
+
+Functions
+- Different shapes and sizes of the magnifying glass.
+- The magnifier can be used for both single and multiple images.
+- The source of images can be a single image, a standard repeating group, or an optional carousel element (Zoom-carousel).
+- The zoomed image can be displayed in the lens itself or outside in a wrapper.
+- Click or hover effect.
+- Different behavior for desktop and mobile devices.
+- And many more functions.
+
+Browser support
+Works in Chrome, Firefox, Internet Explorer and Safari. Mobile support has been tested on the latest minor versions of the current and previous major release for the default iOS and Android browsers.
+
+Demo:
+https://plugin-preview-2.bubbleapps.io/version-test/zoom_magnifier_01_demo
+https://plugin-preview-2.bubbleapps.io/version-test/zoom_magnifier_02_connection
+","https://bubble.io/page?type=page&name=zoom_magnifier_01_demo&id=plugin-preview-2&tab=tabs-1","Place the ""Zoom-main"" element on the page , Enable the ""single image"" field , This is the easiest connection. For more complex connection options please visit the documentation and demo pages: https://plugin-preview-2.bubbleapps.io/version-test/zoom_magnifier_02_connection https://plugin-preview-2.bubbleapps.io/version-test/zoom_magnifier_01_demo","//s3.amazonaws.com/appforest_uf/f1620374864348x780103483434052100/search-flat.png","https://bubble.io/plugin/zoom-magnifier-1616537885632x102862942499241980","Zoom Magnifier","//s3.amazonaws.com/appforest_uf/f1662553904932x907788609896862800/Framelupa.svg","5","25","Add a magnifying glass effect to images on your site with Zoom Magnifier. Ideal for e-commerce, it supports single or multiple images, various shapes, and sizes for the magnifier, with hover or click activation.","Zoom Magnifier - Enhance Image Details with Hover Zoom Effect","Add hover zoom to images with customizable magnifier effects"
+"Technical , Analytics , Mobile , Small Business , Visual Elements , Chart","https://apex-charts.bubbleapps.io/version-test/apex_demo","ApexCharts + CONFIG BUILDER
+ApexCharts is a modern charting library that helps developers to create beautiful and interactive visualizations for web pages.
+
+- Choose from a wide range of charts.
+- ApexCharts are flexible and responsive - making your charts work on desktops, tablets as well as mobiles.
+- Setting up ApexCharts is easy. Config Builder helps you create chart configurations quickly and easily. Our documentation will help you set up charts quickly. Config Builder allows you to adjust more than 400 different parameters.
+- Packed with the features that you expect, ApexCharts includes over a dozen chart types that deliver beautiful, responsive visualizations in your apps and dashboards.
+
+
+HOW IS OUR PLUGIN DIFFERENT FROM OTHER CHARTS PLUGINS?
+
+The creation and configuration of the chart is done using CONFIG BUILDER.
+CONFIG BUILDER is a visual assistant in building and configuring your charts. In CONFIG BUILDER you create the desired chart configuration for you. Adding and changing parameters you will immediately see the result.
+In just a few minutes you can create the chart configuration you need, get the code that will be used in our plugin in your application.
+You can also use CONFIG BUILDER to modify previously created configurations. If you need to change some parameters in a previously created configuration, then you do not have to create everything from the beginning. You just need to paste the old code into the CONFIG BUILDER, make the changes you want, and get the new (changed) configuration code.
+Config Builder allows you to adjust more than 400 different parameters.
+
+
+The charts are divided into five types:
+ApexChart_Type_01
+- area
+- bar
+- line
+- histogram
+- radar
+- scatter
+
+ApexChart_Type_02:
+- pie
+- donut
+- radialBar
+- polarArea
+
+ApexChart_Type_03:
+- bubble
+
+ApexChart_Type_04:
+- heatmap
+- treemap
+
+ApexChart_Type_05:
+- candlestick
+- boxPlot
+
+
+APEX CONFIG BUILDER
+https://bubble-test-api.bubbleapps.io/version-test/apex_builder
+
+
+APEX DOC
+https://apex-charts.bubbleapps.io/version-test/apex_doc
+
+
+DEMO
+https://apex-charts.bubbleapps.io/version-test/apex_demo
+https://apex-charts.bubbleapps.io/version-test/apex_sync","https://bubble.io/page?type=page&name=apex_demo&id=apex-charts&tab=tabs-1","Using CONFIG BUILDER, create a chart configuration and get a configuration code.  APEX CONFIG BUILDER https://bubble-test-api.bubbleapps.io/version-test/apex_builder , Install the ApexChart_Type_XX plugin element in the application. , Connect the data fields and insert the configuration code into the ApexChart_Type_XX plugin element. , If necessary, make a small fine-tuning.","//s3.amazonaws.com/appforest_uf/f1636659760352x587770225465851000/apex-logo.svg","https://bubble.io/plugin/apex-charts-+-config-builder-1628607050488x621279207144030200","ApexCharts + Config Builder","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752754890091x615787819940429700/apex-logo.svg","8","39","Design beautiful, interactive charts with ApexCharts and our Config Builder. Create and customize over a dozen chart types quickly with 400+ parameters. Ideal for dynamic web visualizations.","ApexCharts + Config Builder - Create Interactive Charts Easily","Create and customize interactive charts with ApexCharts and our Config Builder."
+"Mobile , Ecommerce , Customer Support , PDF , Visual Elements","https://plugin-preview-2.bubbleapps.io/version-test/jspdf","PDF creator + template builder
+Allows you to automatically create a document template (invoices, invitations, announcements, mailings, tickets, reports, certificates. etc.) from a page (or group) created by the regular tools of the Bubble editor. And then generate PDFs with dynamic data on the server or client side according to a predefined template.
+
+On the client side: allows using a template with dynamic data to generate a PDF document, upload it to the server, get a link to the downloaded file and / or download the generated PDF file to the client computer.
+On the server side: allows using a template with connected dynamic data without user intervention (for example, on a schedule) to generate a PDF document, upload it to the server, get a link to the uploaded file. For example, send invoices every month on a schedule. Or send invitations to users for a specific event. Etc.
+
+
+The set includes elements:
+- PDF_creator - create PDF on the client side.
+- Create_PDF_action - create a PDF on the server side.
+Auxiliary elements:
+- Create_template - from a regular page created in Bubble, creates a template code for use in PDF_creator and Create_PDF_action.
+- PDF_code_editor - allows you to easily and visually edit (if necessary) the template code created by Create_template.
+
+
+DEMO:
+https://plugin-preview-2.bubbleapps.io/version-test/jspdf
+
+jspdf_doc:
+https://plugin-preview-2.bubbleapps.io/version-test/jspdf_doc
+
+jspdf_code_doc + sandbox:
+https://plugin-preview-2.bubbleapps.io/version-test/jspdf_code_doc","https://bubble.io/page?type=page&name=jspdf&id=plugin-preview-2&tab=tabs-1","Create a page in the bubble app. , Create your template on this page. , Get the template code using the ""Create_template"" element. , Use the element ""PDF_code_editor"" to edit or change (if necessary) the template code. , Next, you only need the received code, and the page with the template can be deleted. , Use the resulting code in the ""PDF_creator"" or ""Create_PDF_action"" elements to generate PDF.","//s3.amazonaws.com/appforest_uf/f1636930964686x993571251586688500/jspdf_logo.png","https://bubble.io/plugin/pdf-creator-+-template-builder-1633696585536x995327633737384000","PDF Creator + Template Builder","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752754965762x466657747509279500/jspdf_logo.png","7","39","Create and manage dynamic PDFs with ease using our PDF Creator + Template Builder. Generate client-side or server-side PDFs from Bubble templates, with options for scheduling, file upload, and download.","PDF Creator + Template Builder - Generate Dynamic PDFs from Bubble Templates","Generate dynamic PDFs from Bubble templates with client-side and server-side options."
+"Technical , Containers , Mobile , Video , Media , Visual Elements , Image","https://plugin-preview-3.bubbleapps.io/version-test/parallax_img_video","What Is Parallax Scrolling Effect?
+Parallax scrolling is a stunning scroll effect that makes an element scroll at a different speed than the page scroll.
+These effects can be viewed on mobile devices too. The plugin allows to adjust settings to set whether parallax effects or videos will be seen on mobile devices and in certain browsers.
+Parallax Scrolling Effect is typically used in the modern web design where the background image scroll slower than the foreground when the user scrolls down the webpage.
+
+Features:
+- Supports applying parallax effect to images and videos.
+- Supports mobile devices.
+- The ability to choose different effects when scrolling: scroll, scale, opacity, scroll-opacity, scale-opacity
+- Ability to adjust parallax speed
+- Video settings: select start and end of video, loop video, lazy load video.
+- The ability to force disable the parallax effect and download videos on some devices
+- Choose to respect or not respect the original proportions of images and videos
+and other
+
+Tested Browsers:
+Latest browsers on Mac and Windows (Chrome, Firefox, Safari, Edge)
+Latest Chrome on Android
+Latest Safari on iOs","https://bubble.io/page?type=page&name=parallax_img_video&id=plugin-preview-3&tab=tabs-1","Place the element ""Parallax-img/video"" on the page and make settings.","//s3.amazonaws.com/appforest_uf/f1645025596988x494289354904805500/icon.png","https://bubble.io/plugin/parallax-imagevideo-1643754774747x943364630109487100","Parallax Image/video","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752754999936x539496281309213250/icon.png","5","15","Enhance your website with Parallax Scrolling Effects. Apply stunning parallax effects to images and videos, with adjustable speed, mobile support, and customizable settings for optimal performance across devices.","Parallax Image/Video Plugin - Dynamic Scrolling Effects for Modern Web Design","Add dynamic parallax scrolling effects to images and videos with customizable settings and mobile support."
+"Technical , Containers , Media , Mobile , Video , Visual Elements","https://plugin-preview-3.bubbleapps.io/version-test/lottie_scroll","Easily add high-quality animation to your app.
+Lottie is an library that renders After Effects animations in real time, allowing apps to use animations as easily as they use static images
+Lottie is an open-sourced animation file format like no other. It is smaller with higher quality and allows for you to create animations that can be interacted with. So versatile, you can easily implement it on almost all platforms out there!
+
+What is the use case for this?
+Where this web animation really shines is in interactive design. With lottie-web, you can start or stop an animation in response to a user action (such as liking something on Twitter). Such subtle usage can really improve the overall user experience of your application.
+How to get Lottie Animation JSON?
+Login/Sign Up on Lottie Files
+https://lottiefiles.com/
+Search Animation and Download JSON file.
+Use Json URL (Lottie Animation URL)
+
+You can also bind an animation to the scroll and/or pin the element (the element will stay in place while scrolling the page).
+
+Element Actions:
+play
+stop
+pause
+setSpeed
+goToAndStop
+goToAndPlay
+setDirection
+playSegments
+getDuration
+updateTextDocumentData
+
+Events:
+Complete
+LoopComplete
+
+States:
+duration","https://bubble.io/page?type=page&name=lottie_scroll&id=plugin-preview-3&tab=tabs-1","Place the element ""lottie-player"" on the page , In the ""Lottie Animation File/URL"" field, specify the Lottie animation file. , In the simplest version, the plugin is ready for use. , If necessary, make other additional settings","//s3.amazonaws.com/appforest_uf/f1645025740753x465395591879635800/lf-intergrations-logo.svg","https://bubble.io/plugin/lottie-player-+-scroll-anim-1643493868042x591309284706091000","Lottie Scroll","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752755045533x222645975063105800/lf-intergrations-logo.svg","5","20","Enhance user experience with Lottie Scroll. Easily add high-quality, interactive animations to your app using Lottie‚Äôs real-time rendering of After Effects animations. Supports scroll-binding and pinning for dynamic visuals.","Lottie Scroll - Integrate High-Quality Animations into Your App","Add interactive Lottie animations to your app, with scroll-binding and pinning options."
+"Technical , Data (things) , Productivity , Ecommerce , Analytics , Visual Elements , Chart","https://mindforapps-testing.bubbleapps.io/version-test/custom_charts","Design your annual reports in minutes using our bar and line charts.
+The data in the plugin is grouped and displayed by month.
+
+Builds a chart using a sample of data for a year. Combines data by month. Those. takes all the data from the sample for January and sums it up, then sums up all the data for February, and so on. Finally, it will display a final chart with the final results for each month from the sample. The sample must contain dates from only one year.
+","https://bubble.io/page?id=mindforapps-testing&tab=tabs-1&name=custom_charts&type=page","Place the plugin on the page. , Set Data source. , Select the fields for the date and price. , Customize the design as you like.","//s3.amazonaws.com/appforest_uf/f1645025999786x876415996920144600/line-chart.png","https://bubble.io/plugin/custom-charts-1644765201901x993084158829658100","Custom Charts","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752755082208x236340913904578700/line-chart.png","2","10","Quickly design annual reports with our Custom Charts plugin. Create bar and line charts that aggregate monthly data from a year's sample. Ideal for visualizing yearly trends and summaries in minutes.","Custom Charts Plugin - Easy Bar and Line Charts for Annual Reports","Create annual reports with bar and line charts that summarize monthly data"
+"Containers , Internationalization , Mobile , Customer Support , Technical , Visual Elements","https://plugin-preview-3.bubbleapps.io/version-test/advanced_tooltip","Advanced Tooltip - the plugin is based on the tippy.js library.
+Tippy.js is the complete solution for the web, powered by Popper.
+Tippy.js is a small yet highly customizable JavaScript tooltip library that helps you add customizable, interactive, animated, accessible, touch-friendly tooltips to any DOM element.
+
+It provides the logic and optional styling of elements that ""pop out"" from the flow of the document and float next to a target element.
+
+- Smart: will always float optimally in view
+- Fast: high performance for low-end devices
+- Universal: compatible with mouse, keyboard, and touch inputs
+- Customizable: fine-tunable functionality and fully stylable with CSS
+- Themeable: style via custom CSS, includes extra themes and animations
+
+
+Key features:
+- works with most standard elements (Text, Button, Icon, Image, Group, RepeatingGroup, Input, Dropdown, Checkbox, RadioButtons and others), as well as elements of custom plugins.
+- Supports all positions: auto, auto-start, auto-end, top, top-start, top-end, right, right-start, right-end, bottom, bottom-start, bottom-end, left, left-start, left-end
+- Custom trigger events: mouseenter, focus, click or manual.
+- 5 built-in amazing animations: fade, perspective, scale, shift-toward, shift-away .
+-4 built-in themes: light, light-border, material, translucent + custom (allows you to customize the color scheme yourself)
+- Allows to embed any HTML markup inside the tooltip.
+- Allows multiple tooltips on the same element.
+- Allows you to use one plugin element not only with a single element on the page, but also with a group of elements.
+- Works in Repeating Group.
+- Useful callback functions.
+","https://bubble.io/page?type=page&name=advanced_tooltip&id=plugin-preview-3&tab=tabs-1","Install the plugin , Make sure you expose the option to attribute a HTML ID from your bubble app, you can do this in the general settings by enabling the checkbox. , Give a unique ID to the element(s) (Targets and triggers (if needed)) , Specify the content of the tooltip.","//s3.amazonaws.com/appforest_uf/f1658848114774x720579081144026200/tippy_2.png","https://bubble.io/plugin/advanced-tooltip-1658529043551x529931311906553860","Advanced Tooltip","//s3.amazonaws.com/appforest_uf/f1662553934299x607780601301040800/Frameoth.svg","5","25","Enhance your web applications with the Advanced Tooltip plugin. This highly customizable tooltip library supports various positions, animations, and themes. Ideal for adding interactive, accessible tooltips to any DOM element with support for multiple tooltips and custom HTML.","Advanced Tooltip Plugin - Customizable and Interactive Tooltips","Customizable, interactive tooltip plugin"
+"Technical , Containers , Data (things) , Media , Visual Elements","https://plugin-preview-4.bubbleapps.io/version-test/advanced_rg_slider","Advanced Slider from Repeating Group is a plugin that turns a standard repeating group into an advanced slider or carousel.
+
+Keeping the convenience and functionality of the repeating group, you get a highly customizable slider with a huge number of functions.
+
+You are not tied to any particular design of the individual slides in the slider, but you can create your own slides with a repeating group of your choice.
+
+Advanced Slider from Repeating Group - based on the ""Swiper"" library.
+Swiper - is the  slider with hardware accelerated transitions and amazing native behavior.
+
+
+Features
+- Mobile-friendly: It is intended to be used in mobile websites, mobile web apps, and mobile native/hybrid apps.
+- 1:1 Touch movement: By default, Swiper provides 1:1 touch movement interaction, but this ratio can be configured through Swiper settings.
+- Rich API: Swiper comes with a very rich API. It allows creating your own pagination, navigation buttons, and many more.
+- Transition Effects: Fade, Flip, 3D Cube (with additional settings for each effect).
+- Full Navigation Control: Swiper comes with all required built-in navigation elements, such as Pagination, Navigation arrows, and Scrollbar.
+- Autoplay.
+- Free Mode.
+- Keyboard control.
+- Mousewheel control.
+- And many more features and settings.","https://bubble.io/page?type=page&name=advanced_rg_slider&id=plugin-preview-4&tab=tabs-1","Place a Repeating Group on the page. Connect Data and Set Up a Repeating Group , For better control, wrap the repeating group in a group. , Adjust the responsiveness of the repeating group. , Give the repeating group an ID. , If sliding the slider will not load additional slides, then you may need to set ""Show all elements at once"" = ""true"" , Install the plugin element (AdvancedRGSlider) on the page. , Connect the AdvancedRGSlider the same way you connected the repeating group. , Write in the ""rg"" field the identifier that you assigned to the Repeating group in step 2 , If necessary, make additional settings for AdvancedRGSlider.","//s3.amazonaws.com/appforest_uf/f1665431147104x410253065289687440/rg_slider_icon.png","https://bubble.io/plugin/advanced-slider-from-repeatinggroup-1663800568882x280561463280009200","Advanced RG slider","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752755161072x133106274159023650/rg_slider_icon.png","7","35","Transform your repeating group into a powerful, customizable slider or carousel with the Advanced RG Slider plugin. Built on the Swiper library, this plugin offers mobile-friendly touch interactions, rich API, various transition effects, and full navigation control for an enhanced user experience.","Advanced RG Slider Plugin - Customizable Carousel with Swiper Integration","Transform your repeating group into a powerful slider or carousel"
+"Technical , Media , Containers , Blog , Data (things) , Visual Elements","https://plugin-preview-4.bubbleapps.io/version-test/wysiwyg_editor","Advanced WYSIWYG HTML editor - the plugin is based on the SunEditor (WYSIWYG web editor).
+The Advanced WYSIWYG HTML editor is a lightweight, flexible, customizable WYSIWYG text editor for your web applications.
+
+
+Key features:
+- Configurable toolbar with option to add/remove controls. 37+ toolbar buttons. The ability to model the toolbar (buttons) as you need.
+- Option to change the order of the controls in the toolbar.
+- Option to conditionally show hide toolbar.
+- Support for inline styles: Bold, Italic, Underline, StrikeThrough, Code, Subscript, Superscript.
+- Support for block types: Paragraph, H1 - H6, Blockquote, Code.
+- Support for setting font-size and font-family and option to add custom types.
+- Support for ordered / unordered lists and indenting.
+- Support for text-alignment.
+- Support for coloring text or background and option to add your own color values.
+- Support for adding / editing links
+- Support for adding / uploading images.
+- Support for aligning images, setting height, width.
+- Support for Embedded links, flexibility to set height and width.
+- Option of undo and redo.
+- Configurable behavior for RTL and Spellcheck.
+- Support for placeholder.
+- Support for internationalization. 20 interface languages: ar, ckb, da, de, en, es, fr, he, it, ja, ko, lv, nl, pl, pt_br, ro, ru, se, ua, zh_cn.
+- Light and dark themes.
+- 4 mode of the editor ('classic', 'inline', 'balloon', 'balloon-always').
+- Pasting from Microsoft Word and Excel.
+- Custom table selection, merge and split.
+- Media embed, images upload (Possibility to insert images, video and audio.).
+- Can use  KaTeX (math plugin).
+- A large number of element actions (run in workflows): Set, Get, Show Editor, Hide Editor, Disable Editor, Enable Editor, Append contents to Editor, getText, Show Toolbar, Hide Toolbar, Disable Toolbar, Enable Toolbar, readOnly
+- Browser Support:
+Chrome, Firefox, Opera, Safari, Edge, Internet Explorer -11+
+- The ability to add a ""pageBreak"" to force content to be split into pages.
+- Create a PDF document from the content.
+- And.. many other features :)","https://bubble.io/page?type=page&name=wysiwyg_editor&id=plugin-preview-4&tab=tabs-1","Install the plugin. Place the ""WYSIWYG editor"" from elements to wherever part you need. , That's it. You can refer to the content as that ""WYSIWYG editor"" editor's content.","//s3.amazonaws.com/appforest_uf/f1665431318487x113855376119440740/editor_icon.png","https://bubble.io/plugin/advanced-wysiwyg-html-editor-1660943494581x605008264340176900","WYSIWYG editor","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752755183735x971113662229017300/editor_icon.png","7","35","Enhance your web applications with the Advanced WYSIWYG HTML Editor, based on SunEditor. This versatile and lightweight editor features a configurable toolbar, support for various text styles and block types, internationalization, and more. Ideal for creating rich text content with ease.","Advanced WYSIWYG HTML Editor Plugin - Flexible & Customizable Text Editor","Customizable WYSIWYG HTML editor with advanced features and flexible toolbar options."
+"Technical , Mobile , Media , Containers , Visual Elements","https://plugin-preview-4.bubbleapps.io/version-test/hover_transition","Hover Transition -  plugin that can be used for creating WebGL powered distortion hover effects using displacement images.
+The effect is as follows: hovering over an image will use a displacement image to transition to another image. Using different displacement images, you can create different images.
+Uses two main images and one displacement image to create the effect.
+","https://plugin-preview-4.bubbleapps.io/version-test/hover_transition","Place hoverTransition on the page.  , Add first and second Images of the animation  and displacement image  , Setup intensity, angle and speed if needed","//s3.amazonaws.com/appforest_uf/f1666709739523x220540314793690180/pay-per-click-02.png","https://bubble.io/plugin/hover-transition-1666354444964x899080159256117200","Hover Transition","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752755214036x988243419194372100/pay-per-click-02.png","3","8","Create stunning WebGL-powered hover effects with the Hover Transition plugin. This tool uses displacement images to transition between two main images, allowing for unique distortion effects. Ideal for adding dynamic visuals to your website.","Hover Transition Plugin - WebGL Distortion Effects with Displacement Images","WebGL plugin for creating distortion hover effects using displacement images."
+"Technical , Analytics , Location , Ecommerce , Mobile , Visual Elements","https://plugin-preview-mapael.bubbleapps.io/version-test/dynamic_maps","     Ease the build of pretty data visualizations on dynamic vector maps
+The plugin allows you to display dynamic vector maps with a lot of options and it is not related to Google Maps, Leaflet, as well as other navigation maps and is not their replacement or alternative.
+
+     For example, with Dynamic Vector Maps, you can display a map of the world with clickable countries. You can also build simple dataviz by setting some parameters in order to automatically set a color depending on a value to each area of your map and display the associated legend. Moreover, you can plot cities on the map with circles or squares by their latitude and longitude. Many more options are available, read the documentation in order to get a complete overview of mapael abilities.
+
+Mapael supports all modern browsers and Internet Explorer 9+.
+
+Key features:
+Interactivity - Set href, tooltip, add events and many more on the elements of your map.
+Plottable cities - Cities can be plotted on the map with circles or squares by their latitude and longitude.
+Areas and plotted points colorization - Mapael automatically sets attributes like color and size to each area and plotted point displayed on map and generates an interactive legend in order to build pretty dataviz
+Links between cities - You can draw links between the cities of the map.
+Resizable - Maps are easily resizable.
+Zoom - Zoom and panning abilities (also on mobile devices).
+Mousewheel - for the zoom on mousewheel feature.
+
+Thus you can load a map (such as the world map or the USA map) and customize the attributes of areas (such as the background-color, the tooltip content, link, text, attributes on mouseover, events, etc). You can plot points on the map by latitude and longitude or x and y and set their attributes. You can add curved links between two points. You can enable the zoom feature that allow to zoom the map through the buttons or through the mousewheel. You can define legends for areas and/or plotted points in order to apply automatically some attributes to the elements of the map depending on the associated value.
+
+     Available maps: World, World Mercator, World Miller, Algeria, Argentina, Austria, Canada, Croatia, EU, France, Germany, India, Japan, Mexico, Morocco, Peru, Scandinavia, Sri Lanka, Thailand, Turkey, Ukraine, UK, USA
+
+This list will grow over time.
+","https://bubble.io/page?type=page&name=dynamic_maps&id=plugin-preview-mapael&tab=tabs-1","Place a Dynamic Maps element on the page , Select a map , This is the simplest connection. The selected map with areas will now be displayed on the page.","//s3.amazonaws.com/appforest_uf/f1680730272004x193633459722029040/destination.png","https://bubble.io/plugin/dynamic-vector-maps-1675613460673x422474218224484350","Dynamic Vector Maps","//s3.amazonaws.com/appforest_uf/f1680730321789x357564350606692350/destination.png","5","20","Enhance your data visualizations with Dynamic Vector Maps. This plugin offers interactive maps with clickable areas, customizable colors, plotted cities, and zoom features. Ideal for creating engaging data visualizations with support for various global maps and modern browsers.","Dynamic Vector Maps - Interactive Data Visualization Plugin","Interactive plugin for dynamic vector maps with customizable data visualization features."
+"Technical , Mobile , Productivity , Media , Input Forms","https://plugin-preview-mapael.bubbleapps.io/version-test/advanced_range_slider","Easy to use, flexible and responsive range slider with skin support
+
+Description:
+Advanced Range Slider ‚Äî cool, comfortable, responsive and easily customizable range slider
+Supports events and public methods, has flexible settings.
+With this plugin you will be able to build beautiful range sliders.
+
+Key features:
+- Cross-browser: Google Chrome, Mozilla Firefox 3.6+, Opera 12+, Safari 5+, Internet Explorer 8+
+- Skin support. 6 beautiful skins included + ability to set custom colors for each theme
+- Any number of sliders at one page without conflicts
+- Two slider types: 1 or 2 handles
+- Support of negative and fractional values
+- Ability to set custom step and connect it to grid
+- Support of custom values diapason
+- Customisable grid of values
+- Ability to disable any UI elements (like grid)
+- Postfixes and prefixes for your numbers ($20, 30 ‚Ç¨)
+- Additional postfix for maximum value (eg. $100+)
+- Prettify large numbers (eg. 1000000 ‚Üí 1.000.000)
+- Slider supports disable param. You can set it true to make slider inactive
+- Slider supports external methods (update and reset) to control it after creation
+- Slider has events: onStart, onChange, onFinish, onUpdate.
+- Supports touch-devices (iPhone, iPad, Nexus, etc.).
+- Can be disabled at any time
+- Numbers can be formatted as dates and time
+","https://bubble.io/page?type=page&name=advanced_range_slider&id=plugin-preview-mapael&tab=tabs-1","Install the plugin. Place the ""Range Slider"" from elements to wherever part you need.After that, the slider will be ready to work. , Then you can customize the slider to suit your needs.","//s3.amazonaws.com/appforest_uf/f1680730308811x345155149712216960/filter.png","https://bubble.io/plugin/advanced-range-slider-1678025092751x568259582726242300","Advanced Range Slider","//s3.amazonaws.com/appforest_uf/f1680730287524x544726787289643700/filter.png","5","25","Discover the Advanced Range Slider: a flexible, cross-browser plugin with support for multiple skins, customizable values, and touch devices. Features include 1 or 2 handles, negative and fractional values, and extensive event support for enhanced user interaction.","Advanced Range Slider - Customizable & Responsive Slider Plugin","Customizable, responsive range slider with multiple skins."
+"Technical , Ecommerce , Mobile , Productivity , Media , Input Forms","https://plugin-preview-mapael.bubbleapps.io/version-test/histogram_slider","A range slider allow users to select continuous ranges while also showing them trends related to those ranges. For instance, Airbnb uses them to show the most popular prices corresponding to other specific criteria. A histogram will appear on the slider, showing where the data is spread across the range.
+
+Features:
+- Select the minimum and maximum range values.
+- Ability to highlight the optimal range of values with color.
+- Has three types of handles (round, square, and triangular).
+- Allows you to customize the color of the track, the handles of the sliders, and the colors of the bars of the histogram and its elements.
+- Adjust the width and height of the slider and histogram settings.
+- Setting the number of bars on the histogram.
+- Supports negative and positive or only negative or only positive values.
+- Supports tooltips and the ability to customize their colors and position.
+- Responsive, fills its container.
+- And much more...
+","https://plugin-preview-mapael.bubbleapps.io/version-test/histogram_slider","Place a slider element on the page. , Set the minimum and maximum slider values (Range Min and Range Max) and Range Min. , Connect Data (Histogram List Values) , If necessary, make the necessary additional settings.","//s3.amazonaws.com/appforest_uf/f1680730364718x591862231166671900/histogram.png","https://bubble.io/plugin/histogram-range-slider-1678932750273x717151498330177500","Histogram Range Slider","//s3.amazonaws.com/appforest_uf/f1680730370095x571899924465836000/histogram.png","5","25","Enhance user experience with our Histogram Range Slider. This customizable slider displays trends with a histogram, supports various handle types, and allows for color adjustments. Ideal for selecting and highlighting ranges, it features responsive design, tooltips, and supports both positive and negative values.","Histogram Range Slider - Customizable Range Selector with Data Trends","Customizable range slider with histogram for data trends"
+"Technical , Productivity , Data (things) , Containers , Visual Elements","https://plugin-preview-mapael.bubbleapps.io/version-test/datepicker","Advanced Datepicker
+
+A highly configurable, cross-browser date time picker plugin.
+
+Enhance your forms with the powerful and highly-configurable date time picker plugin. This date time picker adds an intuitive calendar interface for selecting dates and times, complete with a convenient month and year jump feature. The selected date will be formatted and entered into the input field according to your specified options. Simply attach the plugin to your input fields and let the calendar icon do the rest.
+
+Features:
+
+- Works in conjunction with the standard Input element
+- it is both a date picker as well as a time picker
+- it's cross-browser ‚Äî works in every major browser; works also in Internet Explorer 6!
+- has a default color scheme that blends-in well with almost any design;
+- two additional themes are included (Metallic and Bootstrap)
+- you can also create a custom theme by changing colors and some sizes.
+- offers an intuitive interface allowing for easy navigation through months and years
+- offers an intuitive mechanism for disabling dates and date ranges using a syntax similar to cron's syntax
+- supports defining of custom weekend days for countries that don't have the weekend on Saturday and Sunday
+- supports most of date formats you can think of, borrowing the syntax of PHP's date function
+- supports all sorts of combinations for starting and ending dates
+- date pickers can be ""paired"" ‚Äî where one or more date pickers will use the value of another date picker as starting date
+- supports internationalization
+- supports RTL languages
+- works by automatically attaching a small calendar icon to the indicated input fields which displays the attached date picker when clicked.
+- allows you to use auto binding
+","https://bubble.io/page?type=page&name=datepicker&id=plugin-preview-mapael&tab=tabs-1","Place a standard ""Input"" element on the page and give it an id attribute. , Place the ""Datepicker"" element on the page and in the ""ID Attribute"" field write the id attribute that you assigned to the ""Input"" element , Connect the ""Datepicker"" element to the ""Input"" element. Set the ""Initial content"" field of the ""Input"" element to ""value[format]"" from the element ""Datepicker"" ,  If necessary, include the ""Start Date"" field of the element ""Datepicker"" in the format ""yyyy-mm-dd""","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1685736399898x662531257064753400/604.svg","https://bubble.io/plugin/advanced-datepicker-1588952560226x625185025132855300","Advanced Datepicker","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1685736404741x908559078010271500/604.svg","5","20","Enhance your forms with the Advanced Date Time Picker Plugin. This highly configurable, cross-browser plugin features an intuitive calendar interface, supports date and time selection, and offers custom theming options. Compatible with all major browsers, including Internet Explorer 6, it allows for easy navigation, internationalization, and customization of date formats and ranges.","Advanced Date Time Picker Plugin - Highly Configurable & Cross-Browser","A highly configurable, cross-browser date time picker plugin."
+"Technical , Small Business , Ecommerce , Image , Media","https://imagemapster-92465.bubbleapps.io/version-test/demo","Image Map is a comprehensive tool that allows you to create and view image maps.
+
+An Image Map is a feature introduced in HTML 3.2 that allows specific regions of an image to be defined as clickable or interactive areas. These regions, known as hotspots, can trigger actions or link to relevant content when users click on them.
+
+Image Maps revolutionized web design by enabling the creation of interactive elements within images. This innovation greatly enhances user engagement and improves navigation on websites. By dividing an image into clickable regions, users can easily access related information, navigate to different sections or pages, or trigger specific actions, all within the context of the image.
+
+This technology has found wide application in various web design contexts. Interactive maps, image-based menus, and clickable infographics are just a few examples of how Image Maps are used to create visually appealing and engaging websites. With image Mapster, website owners can transform static images into dynamic components, offering a more interactive and immersive user experience.
+
+The plugin consists of two elements:
+1. imgMapViewer - activates the areas in HTML image maps so you can highlight and select them. It works just about everywhere that Javascript does, including modern browsers, Internet Explorer 6, and mobile devices like iPads, iPhones and Androids. Allows you to highlight and select areas by color, how floating tooltips for areas or area groups and much more.
+
+
+2. imgMapCreator - Html image map editor based on javascript, html5, inline SVG. Simply start by selecting an image from your pc, or load one directly from an external website. Next up create your hot areas using either rectangle, circle or polygon shapes. Creating these shapes is as easy as pointing and clicking on your image. Don't forget to enter data-Keys to identify each area.
+
+
+Features:
+- Control highlight color and opacity, border, and fade effect on mouseover
+- Click-select and deselect one or more areas, or allow highlighing only by disabling isSelectable
+- Use like a toggle or menu with the singleSelect option
+- Define areas as inactive or always active with staticState
+- Show floating tooltips for areas or area groups
+- Effortlessly create area-specific tooltips
+- Manually activate or deactivate tooltips
+- Use grouping and exclusion masks to create complex functionality
+- Group areas together into logical entities that will be selected or highlighted together
+- Link groups so that activating one group also activates another group using includekeys
+- Exclude areas inside of other areas by using masks
+
+
+Demo and docs:
+https://imagemapster-92465.bubbleapps.io/version-test/demo
+
+An example and tutorial on using ""imgMapViewer"" and ""imgMapCreator"" elements together. Creating, editing, viewing image maps:
+https://imagemapster-admin.bubbleapps.io/version-test/admin","https://bubble.io/page?type=page&name=demo&id=imagemapster-92465&test_plugin=1715849143847x644524263683391500_current&tab=tabs-1","To create an image map, use the ""imgMapCreator"" element , Place the ""imgMapCreator"" element on the page and include the ""imgUrl"" field. , Using the buttons (rectangle, circle, poligon) on the top panel, select the shape of the area you want to create. Using the mouse, create areas. Then go to edit mode (the edit button on the top panel), select the desired area (created earlier) and by pressing ""ctrl-i"" (or double-clicking the left mouse button on this area) call up the auxiliary menu in which you define the ""data-key"" for this area (if necessary, specify ""alt"" and ""href"") To familiarize yourself with other hot keys, use the ""?"" button on the top panel. , Using the ""getImgMap"" workflow, get the code of the generated image map. Then, this code will be used in the ""imgMapViewer"" element (Connects to the ""image_map"" field) , Next, use the resulting code in the ""imgMapViewer"" element to view the image map and change various area parameters. , Place the ‚ÄúimgMapViewer‚Äù element on the page and in the ‚ÄúImage Map‚Äù field insert the image map code that was received in the ‚ÄúimgMapCreator‚Äù element. , Done. You can then adjust other settings as needed and customize the behavior of each area individually if necessary. , More information about using the ""imgMapCreator"" and ""imgMapViewer"" elements can be found on the demo and documentation page: https://imagemapster-92465.bubbleapps.io/version-test/demo , Also look at an example of how our team sees the joint use of the ‚ÄúimgMapCreator‚Äù and ‚ÄúimgMapViewer‚Äù elements (for example, as an admin page that creates and configures image maps): https://imagemapster-admin.bubbleapps.io/version-test/admin","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1726690261471x118668227764550770/logo.png","https://bubble.io/plugin/image-map-1715849143847x644524263683391500","Image Map","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1726690269643x228553485400924120/logo.png","5","30","The image map plugin allows you to define specific areas of an image as clickable or interactive areas. These areas, known as hotspots, can trigger actions or link to related content when users click on them.
+This innovation greatly increases user engagement and improves website navigation. By dividing an image into clickable areas, users can easily access related information, navigate to different sections or pages, or trigger specific actions, all within the context of the image.","Image Mapster - a plugin for creating and viewing image maps.","Image Mapster is a comprehensive tool that allows you to create and view image maps."
+"Customer Support , Mobile , Productivity , Technical , Media","https://driverjs-21333.bubbleapps.io/version-test/driverjs","Advanced site tour - plugin to drive the user's focus across the pagements to drive user adoption.
+
+Advanced site tour makes it simple to create custom user on-boarding tours, trainings and announcements to drive user adoption.
+Advanced site tour enables you to guide users through a custom tour or journey within your app or website. Highly customizable with minimal styles, Advanced site tour allows for powerful customization while being easy to use.
+
+Based on driver.js library
+
+Features:
+- Highly customizable
+- Highlight anything: highlight any element on page
+- Feature introductions: create powerful feature introductions for your web applications
+- Focus shifters: add focus shifters for users
+- User friendly: Everything is controllable by keyboard
+- Consistent behavior: usable across all browsers
+- Working with repeating groups, including internal elements of repeating groups.
+
+Advanced site tour can be used for a wide range of use cases:
+
+- Onboard Users:
+Onboard your users by explaining how to use your product and answer common questions.
+- Remove Distractions:
+With highlight feature, you can remove distractions and focus your users attention on what matters.
+- Contextual Help:
+Provide contextual help for your users, explain how to use your product and answer common questions.
+- Feature Adoption:
+Highlight new features, explain how to use them and make sure your users don't miss them.
+- and much more.
+
+
+So, yet another tour library?
+No, it's more than a tour library. Tours are just one of the many use-cases. Advanced site tour can be used wherever you need some sort of overlay for the page; some common usecases could be: highlighting a page component when user is interacting with some component to keep them focused, providing contextual help e.g. popover with dimmed background when user is filling a form, using it as a focus shifter to bring user's attention to some component on page, using it to simulate those ""Turn off the Lights"" widgets that you might have seen on video players online, usage as a simple modal, and of-course product tours etc.
+
+Supported Browsers:
+IE / Edge, Firefox, Chrome, Safari","https://bubble.io/page?id=driverjs-21333&test_plugin=1723226057458x343974621369335800_current&tab=tabs-1&name=driverjs&type=page","Add a ""driverTour"" element to your app page. , In your app settings, on the ""General"" tab, make sure ""Expose the option to add an ID attribute to HTML elements"" is enabled. , Set the ""ID Attribute"" for each element that you want the tour to reference. You can set the ID in the properties of each element. , In your page workflows, use the ""addStep"" action of the ""driverTour"" element to add all the steps you want in order. You'll probably want to do this in the ""Page Loaded"" event. , Use the ""start"" action of the ""driverTour"" element to start the tour.","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1726849853567x100429907785881010/Frame%20140.png","https://bubble.io/plugin/advanced-site-tour-driverjs-1723226057458x343974621369335800","Advanced site tour (driverjs)","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1726849859023x650147326538940500/Frame%20140.png","5","25","Plugin to drive the user's focus across the pagements to drive user adoption. Allows you to take users through a customized tour or journey within your app or website. Highly customizable with minimal styling, the Advanced Site Tour provides powerful customization while being easy to use.","Advanced site tour makes it simple to create custom user on-boarding tours, trainings and announcements to drive user adoption.","Advanced site tour - plugin to drive the user's focus across the pagements to drive user adoption."
+"Image , Media , Visual Elements , Ecommerce","https://virtual-tour-52895.bubbleapps.io/version-test/virtual-tour","This no-code plugin allows you to bring virtual tours and panoramic photos into your Bubble app. You can easily create interactive virtual tours, maps, and presentations. The plugin also supports markers, which can provide information about specific areas within a scene or provide navigation to other rooms or areas.
+
+Panoramic images can be provided in either equirectangular or cube map formats. Equirectangular is the simplest to use as only a single image is needed. However, to ensure support among all WebGL-capable devices, the maximum image size should be preferably limited to 4096px wide; 8192px is also acceptable for most devices. Cube maps require six images but support somewhat higher resolution panoramas, as the vast majority of devices support cube faces up to 4096px across. Although larger images are supported, download sizes should be taken into consideration. This format is a cube map-based format, except each cube face is a tiled image pyramid instead of a single image.
+
+Since it is not obvious from the examples, it is prudent to note that the hotSpotDebug parameter exists to aid in the placing of hot spots. It can be enabled while setting up the hot spots, but it should always be disabled in production.
+
+pannellum.js was used in the process of creating the plugin.
+
+Features:
+- Equirectangular, cubic panoramas
+- Autoload and autorotate the image for seamless experience.
+- Configure autorotation speed to control the image rotation.
+- WebGL and CSS 3D based renderers
+- Interactive controls with zoom and fullscreen options.
+- Hot spots / tours
+- Compass headings
+- API
+- Just 21kB gzipped
+- Browser Compatibility
+- Plugin is built with recent web standards, it requires a modern browser to function.
+
+Full support (with appropriate graphics drivers):
+- Firefox 23+
+- Chrome 24+
+- Safari 8+
+- Internet Explorer 11+
+- Edge
+
+
+Demo:
+For details and demos please visit the plugin page at
+https://virtual-tour-52895.bubbleapps.io/version-test/virtual-tour
+
+Demo app editor:
+https://bubble.io/page?id=virtual-tour-52895&test_plugin=1737661679083x522969597219438600_current&name=virtual-tour&tab=Design&type=page
+
+Manual:
+https://virtual-tour-52895.bubbleapps.io/version-test/virtual-tour-manual
+
+Plugin page:
+https://mindforapps.com/plugin_details/virtual-tour","https://bubble.io/page?id=virtual-tour-52895&test_plugin=1737661679083x522969597219438600_current&tab=Design&name=virtual-tour&type=page","Add a plugin to your application. , Place a ""viewer"" element on the page. Give it the required dimensions. If necessary, change the default parameters. , In workflows, using the desired event (for example, ""Page is loaded"", ""An element is clicked"" or another) connect the ""addScene"" action for each scene (image) in the virtual tour. , Include the required fields: Scene ID I and Panorama URL. Next, configure scenes as needed and, if necessary, install and configure hotPoints. , You can find more detailed information and examples on our demo page and on the page with the manual.","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1738606259344x179479189663360500/logo.png","https://bubble.io/plugin/panorama-viewer---360-virtual-tour-1737661679083x522969597219438600","Virtual Tour","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1738606265124x998189757286543700/logo.png","5","25","This no-code plugin allows you to bring virtual tours and panoramic photos into your Bubble app. You can easily create interactive virtual tours, maps, and presentations. The plugin also supports markers, which can provide information about specific areas within a scene or provide navigation to other rooms or areas.","Panorama viewer / Virtual Tour - allows you to add panoramic photos and virtual tours with navigation and information markers to your Bubble app.","A simple but powerful plugin for adding panoramic photos and virtual tours with navigation and information markers."
+"Image , Media , Technical , Productivity","https://plugin-preview-3.bubbleapps.io/version-test/image_converter","Image Converter is used for convert large images in common formats to smaller, web-friendly JPEG, PNG, WebP, GIF and AVIF images of varying dimensions.
+
+All transformations take place on the server side.
+
+Formats:
+Input: JPEG, PNG, WebP, GIF, AVIF, TIFF, SVG images.
+Output: JPEG, PNG, WebP, GIF, AVIF and TIFF.
+
+Features and parameters of the output image:
+When resizing select:
+width
+height
+fit: cover, contain, fill, inside, outside
+position: position or strategy to use when fit is ""cover"" or ""contain"".
+Possible options: centre, top, right top, right, right bottom, bottom, left bottom, left, left top, attention, entropycover only, dynamically crop using either the entropy or attention strategy.
+entropy: focus on the region with the highest Shannon entropy .
+attention: focus on the region with the highest luminance frequency, colour saturation and presence of skin tones.
+imageBackground
+
+Image operations:
+
+Transforms the image using:
+brightness
+saturation
+hue
+lightness
+rotate
+flip
+flop
+blur
+sharpen
+median
+negate
+normalise
+
+
+Compositing images:
+Image overlay on top of a processed (resized, extracted, etc.) image.
+Options for overlay image:
+Width
+Height
+Gravity: north,northeast,east,southeast,south,southwest,west,northwest,center
+Top
+Left
+
+
+DEMO:
+https://plugin-preview-3.bubbleapps.io/version-test/image_converter
+
+Support:
+If you have questions, reach out to us at support@mindforapps.com
+
+We appreciate your reviews and suggestions.","https://bubble.io/page?id=plugin-preview-3&test_plugin=1653731522180x999424144532045800_current&tab=Design&name=image_converter&type=page&elements=cmOsi","Install the ""Image Converter (server side)"" plugin in your application. , In Workflows, using an event, for example, ""Button clicked"", select the ""Convert Image"" action. , Connect the required fields: - ""Image"". This is the image you want to process. - ""Home URL"". For example, https://your-app.bubbleapps.io or https://your-app.bubbleapps.io/version-test , If necessary, configure other fields (Output file name, Output format, Quality, resize settings and Image operations) , If you need to overlay an image on the processed image, then before ""Convert Image"", connect the ""Composite Element"" action. And then connect this (processed image) in the ""Convert Image"" field - ""compositeElements"" as ""Result of step n (Composite Element)'s element"" , You can see examples of connections on the demo page of this plugin.","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752658647648x450018720768393860/02.png","https://bubble.io/plugin/image-converter-server-side-1653731522180x999424144532045800","Image Converter (server side)","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1752658651914x641038437242656500/02.png","7","20","This server plugin allows you to convert large images of common formats into more compact, web-friendly JPEG, PNG, WebP, GIF and AVIF images of various sizes with the ability to further enhance and edit the output image. You can change the width and height, adjust, select the position. Transforms the image using: brightness, saturation, hue, luminosity, rotation, reflection, blur, sharpness, median, negation and normalization.","Image Converter (server side) - reduction and conversion of images with the possibility of corrections.","A powerful server plugin that allows you to convert large images of common formats into more compact, web-friendly JPEG, PNG, WebP, GIF and AVIF images of various sizes with the ability to further enhance and edit the output image."
+"Data (things) , Productivity , Technical , AI","https://plugin-preview-7.bubbleapps.io/version-test/jsonrepair","Repair invalid JSON documents.
+This is a plugin designed to fix most of the most common errors in JSON documents that lead to undefined errors, such as:
+SyntaxError: JSON.parse: unexpected symbol at line 2 column 18 of the JSON data.
+The plugin works both on the client side and on the server side.
+
+Features:
+- The following issues can be fixed:
+- Add missing quotes around keys
+- Add missing escape characters
+- Add missing commas
+- Add missing closing brackets
+- Repair truncated JSON
+- Replace single quotes with double quotes
+- Replace special quote characters like ‚Äú...‚Äù with regular double quotes
+- Replace special white space characters with regular spaces
+- Replace Python constants None, True, and False with null, true, and false
+- Strip trailing commas
+- Strip comments like /* ... */ and // ...
+- Strip fenced code blocks like  ```json and ```
+- Strip ellipsis in arrays and objects like [1, 2, 3, ...]
+- Strip JSONP notation like callback({ ... })
+- Strip escape characters from an escaped string like {\""stringified\"": \""content\""}
+- Strip MongoDB data types like NumberLong(2) and ISODate(""2012-12-19T06:01:17.171Z"")
+- Concatenate strings like ""long text"" + ""more text on next line""
+- Turn newline delimited JSON into a valid JSON array, for example:
+{ ""id"": 1, ""name"": ""John"" }
+{ ""id"": 2, ""name"": ""Sarah"" }","https://bubble.io/page?id=plugin-preview-7&test_plugin=1752748575200x488553808237428740_current&tab=Design&name=jsonrepair&type=page&elements=bTHJO","Client: Place the ""repair_client"" element on the page. , In the workflow, use an event (e.g. clicking on the element) to trigger the ""repair_client"" action. , Pass JSON to ""repair_client"" to check and repair it if possible (JSON field). , Once the JSON code is corrected, the ""repair_complete"" trigger will fire and the corrected JSON code will be written to the ""repaired"" state. , Server: Place in the workflow. , Use the ""repair_server"" action. , Pass JSON to ""repair_client"" to check and repair it if possible (JSON field). , Once the JSON code is corrected, you can get the corrected JSON code as a result of the previous step (e.g. the result of step 1 (repair_server)'s repaired).","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1753035604013x542852162962625700/json.png","https://bubble.io/plugin/json-repair-1752748575200x488553808237428740","JSON repair","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1753035611677x534124787297276540/json.png","5","15","JSON-repair fixes invalid JSON documents.
+This is a plugin designed to fix most of the most common errors in JSON documents that lead to undefined errors, such as:
+SyntaxError: JSON.parse: unexpected symbol at line 2 column 18 of the JSON data.
+The plugin works both on the client side and on the server side.","Repair invalid JSON documents.","JSON-repair fixes invalid JSON documents."
+"Input Forms , Data (things) , Containers , Small Business , Technical , Productivity","https://plugin-preview-7.bubbleapps.io/version-test/select_dropdown","""Advanced Select Dropdown"" is an advanced, lightweight, and feature-rich select dropdown library for modern web applications.
+Whether you're building a simple contact form or a complex enterprise application, ""Advanced Select Dropdown"" delivers the performance, flexibility, and user experience your project demands.
+
+The ""Advanced Select Dropdown"" plugin is based on the slim-select library.
+
+Features:
+SlimSelect stands out with its comprehensive feature set, exceptional performance, and developer-friendly API.
+
+- Single Select
+- Multiple Select
+- User Addable Options
+- Html Options
+- Settable Data
+- Callback Events
+- Placeholders
+- Label Support
+- Advanced Search
+- Disable Options
+- Custom Css Style
+- Custom Color Scheme
+- Style Inheritance
+- Clean Animations
+- And.. many other features :)
+
+Key Benefits:
+""Advanced Select Dropdown"" is designed with modern web development in mind, offering significant advantages over traditional select elements and other dropdown libraries.
+
+Lightweight & Fast
+At just a few kilobytes, ""Advanced Select Dropdown"" delivers exceptional performance without compromising on features.
+
+Accessibility First
+Full ARIA support, keyboard navigation, and screen reader compatibility ensure your dropdowns are accessible to all users. Meets WCAG guidelines.
+
+Highly Customizable
+Customize every aspect of your dropdowns with CSS. Adapts to your design system and requirements.
+
+Developer Friendly
+Comprehensive documentation and a clean API make ""Advanced Select Dropdown"" easy to integrate and maintain.
+
+
+
+Perfect for every use case:
+SlimSelect is versatile enough to handle any dropdown requirement, from simple contact forms to complex enterprise applications.
+
+- Contact Forms & Surveys: Clean, professional dropdowns that enhance user experience
+- E-commerce Platforms: Product filters, category selection, and checkout forms
+- Admin Dashboards: Data filtering, user management, and configuration panels
+- Content Management: Category selection, tag management, and content organization
+- Search & Discovery: Location pickers, service selection, and advanced filtering","https://bubble.io/page?id=plugin-preview-7&tab=Design&name=select_dropdown&type=page","Install the plugin. Place the ""Select Dropdown"" from elements to wherever part you need. , Connect data either the standard way using the ""Type of content,"" or you can use an alternative data connection method without using the ""Content Type."" This will also allow you to use static Choices. , For more details, check out the examples on the demo page.","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1775742392981x108710967717470690/Group%202548.png","https://bubble.io/plugin/advanced-select-dropdown-1769476186784x533903842074165250","Advanced Select Dropdown","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1775742399320x380586711932046700/Group%202548.png","5","30","""Advanced Select Dropdown"" is an advanced, lightweight, and feature-rich select dropdown library for modern web applications.
+Whether you're building a simple contact form or a complex enterprise application, ""Advanced Select Dropdown"" delivers the performance, flexibility, and user experience your project demands.","An advanced, lightweight, and feature-rich select dropdown library for modern web applications.","""Advanced Select Dropdown"" is an advanced, lightweight, and feature-rich select dropdown library for modern web applications."
+"Media , Technical , Video","https://plugin-preview-7.bubbleapps.io/version-test/video_player","Advanced Video Player - easily customizable and beautiful player with many settings, events and methods. Supports HTML5 (video/audio), YouTube, and Vimeo formats. Developed using the Plyr.js library.
+Features
+HTML Video & Audio, YouTube & Vimeo - support for the major formats
+Accessible - full support for VTT captions and screen readers
+Customizable - make the player look how you want with the markup you want
+Responsive - works with any screen size
+API - toggle playback, volume, seeking, and more through a standardized API
+Events - no messing around with Vimeo and YouTube APIs, all events are standardized across formats
+Fullscreen - supports native fullscreen with fallback to ""full window"" modes
+Shortcuts - supports keyboard shortcuts
+Picture-in-Picture - supports picture-in-picture mode
+Playsinline - supports the playsinline attribute
+Speed controls - adjust speed on the fly
+Multiple captions - support for multiple caption tracks
+i18n support - support for internationalization of controls
+Sticky mode - a player hidden outside the visible area is replaced by a miniature player pinned to a specific location.
+and much more
+
+","https://plugin-preview-7.bubbleapps.io/version-test/video_player","Install the plugin. Place the ""VideoPlayer"" from elements to wherever part you need. , Insert a video using the src field. In the simplest case, simply enter the video URL. (This could be a link to HTML5 video/audio, YouTube or Vimeo) , Make additional adjustments if necessary.","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1775742666410x758857513553364600/Group%202545.png","https://bubble.io/plugin/advanced-video-player-1773700832464x948838658084700200","Advanced Video Player","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1775742659061x979595537261938000/Group%202545.png","5","30","Advanced Video Player - easily customizable and beautiful player with many settings, events and methods. Supports HTML5 (video/audio), YouTube, and Vimeo formats. Developed using the Plyr.js library.","Advanced Video Player - easily customizable and beautiful player with many settings, events and methods.","Advanced Video Player - supports HTML5 (video/audio), YouTube, and Vimeo formats."
+"Containers , Image , Media , Technical , Video","https://plugin-sets.bubbleapps.io/version-test/image_plugin_set_10_in_1","A set of 10 image plugins for the price of one.
+
+These plugins are designed for image viewing, image galleries, sliders, lightboxes, parallax effects, converting page elements into images, and simply creating beautiful visual effects.
+
+Detailed information, demos, and installation instructions can be found on each plugin's demo page.","https://bubble.io/page?id=plugin-sets&tab=Design&name=image_plugin_set_10_in_1&type=page","See the installation steps on the demo pages for each plugin.","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1781636212124x110565020955115440/plugin%20icon.png","https://bubble.io/plugin/image-plugin-set-10-in-1-1777466053985x467124662102655000","Image Plugin Set (10 in 1)","//ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1781636219959x475930751046865540/plugin%20icon.png","7","40","A set of 10 image plugins for the price of one.
+
+These plugins are designed for image viewing, image galleries, sliders, lightboxes, parallax effects, converting page elements into images, and simply creating beautiful visual effects.","A set of 10 image plugins for the price of one.
+
+These plugins are designed for image viewing, image galleries, sliders, lightboxes, parallax effects, converting page elements into images, and simply creating beautiful visual effects.","A set of 10 image plugins for the price of one.
+
+These plugins are designed for image viewing, image galleries, sliders, lightboxes, parallax effects, converting page elements into images, and simply creating beautiful visual effects.
+
+Detailed information, demos, and installation instructions can be found on each plugin's demo page."
