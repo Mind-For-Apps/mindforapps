@@ -51,14 +51,14 @@ export default function ServicesPage() {
             <div className="flex flex-wrap items-center justify-center gap-4 mt-5">
               <BookConsultationButton
                 // className={`flex h-18.75 min-w-55 max-w-100 items-center justify-center rounded-[20px] bg-black px-8 text-[25px] font-medium text-white transition-colors max-[805px]:text-[22px] ${buttonHoverGradient}`}
-                className={`flex h-18.75 w-100 max-[410px]:w-[350px] max-[360px]:w-[300px] items-center justify-center rounded-[20px] bg-black px-8 text-[25px] font-medium text-white transition-colors max-[805px]:text-[22px] ${buttonHoverGradient}`}
+                className={`flex h-18.75 w-100 max-[410px]:w-87.5 max-[360px]:w-75 items-center justify-center rounded-[20px] bg-black px-8 text-[25px] font-medium text-white transition-colors max-[805px]:text-[22px] ${buttonHoverGradient}`}
               >
                 Book a Free Discovery Call
               </BookConsultationButton>
               <Link
                 href="/case-studies"
                 // className={`flex h-18.75 min-w-55 max-w-100 items-center justify-center rounded-[20px] border border-black px-8 text-[25px] font-medium text-black transition-colors hover:border-transparent hover:text-white max-[805px]:text-[22px] ${buttonHoverGradient}`}
-                className={`flex h-18.75 w-100 max-[410px]:w-[350px] max-[360px]:w-[300px] items-center justify-center rounded-[20px] border border-black px-8 text-[25px] font-medium text-black transition-colors hover:border-transparent hover:text-white max-[805px]:text-[22px] ${buttonHoverGradient}`}
+                className={`flex h-18.75 w-100 max-[410px]:w-87.5 max-[360px]:w-75 items-center justify-center rounded-[20px] border border-black px-8 text-[25px] font-medium text-black transition-colors hover:border-transparent hover:text-white max-[805px]:text-[22px] ${buttonHoverGradient}`}
               >
                 View Our Work
               </Link>
@@ -86,7 +86,7 @@ export default function ServicesPage() {
 
       <ServicesActiveProvider>
         <div className="relative z-10 mx-auto -mt-25 grid max-w-300 grid-cols-1 gap-8 px-6 text-left sm:px-10 lg:grid-cols-[282px_1fr] lg:gap-12 lg:px-0 lg:items-start">
-          <div className="lg:sticky lg:top-8">
+          <div className="lg:sticky lg:top-5">
             <ServicesSidebar />
           </div>
           <ServicesContent />

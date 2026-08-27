@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,6 +22,13 @@ type CoreServiceItem = {
   image: string;
   imageWidth: number;
   imageHeight: number;
+  caseStudies?: {
+    image: string;
+    logo: string;
+    logoWidth: number;
+    logoHeight: number;
+    href: string;
+  }[];
 };
 
 type AddOnItem = {
@@ -69,6 +76,22 @@ const CORE_SERVICES: CoreServiceItem[] = [
     image: "/images/services/graphics/product-strategy.png",
     imageWidth: 1021,
     imageHeight: 538,
+    caseStudies: [
+      {
+        image: "/images/services/case-studies/dewie.png",
+        logo: "/images/services/case-studies/dewie_logo.png",
+        logoWidth: 90,
+        logoHeight: 28,
+        href: "/case-studies",
+      },
+      {
+        image: "/images/services/case-studies/poesea.png",
+        logo: "/images/services/case-studies/poesea_logo.png",
+        logoWidth: 118,
+        logoHeight: 32,
+        href: "/case-studies",
+      },
+    ],
   },
   {
     id: "ux-ui-design",
@@ -282,7 +305,7 @@ const SECTIONS = [
 
 function TagPill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-full bg-[#e9e9e9] px-4 py-2 text-sm font-medium text-black">
+    <span className="rounded-full bg-[#e9e9e9] px-4 py-1.5 text-sm font-medium text-black">
       {children}
     </span>
   );
@@ -290,7 +313,7 @@ function TagPill({ children }: { children: React.ReactNode }) {
 
 function FeaturePill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-full bg-[#dde3fb] px-5 py-2.5 text-sm font-medium text-[#2b3b8f]">
+    <span className="rounded-full bg-[#dde3fb] px-5 py-1.5 text-sm font-medium text-[#2b3b8f]">
       {children}
     </span>
   );
@@ -298,7 +321,7 @@ function FeaturePill({ children }: { children: React.ReactNode }) {
 
 function IncludedPill({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-full bg-[#f5f5f5] px-6 py-4 text-base text-black">
+    <div className="rounded-full bg-[#f5f5f5] px-6 py-1.25 text-xs font-medium text-black">
       {children}
     </div>
   );
@@ -306,7 +329,7 @@ function IncludedPill({ children }: { children: React.ReactNode }) {
 
 function DeliverableBox({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex-1 rounded-2xl bg-[#f5f5f5] p-6 text-base text-black">
+    <div className="flex-1 rounded-2xl bg-[#f5f5f5] p-4 text-sm text-black">
       {children}
     </div>
   );
@@ -316,7 +339,7 @@ function CoreServiceCard({ item }: { item: CoreServiceItem }) {
   return (
     <div
       id={item.id}
-      className="flex scroll-mt-8 flex-col gap-8 rounded-[30px] bg-white p-6 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.06)] sm:p-10"
+      className="flex scroll-mt-8 flex-col gap-8 rounded-[20px] bg-white p-6 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.06)] sm:p-10"
     >
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
         <Image
@@ -338,7 +361,7 @@ function CoreServiceCard({ item }: { item: CoreServiceItem }) {
         ))}
       </div>
 
-      <p className="text-base leading-relaxed text-black/80">{item.description}</p>
+      <p className="text-sm leading-relaxed text-black/80">{item.description}</p>
 
       <div className="flex flex-col gap-4">
         <p className="text-base font-medium text-black/50">Features</p>
@@ -351,7 +374,7 @@ function CoreServiceCard({ item }: { item: CoreServiceItem }) {
 
       <div className="flex flex-col gap-4">
         <p className="text-2xl font-bold text-black">What&rsquo;s included</p>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-y-2 gap-x-5 sm:grid-cols-2">
           {item.whatsIncluded.map((line) => (
             <IncludedPill key={line}>{line}</IncludedPill>
           ))}
@@ -369,13 +392,13 @@ function CoreServiceCard({ item }: { item: CoreServiceItem }) {
 
       <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-col gap-2">
-          <p className="text-base text-black">Typical duration:</p>
-          <span className="flex w-fit items-center gap-2 rounded-full border border-brand-accent px-6 py-3 text-lg font-bold text-brand-accent">
+          <p className="text-sm font-medium text-black">Typical duration:</p>
+          <span className="flex flex-col w-fit items-center gap-2 rounded-[15px] border border-brand-accent px-6 py-3 text-normal font-semibold text-brand-accent">
             → {item.duration}
-          </span>
           {item.durationNote && (
             <p className="max-w-125 text-sm text-black/60">{item.durationNote}</p>
           )}
+          </span>
         </div>
         <Image
           src={item.image}
@@ -385,6 +408,42 @@ function CoreServiceCard({ item }: { item: CoreServiceItem }) {
           className="h-auto w-full max-w-125 rounded-2xl"
         />
       </div>
+
+      {item.caseStudies && (
+        <div className="flex flex-col gap-4">
+          <p className="text-2xl font-bold text-black">Case Studies</p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {item.caseStudies.map((cs) => (
+              <Link
+                key={cs.href + cs.logo}
+                href={cs.href}
+                className="flex items-center justify-between gap-4 rounded-[20px] bg-[#dde3fb] p-3 pr-6 transition-colors hover:bg-[#cfd7f9]"
+              >
+                <div className="flex items-center gap-4">
+                  <Image
+                    src={cs.image}
+                    alt=""
+                    width={64}
+                    height={64}
+                    className="size-16 shrink-0 rounded-xl object-cover"
+                  />
+                  <Image
+                    src={cs.logo}
+                    alt=""
+                    width={cs.logoWidth}
+                    height={cs.logoHeight}
+                    className="h-8 w-auto object-contain"
+                  />
+                </div>
+                {/* <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-black"> */}
+                <span className="flex size-9 shrink-0 items-center justify-center">
+                  <Image src="/images/services/case-studies/arrow.svg" alt="" width={14} height={15} />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -393,7 +452,7 @@ function AddOnCard({ item }: { item: AddOnItem }) {
   return (
     <div
       id={item.id}
-      className="flex scroll-mt-8 flex-col gap-8 rounded-[30px] bg-white p-6 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.06)] sm:p-10"
+      className="flex scroll-mt-8 flex-col gap-8 rounded-[20px] bg-white p-6 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.06)] sm:p-10"
     >
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
         <div className="flex h-22.5 w-17.5 shrink-0 items-center justify-center rounded-[4px] border border-black/10 bg-white p-3">
@@ -411,7 +470,7 @@ function AddOnCard({ item }: { item: AddOnItem }) {
         ))}
       </div>
 
-      <p className="text-base leading-relaxed text-black/80">{item.description}</p>
+      <p className="text-sm leading-relaxed text-black/80">{item.description}</p>
 
       <div className="flex flex-col gap-4">
         <p className="text-base font-medium text-black/50">Features</p>
@@ -424,7 +483,7 @@ function AddOnCard({ item }: { item: AddOnItem }) {
 
       <div className="flex flex-col gap-4">
         <p className="text-2xl font-bold text-black">What&rsquo;s included</p>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-y-2 gap-x-5 sm:grid-cols-2">
           {item.whatsIncluded.map((line) => (
             <IncludedPill key={line}>{line}</IncludedPill>
           ))}
@@ -448,11 +507,11 @@ function AddOnCard({ item }: { item: AddOnItem }) {
           className="flex items-center justify-between gap-4 rounded-[25px] bg-[#dde3fb] p-8 transition-colors hover:bg-[#cfd7f9]"
         >
           <div className="flex flex-col gap-1">
-            <p className="text-2xl font-bold text-black">{item.cta.title}</p>
-            <p className="text-base text-black/70">{item.cta.subtitle}</p>
+            <p className="text-[25px] font-semibold text-black">{item.cta.title}</p>
+            <p className="text-lg text-black/70">{item.cta.subtitle}</p>
           </div>
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-black text-lg">
-            →
+          <span className="flex size-9 shrink-0 items-center justify-center">
+            <Image src="/images/services/arrow_2.svg" alt="" width={19} height={35} />
           </span>
         </Link>
       )}
@@ -484,7 +543,7 @@ function HowWeWorkTogetherBlock() {
   return (
     <div
       id="how-together"
-      className="flex scroll-mt-8 flex-col gap-8 rounded-[30px] bg-white p-6 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.06)] sm:p-10"
+      className="flex scroll-mt-8 flex-col gap-8 rounded-[20px] bg-white p-6 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.06)] sm:p-10"
     >
       <div className="flex flex-col items-center gap-2 text-center">
         <h3 className="text-3xl font-bold text-black">How Our Services Work Together</h3>
@@ -613,13 +672,13 @@ function TrustProofBlock() {
         className="flex w-full items-center justify-between gap-4 rounded-[25px] bg-[#dde3fb] p-8 text-left transition-colors hover:bg-[#cfd7f9]"
       >
         <div className="flex flex-col gap-1">
-          <p className="text-2xl font-bold text-black">Case Studies</p>
-          <p className="text-base text-black/70">
+          <p className="text-[25px] font-semibold text-black">Case Studies</p>
+          <p className="text-lg text-black/70">
             Real case studies showcasing no-code success stories.
           </p>
         </div>
-        <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-black text-lg">
-          →
+        <span className="flex size-9 shrink-0 items-center justify-center">
+          <Image src="/images/services/arrow_2.svg" alt="" width={19} height={35} />
         </span>
       </Link>
     </div>
@@ -655,8 +714,8 @@ export function ServicesSidebar() {
   const { active, setActive } = useServicesActive();
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-2 rounded-[30px] bg-white p-4 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.08)]">
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-2 rounded-[20px] bg-white p-3 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.08)]">
         {SECTIONS.map((section) => {
           const isOpen = active === section.id;
           return (
@@ -664,8 +723,10 @@ export function ServicesSidebar() {
               <button
                 type="button"
                 onClick={() => setActive(section.id)}
-                className={`w-full rounded-full px-6 py-4 text-left text-xl font-bold transition-colors ${
-                  isOpen ? `${gradientBg} text-white` : "bg-[#dde3fb] text-black"
+                className={`flex h-12.5 w-full items-center rounded-[30px] px-6 text-left text-[18px] font-medium transition-colors ${
+                  isOpen
+                    ? `${gradientBg} text-white`
+                    : `bg-[#d9e1ff] text-black hover:${gradientBg} hover:text-white`
                 }`}
               >
                 {section.label}
@@ -676,6 +737,12 @@ export function ServicesSidebar() {
                     <li key={item.id}>
                       <a
                         href={`#${item.id}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          document
+                            .getElementById(item.id)
+                            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }}
                         className="block px-6 py-2 text-black transition-colors hover:text-brand-accent"
                       >
                         {item.title}
@@ -693,21 +760,19 @@ export function ServicesSidebar() {
       </div>
 
       <div className={`flex flex-col gap-6 rounded-[30px] ${gradientBg} p-5 text-white`}>
-        <p className="text-2xl leading-tight">
+        <p className="text-[23px] leading-[1.3]">
           One Complete
           <br />
-          <span className="font-bold">Solution</span>
+          <span className="text-[30px] font-semibold">Solution</span>
           <br />
           for All Your Industry Needs
         </p>
         <Link
           href="/solutions"
-          className="flex w-fit items-center gap-3 rounded-full bg-white/15 py-2 pr-2 pl-5 text-lg font-medium transition-colors hover:bg-white/25"
+          className="flex w-fit items-center gap-3 self-end transition-opacity hover:opacity-80"
         >
-          Explore
-          <span className="flex size-9 items-center justify-center rounded-full bg-white text-[#413ECF]">
-            ↗
-          </span>
+          <span className="text-lg font-bold">Explore</span>
+          <Image src="/images/services/arrow.svg" alt="" width={50} height={50} />
         </Link>
       </div>
     </div>
@@ -716,6 +781,18 @@ export function ServicesSidebar() {
 
 export function ServicesContent() {
   const { active } = useServicesActive();
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    const firstItemId = SECTIONS.find((section) => section.id === active)?.items[0]?.id;
+    if (firstItemId) {
+      document.getElementById(firstItemId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [active]);
 
   return (
     <div className="flex flex-col gap-8">
