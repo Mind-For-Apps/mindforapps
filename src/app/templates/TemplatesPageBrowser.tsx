@@ -53,7 +53,7 @@ function FilterPill({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
+      className={`rounded-full border px-2.75 py-1 text-sm font-medium transition-colors ${
         active
           ? "border-brand-accent bg-brand-accent text-white"
           : "border-black/15 bg-white text-black hover:border-black/40"
@@ -95,7 +95,8 @@ export function TemplatesPageBrowser({
     setPriceLabels([]);
   }
 
-  const visibleTags = showAllTags ? featureTags : featureTags.slice(0, 8);
+  const visibleTags = showAllTags ? featureTags : featureTags.slice(0, 2);
+  const hiddenTagsCount = featureTags.length - 2;
 
   const filtered = useMemo(() => {
     let result = templates.filter((t) => {
@@ -210,9 +211,10 @@ export function TemplatesPageBrowser({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[320px_1fr]">
         {showFilters && (
-          <aside className="flex flex-col gap-6 rounded-[25px] bg-brand-surface p-6 lg:sticky lg:top-24 lg:self-start">
+          // <aside className="flex flex-col gap-6 rounded-[25px] bg-brand-surface p-6 lg:sticky lg:top-24 lg:self-start">
+          <aside className="flex flex-col gap-6 rounded-[15px] bg-[#e9e9e9] p-5 lg:top-24 lg:self-start shadow-[0px_2px_8px_0px_rgba(0,0,0,0.12)]">
             <div className="flex items-center justify-between">
               <p className="text-lg font-bold text-black">Filters</p>
               <div className="flex items-center gap-4 text-sm font-medium">
@@ -235,7 +237,7 @@ export function TemplatesPageBrowser({
                 {categories.map((c) => (
                   <FilterPill
                     key={c.id}
-                    label={c.title}
+                    label={c.shortTitle}
                     active={categoryIds.includes(c.id)}
                     onClick={() => setCategoryIds((prev) => toggle(prev, c.id))}
                   />
@@ -287,14 +289,19 @@ export function TemplatesPageBrowser({
                       }
                     />
                   ))}
+                  {!showAllTags && hiddenTagsCount > 0 && (
+                    <span className="flex items-center rounded-full bg-brand-accent px-2.75 py-1 text-sm font-medium text-white">
+                      +{hiddenTagsCount}
+                    </span>
+                  )}
                 </div>
-                {featureTags.length > 8 && (
+                {featureTags.length > 2 && (
                   <button
                     type="button"
                     onClick={() => setShowAllTags((s) => !s)}
                     className="self-start text-sm font-medium text-brand-accent hover:underline"
                   >
-                    {showAllTags ? "Show less" : "See all"}
+                    {showAllTags ? "Hide" : "See all"}
                   </button>
                 )}
               </div>
@@ -335,7 +342,7 @@ export function TemplatesPageBrowser({
                 <div
                   key={template.id}
                   // className="flex flex-col overflow-hidden rounded-[25px] bg-white"
-                  className="flex flex-col overflow-hidden bg-white"
+                  className="flex flex-col overflow-hidden bg-white rounded-[15px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.12)]"
                 >
                   <TemplateGalleryImage
                     images={template.images}

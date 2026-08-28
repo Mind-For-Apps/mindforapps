@@ -347,7 +347,7 @@ function CoreServiceCard({ item }: { item: CoreServiceItem }) {
           alt=""
           width={70}
           height={90}
-          className="h-22.5 w-17.5 shrink-0 rounded-[4px]"
+          className="h-22.5 w-17.5 shrink-0 rounded-sm"
         />
         <div className="flex flex-col gap-2">
           <h3 className="text-3xl font-bold text-black">{item.title}</h3>
@@ -455,7 +455,7 @@ function AddOnCard({ item }: { item: AddOnItem }) {
       className="flex scroll-mt-8 flex-col gap-8 rounded-[20px] bg-white p-6 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.06)] sm:p-10"
     >
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-        <div className="flex h-22.5 w-17.5 shrink-0 items-center justify-center rounded-[4px] border border-black/10 bg-white p-3">
+        <div className="flex h-22.5 w-17.5 shrink-0 items-center justify-center rounded-sm border border-black/10 bg-white p-3">
           <Image src={item.icon} alt="" width={70} height={63} className="h-auto max-h-12 w-full object-contain" />
         </div>
         <div className="flex flex-col gap-2">
