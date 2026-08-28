@@ -77,6 +77,7 @@ export function TemplatesPageBrowser({
   const [sort, setSort] = useState<SortOption>("Most popular");
   const [sortOpen, setSortOpen] = useState(false);
   const [showFilters, setShowFilters] = useState(true);
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [showAllTags, setShowAllTags] = useState(false);
 
   const [categoryIds, setCategoryIds] = useState<string[]>([]);
@@ -97,6 +98,13 @@ export function TemplatesPageBrowser({
 
   const visibleTags = showAllTags ? featureTags : featureTags.slice(0, 2);
   const hiddenTagsCount = featureTags.length - 2;
+
+  const activeFilterCount =
+    categoryIds.length +
+    platformTypes.length +
+    userRoles.length +
+    tagTitles.length +
+    priceLabels.length;
 
   const filtered = useMemo(() => {
     let result = templates.filter((t) => {
@@ -209,22 +217,51 @@ export function TemplatesPageBrowser({
             </div>
           )}
         </div>
+
+        <button
+          type="button"
+          onClick={() => setMobileFiltersOpen((s) => !s)}
+          aria-pressed={mobileFiltersOpen}
+          className="relative flex shrink-0 items-center justify-center rounded-full border border-black/15 bg-white p-3 lg:hidden"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M4 6h16M7 12h10M10 18h4" strokeLinecap="round" />
+          </svg>
+          {activeFilterCount > 0 && (
+            <span className="absolute -right-1.5 -top-1.5 flex size-5 items-center justify-center rounded-full bg-black text-[11px] font-semibold text-white">
+              {activeFilterCount}
+            </span>
+          )}
+        </button>
       </div>
 
       <div className={`grid grid-cols-1 gap-8 ${showFilters ? "lg:grid-cols-[320px_1fr]" : ""}`}>
-        {showFilters && (
-          // <aside className="flex flex-col gap-6 rounded-[25px] bg-brand-surface p-6 lg:sticky lg:top-24 lg:self-start">
-          <aside className="flex flex-col gap-6 rounded-[15px] bg-[#e9e9e9] p-5 lg:top-24 lg:self-start shadow-[0px_2px_8px_0px_rgba(0,0,0,0.12)]">
+        {/* <aside className="flex flex-col gap-6 rounded-[25px] bg-brand-surface p-6 lg:sticky lg:top-24 lg:self-start"> */}
+        <aside
+          className={`${mobileFiltersOpen ? "flex" : "hidden"} flex-col gap-6 rounded-[15px] bg-[#e9e9e9] p-5 shadow-[0px_2px_8px_0px_rgba(0,0,0,0.12)] lg:top-24 lg:self-start ${
+            showFilters ? "lg:flex" : "lg:hidden"
+          }`}
+        >
             <div className="flex items-center justify-between">
-              <p className="text-lg font-bold text-black">Filters</p>
+              <div className="flex items-center gap-2">
+                <p className="text-lg font-bold text-black">Filters</p>
+                {activeFilterCount > 0 && (
+                  <span className="flex size-6 items-center justify-center rounded-full bg-black text-xs font-semibold text-white">
+                    {activeFilterCount}
+                  </span>
+                )}
+              </div>
               <div className="flex items-center gap-4 text-sm font-medium">
                 <button type="button" onClick={reset} className="text-black/60 hover:text-black">
                   Reset
                 </button>
                 <button
                   type="button"
-                  onClick={() => setShowFilters(false)}
-                  className="text-black/60 hover:text-black"
+                  onClick={() => {
+                    setShowFilters(false);
+                    setMobileFiltersOpen(false);
+                  }}
+                  className="hidden text-black/60 hover:text-black lg:inline"
                 >
                   Hide
                 </button>
@@ -321,14 +358,13 @@ export function TemplatesPageBrowser({
               </div>
             </div>
           </aside>
-        )}
 
         <div className="flex flex-col gap-6">
           {!showFilters && (
             <button
               type="button"
               onClick={() => setShowFilters(true)}
-              className="self-start rounded-full border border-black/15 px-5 py-2 text-sm font-medium text-white bg-black hover:border-black/40"
+              className="hidden self-start rounded-full border border-black/15 bg-black px-5 py-2 text-sm font-medium text-white hover:border-black/40 lg:inline-flex"
             >
               Show filters
             </button>

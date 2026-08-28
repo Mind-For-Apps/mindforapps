@@ -157,51 +157,51 @@ export function PluginsBrowser({
       <div
         className={`grid grid-cols-1 gap-8 ${showFilters ? "lg:grid-cols-[280px_1fr]" : ""}`}
       >
-        {showFilters && (
-          <aside
-            className={`${mobileFiltersOpen ? "flex" : "hidden"} flex-col gap-6 rounded-[25px] bg-[#e9e9e9] p-6 lg:flex lg:self-start`}
-          >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <p className="text-lg font-bold text-black">Filters</p>
-                {activeFilterCount > 0 && (
-                  <span className="flex size-6 items-center justify-center rounded-full bg-black text-xs font-semibold text-white">
-                    {activeFilterCount}
-                  </span>
-                )}
-              </div>
-              <div className="flex items-center gap-4 text-sm font-medium">
-                <button type="button" onClick={reset} className="text-black/60 hover:text-black">
-                  Reset
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setShowFilters(false);
-                    setMobileFiltersOpen(false);
-                  }}
-                  className="hidden text-black/60 hover:text-black lg:inline"
-                >
-                  Hide
-                </button>
-              </div>
+        <aside
+          className={`${mobileFiltersOpen ? "flex" : "hidden"} flex-col gap-6 rounded-[25px] bg-[#e9e9e9] p-6 lg:self-start ${
+            showFilters ? "lg:flex" : "lg:hidden"
+          }`}
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <p className="text-lg font-bold text-black">Filters</p>
+              {activeFilterCount > 0 && (
+                <span className="flex size-6 items-center justify-center rounded-full bg-black text-xs font-semibold text-white">
+                  {activeFilterCount}
+                </span>
+              )}
             </div>
+            <div className="flex items-center gap-4 text-sm font-medium">
+              <button type="button" onClick={reset} className="text-black/60 hover:text-black">
+                Reset
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowFilters(false);
+                  setMobileFiltersOpen(false);
+                }}
+                className="hidden text-black/60 hover:text-black lg:inline"
+              >
+                Hide
+              </button>
+            </div>
+          </div>
 
-            <div className="flex flex-col gap-3 border-t border-black/10 pt-4">
-              <p className="text-sm font-semibold text-black">Category</p>
-              <div className="flex flex-wrap gap-2">
-                {categories.map((c) => (
-                  <FilterPill
-                    key={c.id}
-                    label={c.title}
-                    active={categoryIds.includes(c.id)}
-                    onClick={() => setCategoryIds((prev) => toggle(prev, c.id))}
-                  />
-                ))}
-              </div>
+          <div className="flex flex-col gap-3 border-t border-black/10 pt-4">
+            <p className="text-sm font-semibold text-black">Category</p>
+            <div className="flex flex-wrap gap-2">
+              {categories.map((c) => (
+                <FilterPill
+                  key={c.id}
+                  label={c.title}
+                  active={categoryIds.includes(c.id)}
+                  onClick={() => setCategoryIds((prev) => toggle(prev, c.id))}
+                />
+              ))}
             </div>
-          </aside>
-        )}
+          </div>
+        </aside>
 
         <div className="flex flex-col gap-6">
           {!showFilters && (
