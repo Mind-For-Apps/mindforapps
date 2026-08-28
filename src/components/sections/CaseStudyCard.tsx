@@ -10,14 +10,15 @@ export function CaseStudyCard({
   priority?: boolean;
 }) {
   return (
-    // <div className="flex w-full flex-col overflow-hidden lg:h-180 lg:flex-row">
-    <div className="
-    flex 
-    w-full 
-    flex-col 
-    overflow-hidden 
+    <Link
+      href={`/case-studies/${slide.slug}`}
+      className="
+    flex
+    w-full
+    flex-col
+    overflow-hidden
     lg:flex-row
-    lg:h-180 
+    lg:h-180
 
     ">
       <div className="
@@ -137,12 +138,6 @@ export function CaseStudyCard({
           <p className="text-lg text-black">{slide.hours}</p>
           <p className="text-lg text-black">{slide.teamSize}</p>
         </div>
-        {/* <Link
-          href={`/case-studies/${slide.slug}`}
-          className="flex h-14 w-full items-center justify-center rounded-full border border-black text-sm font-medium uppercase tracking-widest text-black transition-colors hover:bg-black hover:text-white sm:w-67.5"
-        >
-          View Case Study
-        </Link> */}
       </div>
       {slide.mainImageUrl && (
         <div className="relative hidden aspect-405/532 lg:block lg:h-full lg:w-auto">
@@ -168,6 +163,6 @@ export function CaseStudyCard({
           />
         </div>
       )}
-    </div>
+    </Link>
   );
 }

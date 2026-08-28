@@ -17,14 +17,13 @@ export function ImagesSlider({ images }: { images: string[] }) {
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
       }}
-      slidesPerView={2}
-      spaceBetween={20}
-      // centeredSlides={true}
+      slidesPerView={1.1}
+      spaceBetween={12}
       breakpoints={{
-        1000: { slidesPerView: 2.7 },
-        1500: { slidesPerView: 3 },
+        640: { slidesPerView: 1.8, spaceBetween: 20 },
+        1000: { slidesPerView: 2.7, spaceBetween: 20 },
+        1500: { slidesPerView: 3, spaceBetween: 20 },
       }}
-      // className="w-full!"
       className="w-full! px-5!"
     >
       {images.map((url, i) => (
@@ -34,7 +33,7 @@ export function ImagesSlider({ images }: { images: string[] }) {
               src={url}
               alt=""
               fill
-              sizes="(min-width: 1500px) 33vw, (min-width: 1000px) 37vw, 50vw"
+              sizes="(min-width: 1500px) 33vw, (min-width: 1000px) 37vw, (min-width: 640px) 55vw, 90vw"
               className="object-cover"
               priority={i === 0}
             />

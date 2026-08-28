@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { getCaseStudyBySlug } from "@/lib/case-studies";
+import { ImagesSlider } from "@/components/ImagesSlider";
+import { ToolsSlider } from "@/components/ToolsSlider";
 import { BulletSection } from "./BulletSection";
 import { HighlightText } from "./HighlightText";
 
@@ -85,19 +87,23 @@ export default async function CaseStudyDetailPage({
             <div>
               <p className="text-sm text-white/40">Tools</p>
               <div className="mt-2 flex flex-wrap items-center gap-2">
-                {caseStudy.tools.map(
-                  (tool) =>
-                    tool.icon_url && (
-                      <Image
-                        key={tool.name}
-                        src={tool.icon_url}
-                        alt={tool.name}
-                        width={24}
-                        height={24}
-                        className="size-6 object-contain"
-                      />
-                    ),
-                )}
+                {caseStudy.tools
+                  .filter(
+                    (tool) => tool.name === "Figma" || tool.name === "Bubble.io",
+                  )
+                  .map(
+                    (tool) =>
+                      tool.icon_url && (
+                        <Image
+                          key={tool.name}
+                          src={tool.icon_url}
+                          alt={tool.name}
+                          width={24}
+                          height={24}
+                          className="size-6 object-contain"
+                        />
+                      ),
+                  )}
               </div>
             </div>
           )}
@@ -135,44 +141,8 @@ export default async function CaseStudyDetailPage({
         </section>
 
         {caseStudy.headerImages.length > 0 && (
-          <section className="bg-brand-surface px-6 py-10 sm:px-25">
-            <div className="mx-auto grid max-w-300 grid-cols-1 gap-4 sm:grid-cols-3">
-              {caseStudy.headerImages.map((url, i) => (
-                <div
-                  key={url}
-                  className="relative aspect-4/3 overflow-hidden rounded-2xl"
-                >
-                  <Image
-                    src={url}
-                    alt={`${caseStudy.title} screenshot ${i + 1}`}
-                    fill
-                    sizes="(min-width: 640px) 33vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {caseStudy.progressImages.length > 0 && (
-          <section className="bg-brand-surface px-6 pb-10 sm:px-25">
-            <div className="mx-auto grid max-w-300 grid-cols-1 gap-4 sm:grid-cols-3">
-              {caseStudy.progressImages.map((url, i) => (
-                <div
-                  key={url}
-                  className="relative aspect-4/3 overflow-hidden rounded-2xl"
-                >
-                  <Image
-                    src={url}
-                    alt={`${caseStudy.title} progress ${i + 1}`}
-                    fill
-                    sizes="(min-width: 640px) 33vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+          <section className="bg-brand-surface py-10">
+            <ImagesSlider images={caseStudy.headerImages} />
           </section>
         )}
 
@@ -183,7 +153,7 @@ export default async function CaseStudyDetailPage({
           caseStudy.clientGoal.length > 0 ||
           caseStudy.solution) && (
           <section className="bg-brand-surface px-6 py-16 sm:px-25">
-            <div className="mx-auto grid max-w-300 grid-cols-1 gap-10 lg:grid-cols-2">
+            <div className="mx-auto grid max-w-300 grid-cols-1 gap-10 lg:grid-cols-[1fr_2fr]">
               <div className="flex flex-col gap-4 lg:sticky lg:top-24 lg:self-start">
                 <h2 className="text-3xl font-bold text-black sm:text-[40px]">
                   Problem &amp; Context
@@ -211,23 +181,27 @@ export default async function CaseStudyDetailPage({
                   illustrationSrc="/images/case-study-detail/illustration-goal.svg"
                 />
                 {caseStudy.solution && (
-                  <div className="relative overflow-hidden rounded-2xl border-l-4 border-brand-accent bg-white px-6 py-8 sm:px-8">
-                    <div className="flex flex-col gap-3">
-                      <h3 className="text-2xl font-bold text-brand-accent sm:text-[32px]">
-                        Solution
-                      </h3>
-                      <span className="block h-1 w-10 rounded-full bg-brand-accent" />
-                      <p className="text-base text-black sm:text-lg">
+                  <div className="flex flex-col gap-6 rounded-3xl bg-[#e9e9e9] p-6 sm:p-8 xl:flex-row xl:items-center xl:justify-between">
+                    <div className="flex flex-1 flex-col gap-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-brand-accent sm:text-[32px]">
+                          Solution
+                        </h3>
+                        <span className="mt-2 block h-1 w-10 rounded-full bg-brand-accent" />
+                      </div>
+                      <p className="rounded-2xl bg-white px-6 py-4 text-base text-black">
                         {caseStudy.solution}
                       </p>
                     </div>
-                    <Image
-                      src="/images/case-study-detail/solution-target.avif"
-                      alt=""
-                      width={100}
-                      height={100}
-                      className="pointer-events-none absolute -bottom-4 -right-4 hidden opacity-90 xl:block"
-                    />
+                    <div className="relative hidden h-44 w-64 shrink-0 opacity-90 xl:block">
+                      <Image
+                        src="/images/case-study-detail/solution-target.avif"
+                        alt=""
+                        fill
+                        sizes="256px"
+                        className="pointer-events-none object-contain"
+                      />
+                    </div>
                   </div>
                 )}
               </div>
@@ -249,7 +223,7 @@ export default async function CaseStudyDetailPage({
             </div>
             <div className="grid w-full max-w-300 grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
               {caseStudy.webArchitecture.map((item) => (
-                <div key={item.label} className="flex flex-col items-center gap-4">
+                <div key={item.label} className="flex min-w-0 flex-col items-center gap-4">
                   <div className="flex size-16 items-center justify-center rounded-full bg-white/10">
                     {item.iconUrl && (
                       <Image
@@ -261,7 +235,9 @@ export default async function CaseStudyDetailPage({
                       />
                     )}
                   </div>
-                  <p className="text-sm text-white sm:text-base">{item.label}</p>
+                  <p className="w-full break-words text-sm text-white sm:text-base">
+                    {item.label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -284,7 +260,7 @@ export default async function CaseStudyDetailPage({
               {caseStudy.keyFeatures.map((feature) => (
                 <div
                   key={feature.label}
-                  className="flex flex-col items-start gap-10 rounded-2xl bg-white p-6 text-left"
+                  className="flex min-w-0 flex-col items-start gap-10 rounded-2xl bg-white p-6 text-left"
                 >
                   {feature.iconUrl ? (
                     <Image
@@ -297,12 +273,21 @@ export default async function CaseStudyDetailPage({
                   ) : (
                     <div className="size-8" />
                   )}
-                  <p className="text-lg font-semibold text-black">
+                  <p className="w-full text-lg font-semibold break-words text-black">
                     {feature.label}
                   </p>
                 </div>
               ))}
             </div>
+          </section>
+        )}
+
+        {caseStudy.progressImages.length > 0 && (
+          <section className="flex flex-col items-center gap-10 bg-brand-surface pt-16 pb-10 text-center">
+            <h2 className="text-3xl font-bold text-black sm:text-[40px]">
+              Design in Progress
+            </h2>
+            <ImagesSlider images={caseStudy.progressImages} />
           </section>
         )}
 
@@ -318,26 +303,8 @@ export default async function CaseStudyDetailPage({
                 </p>
               )}
             </div>
-            <div className="grid w-full max-w-225 grid-cols-2 gap-4 sm:grid-cols-4">
-              {caseStudy.tools.map((tool) => (
-                <div
-                  key={tool.name}
-                  className="flex flex-col items-center gap-4 rounded-2xl bg-[#e9e9e9] p-6"
-                >
-                  {tool.icon_url && (
-                    <Image
-                      src={tool.icon_url}
-                      alt=""
-                      width={48}
-                      height={48}
-                      className="size-12 object-contain"
-                    />
-                  )}
-                  <p className="rounded-lg bg-white px-4 py-2 text-sm font-medium text-black">
-                    {tool.name}
-                  </p>
-                </div>
-              ))}
+            <div className="w-full max-w-300">
+              <ToolsSlider tools={caseStudy.tools} />
             </div>
           </section>
         )}
@@ -460,7 +427,7 @@ export default async function CaseStudyDetailPage({
                 {caseStudy.teamInvolvement.map((item) => (
                   <div
                     key={item}
-                    className="flex items-center justify-center rounded-2xl bg-white px-6 py-10 text-center text-lg font-medium text-black"
+                    className="flex min-w-0 items-center justify-center break-words rounded-2xl bg-white px-6 py-10 text-center text-lg font-medium text-black"
                   >
                     {item}
                   </div>
@@ -479,7 +446,7 @@ export default async function CaseStudyDetailPage({
               {caseStudy.suitableFor.map((item) => (
                 <div
                   key={item}
-                  className="rounded-[30px] border border-black px-6 py-5 text-base font-medium text-black sm:text-lg"
+                  className="min-w-0 break-words rounded-[30px] border border-black px-6 py-5 text-base font-medium text-black sm:text-lg"
                 >
                   {item}
                 </div>
