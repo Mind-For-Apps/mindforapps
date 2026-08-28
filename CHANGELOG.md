@@ -4,6 +4,7 @@
 
 ### Changed
 - `next.config.ts`: `images.minimumCacheTTL` raised from the Next.js default (60s) to 604800 (1 week). Vercel's free-tier Image Optimization quota (5,000 transformations/month) was fully used up — traced to the 60s default TTL causing the same image at the same width to be re-transformed (and re-billed against the quota) roughly once a minute under normal traffic, rather than being served from cache. A long TTL is safe here specifically because `ImageUploadField.tsx` gives every uploaded image a fresh `crypto.randomUUID()` Storage path — replacing an image in the admin panel never reuses an old URL, so a stale cached transform can never be served for content that's actually changed. Started conservative at 1 week rather than jumping straight to Vercel's commonly-recommended 1-year value; can be raised further later if the quota is still tight.
+- `next.config.ts`: `images.deviceSizes` trimmed from the Next.js default (which includes 2048/3840) down to `[640, 750, 828, 1080, 1200, 1920]` — every page's content sits inside a `max-w-300` (1200px) container, so no responsive image on the site is ever rendered wider than ~1920px; the two largest default tiers were pure unused overhead, each one multiplying the number of distinct transformations generated per image.
 
 ## 2026-08-26 — New `/plugins` page (Bubble no-code plugin marketplace listings)
 
