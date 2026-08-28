@@ -53,7 +53,7 @@ function FilterPill({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+      className={`rounded-full border px-2.75 py-1 text-sm font-medium transition-colors ${
         active
           ? "border-brand-accent bg-brand-accent text-white"
           : "border-black/15 bg-white text-black hover:border-black/40"
@@ -77,7 +77,6 @@ export function TemplatesPageBrowser({
   const [sort, setSort] = useState<SortOption>("Most popular");
   const [sortOpen, setSortOpen] = useState(false);
   const [showFilters, setShowFilters] = useState(true);
-  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [showAllTags, setShowAllTags] = useState(false);
 
   const [categoryIds, setCategoryIds] = useState<string[]>([]);
@@ -96,14 +95,8 @@ export function TemplatesPageBrowser({
     setPriceLabels([]);
   }
 
-  const visibleTags = showAllTags ? featureTags : featureTags.slice(0, 8);
-
-  const activeFilterCount =
-    categoryIds.length +
-    platformTypes.length +
-    userRoles.length +
-    tagTitles.length +
-    priceLabels.length;
+  const visibleTags = showAllTags ? featureTags : featureTags.slice(0, 2);
+  const hiddenTagsCount = featureTags.length - 2;
 
   const filtered = useMemo(() => {
     let result = templates.filter((t) => {
@@ -185,84 +178,53 @@ export function TemplatesPageBrowser({
           />
         </div>
 
-        <div className="flex items-center gap-3">
-          <div className="relative shrink-0">
-            <button
-              type="button"
-              onClick={() => setSortOpen((s) => !s)}
-              className="flex items-center gap-2 rounded-full border border-black/15 bg-white px-6 py-3 text-sm font-medium text-black"
-            >
-              {sort}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            {sortOpen && (
-              <div className="absolute right-0 top-full z-10 mt-2 flex w-48 flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-lg">
-                {SORT_OPTIONS.map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    onClick={() => {
-                      setSort(option);
-                      setSortOpen(false);
-                    }}
-                    className={`px-4 py-3 text-left text-sm hover:bg-brand-surface ${
-                      option === sort ? "font-semibold text-brand-accent" : "text-black"
-                    }`}
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
+        <div className="relative shrink-0">
           <button
             type="button"
-            onClick={() => setMobileFiltersOpen((s) => !s)}
-            aria-pressed={mobileFiltersOpen}
-            className="relative flex shrink-0 items-center justify-center rounded-full border border-black/15 bg-white p-3 lg:hidden"
+            onClick={() => setSortOpen((s) => !s)}
+            className="flex items-center gap-2 rounded-full border border-black/15 bg-white px-6 py-3 text-base font-medium text-black"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M4 6h16M7 12h10M10 18h4" strokeLinecap="round" />
+            {sort}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            {activeFilterCount > 0 && (
-              <span className="absolute -right-1.5 -top-1.5 flex size-5 items-center justify-center rounded-full bg-black text-[11px] font-semibold text-white">
-                {activeFilterCount}
-              </span>
-            )}
           </button>
+          {sortOpen && (
+            <div className="absolute right-0 top-full z-100 mt-2 flex w-48 flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-lg">
+              {SORT_OPTIONS.map((option) => (
+                <button
+                  key={option}
+                  type="button"
+                  onClick={() => {
+                    setSort(option);
+                    setSortOpen(false);
+                  }}
+                  className={`px-4 py-3 text-left text-sm hover:bg-brand-surface ${
+                    option === sort ? "font-semibold text-brand-accent" : "text-black"
+                  }`}
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
-      <div
-        className={`grid grid-cols-1 gap-8 ${showFilters ? "lg:grid-cols-[280px_1fr]" : ""}`}
-      >
+      <div className={`grid grid-cols-1 gap-8 ${showFilters ? "lg:grid-cols-[320px_1fr]" : ""}`}>
         {showFilters && (
-          <aside
-            className={`${mobileFiltersOpen ? "flex" : "hidden"} flex-col gap-6 rounded-[25px] bg-[#e9e9e9] p-6 lg:flex lg:self-start`}
-          >
+          // <aside className="flex flex-col gap-6 rounded-[25px] bg-brand-surface p-6 lg:sticky lg:top-24 lg:self-start">
+          <aside className="flex flex-col gap-6 rounded-[15px] bg-[#e9e9e9] p-5 lg:top-24 lg:self-start shadow-[0px_2px_8px_0px_rgba(0,0,0,0.12)]">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <p className="text-lg font-bold text-black">Filters</p>
-                {activeFilterCount > 0 && (
-                  <span className="flex size-6 items-center justify-center rounded-full bg-black text-xs font-semibold text-white">
-                    {activeFilterCount}
-                  </span>
-                )}
-              </div>
+              <p className="text-lg font-bold text-black">Filters</p>
               <div className="flex items-center gap-4 text-sm font-medium">
                 <button type="button" onClick={reset} className="text-black/60 hover:text-black">
                   Reset
                 </button>
                 <button
                   type="button"
-                  onClick={() => {
-                    setShowFilters(false);
-                    setMobileFiltersOpen(false);
-                  }}
-                  className="hidden text-black/60 hover:text-black lg:inline"
+                  onClick={() => setShowFilters(false)}
+                  className="text-black/60 hover:text-black"
                 >
                   Hide
                 </button>
@@ -327,14 +289,19 @@ export function TemplatesPageBrowser({
                       }
                     />
                   ))}
+                  {!showAllTags && hiddenTagsCount > 0 && (
+                    <span className="flex items-center rounded-full bg-brand-accent px-2.75 py-1 text-sm font-medium text-white">
+                      +{hiddenTagsCount}
+                    </span>
+                  )}
                 </div>
-                {featureTags.length > 8 && (
+                {featureTags.length > 2 && (
                   <button
                     type="button"
                     onClick={() => setShowAllTags((s) => !s)}
                     className="self-start text-sm font-medium text-brand-accent hover:underline"
                   >
-                    {showAllTags ? "Show less" : "See all"}
+                    {showAllTags ? "Hide" : "See all"}
                   </button>
                 )}
               </div>
@@ -361,7 +328,7 @@ export function TemplatesPageBrowser({
             <button
               type="button"
               onClick={() => setShowFilters(true)}
-              className="hidden self-start rounded-full border border-black/15 px-5 py-2 text-sm font-medium text-black hover:border-black/40 lg:inline-flex"
+              className="self-start rounded-full border border-black/15 px-5 py-2 text-sm font-medium text-white bg-black hover:border-black/40"
             >
               Show filters
             </button>
@@ -370,12 +337,16 @@ export function TemplatesPageBrowser({
           {filtered.length === 0 ? (
             <p className="text-black/60">No templates match these filters.</p>
           ) : (
-            <div className="grid grid-cols-1 gap-6 min-[900px]:grid-cols-2">
+            <div
+              className={`grid grid-cols-1 gap-6 min-[900px]:grid-cols-2 ${
+                !showFilters ? "min-[1025px]:grid-cols-3" : ""
+              }`}
+            >
               {filtered.map((template) => (
                 <div
                   key={template.id}
                   // className="flex flex-col overflow-hidden rounded-[25px] bg-white"
-                  className="flex flex-col overflow-hidden bg-white"
+                  className="flex flex-col overflow-hidden bg-white rounded-[15px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.12)]"
                 >
                   <TemplateGalleryImage
                     images={template.images}
