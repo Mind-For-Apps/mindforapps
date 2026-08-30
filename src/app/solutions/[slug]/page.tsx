@@ -17,7 +17,6 @@ import { TestimonialsSlider } from "@/components/sections/TestimonialsSlider";
 import { FreeAudit } from "@/components/sections/FreeAudit";
 import { CalendlyWidget } from "@/components/CalendlyWidget";
 
-const AUDIENCE_ICONS = ["onboarding", "community", "roles", "map"];
 const INCLUDED_FEATURE_ICONS = [
   "reports",
   "community",
@@ -68,7 +67,7 @@ export default async function SolutionDetailPage({
   return (
     <>
       <Header />
-      <main id="top" className="flex flex-1 flex-col">
+      <main id="top" className="flex flex-1 flex-col mb-5">
         {/* <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-8.5 sm:px-25"> */}
         <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 pt-8.5">
           {/* <div className="mx-auto grid w-full max-w-300 grid-cols-1 items-center gap-10 lg:grid-cols-2"> */}
@@ -104,7 +103,7 @@ export default async function SolutionDetailPage({
                 </a>
                 <a
                   href="#pricing"
-                  className="flex h-15 w-47.5 max-[1139px]:w-37.5 items-center rounded-full bg-black px-9 text-[25px] font-medium text-white transition-opacity hover:opacity-90"
+                  className="flex h-15 w-47.5 max-[1139px]:w-37.5 items-center justify-center rounded-full bg-black px-9 text-[25px] font-medium text-white transition-opacity hover:opacity-90"
                 >
                   Pricing
                 </a>
@@ -143,7 +142,7 @@ export default async function SolutionDetailPage({
               className="pointer-events-none absolute right-0 top-0 hidden w-[55%] max-w-225 opacity-90 lg:block"
             />
             {/* <div className="relative mx-auto flex max-w-300 flex-col gap-8 px-6 sm:px-25"> */}
-            <div className="relative mx-auto flex max-w-300 flex-col gap-8 px-6">
+            <div className="relative mx-auto flex max-w-310 flex-col gap-8 px-6">
               <div className="flex flex-col gap-3">
                 {solution.text1 && (
                   <>
@@ -164,19 +163,22 @@ export default async function SolutionDetailPage({
 
               {solution.designedFor.length > 0 && (
                 <div className="grid max-w-305 min-h-45 grid-cols-1 gap-4 min-[450px]:grid-cols-2 min-[650px]:grid-cols-3 min-[850px]:grid-cols-4">
-                  {solution.designedFor.map((item, i) => (
+                  {solution.designedFor.map((item) => (
                     <div
-                      key={item}
-                      className="flex min-h-45 min-w-10 flex-col gap-3 rounded-[30px] border border-transparent bg-white p-6 shadow-[0px_4px_7px_0px_rgba(0,0,0,0.14)] transition-colors hover:border-black min-[450px]:max-w-72.5"
+                      key={item.title}
+                      className="flex min-h-45 min-w-10 flex-col gap-4 rounded-[30px] border border-transparent bg-white p-5 shadow-[0px_4px_7px_0px_rgba(0,0,0,0.14)] transition-colors hover:border-black min-[450px]:max-w-72.5"
                     >
                       <Image
-                        src={`/images/icons/${AUDIENCE_ICONS[i % AUDIENCE_ICONS.length]}.svg`}
+                        src={item.iconUrl ?? "/images/icons/onboarding.svg"}
                         alt=""
                         width={28}
                         height={28}
-                        className="size-7"
+                        className="size-12.5"
                       />
-                      <p className="font-semibold text-black">{item}</p>
+                      <p className="font-medium text-[20px] text-black">{item.title}</p>
+                      {item.description && (
+                        <p className="text-[16px] font-medium text-black/60">{item.description}</p>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -212,13 +214,13 @@ export default async function SolutionDetailPage({
         {(solution.text6 || solution.withMfa.length > 0) && (
           // <section className="flex flex-col items-center gap-10 bg-black px-6 py-16 text-center sm:px-25">
           <section className="flex flex-col items-center gap-10 py-5 text-center">
-                <p className="max-w-175 text-base text-[#325ffe] font-semibold">
+                <p className="max-w-175 text-base text-brand-accent font-semibold">
                   WHAT PROBLEM IT SOLVES
                 </p>
             <div className="flex flex-col items-center gap-4">
               {solution.text6 && (
                 // <h2 className="max-w-200 text-3xl font-bold text-white sm:text-[40px]">
-                <h2 className="max-w-275 text-3xl font-semibold sm:text-[40px] leading-[1.5]">
+                <h2 className="max-w-275 text-3xl font-semibold sm:text-[40px] leading-normal">
                   {solution.text6}
                 </h2>
               )}
@@ -250,7 +252,7 @@ export default async function SolutionDetailPage({
               id="features"
               className="relative mx-auto flex max-w-300 flex-col items-center gap-5 text-center"
             >
-              <p className="max-w-175 text-base text-[#325ffe] font-semibold">
+              <p className="max-w-175 text-base text-brand-accent font-semibold">
                 FEATURES
               </p>
               <div className="flex flex-col items-center gap-3">
@@ -317,7 +319,7 @@ export default async function SolutionDetailPage({
               ].map((stat) => (
                 <div
                   key={stat.value}
-                  className={`flex min-h-50 min-w-47.5 flex-col items-start gap-3 rounded-2xl ${stat.corners} bg-white p-5 text-center shadow-[7px_21px_19px_0px_rgba(50,95,254,0.1)] max-[530px]:p-[20px] max-[850px]:p-[40px] max-[1020px]:p-[20px] min-[1021px]:p-8 max-[429px]:min-h-0 max-[429px]:max-h-40`}
+                  className={`flex min-h-50 min-w-47.5 flex-col items-start gap-3 rounded-2xl ${stat.corners} bg-white p-5 text-center shadow-[7px_21px_19px_0px_rgba(50,95,254,0.1)] max-[530px]:p-5 max-[850px]:p-10 max-[1020px]:p-5 min-[1021px]:p-8 max-[429px]:min-h-0 max-[429px]:max-h-40`}
                 >
                   <span className="rounded-full bg-brand-accent px-6 py-3 font-bold text-white text-3xl max-[1080px]:text-[26px] max-[1020px]:text-[24px] max-[470px]:text-[30px] max-[470px]:w-full">
                     {stat.value}

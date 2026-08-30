@@ -5,6 +5,7 @@ import { TextField, TextAreaField, FormSection } from "@/components/admin/FormFi
 import { TextListRepeater } from "@/components/admin/TextListRepeater";
 import { SolutionFeaturesRepeater } from "./SolutionFeaturesRepeater";
 import { IncludedFeaturesRepeater } from "./IncludedFeaturesRepeater";
+import { DesignedForRepeater } from "./DesignedForRepeater";
 
 type LookupOption = { id: string; name: string };
 
@@ -15,6 +16,11 @@ type IncludedFeature = {
   subtitle: string;
   iconUrl: string;
   tags: string;
+};
+type DesignedForItem = {
+  title: string;
+  description: string;
+  iconUrl: string;
 };
 
 type SolutionRow = {
@@ -27,7 +33,6 @@ type SolutionRow = {
   is_estimate_link: boolean;
   tags: string[];
   more_count: number;
-  designed_for: string[];
   with_mfa: string[];
   without_mfa: string[];
   main_image_url: string | null;
@@ -60,6 +65,7 @@ export function SolutionForm({
   selectedToolIds,
   featureCategories,
   includedFeatures,
+  designedFor,
 }: {
   action: (formData: FormData) => void;
   solution?: SolutionRow;
@@ -67,6 +73,7 @@ export function SolutionForm({
   selectedToolIds: string[];
   featureCategories: FeatureCategory[];
   includedFeatures: IncludedFeature[];
+  designedFor: DesignedForItem[];
 }) {
   const s = solution;
   const idPrefix = s?.id ?? "new";
@@ -114,7 +121,6 @@ export function SolutionForm({
           type="number"
           defaultValue={s?.more_count ?? 0}
         />
-        <TextListRepeater name="designed_for" label="Designed for" defaultValues={s?.designed_for} />
       </FormSection>
 
       <FormSection title="Build Track Pricing (detail page)">
@@ -203,6 +209,13 @@ export function SolutionForm({
         <IncludedFeaturesRepeater
           defaultValues={includedFeatures}
           pathPrefix={`solutions/${idPrefix}/included-features`}
+        />
+      </FormSection>
+
+      <FormSection title="Designed For">
+        <DesignedForRepeater
+          defaultValues={designedFor}
+          pathPrefix={`solutions/${idPrefix}/designed-for`}
         />
       </FormSection>
 

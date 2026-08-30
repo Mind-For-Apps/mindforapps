@@ -19,7 +19,7 @@ export function CaseStudyCard({
     overflow-hidden
     lg:flex-row
     lg:h-180
-
+    max-w-300
     ">
       <div className="
       flex 
@@ -83,7 +83,8 @@ export function CaseStudyCard({
               </p>
             </div>
           </div> */}
-          <div className="grid grid-cols-1 gap-x-16 gap-y-5 rounded-[15px] bg-linear-to-r from-[#cde1ff]/50 to-[#d9daff]/50 px-5 py-3 font-medium sm:grid-cols-[1fr_auto]">
+          {/* <div className="grid grid-cols-1 gap-x-16 gap-y-5 rounded-[15px] bg-linear-to-r from-[#cde1ff]/50 to-[#d9daff]/50 px-5 py-3 font-medium sm:grid-cols-[1fr_auto]"> */}
+          <div className="grid grid-cols-1 gap-x-16 gap-y-5 rounded-[15px] bg-[rgb(244,244,244)] px-5 py-3 font-medium sm:grid-cols-[1fr_auto]">
             <div>
               <p className="text-sm tracking-[-0.27px] text-black/40">
                 Services

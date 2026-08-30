@@ -17,17 +17,18 @@ export default async function CaseStudiesPage() {
     <>
       <Header />
       <main className="flex flex-1 flex-col">
-        <section className="flex flex-col items-center gap-3 bg-brand-surface px-6 py-16 text-center sm:px-25">
-          <h1 className="text-3xl font-semibold text-black sm:text-[45px]">
+        <section className="flex flex-col items-center gap-6 bg-brand-surface px-6 pt-12 pb-18 text-center sm:px-25">
+          <h1 className="text-3xl font-medium text-black sm:text-[40px]">
             No-Code App &amp; MVP Case Studies
           </h1>
-          <p className="max-w-152 text-base text-brand-gray sm:text-lg">
+          <p className="max-w-170 text-base  sm:text-lg">
             Real case studies showcasing no-code success stories, project
             examples, and proven client results across industries.
           </p>
         </section>
 
-        <section className="flex flex-col items-center gap-8 bg-black px-6 py-16 sm:px-25">
+        {/* <section className="flex flex-col items-center gap-8 bg-black px-6 py-20 min-[1200px]:px-41"> */}
+        <section className="flex flex-col items-center gap-8 bg-black px-6 py-20">
           {slides.length === 0 ? (
             <p className="text-white">No case studies published yet.</p>
           ) : (

@@ -1,0 +1,46 @@
+{
+  "real-estate": [
+    {
+      "title": "Agents & Brokerages",
+      "description": "Branded platform",
+      "icon": "https://ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1773930177684x677234020531262600/Vector%20%283%29.svg"
+    },
+    {
+      "title": "White-label agencies",
+      "description": "Resell to clients",
+      "icon": "https://ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1775649255827x690432612643010500/Frame%2011988.svg"
+    },
+    {
+      "title": "Property Investors",
+      "description": "Portfolio tools",
+      "icon": "https://ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1773930192386x976194384855575400/Line%20%281%29.svg"
+    },
+    {
+      "title": "Prop-tech startups",
+      "description": "Marketplace MVP",
+      "icon": "https://ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1773930199625x908098413187905000/Line%20%282%29.svg"
+    }
+  ],
+  "service-booking-platform": [
+    {
+      "title": "Solo professionals",
+      "description": "Coaches, therapists, tutors, consultants — one calendar, full ownership.",
+      "icon": "https://ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1778418296688x971851803526838000/Line.svg"
+    },
+    {
+      "title": "Clinics & multi-staff",
+      "description": "Dental, medical, beauty, wellness — manage teams, rooms, and availability.",
+      "icon": "https://ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1778418306042x658277719103243600/Line%20%281%29.svg"
+    },
+    {
+      "title": "Studios & classes",
+      "description": "Yoga, fitness, dance — group bookings, memberships, waitlists.",
+      "icon": "https://ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1778418314369x631655063379389300/Line%20%282%29.svg"
+    },
+    {
+      "title": "Home & mobile services",
+      "description": "Cleaners, tradespeople, mobile tutors — location-aware scheduling.",
+      "icon": "https://ffe46b16a377e4f6249ab41469afe35b.cdn.bubble.io/f1778418323389x811551422102223500/Line%20%283%29.svg"
+    }
+  ]
+}

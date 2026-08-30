@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SolutionCard } from "@/components/sections/SolutionCard";
@@ -42,6 +44,31 @@ export default async function SolutionsPage() {
               ))}
             </div>
           )}
+        </section>
+
+        <section className="flex justify-center bg-brand-surface px-6 py-8">
+          <div className="flex w-full max-w-300 min-h-63.75 flex-col items-start justify-between gap-6 rounded-[20px] bg-white p-8 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.06)] sm:flex-row sm:items-center sm:p-10">
+            <div className="flex flex-col gap-4">
+              <h2 className="text-2xl font-medium text-black sm:text-[40px]">
+                Didn&rsquo;t find what suits you best?
+              </h2>
+              <p className="text-base text-black/60 sm:text-[22px] font-medium">
+                Find the appropriate service for you.
+              </p>
+            </div>
+            <Link
+              href="/services"
+              className="flex h-21.75 w-61.75 shrink-0 items-center justify-center gap-3 rounded-full bg-black px-8 text-[20px] font-medium text-white transition-colors hover:bg-[linear-gradient(45deg,rgb(31,120,255),rgb(65,62,207),rgb(111,47,239))]"
+            >
+              Services
+              <Image
+                src="/images/services/nav/arrow-right-white.svg"
+                alt=""
+                width={13}
+                height={15}
+              />
+            </Link>
+          </div>
         </section>
       </main>
       <Footer />
