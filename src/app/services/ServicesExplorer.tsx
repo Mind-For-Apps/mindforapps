@@ -82,14 +82,14 @@ const CORE_SERVICES: CoreServiceItem[] = [
         logo: "/images/services/case-studies/dewie_logo.png",
         logoWidth: 90,
         logoHeight: 28,
-        href: "/case-studies",
+        href: "/case-studies/school-readiness-edtech-platform",
       },
       {
         image: "/images/services/case-studies/poesea.png",
         logo: "/images/services/case-studies/poesea_logo.png",
         logoWidth: 118,
         logoHeight: 32,
-        href: "/case-studies",
+        href: "/case-studies/amalfi-boat-rental-marketplace",
       },
     ],
   },
@@ -519,6 +519,63 @@ function AddOnCard({ item }: { item: AddOnItem }) {
   );
 }
 
+function SectionNav({ sectionId }: { sectionId: Section }) {
+  const { setActive } = useServicesActive();
+  const index = SECTIONS.findIndex((s) => s.id === sectionId);
+  const prev = index > 0 ? SECTIONS[index - 1] : null;
+  const next = index !== -1 && index < SECTIONS.length - 1 ? SECTIONS[index + 1] : null;
+
+  if (!prev && !next) return null;
+
+  return (
+    <div className="flex w-full items-center justify-between gap-4 border-t border-black/10 pt-8">
+      {prev ? (
+        <button
+          type="button"
+          onClick={() => setActive(prev.id)}
+          className={`group flex items-center gap-2.5 w-33.25 min-h-18.75 rounded-[20px] border border-black px-6 py-3 text-base font-bold text-black transition-colors hover:${gradientBg} hover:border-transparent hover:text-white`}
+        >
+          <span className="relative size-3.5 shrink-0">
+            <Image
+              src="/images/services/nav/arrow-left-black.svg"
+              alt=""
+              fill
+              className="object-contain group-hover:opacity-0"
+            />
+            <Image
+              src="/images/services/nav/arrow-left-white.svg"
+              alt=""
+              fill
+              className="object-contain opacity-0 group-hover:opacity-100"
+            />
+          </span>
+          Back
+        </button>
+      ) : (
+        <span />
+      )}
+
+      {next && (
+        <button
+          type="button"
+          onClick={() => setActive(next.id)}
+          className={`group flex items-center gap-4 min-h-18.75 rounded-[20px] border border-black bg-black px-6 py-3 text-white transition-colors hover:${gradientBg} hover:border-transparent`}
+        >
+          <span className="text-right">
+            <span className="block text-sm font-medium text-white/70">
+              Next {next.label}
+            </span>
+            <span className="block text-base font-bold">{next.items[0]?.title}</span>
+          </span>
+          <span className="relative size-3.5 shrink-0">
+            <Image src="/images/services/nav/arrow-right-white.svg" alt="" fill className="object-contain" />
+          </span>
+        </button>
+      )}
+    </div>
+  );
+}
+
 function PathCard({
   title,
   flow,
@@ -681,6 +738,8 @@ function TrustProofBlock() {
           <Image src="/images/services/arrow_2.svg" alt="" width={19} height={35} />
         </span>
       </Link>
+
+      <SectionNav sectionId="how" />
     </div>
   );
 }
@@ -703,6 +762,7 @@ function useServicesActive() {
 
 export function ServicesActiveProvider({ children }: { children: React.ReactNode }) {
   const [active, setActive] = useState<Section>("core");
+
   return (
     <ServicesActiveContext.Provider value={{ active, setActive }}>
       {children}
@@ -796,10 +856,22 @@ export function ServicesContent() {
 
   return (
     <div className="flex flex-col gap-8">
-      {active === "core" &&
-        CORE_SERVICES.map((item) => <CoreServiceCard key={item.id} item={item} />)}
-      {active === "addons" &&
-        ADD_ONS.map((item) => <AddOnCard key={item.id} item={item} />)}
+      {active === "core" && (
+        <>
+          {CORE_SERVICES.map((item) => (
+            <CoreServiceCard key={item.id} item={item} />
+          ))}
+          <SectionNav sectionId="core" />
+        </>
+      )}
+      {active === "addons" && (
+        <>
+          {ADD_ONS.map((item) => (
+            <AddOnCard key={item.id} item={item} />
+          ))}
+          <SectionNav sectionId="addons" />
+        </>
+      )}
       {active === "how" && (
         <>
           <HowWeWorkTogetherBlock />

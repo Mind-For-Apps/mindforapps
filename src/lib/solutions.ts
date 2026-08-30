@@ -61,6 +61,12 @@ export type SolutionIncludedFeature = {
   tags: string[];
 };
 
+export type SolutionDesignedFor = {
+  iconUrl: string | null;
+  title: string;
+  description: string | null;
+};
+
 export type SolutionDetail = {
   slug: string;
   title: string;
@@ -73,7 +79,7 @@ export type SolutionDetail = {
   whatsIncludedIconUrl: string | null;
   images: string[];
   imagesCover: string[];
-  designedFor: string[];
+  designedFor: SolutionDesignedFor[];
   withMfa: string[];
   withoutMfa: string[];
   buildPriceLow: number | null;
@@ -98,15 +104,18 @@ export async function getSolutionBySlug(
 ): Promise<SolutionDetail | null> {
   const supabase = await createClient();
 
-  const { data: solution } = await supabase
+  const { data: solution, error } = await supabase
     .from("solutions")
     .select(
-      `*, solution_tools(tools(name, icon_url)), solution_feature_categories(name, images, sort_order, solution_feature_labels(title, color, bg_color, sort_order)), solution_included_features(icon_url, title, subtitle, tags, sort_order)`,
+      `*, solution_tools(tools(name, icon_url)), solution_feature_categories(name, images, sort_order, solution_feature_labels(title, color, bg_color, sort_order)), solution_included_features(icon_url, title, subtitle, tags, sort_order), solution_designed_for(icon_url, title, description, sort_order)`,
     )
     .eq("slug", slug)
     .eq("is_published", true)
     .maybeSingle();
 
+  if (error) {
+    console.error(`getSolutionBySlug("${slug}") query failed:`, error.message);
+  }
   if (!solution) return null;
 
   const tools = (
@@ -159,6 +168,22 @@ export async function getSolutionBySlug(
       tags: f.tags ?? [],
     }));
 
+  const designedFor = (
+    solution.solution_designed_for as {
+      icon_url: string | null;
+      title: string;
+      description: string | null;
+      sort_order: number;
+    }[]
+  )
+    .slice()
+    .sort((a, b) => a.sort_order - b.sort_order)
+    .map((d) => ({
+      iconUrl: d.icon_url,
+      title: d.title,
+      description: d.description,
+    }));
+
   return {
     slug: solution.slug,
     title: solution.title,
@@ -171,7 +196,7 @@ export async function getSolutionBySlug(
     whatsIncludedIconUrl: solution.whats_included_icon_url,
     images: solution.images ?? [],
     imagesCover: solution.images_cover ?? [],
-    designedFor: solution.designed_for ?? [],
+    designedFor,
     withMfa: solution.with_mfa ?? [],
     withoutMfa: solution.without_mfa ?? [],
     buildPriceLow: solution.build_price_low,

@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-08-31 — "Designed For" moved from `text[]` to a real child table
+
+### Added
+- `supabase/migrations/0015_solution_designed_for.sql`: new `solution_designed_for` table (`solution_id`, `icon_url`, `title`, `description`, `sort_order`), replacing the plain `solutions.designed_for text[]` column — same reasoning/shape as `case_study_web_architecture` (migration `0008`): the "Who it's built for" grid on `/solutions/[slug]` needs a real per-item icon and a short description per card, not a cycling generic icon with no room for description. `designed_for` was only ever populated for `real-estate` and `service-booking-platform` (checked `scripts/solutions-data.json`), so dropping the column loses no visible content on the other three solution pages — their "Who it's built for" block was already hidden (`designedFor.length > 0`).
+- `scripts/seed-solution-designed-for.ts` + `scripts/solution-designed-for-data.json` (`npm run seed:solution-designed-for`): seeds the 4+4 real "Designed For" cards for Real Estate and Service Booking (title/description/icon, sourced from a client-provided spreadsheet), re-uploading each icon SVG to Storage — same pattern as `seed-case-study-web-architecture.ts`.
+- `/admin/solutions` gained a new "Designed For" repeater (`DesignedForRepeater.tsx`, title + description + icon upload per row), same shape as the existing "What's Included" repeater, wired through `SolutionForm.tsx` / `[id]/page.tsx` / `actions.ts`'s `syncRelations()`.
+
+### Changed
+- `src/lib/solutions.ts`: `SolutionDetail.designedFor` is now `SolutionDesignedFor[]` (`{ iconUrl, title, description }`) instead of `string[]`.
+- `src/app/solutions/[slug]/page.tsx`: the "Who it's built for" cards now render a real per-item icon and a description line instead of cycling a static `AUDIENCE_ICONS` array with no description (removed).
+
 ## 2026-08-28 — Raised Next.js image cache TTL to cut Vercel Image Optimization usage
 
 ### Changed

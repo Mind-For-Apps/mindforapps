@@ -364,9 +364,14 @@ export function TemplatesPageBrowser({
             <button
               type="button"
               onClick={() => setShowFilters(true)}
-              className="hidden self-start rounded-full border border-black/15 bg-black px-5 py-2 text-sm font-medium text-white hover:border-black/40 lg:inline-flex"
+              className="hidden items-center gap-2.5 self-start rounded-full border border-black/15 bg-black px-5 py-2 text-sm font-medium text-white hover:border-black/40 lg:inline-flex"
             >
               Show filters
+              {activeFilterCount > 0 && (
+                <span className="flex size-5 items-center justify-center rounded-full bg-white text-[11px] font-semibold text-black">
+                  {activeFilterCount}
+                </span>
+              )}
             </button>
           )}
 

@@ -12,6 +12,7 @@
     "seed:tools": "node --env-file=.env.local --experimental-strip-types scripts/seed-tools.ts",
     "seed:solutions": "node --env-file=.env.local --experimental-strip-types scripts/seed-solutions.ts",
     "seed:solution-features": "node --env-file=.env.local --experimental-strip-types scripts/seed-solution-features.ts",
+    "seed:solution-designed-for": "node --env-file=.env.local --experimental-strip-types scripts/seed-solution-designed-for.ts",
     "seed:categories": "node --env-file=.env.local --experimental-strip-types scripts/seed-categories.ts",
     "seed:templates": "node --env-file=.env.local --experimental-strip-types scripts/seed-templates.ts",
     "seed:web-architecture": "node --env-file=.env.local --experimental-strip-types scripts/seed-case-study-web-architecture.ts",

@@ -21,7 +21,6 @@ function getSolutionFields(formData: FormData) {
     is_estimate_link: formData.get("is_estimate_link") === "on",
     tags: getTextArray(formData, "tags"),
     more_count: Number(formData.get("more_count") ?? 0),
-    designed_for: getTextArray(formData, "designed_for"),
     with_mfa: getTextArray(formData, "with_mfa"),
     without_mfa: getTextArray(formData, "without_mfa"),
     main_image_url: (formData.get("main_image_url") as string) || null,
@@ -142,6 +141,37 @@ async function syncRelations(solutionId: string, formData: FormData) {
         subtitle: f.subtitle,
         icon_url: f.icon_url,
         tags: f.tags,
+        sort_order: i,
+      })),
+    );
+  }
+
+  await supabase
+    .from("solution_designed_for")
+    .delete()
+    .eq("solution_id", solutionId);
+
+  const designedForTitles = formData.getAll("designed_for_title") as string[];
+  const designedForDescriptions = formData.getAll(
+    "designed_for_description",
+  ) as string[];
+  const designedForIcons = formData.getAll("designed_for_icon") as string[];
+
+  const designedFor = designedForTitles
+    .map((title, i) => ({
+      title: title.trim(),
+      description: designedForDescriptions[i]?.trim() || null,
+      icon_url: designedForIcons[i] || null,
+    }))
+    .filter((d) => d.title);
+
+  if (designedFor.length > 0) {
+    await supabase.from("solution_designed_for").insert(
+      designedFor.map((d, i) => ({
+        solution_id: solutionId,
+        title: d.title,
+        description: d.description,
+        icon_url: d.icon_url,
         sort_order: i,
       })),
     );

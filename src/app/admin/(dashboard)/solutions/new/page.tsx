@@ -14,6 +14,7 @@ export default async function NewSolutionPage() {
         selectedToolIds={[]}
         featureCategories={[]}
         includedFeatures={[]}
+        designedFor={[]}
       />
     </div>
   );
