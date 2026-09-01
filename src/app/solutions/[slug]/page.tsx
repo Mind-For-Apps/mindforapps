@@ -198,10 +198,10 @@ export default async function SolutionDetailPage({
             href="#contact"
             className="mx-auto flex max-w-300 flex-col items-center gap-2 rounded-[25px] bg-white p-8 text-center transition-opacity hover:opacity-90"
           >
-            <p className="text-xl font-bold text-brand-accent">
+            <p className="text-[25px] font-semibold text-brand-accent">
               Building for clients?
             </p>
-            <p className="max-w-175 text-base text-black/70">
+            <p className="max-w-175 text-[20px] font-medium text-black/70">
               Our platform is built for white-labelling — resell it under
               your own brand, domain, and colour scheme. Ask us how on the{" "}
               <span className="font-medium text-brand-accent underline">
@@ -332,18 +332,18 @@ export default async function SolutionDetailPage({
 
           <div className="relative mx-auto mt-16 max-w-300">
             <div className="flex flex-col items-start gap-4 rounded-[25px] bg-white p-8 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex flex-col gap-2">
-                <p className="text-xl font-bold text-brand-accent">
+              <div className="flex flex-col gap-5">
+                <p className="text-[28px] font-semibold text-brand-accent">
                   Want to speak to a past client before committing?
                 </p>
-                <p className="text-base text-black/60">
+                <p className="text-xl text-black/80">
                   Ask us on the strategy call, and we&rsquo;ll make the
                   introduction.
                 </p>
               </div>
               <a
                 href="#contact"
-                className="bg-brand-gradient shrink-0 rounded-full px-8 py-4 text-base font-medium text-white transition-opacity hover:opacity-90"
+                className="bg-brand-gradient shrink-0 rounded-full px-8 py-3 text-[25px] font-medium text-white transition-opacity hover:opacity-90"
               >
                 Book a Free Strategy Call
               </a>
@@ -353,7 +353,7 @@ export default async function SolutionDetailPage({
 
         <section
           id="process"
-          className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25"
+          className="flex flex-col items-center gap-15 bg-brand-surface px-6 py-16 text-center sm:px-25"
         >
           <div className="flex flex-col items-center gap-3">
             <p className="text-sm font-semibold uppercase tracking-wide text-brand-accent">
@@ -363,11 +363,11 @@ export default async function SolutionDetailPage({
               From brief to live in 3 steps.
             </h2>
             <p className="max-w-150 text-base text-black/60">
-              Three steps. Clarity and support on each step. Every stage has a
-              clear deliverable. You always know what comes next.
+              Three steps. Clarity and support on each step.  <br></ br>
+              Every stage has a clear deliverable. You always know what comes next.
             </p>
           </div>
-          <div className="flex w-full max-w-300 flex-col gap-4">
+          <div className="flex w-full max-w-300 flex-col gap-8">
             {[
               {
                 n: 1,
@@ -381,7 +381,8 @@ export default async function SolutionDetailPage({
                   "Budget confirmed",
                   "Start date set",
                 ],
-                bg: "bg-[#dbeafe]",
+                bg: "bg-[rgb(226,245,249)]",
+                accentBg: "bg-[rgb(52,196,227)]",
               },
               {
                 n: 2,
@@ -395,6 +396,7 @@ export default async function SolutionDetailPage({
                   "Full QA completed",
                 ],
                 bg: "bg-[#e3ddfa]",
+                accentBg: "bg-[rgb(99,133,255)]",
               },
               {
                 n: 3,
@@ -409,38 +411,43 @@ export default async function SolutionDetailPage({
                   "Support channel open",
                 ],
                 bg: "bg-[#d8cef7]",
+                accentBg: "bg-[rgb(161,98,255)]",
               },
             ].map((step) => (
               <div
                 key={step.n}
-                className="grid grid-cols-1 gap-0 overflow-hidden rounded-2xl bg-white text-left lg:grid-cols-2"
+                className="grid grid-cols-1 gap-0 overflow-hidden rounded-sm bg-white text-left lg:grid-cols-2 p-2.5 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.14)]"
               >
-                <div className="flex flex-col gap-3 p-8">
+                <div className="flex flex-col gap-3 p-4">
                   <div className="flex items-center gap-3">
-                    <span className="flex size-7 items-center justify-center rounded-full bg-brand-accent text-sm font-bold text-white">
+                    <span
+                      className={`flex size-7 items-center justify-center rounded-full ${step.accentBg} text-lg font-medium text-white p-4`}
+                    >
                       {step.n}
                     </span>
-                    <span className="rounded-full bg-brand-accent/10 px-4 py-1.5 text-sm font-medium text-brand-accent">
+                    <span
+                      className={`rounded-full ${step.accentBg} px-5 py-0.75 text-lg font-medium text-white`}
+                    >
                       {step.duration}
                     </span>
                   </div>
-                  <p className="text-xl font-bold text-black">{step.title}</p>
-                  <p className="text-base text-black/60">{step.description}</p>
+                  <p className="text-[25px] font-semibold text-black">{step.title}</p>
+                  <p className="text-base text-black/80">{step.description}</p>
                 </div>
-                <div className={`flex flex-col gap-3 p-8 ${step.bg}`}>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-black/50">
+                <div className={`flex flex-col gap-3 p-4 ${step.bg}`}>
+                  <p className="text-[13px] font-semibold uppercase tracking-wide text-black/50">
                     After this step
                   </p>
-                  <p className="text-base font-semibold text-black">
+                  <p className="text-lg font-semibold text-black">
                     {step.outcome}
                   </p>
                   <ul className="flex flex-col gap-2">
                     {step.checklist.map((item) => (
                       <li
                         key={item}
-                        className="flex items-center gap-2 text-sm text-black/80"
+                        className="flex items-center gap-2 text-base font-medium text-black/80"
                       >
-                        <span className="text-brand-accent">✓</span>
+                        <span className="text-brand-accent">✔️</span>
                         {item}
                       </li>
                     ))}
@@ -452,8 +459,8 @@ export default async function SolutionDetailPage({
         </section>
 
         {solution.tools.length > 0 && (
-          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25">
-            <div className="flex flex-col items-center gap-3">
+          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-10 text-center sm:px-25">
+            <div className="flex flex-col items-center gap-4">
               <p className="text-sm font-semibold uppercase tracking-wide text-brand-accent">
                 Built with
               </p>
@@ -472,7 +479,7 @@ export default async function SolutionDetailPage({
         )}
 
         {solution.includedFeatures.length > 0 && (
-          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25">
+          <section className="flex flex-col items-center gap-15 bg-brand-surface px-6 py-16 text-center sm:px-25">
             <div className="flex flex-col items-center gap-3">
               <p className="text-sm font-semibold uppercase tracking-wide text-brand-accent">
                 What&rsquo;s included
@@ -618,7 +625,8 @@ export default async function SolutionDetailPage({
                       key={item}
                       className="flex items-center gap-2 text-sm text-black/70"
                     >
-                      <span className="text-brand-accent">✓</span>
+                      {/* <span className="text-brand-accent">✔️✓</span> */}
+                      <span className="text-brand-accent">✔️</span>
                       {item}
                     </li>
                   ))}
@@ -663,7 +671,8 @@ export default async function SolutionDetailPage({
                     key={item}
                     className="flex items-center gap-2 text-sm text-black/70"
                   >
-                    <span className="text-brand-accent">✓</span>
+                    {/* <span className="text-brand-accent">✔️✓</span> */}
+                    <span className="text-brand-accent">✔️</span>
                     {item}
                   </li>
                 ))}

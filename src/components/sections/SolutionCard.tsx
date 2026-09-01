@@ -9,16 +9,16 @@ export function SolutionCard({ solution }: { solution: SolutionCardData }) {
   const href = solution.slug ? `/solutions/${solution.slug}` : "#";
   const hasSolutionPage = SOLUTION_PAGE_SLUGS.includes(solution.slug ?? "");
   const buttonClassName =
-    "flex h-14 items-center justify-center rounded-full border border-black text-[20px] font-bold uppercase tracking-widest text-black transition-colors hover:border-transparent hover:bg-[linear-gradient(45deg,rgb(31,120,255),rgb(65,62,207),rgb(111,47,239))] hover:text-white max-[400px]:text-base";
+    "flex h-14 items-center justify-center rounded-[25px] border border-black text-[20px] font-bold uppercase tracking-widest text-black transition-colors hover:border-transparent hover:bg-[linear-gradient(45deg,rgb(31,120,255),rgb(65,62,207),rgb(111,47,239))] hover:text-white max-[400px]:text-base";
 
   return (
-    <div className="@container flex h-full w-full flex-col gap-6 rounded-[25px] bg-white p-6 sm:p-8">
-      <div className="flex flex-1 flex-col gap-6">
+    <div className="@container flex h-full w-full flex-col gap-6 rounded-[25px] bg-white p-6">
+      <div className="flex flex-1 flex-col gap-3">
         <div>
-          <h3 className="text-3xl font-bold tracking-[-0.77px] text-black">
+          <h3 className="text-[35px] font-bold tracking-[-0.77px] text-black leading-none">
             {solution.title}
           </h3>
-          <p className="text-lg text-black/60">Solution</p>
+          <p className="text-[25px] text-black/90 font-medium">Solution</p>
         </div>
 
         {solution.tags.length > 0 && (
@@ -57,7 +57,7 @@ export function SolutionCard({ solution }: { solution: SolutionCardData }) {
         )}
 
         {solution.titleForCards && (
-          <p className="text-base leading-normal text-black">
+          <p className="text-base font-medium leading-normal text-black">
             <span className="line-clamp-3">{solution.titleForCards}</span>{" "}
             <Link
               href={href}
@@ -69,11 +69,11 @@ export function SolutionCard({ solution }: { solution: SolutionCardData }) {
         )}
 
         {solution.imagesCover.length > 0 && (
-          <div className="flex gap-3">
+          <div className="flex gap-3 py-7">
             {solution.imagesCover.map((url, i) => (
               <div
                 key={url}
-                className="relative h-45 flex-1 overflow-hidden rounded-2xl bg-brand-surface"
+                className="relative h-45 flex-1 overflow-hidden rounded-2xl bg-brand-surface shadow-[2px_2px_8px_0px_rgba(170,170,170,0.5)]"
               >
                 <Image
                   src={url}
