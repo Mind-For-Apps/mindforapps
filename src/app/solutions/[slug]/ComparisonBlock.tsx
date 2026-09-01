@@ -64,7 +64,7 @@ export function ComparisonBlock({
             className="hidden object-cover min-[800px]:block rounded-3xl"
           />
           <div className="relative z-10 flex flex-col gap-8 p-3 pt-30 min-[800px]:pt-3">
-            <div className="relative min-h-[91px] flex items-center w-full">
+            <div className="relative min-h-22.75 flex items-center w-full">
               <Image
                 src="/images/solutions/pill-red.png"
                 alt=""
@@ -118,7 +118,7 @@ export function ComparisonBlock({
           />
           <div className="relative z-10 flex flex-col gap-8 p-3 pt-30 min-[800px]:pt-3">
             {/* <div className="relative min-h-[84px] flex items-center w-full shadow-[0px_4px_12px_0px_rgba(0,0,0,0.15)]"> */}
-            <div className="relative min-h-[91px] flex items-center w-full">
+            <div className="relative min-h-22.75 flex items-center w-full">
               <Image
                 src="/images/solutions/pill-blue.png"
                 alt=""

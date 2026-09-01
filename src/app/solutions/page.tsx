@@ -19,12 +19,12 @@ export default async function SolutionsPage() {
     <>
       <Header />
       <main className="flex flex-1 flex-col">
-        <section className="flex flex-col items-center gap-3 bg-brand-surface px-6 py-16 text-center sm:px-25">
-          <h1 className="max-w-225 text-3xl font-medium text-black sm:text-[45px]">
+        <section className="flex flex-col items-center gap-4.75 bg-brand-surface px-6 pt-10 pb-15 text-center sm:px-25">
+          <h1 className="text-3xl font-normal text-black sm:text-[40px]">
             Ready-Made App <span className="font-bold">Solutions</span>,
             Tailored to Your Industry
           </h1>
-          <p className="max-w-225 text-base text-brand-gray sm:text-lg">
+          <p className="max-w-240 text-base text-[rgb(51,51,51)]">
             Launch a production-ready app powered by our proprietary industry
             blueprints. We bridge the gap between rigid templates and costly
             custom development — combining a battle-tested functional core
@@ -34,7 +34,7 @@ export default async function SolutionsPage() {
         </section>
 
         {/* <section className="bg-black px-6 py-16 sm:px-25"> */}
-        <section className="bg-black px-6 py-16">
+        <section className="bg-black px-6 pt-20 pb-12">
           {solutions.length === 0 ? (
             <p className="text-center text-white">No solutions published yet.</p>
           ) : (
