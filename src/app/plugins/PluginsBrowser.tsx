@@ -32,7 +32,7 @@ function FilterPill({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+      className={`rounded-full border min-w-25 px-3 py-1.5 text-sm font-medium transition-colors ${
         active
           ? "border-brand-accent bg-brand-accent text-white"
           : "border-black/15 bg-white text-black hover:border-black/40"
@@ -64,18 +64,17 @@ function PluginCard({ plugin }: { plugin: PluginCardData }) {
           <Image
             src={plugin.logoUrl}
             alt={plugin.name}
-            width={56}
-            height={56}
-            className="size-14 shrink-0 rounded-full object-cover"
+            width={73}
+            height={73}
+            className="size-18.25 shrink-0 rounded-full object-cover"
           />
         ) : (
-          <div className="size-14 shrink-0 rounded-full bg-brand-surface" />
+          <div className="size-18.25 shrink-0 rounded-full bg-brand-surface" />
         )}
-        <p className="text-lg font-bold text-black sm:text-xl">{plugin.name}</p>
-      </div>
-
+        <div className="flex flex-wrap gap-3">
+        <p className="text-xl font-medium text-black sm:text-xl">{plugin.name}</p>
       {plugin.shortDescription && (
-        <p className={`text-sm text-brand-gray ${expanded ? "" : "line-clamp-2"}`}>
+        <p className={`text-[13px] leading-[1.3] text-black/80 ${expanded ? "" : "line-clamp-2"}`}>
           {plugin.shortDescription}{" "}
           <button
             type="button"
@@ -90,17 +89,20 @@ function PluginCard({ plugin }: { plugin: PluginCardData }) {
           </button>
         </p>
       )}
+        </div>
+      </div>
+
 
       <div className="mt-auto flex items-center justify-between gap-4 pt-2">
         {price && (
-          <span className="rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white">
+          <span className="rounded-full bg-black px-5 py-2.5 text-base font-bold text-white">
             {price}
           </span>
         )}
         {plugin.demoUrl && (
-          <span className="ml-auto flex items-center gap-1 text-sm font-medium text-black">
+          <span className="ml-auto flex items-center gap-1 text-base font-bold text-black">
             Demo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </span>
@@ -155,7 +157,7 @@ export function PluginsBrowser({
       </div>
 
       <div
-        className={`grid grid-cols-1 gap-8 ${showFilters ? "lg:grid-cols-[280px_1fr]" : ""}`}
+        className={`grid grid-cols-1 gap-8 ${showFilters ? "lg:grid-cols-[320px_1fr]" : ""}`}
       >
         <aside
           className={`${mobileFiltersOpen ? "flex" : "hidden"} flex-col gap-6 rounded-[25px] bg-[#e9e9e9] p-6 lg:self-start ${
@@ -190,7 +192,7 @@ export function PluginsBrowser({
 
           <div className="flex flex-col gap-3 border-t border-black/10 pt-4">
             <p className="text-sm font-semibold text-black">Category</p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-y-2 gap-x-4">
               {categories.map((c) => (
                 <FilterPill
                   key={c.id}

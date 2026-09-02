@@ -6,6 +6,7 @@ type FaqRow = {
   answer: string;
   show_on_index: boolean;
   real_estate_sort_order: number | null;
+  service_booking_sort_order: number | null;
   sort_order: number;
 };
 
@@ -39,12 +40,18 @@ export function FaqForm({
             defaultValue={f?.real_estate_sort_order ?? ""}
           />
           <TextField
-            name="sort_order"
-            label="Sort order (main FAQ page / homepage)"
+            name="service_booking_sort_order"
+            label="Service Booking solution — position (leave blank to hide there)"
             type="number"
-            defaultValue={f?.sort_order ?? 0}
+            defaultValue={f?.service_booking_sort_order ?? ""}
           />
         </div>
+        <TextField
+          name="sort_order"
+          label="Sort order (main FAQ page / homepage)"
+          type="number"
+          defaultValue={f?.sort_order ?? 0}
+        />
       </FormSection>
 
       <button

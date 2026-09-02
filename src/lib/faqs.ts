@@ -31,3 +31,13 @@ export async function getRealEstateFaqs(): Promise<Faq[]> {
     .order("real_estate_sort_order");
   return data ?? [];
 }
+
+export async function getServiceBookingFaqs(): Promise<Faq[]> {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("faqs")
+    .select("*")
+    .not("service_booking_sort_order", "is", null)
+    .order("service_booking_sort_order");
+  return data ?? [];
+}

@@ -49,7 +49,7 @@ export async function getPluginCards(): Promise<PluginCardData[]> {
     .from("plugins")
     .select("*, plugin_category_links(category_id)")
     .eq("is_public", true)
-    .order("sort_order");
+    .order("sort_order", { ascending: false });
 
   return (plugins ?? []).map(mapPlugin);
 }
