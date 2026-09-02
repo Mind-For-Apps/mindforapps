@@ -2,20 +2,14 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { formatPluginPrice } from "@/lib/plugin-price";
 import type { PluginCardData, PluginCategory } from "@/lib/plugins";
 
 function toggle<T>(list: T[], value: T): T[] {
   return list.includes(value)
     ? list.filter((v) => v !== value)
     : [...list, value];
-}
-
-function formatPrice(monthly: number | null, oneTime: number | null) {
-  if (oneTime !== null && monthly !== null)
-    return `$${oneTime} once or $${monthly}/mo`;
-  if (oneTime !== null) return `$${oneTime} once`;
-  if (monthly !== null) return `$${monthly}/mo`;
-  return null;
 }
 
 function FilterPill({
@@ -44,20 +38,19 @@ function FilterPill({
 }
 
 function PluginCard({ plugin }: { plugin: PluginCardData }) {
+  const router = useRouter();
   const [expanded, setExpanded] = useState(false);
-  const price = formatPrice(plugin.priceMonthly, plugin.priceOneTime);
+  const price = formatPluginPrice(plugin.priceMonthly, plugin.priceOneTime);
 
   return (
-    <a
-      href={plugin.demoUrl ?? undefined}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`flex flex-col gap-4 rounded-[25px] bg-white p-6 transition-shadow ${
-        plugin.demoUrl ? "hover:shadow-[0px_4px_20px_0px_rgba(0,0,0,0.10)]" : "cursor-default"
-      }`}
-      onClick={(e) => {
-        if (!plugin.demoUrl) e.preventDefault();
+    <div
+      role="link"
+      tabIndex={0}
+      onClick={() => router.push(`/plugin_details/${plugin.slug}`)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") router.push(`/plugin_details/${plugin.slug}`);
       }}
+      className="flex cursor-pointer flex-col gap-4 rounded-[25px] bg-white p-6 transition-shadow hover:shadow-[0px_4px_20px_0px_rgba(0,0,0,0.10)]"
     >
       <div className="flex items-center gap-4">
         {plugin.logoUrl ? (
@@ -94,21 +87,38 @@ function PluginCard({ plugin }: { plugin: PluginCardData }) {
 
 
       <div className="mt-auto flex items-center justify-between gap-4 pt-2">
-        {price && (
-          <span className="rounded-full bg-black px-5 py-2.5 text-base font-bold text-white">
-            {price}
-          </span>
-        )}
+        {price &&
+          (plugin.marketUrl ? (
+            <a
+              href={plugin.marketUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="rounded-full bg-black px-5 py-2.5 text-base font-bold text-white transition-opacity hover:opacity-90"
+            >
+              {price}
+            </a>
+          ) : (
+            <span className="rounded-full bg-black px-5 py-2.5 text-base font-bold text-white">
+              {price}
+            </span>
+          ))}
         {plugin.demoUrl && (
-          <span className="ml-auto flex items-center gap-1 text-base font-bold text-black">
+          <a
+            href={plugin.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="ml-auto flex items-center gap-1 text-base font-bold text-black hover:opacity-70"
+          >
             Demo
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </span>
+          </a>
         )}
       </div>
-    </a>
+    </div>
   );
 }
 
