@@ -7,7 +7,7 @@ import { TrustCarousel } from "@/components/sections/TrustCarousel";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { getSolutionBySlug } from "@/lib/solutions";
 import { getTestimonials } from "@/lib/testimonials";
-import { getRealEstateFaqs } from "@/lib/faqs";
+import { getRealEstateFaqs, getServiceBookingFaqs } from "@/lib/faqs";
 import { StickyNav } from "./StickyNav";
 import { ComparisonBlock } from "./ComparisonBlock";
 import { ImagesSlider } from "@/components/ImagesSlider";
@@ -57,12 +57,12 @@ export default async function SolutionDetailPage({
 
   if (!solution) notFound();
 
-  const faqs = slug === "real-estate" ? await getRealEstateFaqs() : [];
-
-  const buildPriceRange =
-    solution.buildPriceLow && solution.buildPriceHigh
-      ? `$${solution.buildPriceLow.toLocaleString()} – $${solution.buildPriceHigh.toLocaleString()}`
-      : solution.priceLabel;
+  const faqs =
+    slug === "real-estate"
+      ? await getRealEstateFaqs()
+      : slug === "service-booking-platform"
+        ? await getServiceBookingFaqs()
+        : [];
 
   return (
     <>
@@ -459,7 +459,7 @@ export default async function SolutionDetailPage({
         </section>
 
         {solution.tools.length > 0 && (
-          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-10 text-center sm:px-25">
+          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-10 text-center">
             <div className="flex flex-col items-center gap-4">
               <p className="text-sm font-semibold uppercase tracking-wide text-brand-accent">
                 Built with
@@ -472,7 +472,8 @@ export default async function SolutionDetailPage({
                 supported, and fully transferable.
               </p>
             </div>
-            <div className="w-full max-w-300">
+            {/* <div className="w-full max-w-300"> */}
+            <div className="w-full">
               <ToolsSlider tools={solution.tools} />
             </div>
           </section>
@@ -586,7 +587,7 @@ export default async function SolutionDetailPage({
 
         <section
           id="pricing"
-          className="flex flex-col items-center gap-10 bg-white px-6 py-16 text-center sm:px-25"
+          className="mx-auto flex w-full max-w-300 flex-col items-center mb-12.5 gap-10 rounded-[30px] bg-white py-16 text-center shadow-[0px_7px_23px_0px_rgba(0,0,0,0.14)]"
         >
           <div className="flex flex-col items-center gap-3">
             <h2 className="text-3xl font-bold text-black sm:text-[40px]">
@@ -598,91 +599,116 @@ export default async function SolutionDetailPage({
               writing before we start.
             </p>
           </div>
-          <div className="grid w-full max-w-250 grid-cols-1 gap-6 bg-linear-to-br from-[#e0e4ff] to-[#dff0ff] p-1 sm:grid-cols-2">
-            <div className="flex flex-col gap-4 rounded-2xl bg-white p-8 text-left">
-              <span className="w-fit rounded-full bg-[#e0e4ff] px-4 py-1.5 text-sm font-medium text-brand-accent">
-                Build track
-              </span>
-              <p className="text-xl font-bold text-black">
-                Launch your platform
-              </p>
-              <p className="text-sm text-black/60">
-                A fully configured, branded {solution.title} platform — live
-                in weeks. One-time fixed price, scoped before we start.
-              </p>
-              {buildPriceRange && (
+          <div className="relative w-full">
+            <div
+              aria-hidden
+              className="absolute inset-x-0 top-0 h-85 bg-[linear-gradient(150deg,rgba(111,47,239,0.2),rgba(62,125,207,0.2),rgba(82,226,251,0.2))]"
+            />
+            {/* <div className="relative z-10 grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 justify-items-center"> */}
+            <div className="relative z-10 flex flex-wrap justify-center gap-6 p-6 pt-12.5">
+              <div className="min-w-82.5 flex flex-1 flex-col gap-4 rounded-[25px] bg-white p-6.25 text-left shadow-[0px_7px_23px_0px_rgba(0,0,0,0.14)] min-[800px]:max-w-120">
+                <span className="w-fit rounded-full bg-[#e0e4ff] px-4 py-1.5 text-sm font-medium text-brand-accent">
+                  Build track
+                </span>
+                <p className="text-[22px] font-semibold text-black">
+                  Launch your platform
+                </p>
+                <p className="text-sm text-black/80">
+                  A fully configured, branded {solution.title} platform — live
+                  in weeks. One-time fixed price, scoped before we start.
+                </p>
                 <p className="text-3xl font-bold text-black">
-                  {buildPriceRange}{" "}
+                  $1,500 – $3,000{" "}
                   <span className="text-base font-normal text-black/50">
                     / one-time
                   </span>
                 </p>
-              )}
-              {solution.buildChecklist.length > 0 && (
+                <p className="text-sm text-black/50">
+                  Fixed price · confirmed on strategy call · no hourly billing
+                </p>
                 <ul className="flex flex-col gap-2 border-t border-black/10 pt-4">
-                  {solution.buildChecklist.map((item) => (
+                  {[
+                    "Core platform features fully configured",
+                    "Branding, domain, and mobile-ready design",
+                    "Admin panel and user roles",
+                    "Third-party integrations included in scope",
+                    "Full QA and testing before launch",
+                    "Post-launch handover session included",
+                    "100% client ownership — no lock-in",
+                  ].map((item) => (
                     <li
                       key={item}
                       className="flex items-center gap-2 text-sm text-black/70"
                     >
-                      {/* <span className="text-brand-accent">✔️✓</span> */}
-                      <span className="text-brand-accent">✔️</span>
+                      <Image
+                        src="/images/solutions/tick.svg"
+                        alt=""
+                        width={19}
+                        height={19}
+                      />
                       {item}
                     </li>
                   ))}
                 </ul>
-              )}
-              <a
-                href="#start-your-project"
-                className="bg-brand-gradient mt-auto flex h-14 items-center justify-center rounded-full text-sm font-medium text-white transition-opacity hover:opacity-90"
-              >
-                Book a Free Strategy Call
-              </a>
-            </div>
+                <a
+                  href="#start-your-project"
+                  className="bg-brand-gradient mt-auto flex h-14 items-center justify-center rounded-full text-[20px] font-medium text-white transition-opacity hover:opacity-90"
+                >
+                  Book a Free Strategy Call
+                </a>
+              </div>
 
-            <div className="flex flex-col gap-4 rounded-2xl bg-white p-8 text-left">
-              <span className="w-fit rounded-full bg-[#e0e4ff] px-4 py-1.5 text-sm font-medium text-brand-accent">
-                Grow track
-              </span>
-              <p className="text-xl font-bold text-black">
-                Keep growing after launch
-              </p>
-              <p className="text-sm text-black/60">
-                Monthly retainer for ongoing support, new features, and
-                platform iterations. Start when you&rsquo;re ready — no
-                lock-in.
-              </p>
-              <p className="text-3xl font-bold text-black">
-                $300 – $600{" "}
-                <span className="text-base font-normal text-black/50">
-                  / month
+              <div className="min-w-82.5 flex flex-1 flex-col gap-4 rounded-[25px] bg-white p-6.25 text-left shadow-[0px_7px_23px_0px_rgba(0,0,0,0.14)] min-[800px]:max-w-120">
+                <span className="w-fit rounded-full px-4 py-1.5 text-sm font-medium text-[rgb(54,53,207)] bg-[rgb(186,214,255)]">
+                  Grow track
                 </span>
-              </p>
-              <ul className="flex flex-col gap-2 border-t border-black/10 pt-4">
-                {[
-                  "Bug fixes and platform maintenance",
-                  "Feature iterations and improvements",
-                  "Priority response and turnaround",
-                  "New integration and automation scoping",
-                  "Monthly review call and roadmap planning",
-                  "Scope and pricing confirmed monthly in writing",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-2 text-sm text-black/70"
-                  >
-                    {/* <span className="text-brand-accent">✔️✓</span> */}
-                    <span className="text-brand-accent">✔️</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#start-your-project"
-                className="mt-auto flex h-14 items-center justify-center rounded-full border border-brand-accent text-sm font-medium text-brand-accent transition-colors hover:bg-brand-accent hover:text-white"
-              >
-                Ask us about Grow Track
-              </a>
+                <p className="text-[22px] font-semibold text-black">
+                  Keep growing after launch
+                </p>
+                <p className="text-sm text-black/80">
+                  Monthly retainer for ongoing support, new features, and
+                  platform iterations. Start when you&rsquo;re ready — no
+                  lock-in.
+                </p>
+                <p className="text-3xl font-bold text-black">
+                  $300 – $600{" "}
+                  <span className="text-base font-normal text-black/50">
+                    / month
+                  </span>
+                </p>
+                <p className="text-sm text-black/50">
+                  Month-to-month · scope confirmed upfront · cancel anytime
+                </p>
+                <ul className="flex flex-col gap-2 border-t border-black/10 pt-4">
+                  {[
+                    "Bug fixes and platform maintenance",
+                    "Feature iterations and improvements",
+                    "Priority response and turnaround",
+                    "New integration and automation scoping",
+                    "Monthly review call and roadmap planning",
+                    "Scope and pricing confirmed monthly in writing",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-2 text-sm text-black/70"
+                    >
+                      <Image
+                        src="/images/solutions/tick.svg"
+                        alt=""
+                        width={19}
+                        height={19}
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#start-your-project"
+                  className="mt-auto flex h-14 items-center justify-center rounded-full border border-brand-accent text-[20px] font-medium text-brand-accent transition-colors hover:border-transparent hover:bg-[linear-gradient(45deg,rgb(31,120,255),rgb(65,62,207),rgb(111,47,239))] hover:text-white"
+                >
+                  Ask us about Grow Track
+                </a>
+              </div>
             </div>
           </div>
         </section>

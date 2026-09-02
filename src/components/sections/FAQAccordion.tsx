@@ -13,11 +13,11 @@ export function FAQAccordion({ items }: { items: Faq[] }) {
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
-          <div key={item.id} className="rounded-2xl bg-white px-6 py-5">
+          <div key={item.id} className="rounded-2xl bg-white px-6 py-4">
             <button
               type="button"
               onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="flex w-full items-center justify-between gap-4 text-left"
+              className="flex w-full items-center justify-between gap-4 text-left text-lg"
             >
               <span className="font-medium text-black">{item.question}</span>
               <svg
@@ -37,7 +37,7 @@ export function FAQAccordion({ items }: { items: Faq[] }) {
               </svg>
             </button>
             {isOpen && (
-              <p className="mt-3 border-l-2 border-brand-accent pl-4 text-sm leading-relaxed text-black/70">
+              <p className="mt-3 border-l-4 border-brand-accent pl-4 text-lg leading-relaxed text-black/70">
                 {item.answer}
               </p>
             )}

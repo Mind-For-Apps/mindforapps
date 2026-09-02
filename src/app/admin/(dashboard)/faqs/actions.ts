@@ -6,12 +6,14 @@ import { createClient } from "@/lib/supabase/server";
 
 function getFaqFields(formData: FormData) {
   const realEstateNr = formData.get("real_estate_sort_order") as string;
+  const serviceBookingNr = formData.get("service_booking_sort_order") as string;
 
   return {
     question: (formData.get("question") as string)?.trim(),
     answer: (formData.get("answer") as string)?.trim(),
     show_on_index: formData.get("show_on_index") === "on",
     real_estate_sort_order: realEstateNr ? Number(realEstateNr) : null,
+    service_booking_sort_order: serviceBookingNr ? Number(serviceBookingNr) : null,
     sort_order: Number(formData.get("sort_order") ?? 0),
   };
 }
@@ -26,6 +28,7 @@ export async function createFaq(formData: FormData) {
   revalidatePath("/");
   revalidatePath("/faq");
   revalidatePath("/solutions/real-estate");
+  revalidatePath("/solutions/service-booking-platform");
   redirect("/admin/faqs");
 }
 
@@ -42,6 +45,7 @@ export async function updateFaq(id: string, formData: FormData) {
   revalidatePath("/");
   revalidatePath("/faq");
   revalidatePath("/solutions/real-estate");
+  revalidatePath("/solutions/service-booking-platform");
   redirect("/admin/faqs");
 }
 
@@ -52,4 +56,5 @@ export async function deleteFaq(id: string) {
   revalidatePath("/");
   revalidatePath("/faq");
   revalidatePath("/solutions/real-estate");
+  revalidatePath("/solutions/service-booking-platform");
 }
