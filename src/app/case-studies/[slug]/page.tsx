@@ -235,7 +235,7 @@ export default async function CaseStudyDetailPage({
                       />
                     )}
                   </div>
-                  <p className="w-full break-words text-sm text-white sm:text-base">
+                  <p className="w-full wrap-break-word text-sm text-white sm:text-base">
                     {item.label}
                   </p>
                 </div>
@@ -273,7 +273,7 @@ export default async function CaseStudyDetailPage({
                   ) : (
                     <div className="size-8" />
                   )}
-                  <p className="w-full text-lg font-semibold break-words text-black">
+                  <p className="w-full text-lg font-semibold wrap-break-word text-black">
                     {feature.label}
                   </p>
                 </div>
@@ -427,7 +427,7 @@ export default async function CaseStudyDetailPage({
                 {caseStudy.teamInvolvement.map((item) => (
                   <div
                     key={item}
-                    className="flex min-w-0 items-center justify-center break-words rounded-2xl bg-white px-6 py-10 text-center text-lg font-medium text-black"
+                    className="flex min-w-0 items-center justify-center wrap-break-word rounded-2xl bg-white px-6 py-10 text-center text-lg font-medium text-black"
                   >
                     {item}
                   </div>
@@ -446,7 +446,7 @@ export default async function CaseStudyDetailPage({
               {caseStudy.suitableFor.map((item) => (
                 <div
                   key={item}
-                  className="min-w-0 break-words rounded-[30px] border border-black px-6 py-5 text-base font-medium text-black sm:text-lg"
+                  className="min-w-0 wrap-break-word rounded-[30px] border border-black px-6 py-5 text-base font-medium text-black sm:text-lg"
                 >
                   {item}
                 </div>
