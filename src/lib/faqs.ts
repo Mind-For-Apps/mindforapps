@@ -41,3 +41,13 @@ export async function getServiceBookingFaqs(): Promise<Faq[]> {
     .order("service_booking_sort_order");
   return data ?? [];
 }
+
+export async function getFreeSeoAuditFaqs(): Promise<Faq[]> {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("faqs")
+    .select("*")
+    .not("free_seo_audit_sort_order", "is", null)
+    .order("free_seo_audit_sort_order");
+  return data ?? [];
+}

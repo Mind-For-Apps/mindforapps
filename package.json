@@ -19,6 +19,7 @@
     "seed:testimonials": "node --env-file=.env.local --experimental-strip-types scripts/seed-testimonials.ts",
     "seed:faqs": "node --env-file=.env.local --experimental-strip-types scripts/seed-faqs.ts",
     "seed:service-booking-faqs": "node --env-file=.env.local --experimental-strip-types scripts/seed-service-booking-faqs.ts",
+    "seed:free-seo-audit-faqs": "node --env-file=.env.local --experimental-strip-types scripts/seed-free-seo-audit-faqs.ts",
     "seed:blog": "node --env-file=.env.local --experimental-strip-types scripts/seed-blog.ts",
     "seed:plugins": "node --env-file=.env.local --experimental-strip-types scripts/seed-plugins.ts"
   },
