@@ -12,7 +12,7 @@ export function BulletSection({
   if (items.length === 0) return null;
 
   return (
-    <div className="flex flex-col gap-6 rounded-3xl bg-[#e9e9e9] p-6 sm:p-8 xl:flex-row xl:items-center xl:justify-between">
+    <div className="flex flex-col gap-6 rounded bg-[#e9e9e9] p-6 sm:p-8 xl:flex-row xl:items-center xl:justify-between">
       <div className="flex flex-1 flex-col gap-4">
         <div>
           <h3 className="text-2xl font-bold text-black sm:text-[32px]">

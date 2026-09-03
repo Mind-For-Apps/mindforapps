@@ -10,6 +10,7 @@
     "seed:case-studies": "node --env-file=.env.local --experimental-strip-types scripts/seed-case-studies.ts",
     "seed:services-features": "node --env-file=.env.local --experimental-strip-types scripts/seed-services-and-features.ts",
     "seed:tools": "node --env-file=.env.local --experimental-strip-types scripts/seed-tools.ts",
+    "seed:tools-icon-white": "node --env-file=.env.local --experimental-strip-types scripts/seed-tools-icon-white.ts",
     "seed:solutions": "node --env-file=.env.local --experimental-strip-types scripts/seed-solutions.ts",
     "seed:solution-features": "node --env-file=.env.local --experimental-strip-types scripts/seed-solution-features.ts",
     "seed:solution-designed-for": "node --env-file=.env.local --experimental-strip-types scripts/seed-solution-designed-for.ts",
