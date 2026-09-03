@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -7,7 +8,32 @@ import "swiper/css";
 
 type Tool = { name: string; icon_url: string | null };
 
-export function ToolsSlider({ tools }: { tools: Tool[] }) {
+const DEFAULT_BREAKPOINTS = {
+  450: { slidesPerView: 1.5 },
+  550: { slidesPerView: 2 },
+  650: { slidesPerView: 2.5 },
+  900: { slidesPerView: 3.5 },
+  1200: { slidesPerView: 4.7 },
+  1500: { slidesPerView: 5.2 },
+  1650: { slidesPerView: 6 },
+  1900: { slidesPerView: 7 },
+};
+
+export function ToolsSlider({
+  tools,
+  slidesPerView = 1.2,
+  spaceBetween = 20,
+  breakpoints = DEFAULT_BREAKPOINTS,
+  fadeInOnReady = false,
+}: {
+  tools: Tool[];
+  slidesPerView?: number;
+  spaceBetween?: number;
+  breakpoints?: Record<number, { slidesPerView: number; spaceBetween?: number }>;
+  fadeInOnReady?: boolean;
+}) {
+  const [ready, setReady] = useState(false);
+
   return (
     <Swiper
       modules={[Autoplay]}
@@ -15,19 +41,15 @@ export function ToolsSlider({ tools }: { tools: Tool[] }) {
       loopAdditionalSlides={0}
       speed={800}
       autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true, }}
-      slidesPerView={1.2}
-      spaceBetween={20}
-      breakpoints={{
-        450: { slidesPerView: 1.5 },
-        550: { slidesPerView: 2 },
-        650: { slidesPerView: 2.5 },
-        900: { slidesPerView: 3.5 },
-        1200: { slidesPerView: 4.7 },
-        1500: { slidesPerView: 5.2 },
-        1650: { slidesPerView: 6 },
-        1900: { slidesPerView: 7 },
-      }}
-      className="w-full!"
+      slidesPerView={slidesPerView}
+      spaceBetween={spaceBetween}
+      breakpoints={breakpoints}
+      onInit={fadeInOnReady ? () => setReady(true) : undefined}
+      className={
+        fadeInOnReady
+          ? `w-full! transition-opacity duration-300 ${ready ? "opacity-100" : "opacity-0"}`
+          : "w-full!"
+      }
     >
       {tools.map((tool) => (
         <SwiperSlide key={tool.name}>

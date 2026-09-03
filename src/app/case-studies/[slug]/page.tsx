@@ -50,15 +50,16 @@ export default async function CaseStudyDetailPage({
     <>
       <Header />
       <main className="flex flex-1 flex-col">
-        <section className="flex flex-col items-center gap-3 bg-brand-surface px-6 py-16 text-center sm:px-25">
-          <h1 className="max-w-225 text-3xl font-semibold text-black sm:text-[45px]">
+        <section className="flex flex-col items-center gap-11 bg-brand-surface px-6 pt-12 pb-10 text-center sm:px-25">
+          <h1 className="max-w-225 text-3xl font-medium text-black sm:text-[40px]">
             {caseStudy.title}
           </h1>
           {caseStudy.tags.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-3 text-sm font-medium text-black sm:gap-3.75 sm:text-lg">
+            // <div className="flex flex-wrap items-center justify-center gap-3 text-sm font-medium text-black sm:gap-3.75 sm:text-base">
+            <div className="flex flex-wrap items-center justify-center text-sm font-medium text-black sm:text-base">
               {caseStudy.tags.map((tag, i) => (
                 <span key={tag} className="flex items-center gap-3">
-                  {i > 0 && <span className="text-black/40">|</span>}
+                  {i > 0 && <span className="text-black/80">&nbsp;&nbsp;|</span>}
                   {tag}
                 </span>
               ))}
@@ -66,50 +67,52 @@ export default async function CaseStudyDetailPage({
           )}
         </section>
 
-        <section className="flex flex-wrap items-center justify-between gap-8 bg-black px-6 py-10 sm:px-25">
+        <section className="flex flex-wrap items-start justify-between gap-8 bg-black px-6 pt-10 pb-16 sm:px-41">
           {caseStudy.serviceNames.length > 0 && (
             <div>
-              <p className="text-sm text-white/40">Services</p>
-              <p className="mt-1 max-w-60 text-lg font-medium text-white">
+              <p className="text-sm font-medium text-white/40">Services</p>
+              <p className="mt-1 max-w-85 text-lg font-medium text-white">
                 {caseStudy.serviceNames.join(", ")}
               </p>
             </div>
           )}
           {caseStudy.deliverables && (
             <div>
-              <p className="text-sm text-white/40">Deliverables</p>
-              <p className="mt-1 max-w-70 text-lg font-medium text-white">
+              <p className="text-sm font-medium text-white/40">Deliverables</p>
+              <p className="mt-1 max-w-54 text-lg font-medium text-white">
                 {caseStudy.deliverables}
               </p>
             </div>
           )}
           {caseStudy.tools.length > 0 && (
             <div>
-              <p className="text-sm text-white/40">Tools</p>
+              <p className="text-sm font-medium text-white/40">Tools</p>
               <div className="mt-2 flex flex-wrap items-center gap-2">
                 {caseStudy.tools
                   .filter(
                     (tool) => tool.name === "Figma" || tool.name === "Bubble.io",
                   )
-                  .map(
-                    (tool) =>
-                      tool.icon_url && (
+                  .map((tool) => {
+                    const iconUrl = tool.icon_white_url || tool.icon_url;
+                    return (
+                      iconUrl && (
                         <Image
                           key={tool.name}
-                          src={tool.icon_url}
+                          src={iconUrl}
                           alt={tool.name}
                           width={24}
                           height={24}
                           className="size-6 object-contain"
                         />
-                      ),
-                  )}
+                      )
+                    );
+                  })}
               </div>
             </div>
           )}
           {caseStudy.timeline && (
             <div>
-              <p className="text-sm text-white/40">Timeline</p>
+              <p className="text-sm font-medium text-white/40">Timeline</p>
               <p className="mt-1 text-lg font-medium text-white">
                 {caseStudy.timeline}
               </p>
@@ -120,7 +123,7 @@ export default async function CaseStudyDetailPage({
               href={caseStudy.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-14 shrink-0 items-center gap-2 rounded-full bg-white px-6 text-sm font-medium text-black transition-opacity hover:opacity-90"
+              className="flex h-11.25 shrink-0 items-center gap-2 rounded-full bg-white px-6 text-lg font-medium text-black transition-opacity hover:opacity-90 max-[640px]:w-full max-[640px]:justify-center"
             >
               Live website
               <svg
@@ -141,8 +144,25 @@ export default async function CaseStudyDetailPage({
         </section>
 
         {caseStudy.headerImages.length > 0 && (
-          <section className="bg-brand-surface py-10">
-            <ImagesSlider images={caseStudy.headerImages} />
+          <section className="bg-brand-surface">
+            <div className="bg-[#000000] w-full h-100 max-[1000px]:h-80 max-[800px]:h-60"></div>
+            <section className="-mt-100 max-[1000px]:-mt-80 max-[800px]:-mt-60">
+            <ImagesSlider
+              images={caseStudy.headerImages}
+              slidesPerView={1}
+              spaceBetween={20}
+              breakpoints={{
+                550: { slidesPerView: 1.5 },
+                1300: { slidesPerView: 1.8 },
+                1500: { slidesPerView: 2 },
+                1600: { slidesPerView: 2.5 },
+                2000: { slidesPerView: 3 },
+                2300: { slidesPerView: 3.5 },
+              }}
+              slideMaxWidthClass=""
+              fadeInOnReady
+            />
+            </section>
           </section>
         )}
 
@@ -153,9 +173,9 @@ export default async function CaseStudyDetailPage({
           caseStudy.clientGoal.length > 0 ||
           caseStudy.solution) && (
           <section className="bg-brand-surface px-6 py-16 sm:px-25">
-            <div className="mx-auto grid max-w-300 grid-cols-1 gap-10 lg:grid-cols-[1fr_2fr]">
+            <div className="mx-auto grid max-w-300 grid-cols-1 gap-10 lg:grid-cols-[300px_2fr]">
               <div className="flex flex-col gap-4 lg:sticky lg:top-24 lg:self-start">
-                <h2 className="text-3xl font-bold text-black sm:text-[40px]">
+                <h2 className="text-3xl font-semibold text-black sm:text-[40px]">
                   Problem &amp; Context
                 </h2>
                 <p className="max-w-105 text-base text-black/70 sm:text-lg">
@@ -181,7 +201,9 @@ export default async function CaseStudyDetailPage({
                   illustrationSrc="/images/case-study-detail/illustration-goal.svg"
                 />
                 {caseStudy.solution && (
-                  <div className="flex flex-col gap-6 rounded-3xl bg-[#e9e9e9] p-6 sm:p-8 xl:flex-row xl:items-center xl:justify-between">
+                  <div className="p-1.25 rounded-md bg-linear-to-b from-[#0165fd] via-[#2e2d99] to-[#070f67]">
+
+                  <div className="flex flex-col gap-6 rounded bg-[#e9e9e9] p-6 sm:p-8 xl:flex-row xl:items-center xl:justify-between">
                     <div className="flex flex-1 flex-col gap-4">
                       <div>
                         <h3 className="text-2xl font-bold text-brand-accent sm:text-[32px]">
@@ -203,6 +225,7 @@ export default async function CaseStudyDetailPage({
                       />
                     </div>
                   </div>
+                </div>
                 )}
               </div>
             </div>
@@ -212,11 +235,11 @@ export default async function CaseStudyDetailPage({
         {caseStudy.webArchitecture.length > 0 && (
           <section className="flex flex-col items-center gap-10 bg-black px-6 py-16 text-center sm:px-25">
             <div className="flex flex-col items-center gap-3">
-              <h2 className="text-3xl font-bold text-white sm:text-[40px]">
+              <h2 className="text-3xl font-semibold text-white sm:text-[40px]">
                 What Was Built
               </h2>
               {caseStudy.textWhatWasBuilt && (
-                <p className="max-w-175 text-base text-white/70 sm:text-lg">
+                <p className="text-base text-white/70 sm:text-lg">
                   {caseStudy.textWhatWasBuilt}
                 </p>
               )}
@@ -224,18 +247,18 @@ export default async function CaseStudyDetailPage({
             <div className="grid w-full max-w-300 grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
               {caseStudy.webArchitecture.map((item) => (
                 <div key={item.label} className="flex min-w-0 flex-col items-center gap-4">
-                  <div className="flex size-16 items-center justify-center rounded-full bg-white/10">
+                  <div className="flex size-16 items-center justify-center rounded-full bg-[rgb(217,225,255)]">
                     {item.iconUrl && (
                       <Image
                         src={item.iconUrl}
                         alt=""
                         width={28}
                         height={28}
-                        className="size-7 object-contain invert"
+                        className="size-7 object-contain"
                       />
                     )}
                   </div>
-                  <p className="w-full wrap-break-word text-sm text-white sm:text-base">
+                  <p className="w-full wrap-break-word text-sm text-white sm:text-lg">
                     {item.label}
                   </p>
                 </div>
@@ -247,7 +270,7 @@ export default async function CaseStudyDetailPage({
         {caseStudy.keyFeatures.length > 0 && (
           <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25">
             <div className="flex flex-col items-center gap-3">
-              <h2 className="text-3xl font-bold text-black sm:text-[40px]">
+              <h2 className="text-3xl font-semibold text-black sm:text-[40px]">
                 Key Features Delivered
               </h2>
               {caseStudy.textFeatures && (
@@ -260,15 +283,15 @@ export default async function CaseStudyDetailPage({
               {caseStudy.keyFeatures.map((feature) => (
                 <div
                   key={feature.label}
-                  className="flex min-w-0 flex-col items-start gap-10 rounded-2xl bg-white p-6 text-left"
+                  className="flex min-w-0 min-h-50 justify-around flex-col items-start gap-10 rounded-3xl border border-solid border-transparent bg-white p-6 text-left transition-colors hover:border-black"
                 >
                   {feature.iconUrl ? (
                     <Image
                       src={feature.iconUrl}
                       alt=""
-                      width={32}
-                      height={32}
-                      className="size-8"
+                      width={44}
+                      height={44}
+                      className="size-11"
                     />
                   ) : (
                     <div className="size-8" />
@@ -284,17 +307,31 @@ export default async function CaseStudyDetailPage({
 
         {caseStudy.progressImages.length > 0 && (
           <section className="flex flex-col items-center gap-10 bg-brand-surface pt-16 pb-10 text-center">
-            <h2 className="text-3xl font-bold text-black sm:text-[40px]">
+            <h2 className="text-3xl mb-10 font-semibold text-black sm:text-[40px]">
               Design in Progress
             </h2>
-            <ImagesSlider images={caseStudy.progressImages} />
+            <ImagesSlider
+              images={caseStudy.progressImages}
+              slidesPerView={1}
+              spaceBetween={20}
+              breakpoints={{
+                550: { slidesPerView: 1.5 },
+                1300: { slidesPerView: 1.8 },
+                1500: { slidesPerView: 2 },
+                1600: { slidesPerView: 2.5 },
+                2000: { slidesPerView: 3 },
+                2300: { slidesPerView: 3.5 },
+              }}
+              slideMaxWidthClass=""
+              fadeInOnReady
+            />
           </section>
         )}
 
         {caseStudy.tools.length > 0 && (
           <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25">
             <div className="flex flex-col items-center gap-3">
-              <h2 className="text-3xl font-bold text-black sm:text-[40px]">
+              <h2 className="text-3xl font-semibold text-black sm:text-[40px]">
                 Platform &amp; Tools Used
               </h2>
               {caseStudy.textTools && (
@@ -304,7 +341,20 @@ export default async function CaseStudyDetailPage({
               )}
             </div>
             <div className="w-full max-w-300">
-              <ToolsSlider tools={caseStudy.tools} />
+              <ToolsSlider
+                tools={caseStudy.tools}
+                slidesPerView={1}
+                spaceBetween={20}
+                breakpoints={{
+                  550: { slidesPerView: 1.5 },
+                  1300: { slidesPerView: 1.8 },
+                  1500: { slidesPerView: 2 },
+                  1600: { slidesPerView: 2.5 },
+                  2000: { slidesPerView: 3 },
+                  2300: { slidesPerView: 3.5 },
+                }}
+                fadeInOnReady
+              />
             </div>
           </section>
         )}
@@ -312,7 +362,7 @@ export default async function CaseStudyDetailPage({
         {highlightStats.length > 0 && (
           <section className="bg-brand-surface px-6 py-16 sm:px-25">
             <div className="mx-auto flex max-w-300 flex-col gap-10 lg:flex-row lg:items-start">
-              <h2 className="shrink-0 text-3xl font-bold text-black sm:text-[40px] lg:w-65">
+              <h2 className="shrink-0 text-3xl font-semibold text-black sm:text-[40px] lg:w-65">
                 Outcome &amp; Impact
               </h2>
               <div className="grid flex-1 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -339,7 +389,7 @@ export default async function CaseStudyDetailPage({
               className="object-cover"
             />
             <div className="relative z-10 mx-auto flex max-w-300 flex-col gap-10 lg:flex-row lg:items-center">
-              <h2 className="shrink-0 text-3xl font-bold text-white sm:text-[40px] lg:w-70">
+              <h2 className="shrink-0 text-3xl font-semibold text-white sm:text-[40px] lg:w-70">
                 Client Feedback
               </h2>
               <div className="flex w-full flex-col gap-6 rounded-[25px] border border-white/15 bg-[#123250]/95 p-8 sm:p-10">
@@ -412,7 +462,7 @@ export default async function CaseStudyDetailPage({
           <section className="bg-brand-surface px-6 py-16 sm:px-25">
             <div className="mx-auto grid max-w-300 grid-cols-1 gap-10 lg:grid-cols-[275px_1fr]">
               <div className="flex flex-col gap-6">
-                <h2 className="text-3xl font-bold text-black sm:text-[40px]">
+                <h2 className="text-3xl font-semibold text-black sm:text-[40px]">
                   Team Involvement
                 </h2>
                 <Image
@@ -439,7 +489,7 @@ export default async function CaseStudyDetailPage({
 
         {caseStudy.suitableFor.length > 0 && (
           <section className="flex flex-col items-center gap-8 bg-brand-surface px-6 py-16 text-center sm:px-25">
-            <h2 className="text-3xl font-bold text-black sm:text-[40px]">
+            <h2 className="text-3xl font-semibold text-black sm:text-[40px]">
               Suitable For:
             </h2>
             <div className="grid w-full max-w-225 grid-cols-1 gap-4 sm:grid-cols-2">

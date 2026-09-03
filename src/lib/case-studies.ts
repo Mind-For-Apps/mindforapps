@@ -8,7 +8,7 @@ export type CaseStudySlide = {
   problem: string | null;
   context: string | null;
   serviceNames: string;
-  tools: { name: string; icon_url: string | null }[];
+  tools: { name: string; icon_url: string | null; icon_white_url: string | null }[];
   deliverables: string | null;
   timeline: string | null;
   hours: string | null;
@@ -56,7 +56,7 @@ export type CaseStudyDetail = {
   seoDescription: string | null;
   seoImageUrl: string | null;
   serviceNames: string[];
-  tools: { name: string; icon_url: string | null }[];
+  tools: { name: string; icon_url: string | null; icon_white_url: string | null }[];
   keyFeatures: { label: string; iconUrl: string | null }[];
   teamInvolvement: string[];
 };
@@ -67,7 +67,7 @@ export async function getCaseStudySlides(): Promise<CaseStudySlide[]> {
   const { data: caseStudies } = await supabase
     .from("case_studies")
     .select(
-      `*, case_study_services(services(name)), case_study_tools(tools(name, icon_url))`,
+      `*, case_study_services(services(name)), case_study_tools(tools(name, icon_url, icon_white_url))`,
     )
     .eq("is_published", true)
     .order("sort_order");
@@ -89,11 +89,23 @@ export async function getCaseStudySlides(): Promise<CaseStudySlide[]> {
 
     const tools = (
       caseStudy.case_study_tools as {
-        tools: { name: string; icon_url: string | null } | null;
+        tools: {
+          name: string;
+          icon_url: string | null;
+          icon_white_url: string | null;
+        } | null;
       }[]
     )
       .map((row) => row.tools)
-      .filter((t): t is { name: string; icon_url: string | null } => !!t);
+      .filter(
+        (
+          t,
+        ): t is {
+          name: string;
+          icon_url: string | null;
+          icon_white_url: string | null;
+        } => !!t,
+      );
 
     return {
       id: caseStudy.id,
@@ -124,7 +136,7 @@ export async function getCaseStudyBySlug(
   const { data: caseStudy } = await supabase
     .from("case_studies")
     .select(
-      `*, case_study_services(services(name)), case_study_tools(tools(name, icon_url)), case_study_key_features(label, icon_url, sort_order), case_study_team_involvement(team_involvement_types(name, sort_order)), case_study_web_architecture(label, icon_url, sort_order)`,
+      `*, case_study_services(services(name)), case_study_tools(tools(name, icon_url, icon_white_url)), case_study_key_features(label, icon_url, sort_order), case_study_team_involvement(team_involvement_types(name, sort_order)), case_study_web_architecture(label, icon_url, sort_order)`,
     )
     .eq("slug", slug)
     .eq("is_published", true)
@@ -145,11 +157,23 @@ export async function getCaseStudyBySlug(
 
   const tools = (
     caseStudy.case_study_tools as {
-      tools: { name: string; icon_url: string | null } | null;
+      tools: {
+        name: string;
+        icon_url: string | null;
+        icon_white_url: string | null;
+      } | null;
     }[]
   )
     .map((row) => row.tools)
-    .filter((t): t is { name: string; icon_url: string | null } => !!t);
+    .filter(
+      (
+        t,
+      ): t is {
+        name: string;
+        icon_url: string | null;
+        icon_white_url: string | null;
+      } => !!t,
+    );
 
   const keyFeatures = (
     caseStudy.case_study_key_features as {
