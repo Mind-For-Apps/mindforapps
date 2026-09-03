@@ -1,7 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import { BookConsultationButton } from "@/components/BookConsultationButton";
 
-export function FreeAudit() {
+export function FreeAudit({ href }: { href?: string } = {}) {
+  const buttonClassName =
+    "self-end rounded-full bg-white px-8 py-4 text-xl font-medium text-black transition-colors hover:bg-black hover:text-white max-[530px]:w-full mt-5";
+
   return (
     // <section className="flex flex-col items-center bg-brand-surface px-6 py-6 sm:px-25">
     <section className="flex flex-col items-center bg-brand-surface px-6 py-6">
@@ -28,9 +32,15 @@ export function FreeAudit() {
             </p>
           </div>
 
-          <BookConsultationButton className="self-end rounded-full bg-white px-8 py-4 text-xl font-medium text-black transition-colors hover:bg-black hover:text-white max-[530px]:w-full mt-5">
-            Book a Free Audit
-          </BookConsultationButton>
+          {href ? (
+            <Link href={href} className={buttonClassName}>
+              Book a Free Audit
+            </Link>
+          ) : (
+            <BookConsultationButton className={buttonClassName}>
+              Book a Free Audit
+            </BookConsultationButton>
+          )}
         </div>
 
         {/* <div className="relative flex min-h-108.25 min-w-70 max-w-101.25 flex-1 items-center justify-center overflow-hidden rounded-[5px] bg-white p-8 max-[799px]:max-w-none"> */}

@@ -7,6 +7,7 @@ type FaqRow = {
   show_on_index: boolean;
   real_estate_sort_order: number | null;
   service_booking_sort_order: number | null;
+  free_seo_audit_sort_order: number | null;
   sort_order: number;
 };
 
@@ -32,7 +33,7 @@ export function FaqForm({
           />
           Show on homepage
         </label>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <TextField
             name="real_estate_sort_order"
             label="Real Estate solution — position (leave blank to hide there)"
@@ -44,6 +45,12 @@ export function FaqForm({
             label="Service Booking solution — position (leave blank to hide there)"
             type="number"
             defaultValue={f?.service_booking_sort_order ?? ""}
+          />
+          <TextField
+            name="free_seo_audit_sort_order"
+            label="Free SEO Audit page — position (leave blank to hide there)"
+            type="number"
+            defaultValue={f?.free_seo_audit_sort_order ?? ""}
           />
         </div>
         <TextField

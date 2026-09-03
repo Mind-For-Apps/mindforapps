@@ -121,9 +121,11 @@ function CloudUploadIcon() {
 export function Footer({
   openContactForm = false,
   hideStartProjectCard = false,
+  hideStartProjectSection = false,
 }: {
   openContactForm?: boolean;
   hideStartProjectCard?: boolean;
+  hideStartProjectSection?: boolean;
 }) {
   const messageId = useId();
   const [stage, setStage] = useState<string | null>(
@@ -180,7 +182,7 @@ export function Footer({
         id="start-your-project"
         // className="relative bg-[#e9edf1] px-6 py-16 sm:px-25"
         // className="relative px-6 py-16 sm:px-25"
-        className="relative px-6 pb-16 mt-8.5"
+        className={`relative px-6 pb-16 mt-8.5 ${hideStartProjectSection ? "hidden" : ""}`}
       >
         <Image
           // src="/images/footer-top-wave.png"

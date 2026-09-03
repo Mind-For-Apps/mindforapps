@@ -31,7 +31,7 @@ export default function Home() {
         <Testimonials />
         <FAQ />
         <Blog />
-        <FreeAudit />
+        <FreeAudit href="/free-seo-audit" />
       </main>
       <Footer />
     </>
