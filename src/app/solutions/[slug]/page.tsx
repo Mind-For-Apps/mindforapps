@@ -14,6 +14,7 @@ import { ImagesSlider } from "@/components/ImagesSlider";
 import { ToolsSlider } from "@/components/ToolsSlider";
 import { FeaturesBrowser } from "./FeaturesBrowser";
 import { TestimonialsSlider } from "@/components/sections/TestimonialsSlider";
+import { isSvgSrc } from "@/lib/is-svg-src";
 import { FreeAudit } from "@/components/sections/FreeAudit";
 import { CalendlyWidget } from "@/components/CalendlyWidget";
 
@@ -116,6 +117,7 @@ export default async function SolutionDetailPage({
                   src={solution.mainImageUrl}
                   alt={solution.title}
                   fill
+                  sizes="(min-width: 1024px) 617px, 100vw"
                   className="object-contain"
                 />
               </div>
@@ -169,6 +171,7 @@ export default async function SolutionDetailPage({
                       className="flex min-h-45 min-w-10 flex-col gap-4 rounded-[30px] border border-transparent bg-white p-5 shadow-[0px_4px_7px_0px_rgba(0,0,0,0.14)] transition-colors hover:border-black min-[450px]:max-w-72.5"
                     >
                       <Image
+                        unoptimized={isSvgSrc(item.iconUrl) || !item.iconUrl}
                         src={item.iconUrl ?? "/images/icons/onboarding.svg"}
                         alt=""
                         width={28}
@@ -503,6 +506,7 @@ export default async function SolutionDetailPage({
                 >
                   {feature.iconUrl ? (
                     <Image
+                      unoptimized={isSvgSrc(feature.iconUrl)}
                       src={feature.iconUrl}
                       alt=""
                       width={28}
@@ -511,6 +515,7 @@ export default async function SolutionDetailPage({
                     />
                   ) : (
                     <Image
+                      unoptimized
                       src={`/images/icons/${INCLUDED_FEATURE_ICONS[i % INCLUDED_FEATURE_ICONS.length]}.svg`}
                       alt=""
                       width={28}
@@ -555,7 +560,9 @@ export default async function SolutionDetailPage({
             )}
             <div className="relative mt-10 aspect-1122/495 w-full max-w-280.5">
               <Image
+                unoptimized={isSvgSrc(solution.whatsIncludedIconUrl)}
                 src={solution.whatsIncludedIconUrl}
+                sizes="(min-width: 1150px) 1122px, 100vw"
                 alt=""
                 fill
                 className="object-contain"
@@ -641,6 +648,7 @@ export default async function SolutionDetailPage({
                       className="flex items-center gap-2 text-sm text-black/70"
                     >
                       <Image
+                        unoptimized
                         src="/images/solutions/tick.svg"
                         alt=""
                         width={19}
@@ -693,6 +701,7 @@ export default async function SolutionDetailPage({
                       className="flex items-center gap-2 text-sm text-black/70"
                     >
                       <Image
+                        unoptimized
                         src="/images/solutions/tick.svg"
                         alt=""
                         width={19}

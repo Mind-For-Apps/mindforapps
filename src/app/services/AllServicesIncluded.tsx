@@ -48,6 +48,7 @@ export function AllServicesIncluded() {
               className="opacity-0 transition-opacity w-14 duration-300 group-hover:opacity-100"
             />
             <Image
+              unoptimized
               src="/images/solution-deco-left.svg"
               alt=""
               width={38}
@@ -55,6 +56,7 @@ export function AllServicesIncluded() {
               className="absolute top-6 left-6 w-6.25 h-17.5"
             />
             <Image
+              unoptimized
               src="/images/solution-deco-right.svg"
               alt=""
               width={36}
@@ -62,6 +64,7 @@ export function AllServicesIncluded() {
               className="absolute top-6 right-6 w-6.25 h-17.5"
             />
             <Image
+              unoptimized
               // src="/images/explore-deco-left.svg"
               src="/images/solution-deco-left.svg"
               alt=""
@@ -70,6 +73,7 @@ export function AllServicesIncluded() {
               className="absolute bottom-0 left-12 w-6.25 h-17.5 -rotate-90"
             />
             <Image
+              unoptimized
               // src="/images/explore-deco-right.svg"
               src="/images/solution-deco-left.svg"
               alt=""
@@ -79,7 +83,7 @@ export function AllServicesIncluded() {
             />
             <div className="relative flex flex-col items-center gap-4 px-6 text-center">
               <p className="text-3xl font-semibold text-white">Solution</p>
-              <Image src="/images/solution-icon.svg" alt="" width={70} height={40} />
+              <Image unoptimized src="/images/solution-icon.svg" alt="" width={70} height={40} />
             </div>
           </Link>
 
@@ -93,7 +97,7 @@ export function AllServicesIncluded() {
               href="/solutions"
               className="flex w-fit items-center gap-3 self-end transition-opacity hover:opacity-80"
             >
-              <Image src="/images/services/arrow_b.svg" alt="" width={55} height={55} />
+              <Image unoptimized src="/images/services/arrow_b.svg" alt="" width={55} height={55} />
               <span className="text-[32px] font-medium text-black">Explore</span>
             </Link>
           </div>
@@ -107,6 +111,7 @@ export function AllServicesIncluded() {
             className="flex flex-col items-center justify-center gap-3 rounded-[25px] border border-[#e4e4e4] bg-white px-2 py-8 transition-colors hover:bg-[#eaeffe] shadow-[0px_4px_9.65px_rgba(0,0,0,0.1)]"
           >
             <Image
+              unoptimized
               src={`/images/icons/${item.icon}.svg`}
               alt=""
               width={26}

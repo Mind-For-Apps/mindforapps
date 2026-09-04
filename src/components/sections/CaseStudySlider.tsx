@@ -23,6 +23,7 @@ export function CaseStudySlider({ slides }: { slides: CaseStudySlide[] }) {
           className="hidden shrink-0 sm:block disabled:opacity-30"
         >
           <Image
+            unoptimized
             src="/images/nav-arrow-left.svg"
             alt=""
             width={59}
@@ -47,6 +48,7 @@ export function CaseStudySlider({ slides }: { slides: CaseStudySlide[] }) {
           className="hidden shrink-0 sm:block disabled:opacity-30"
         >
           <Image
+            unoptimized
             src="/images/nav-arrow-right.svg"
             alt=""
             width={59}

@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import type { ServiceCardData } from "@/lib/services";
+import { isSvgSrc } from "@/lib/is-svg-src";
 
 export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
   const swiperRef = useRef<SwiperRef>(null);
@@ -21,6 +22,7 @@ export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
           className="hidden shrink-0 sm:block disabled:opacity-30"
         >
           <Image
+            unoptimized
             src="/images/nav-arrow-left.svg"
             alt=""
             width={59}
@@ -45,6 +47,7 @@ export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
           className="hidden shrink-0 sm:block disabled:opacity-30"
         >
           <Image
+            unoptimized
             src="/images/nav-arrow-right.svg"
             alt=""
             width={59}
@@ -76,6 +79,7 @@ export function ServicesSlider({ services }: { services: ServiceCardData[] }) {
               <div className="flex w-16 shrink-0 items-start justify-center rounded bg-brand-gradient pt-6 @min-[600px]:w-20 @min-[600px]:pt-8">
                 {service.iconUrl && (
                   <Image
+                    unoptimized={isSvgSrc(service.iconUrl)}
                     src={service.iconUrl}
                     alt=""
                     width={40}

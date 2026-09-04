@@ -33,6 +33,7 @@ export function BulletSection({
       </div>
       <div className="relative hidden h-47.5 w-72.5 shrink-0 opacity-90 xl:block">
         <Image
+          unoptimized
           src={illustrationSrc}
           alt=""
           fill

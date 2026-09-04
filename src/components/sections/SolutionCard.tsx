@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { SolutionCardData } from "@/lib/solutions";
 import { BookConsultationButton } from "@/components/BookConsultationButton";
+import { isSvgSrc } from "@/lib/is-svg-src";
 
 const SOLUTION_PAGE_SLUGS = ["real-estate", "service-booking-platform"];
 
@@ -44,6 +45,7 @@ export function SolutionCard({ solution }: { solution: SolutionCardData }) {
                     className="mx-auto my-1.75 flex w-full max-w-18.75 items-center justify-center overflow-hidden rounded-xl border border-black/10 bg-white py-3.75 px-2.5 shadow-[1px_2px_7px_0px_rgba(0,0,0,0.14)] @max-[465px]:max-h-13.25 @max-[465px]:max-w-15 @max-[465px]:min-w-15 max-[420px]:max-h-11.25! max-[420px]:max-w-12.5! max-[420px]:min-w-10! max-[420px]:py-2.5! max-[420px]:px-1.25! max-[370px]:mx-0.5!"
                   >
                     <Image
+                      unoptimized={isSvgSrc(tool.icon_url)}
                       src={tool.icon_url}
                       alt={tool.name}
                       width={36}
@@ -79,6 +81,7 @@ export function SolutionCard({ solution }: { solution: SolutionCardData }) {
                   src={url}
                   alt={`${solution.title} preview ${i + 1}`}
                   fill
+                  sizes="(min-width: 800px) 236px, 33vw"
                   className="object-cover"
                 />
               </div>

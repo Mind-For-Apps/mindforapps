@@ -1,5 +1,39 @@
 # Changelog
 
+## 2026-09-04 — Cut Vercel Image Optimization usage further (SVGs + `fill` sizing)
+
+### Changed
+- The `2026-08-28` TTL/`deviceSizes` fix wasn't enough — quota hit 5,000/5,000
+  again. Root cause this time: `next.config.ts`'s `images.dangerouslyAllowSVG:
+  true` (needed so remote SVG icons from Supabase Storage load at all)
+  disables Next's own built-in "auto-`unoptimized` for `.svg` src" shortcut
+  (verified in `node_modules/next/dist/shared/lib/get-img-props.js` — the
+  auto-bypass is explicitly gated on `!config.dangerouslyAllowSVG`). So every
+  SVG icon on the site — ~65 `<Image>` usages across 34 files, both local
+  decorative icons and remote Storage-hosted tool/category/feature icons —
+  was being routed through the paid optimizer for zero visual benefit (a
+  vector icon never needs raster resizing).
+- New `src/lib/is-svg-src.ts` (`isSvgSrc(src)`): checks whether a
+  DB/Storage-sourced URL string ends in `.svg`. Every `<Image>` with a
+  literal `.svg` `src` now gets a hardcoded `unoptimized` prop; every one
+  with a dynamic `src` that may or may not be an SVG (tool/category/feature/
+  plugin/testimonial-project icons and logos) gets `unoptimized={isSvgSrc(...)}`.
+  Real content photos (case study/solution/template/testimonial images,
+  headshots, screenshots) were left untouched — those genuinely benefit from
+  responsive optimization.
+- Added explicit `sizes` to `fill`-mode `<Image>`s that were missing it and
+  aren't already `unoptimized` (Next defaults a `fill` image with no `sizes`
+  to `100vw`, i.e. willing to generate the widest `deviceSizes` variant even
+  for a small card thumbnail): fixed-size photo/logo thumbnails now get a
+  `sizes` matching their real rendered width (e.g. `plugin_details/[slug]`'s
+  logo circle, `SolutionCard`'s preview thumbnails, `ComparisonBlock`'s pill
+  backgrounds); genuine full-bleed page backgrounds (`services/page.tsx`,
+  `Footer.tsx`, `WhyUs.tsx`, `WithMindforapps.tsx`) got an explicit
+  `sizes="100vw"` for documentation, no functional change.
+- `minimumCacheTTL` (1 week, set `2026-08-28`) deliberately left as-is this
+  round — the SVG/`fill` fixes target more clearly-identified waste; revisit
+  the TTL separately if the quota is still tight after this.
+
 ## 2026-08-31 — "Designed For" moved from `text[]` to a real child table
 
 ### Added

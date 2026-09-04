@@ -75,6 +75,7 @@ export default function AboutPage() {
               className="flex items-center gap-3 text-[16px] font-normal text-black min-[420px]:text-[18px] min-[460px]:text-[20px]"
             >
               <Image
+                unoptimized
                 src="/images/about_us/mail-icon.svg"
                 alt=""
                 width={34}

@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { CategoryData } from "@/lib/categories";
 import type { TemplateCardData } from "@/lib/templates";
 import { TemplateGalleryImage } from "@/components/sections/TemplateGalleryImage";
+import { isSvgSrc } from "@/lib/is-svg-src";
 
 export function TemplatesBrowser({
   categories,
@@ -43,6 +44,7 @@ export function TemplatesBrowser({
             >
               {category.iconUrl && (
                 <Image
+                  unoptimized={isSvgSrc(category.iconUrl)}
                   src={category.iconUrl}
                   alt=""
                   width={36}
@@ -81,6 +83,7 @@ export function TemplatesBrowser({
                 </p>
                 <div className="relative size-16 shrink-0">
                   <Image
+                    unoptimized
                     src="/images/templates-browser/Group-1.1.svg"
                     alt=""
                     fill
@@ -88,6 +91,7 @@ export function TemplatesBrowser({
                     className="object-contain transition-opacity group-hover:opacity-0"
                   />
                   <Image
+                    unoptimized
                     src="/images/templates-browser/Group-1.2.svg"
                     alt=""
                     fill

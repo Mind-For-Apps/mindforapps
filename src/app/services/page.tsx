@@ -29,6 +29,7 @@ export default function ServicesPage() {
           alt=""
           fill
           priority
+          sizes="100vw"
           className="object-cover object-top h-[130%]! min-[1451px]:h-full"
         />
         <div className="relative z-10">

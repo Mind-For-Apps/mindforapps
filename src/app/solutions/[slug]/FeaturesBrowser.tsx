@@ -22,6 +22,7 @@ export function FeaturesBrowser({
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <Image
+                unoptimized
                 src="/images/icons/dashboard.svg"
                 alt=""
                 width={24}
@@ -57,6 +58,7 @@ export function FeaturesBrowser({
                 src={featuresImageUrl}
                 alt=""
                 fill
+                sizes="(min-width: 1300px) 655px, (min-width: 1024px) 55vw, 100vw"
                 className="object-cover"
               />
             </div>
@@ -78,6 +80,7 @@ export function FeaturesBrowser({
           >
             <div className="flex items-center gap-3">
               <Image
+                unoptimized
                 src="/images/icons/dashboard.svg"
                 alt=""
                 width={20}

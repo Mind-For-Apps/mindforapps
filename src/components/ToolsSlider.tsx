@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { isSvgSrc } from "@/lib/is-svg-src";
 
 type Tool = { name: string; icon_url: string | null };
 
@@ -56,6 +57,7 @@ export function ToolsSlider({
           <div className="flex flex-col items-center gap-4 rounded-2xl bg-white p-3.75">
             {tool.icon_url && (
               <Image
+                unoptimized={isSvgSrc(tool.icon_url)}
                 src={tool.icon_url}
                 alt=""
                 width={75}

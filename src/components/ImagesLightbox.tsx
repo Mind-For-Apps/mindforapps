@@ -81,6 +81,7 @@ export function ImagesLightbox({
           >
             <span className="relative block size-6 sm:size-8">
               <Image
+                unoptimized
                 src="/images/lightbox-arrow-left.svg"
                 alt=""
                 fill
@@ -109,6 +110,7 @@ export function ImagesLightbox({
           >
             <span className="relative block size-6 sm:size-8">
               <Image
+                unoptimized
                 src="/images/lightbox-arrow-right.svg"
                 alt=""
                 fill

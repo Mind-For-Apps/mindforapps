@@ -55,6 +55,7 @@ function PillCard({ pill }: { pill: Pill }) {
       </div>
       {pill.icon && (
         <Image
+          unoptimized
           src={pill.icon}
           alt=""
           width={56}

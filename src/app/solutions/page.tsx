@@ -62,6 +62,7 @@ export default async function SolutionsPage() {
             >
               Services
               <Image
+                unoptimized
                 src="/images/services/nav/arrow-right-white.svg"
                 alt=""
                 width={13}

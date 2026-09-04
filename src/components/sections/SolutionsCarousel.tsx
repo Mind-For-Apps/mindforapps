@@ -98,7 +98,7 @@ export function SolutionsCarousel({
         disabled={solutions.length < 2}
         className="absolute left-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-white p-2 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.14)] disabled:opacity-30 sm:block"
       >
-        <Image src="/images/nav-arrow-left.svg" alt="" width={20} height={20} className="size-5" />
+        <Image unoptimized src="/images/nav-arrow-left.svg" alt="" width={20} height={20} className="size-5" />
       </button>
       <button
         type="button"
@@ -107,7 +107,7 @@ export function SolutionsCarousel({
         disabled={solutions.length < 2}
         className="absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-white p-2 shadow-[0px_4px_19.3px_0px_rgba(0,0,0,0.14)] disabled:opacity-30 sm:block"
       >
-        <Image src="/images/nav-arrow-right.svg" alt="" width={20} height={20} className="size-5 -scale-x-100" />
+        <Image unoptimized src="/images/nav-arrow-right.svg" alt="" width={20} height={20} className="size-5 -scale-x-100" />
       </button>
     </div>
   );
