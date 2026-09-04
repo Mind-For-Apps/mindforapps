@@ -343,6 +343,7 @@ function CoreServiceCard({ item }: { item: CoreServiceItem }) {
     >
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
         <Image
+          unoptimized
           src={item.icon}
           alt=""
           width={70}
@@ -437,7 +438,7 @@ function CoreServiceCard({ item }: { item: CoreServiceItem }) {
                 </div>
                 {/* <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-black"> */}
                 <span className="flex size-9 shrink-0 items-center justify-center">
-                  <Image src="/images/services/case-studies/arrow.svg" alt="" width={14} height={15} />
+                  <Image unoptimized src="/images/services/case-studies/arrow.svg" alt="" width={14} height={15} />
                 </span>
               </Link>
             ))}
@@ -456,7 +457,7 @@ function AddOnCard({ item }: { item: AddOnItem }) {
     >
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
         <div className="flex h-22.5 w-17.5 shrink-0 items-center justify-center rounded-sm border border-black/10 bg-white p-3">
-          <Image src={item.icon} alt="" width={70} height={63} className="h-auto max-h-12 w-full object-contain" />
+          <Image unoptimized src={item.icon} alt="" width={70} height={63} className="h-auto max-h-12 w-full object-contain" />
         </div>
         <div className="flex flex-col gap-2">
           <h3 className="text-3xl font-bold text-black">{item.title}</h3>
@@ -511,7 +512,7 @@ function AddOnCard({ item }: { item: AddOnItem }) {
             <p className="text-lg text-black/70">{item.cta.subtitle}</p>
           </div>
           <span className="flex size-9 shrink-0 items-center justify-center">
-            <Image src="/images/services/arrow_2.svg" alt="" width={19} height={35} />
+            <Image unoptimized src="/images/services/arrow_2.svg" alt="" width={19} height={35} />
           </span>
         </Link>
       )}
@@ -537,12 +538,14 @@ function SectionNav({ sectionId }: { sectionId: Section }) {
         >
           <span className="relative size-3.5 shrink-0">
             <Image
+              unoptimized
               src="/images/services/nav/arrow-left-black.svg"
               alt=""
               fill
               className="object-contain group-hover:opacity-0"
             />
             <Image
+              unoptimized
               src="/images/services/nav/arrow-left-white.svg"
               alt=""
               fill
@@ -568,7 +571,7 @@ function SectionNav({ sectionId }: { sectionId: Section }) {
             <span className="block text-base font-bold">{next.items[0]?.title}</span>
           </span>
           <span className="relative size-3.5 shrink-0">
-            <Image src="/images/services/nav/arrow-right-white.svg" alt="" fill className="object-contain" />
+            <Image unoptimized src="/images/services/nav/arrow-right-white.svg" alt="" fill className="object-contain" />
           </span>
         </button>
       )}
@@ -735,7 +738,7 @@ function TrustProofBlock() {
           </p>
         </div>
         <span className="flex size-9 shrink-0 items-center justify-center">
-          <Image src="/images/services/arrow_2.svg" alt="" width={19} height={35} />
+          <Image unoptimized src="/images/services/arrow_2.svg" alt="" width={19} height={35} />
         </span>
       </Link>
 
@@ -832,7 +835,7 @@ export function ServicesSidebar() {
           className="flex w-fit items-center gap-3 self-end transition-opacity hover:opacity-80"
         >
           <span className="text-lg font-bold">Explore</span>
-          <Image src="/images/services/arrow.svg" alt="" width={50} height={50} />
+          <Image unoptimized src="/images/services/arrow.svg" alt="" width={50} height={50} />
         </Link>
       </div>
     </div>

@@ -26,6 +26,7 @@ export function WhyUs() {
         src="/images/why-us/wave-bg-illustration.png"
         alt=""
         fill
+        sizes="100vw"
         className="pointer-events-none rotate-180 object-cover opacity-70"
       />
 
@@ -39,11 +40,12 @@ export function WhyUs() {
         </p>
       </div>
 
-      <div className="relative w-full max-w-300 rounded-[4px] bg-[rgba(233,233,233,0.7)] p-4 sm:p-6">
+      <div className="relative w-full max-w-300 rounded-sm bg-[rgba(233,233,233,0.7)] p-4 sm:p-6">
         <div className="grid gap-4 lg:grid-cols-2">
-          <div className="flex flex-col gap-6 rounded-[4px] bg-white p-6 sm:p-9">
+          <div className="flex flex-col gap-6 rounded-sm bg-white p-6 sm:p-9">
             <div className="flex items-center gap-4">
               <Image
+                unoptimized
                 src="/images/why-us/pin-before.svg"
                 alt=""
                 width={25}
@@ -65,6 +67,7 @@ export function WhyUs() {
                   className="flex items-center gap-4 text-lg text-black/80"
                 >
                   <Image
+                    unoptimized
                     src="/images/why-us/x-icon.svg"
                     alt=""
                     width={27}
@@ -80,9 +83,10 @@ export function WhyUs() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 rounded-[4px] bg-white p-6 sm:p-9">
+          <div className="flex flex-col gap-4 rounded-sm bg-white p-6 sm:p-9">
             <div className="flex items-center gap-4">
               <Image
+                unoptimized
                 src="/images/why-us/pin-after.svg"
                 alt=""
                 width={25}
@@ -104,6 +108,7 @@ export function WhyUs() {
                   className="flex items-start gap-4 text-lg text-black/80"
                 >
                   <Image
+                    unoptimized
                     src="/images/why-us/check-icon.svg"
                     alt=""
                     width={27}

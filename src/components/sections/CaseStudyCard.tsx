@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudySlide } from "@/lib/case-studies";
+import { isSvgSrc } from "@/lib/is-svg-src";
 
 export function CaseStudyCard({
   slide,
@@ -42,6 +43,7 @@ export function CaseStudyCard({
           <div className="inline-flex w-fit items-center rounded-full bg-brand-surface px-8 py-5">
             <div className="relative h-10 w-37.5 sm:h-12 sm:w-45">
               <Image
+                unoptimized={isSvgSrc(slide.logoUrl)}
                 src={slide.logoUrl}
                 alt={slide.clientName ?? ""}
                 fill
@@ -105,6 +107,7 @@ export function CaseStudyCard({
                     tool.icon_url && (
                       <div key={tool.name} className="relative h-6 w-5">
                         <Image
+                          unoptimized={isSvgSrc(tool.icon_url)}
                           src={tool.icon_url}
                           alt={tool.name}
                           fill

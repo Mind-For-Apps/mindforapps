@@ -189,6 +189,7 @@ export function Footer({
           src="/images/footer-1400.webp"
           alt=""
           fill
+          sizes="100vw"
           className="object-cover object-top opacity-90"
         />
         {/* <div className="relative z-10 mx-auto -mb-40 flex items-center max-w-300 flex-col gap-8 rounded-[15px] bg-white/90 p-6 shadow-[0px_20px_60px_rgba(0,0,0,0.08)] sm:py-12"> */}
@@ -230,7 +231,7 @@ export function Footer({
                         : "border-black/10 hover:border-black/30"
                     }`}
                   >
-                    <Image src={s.icon} alt="" width={36} height={36} className="h-9 w-9" />
+                    <Image unoptimized src={s.icon} alt="" width={36} height={36} className="h-9 w-9" />
                     <span className="font-semibold text-black text-lg">{s.value}</span>
                     <span className="text-sm/4.5 text-black/50">
                       {s.description}
@@ -358,6 +359,7 @@ export function Footer({
 
           <div className="flex flex-col items-center gap-10">
             <Image
+              unoptimized
               src="/images/mfa-logo-with-text.svg"
               alt="Mind For Apps"
               width={247}

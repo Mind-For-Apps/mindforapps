@@ -61,6 +61,7 @@ function FeatureIcon({ icon }: { icon: string | null }) {
   if (icon) {
     return (
       <Image
+        unoptimized
         src={`/images/icons/${icon}.svg`}
         alt=""
         width={26}
@@ -120,6 +121,7 @@ export function FeatureGrid() {
             className="opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           />
           <Image
+            unoptimized
             src="/images/solution-deco-left.svg"
             alt=""
             width={38}
@@ -127,6 +129,7 @@ export function FeatureGrid() {
             className="absolute left-6 top-6"
           />
           <Image
+            unoptimized
             src="/images/solution-deco-right.svg"
             alt=""
             width={36}
@@ -134,6 +137,7 @@ export function FeatureGrid() {
             className="absolute right-6 top-6"
           />
           <Image
+            unoptimized
             src="/images/explore-deco-left.svg"
             alt=""
             width={48}
@@ -141,6 +145,7 @@ export function FeatureGrid() {
             className="absolute bottom-6 left-6"
           />
           <Image
+            unoptimized
             src="/images/explore-deco-right.svg"
             alt=""
             width={36}
@@ -152,6 +157,7 @@ export function FeatureGrid() {
               Solution
             </p>
             <Image
+              unoptimized
               src="/images/solution-icon.svg"
               alt=""
               width={97}

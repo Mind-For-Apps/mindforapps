@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { getCaseStudyBySlug } from "@/lib/case-studies";
+import { isSvgSrc } from "@/lib/is-svg-src";
 import { ImagesSlider } from "@/components/ImagesSlider";
 import { ToolsSlider } from "@/components/ToolsSlider";
 import { BulletSection } from "./BulletSection";
@@ -98,6 +99,7 @@ export default async function CaseStudyDetailPage({
                       iconUrl && (
                         <Image
                           key={tool.name}
+                          unoptimized={isSvgSrc(iconUrl)}
                           src={iconUrl}
                           alt={tool.name}
                           width={24}
@@ -250,6 +252,7 @@ export default async function CaseStudyDetailPage({
                   <div className="flex size-16 items-center justify-center rounded-full bg-[rgb(217,225,255)]">
                     {item.iconUrl && (
                       <Image
+                        unoptimized={isSvgSrc(item.iconUrl)}
                         src={item.iconUrl}
                         alt=""
                         width={28}
@@ -287,6 +290,7 @@ export default async function CaseStudyDetailPage({
                 >
                   {feature.iconUrl ? (
                     <Image
+                      unoptimized={isSvgSrc(feature.iconUrl)}
                       src={feature.iconUrl}
                       alt=""
                       width={44}
@@ -405,6 +409,7 @@ export default async function CaseStudyDetailPage({
                   ) : (
                     <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-[#d9d9d9]">
                       <Image
+                        unoptimized
                         src="/images/icons/profiles.svg"
                         alt=""
                         width={20}
@@ -439,6 +444,7 @@ export default async function CaseStudyDetailPage({
                       {caseStudy.logoUrl && (
                         <div className="relative h-6 w-22.5">
                           <Image
+                            unoptimized={isSvgSrc(caseStudy.logoUrl)}
                             src={caseStudy.logoUrl}
                             alt=""
                             fill
@@ -466,6 +472,7 @@ export default async function CaseStudyDetailPage({
                   Team Involvement
                 </h2>
                 <Image
+                  unoptimized
                   src="/images/case-study-detail/illustration-team.svg"
                   alt=""
                   width={275}

@@ -29,6 +29,7 @@ export function WithMindforapps() {
             src="/images/cta-wave-bg-3.png"
             alt=""
             fill
+            sizes="100vw"
             className="object-cover h-auto!"
           />
         </div>
@@ -36,6 +37,7 @@ export function WithMindforapps() {
         <div className="relative flex flex-col items-center gap-6 text-center">
           <div className="flex size-27 items-center justify-center rounded-full bg-white">
             <Image
+              unoptimized
               src="/images/checkmark-icon.svg"
               alt=""
               width={38}

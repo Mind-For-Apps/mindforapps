@@ -216,6 +216,7 @@ export default async function FreeSeoAuditPage() {
                 className="flex flex-col gap-4 rounded-2xl border border-black/15 p-8"
               >
                 <Image
+                  unoptimized
                   src={`/images/free-seo-audit/${area.icon}`}
                   alt=""
                   width={41}
@@ -230,6 +231,7 @@ export default async function FreeSeoAuditPage() {
 
           <div className="flex w-full max-w-300 items-center gap-6 rounded-[30px] bg-white p-8 text-left">
             <Image
+              unoptimized
               src="/images/free-seo-audit/icon-7.svg"
               alt=""
               width={70}
@@ -273,6 +275,7 @@ export default async function FreeSeoAuditPage() {
                   className="flex items-start gap-3 rounded-2xl bg-[rgba(255,255,255,0.3)] p-4"
                 >
                   <Image
+                    unoptimized
                     src="/images/free-seo-audit/icon-8.svg"
                     alt=""
                     width={28}
@@ -341,6 +344,7 @@ export default async function FreeSeoAuditPage() {
                       className="flex items-center gap-2 text-sm text-black/70"
                     >
                       <Image
+                        unoptimized
                         src="/images/free-seo-audit/tick.svg"
                         alt=""
                         width={19}
@@ -387,6 +391,7 @@ export default async function FreeSeoAuditPage() {
                       className="flex items-center gap-2 text-sm text-black/70"
                     >
                       <Image
+                        unoptimized
                         src="/images/free-seo-audit/tick.svg"
                         alt=""
                         width={19}
@@ -435,6 +440,7 @@ export default async function FreeSeoAuditPage() {
                     src="/images/free-seo-audit/photo.png"
                     alt="Jay D"
                     fill
+                    sizes="145px"
                     className="object-cover"
                   />
                 </div>
@@ -502,6 +508,7 @@ export default async function FreeSeoAuditPage() {
                 {REQUEST_INCLUDES.map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <Image
+                      unoptimized
                       src="/images/free-seo-audit/icon-8.svg"
                       alt=""
                       width={28}
@@ -655,12 +662,14 @@ export default async function FreeSeoAuditPage() {
                 Continue to start audit
                 <span className="relative size-4 shrink-0">
                   <Image
+                    unoptimized
                     src="/images/services/nav/arrow-right-white.svg"
                     alt=""
                     fill
                     className="object-contain group-hover:opacity-0"
                   />
                   <Image
+                    unoptimized
                     src="/images/free-seo-audit/arrow-right-314cde.svg"
                     alt=""
                     fill

@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { getPluginBySlug, formatPluginPrice } from "@/lib/plugins";
 import { linkifyText } from "@/lib/linkify";
+import { isSvgSrc } from "@/lib/is-svg-src";
 import { InstallationSteps } from "./InstallationSteps";
 
 export async function generateMetadata({
@@ -80,9 +81,11 @@ export default async function PluginDetailPage({
               {plugin.logoUrl && (
                 <div className="relative mt-5 size-25 overflow-hidden rounded-full">
                   <Image
+                    unoptimized={isSvgSrc(plugin.logoUrl)}
                     src={plugin.logoUrl}
                     alt={plugin.name}
                     fill
+                    sizes="100px"
                     className="object-cover"
                   />
                 </div>
@@ -96,12 +99,12 @@ export default async function PluginDetailPage({
                     href={plugin.marketUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-12.5 items-center justify-center rounded-[55px] bg-[#325ffe] px-6 text-center text-[20px] font-bold uppercase text-white transition-colors hover:bg-[linear-gradient(266deg,rgb(45,184,255),rgb(118,148,255),rgb(163,154,255))] hover:text-white"
+                    className="flex h-12.5 items-center justify-center rounded-[55px] bg-brand-accent px-6 text-center text-[20px] font-bold uppercase text-white transition-colors hover:bg-[linear-gradient(266deg,rgb(45,184,255),rgb(118,148,255),rgb(163,154,255))] hover:text-white"
                   >
                     {price}
                   </a>
                 ) : (
-                  <span className="flex h-15.5 items-center justify-center rounded-[55px] bg-[#325ffe] px-6 text-center text-[20px] font-bold uppercase text-white">
+                  <span className="flex h-15.5 items-center justify-center rounded-[55px] bg-brand-accent px-6 text-center text-[20px] font-bold uppercase text-white">
                     {price}
                   </span>
                 ))}
@@ -116,12 +119,14 @@ export default async function PluginDetailPage({
                   Check it Live
                   <span className="relative size-4 shrink-0">
                     <Image
+                      unoptimized
                       src="/images/plugins/arrow-check-live.svg"
                       alt=""
                       fill
                       className="object-contain group-hover:opacity-0"
                     />
                     <Image
+                      unoptimized
                       src="/images/plugins/arrow-check-live-white.svg"
                       alt=""
                       fill
@@ -138,7 +143,7 @@ export default async function PluginDetailPage({
                   </p>
                   <Link
                     href="/contact"
-                    className="flex h-12.5 items-center justify-center mb-5 rounded-[55px] bg-[#325ffe] px-6 text-[16px] font-bold uppercase text-white transition-colors hover:bg-[linear-gradient(266deg,rgb(45,184,255),rgb(118,148,255),rgb(163,154,255))] hover:text-white"
+                    className="flex h-12.5 items-center justify-center mb-5 rounded-[55px] bg-brand-accent px-6 text-[16px] font-bold uppercase text-white transition-colors hover:bg-[linear-gradient(266deg,rgb(45,184,255),rgb(118,148,255),rgb(163,154,255))] hover:text-white"
                   >
                     Book a meeting
                   </Link>
@@ -148,6 +153,7 @@ export default async function PluginDetailPage({
                     src="/images/plugins/book-meeting-illustration.png"
                     alt=""
                     fill
+                    sizes="162px"
                     className="object-contain object-bottom"
                   />
                 </div>
@@ -162,6 +168,7 @@ export default async function PluginDetailPage({
               <div className="flex flex-col gap-1">
                 <p className="text-[24px] font-normal text-black">Plugin details</p>
                 <Image
+                  unoptimized
                   src="/images/plugins/line-divider.svg"
                   alt=""
                   width={391}
@@ -226,6 +233,7 @@ export default async function PluginDetailPage({
             >
               More plugins
               <Image
+                unoptimized
                 src="/images/plugins/arrow-more-plugins.svg"
                 alt=""
                 width={42}

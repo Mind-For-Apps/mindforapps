@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import type { Testimonial } from "@/lib/testimonials";
+import { isSvgSrc } from "@/lib/is-svg-src";
 
 function TestimonialQuote({ quote }: { quote: string }) {
   const [expanded, setExpanded] = useState(false);
@@ -61,6 +62,7 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
           className="hidden shrink-0 sm:block disabled:opacity-30"
         >
           <Image
+            unoptimized
             src="/images/nav-arrow-left.svg"
             alt=""
             width={59}
@@ -83,6 +85,7 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
           className="hidden shrink-0 sm:block disabled:opacity-30"
         >
           <Image
+            unoptimized
             src="/images/nav-arrow-right.svg"
             alt=""
             width={59}
@@ -154,6 +157,7 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
                     {t.projectLogoUrl && (
                       <div className="relative h-6 w-22.5">
                         <Image
+                          unoptimized={isSvgSrc(t.projectLogoUrl)}
                           src={t.projectLogoUrl}
                           alt=""
                           fill

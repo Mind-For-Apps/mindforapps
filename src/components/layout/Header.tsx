@@ -33,6 +33,7 @@ export function Header() {
           className="mr-2.5 shrink-0 min-[501px]:max-w-47.5 min-[501px]:min-w-42.5 min-[951px]:mr-5 min-[951px]:max-w-none min-[951px]:min-w-0"
         >
           <Image
+            unoptimized
             src="/images/logo.svg"
             alt="Mind For Apps"
             width={231}
@@ -41,6 +42,7 @@ export function Header() {
             className="hidden h-8 w-auto min-[501px]:block"
           />
           <Image
+            unoptimized
             src="/images/logo-icon.svg"
             alt="Mind For Apps"
             width={54}

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { formatPluginPrice } from "@/lib/plugin-price";
+import { isSvgSrc } from "@/lib/is-svg-src";
 import type { PluginCardData, PluginCategory } from "@/lib/plugins";
 
 function toggle<T>(list: T[], value: T): T[] {
@@ -55,6 +56,7 @@ function PluginCard({ plugin }: { plugin: PluginCardData }) {
       <div className="flex items-center gap-4">
         {plugin.logoUrl ? (
           <Image
+            unoptimized={isSvgSrc(plugin.logoUrl)}
             src={plugin.logoUrl}
             alt={plugin.name}
             width={73}

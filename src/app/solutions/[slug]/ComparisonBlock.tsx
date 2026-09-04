@@ -69,10 +69,12 @@ export function ComparisonBlock({
                 src="/images/solutions/pill-red.png"
                 alt=""
                 fill
+                sizes="(min-width: 1000px) 590px, 50vw"
                 className="object-cover rounded-[19px]"
               />
               <div className="relative z-10 flex h-full items-center gap-3 px-6 sm:px-8">
                 <Image
+                  unoptimized
                   src="/images/solutions/icon-cross.svg"
                   alt=""
                   width={41}
@@ -123,10 +125,12 @@ export function ComparisonBlock({
                 src="/images/solutions/pill-blue.png"
                 alt=""
                 fill
+                sizes="(min-width: 1000px) 590px, 50vw"
                 className="object-cover rounded-[19px]"
               />
               <div className="relative z-10 flex h-full items-center gap-3 px-6 sm:px-8">
                 <Image
+                  unoptimized
                   src="/images/solutions/icon-check.svg"
                   alt=""
                   width={41}
