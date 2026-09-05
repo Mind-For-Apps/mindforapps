@@ -27,7 +27,7 @@ export function InstallationSteps({ steps }: { steps: string[] }) {
             rowRefs.current[i] = el;
           }}
           style={rowHeight ? { minHeight: rowHeight } : undefined}
-          className="flex items-stretch overflow-hidden rounded-full shadow-[0px_4px_12px_0px_rgba(0,0,0,0.08)]"
+          className="flex items-stretch overflow-hidden min-h-19 rounded-[50px] shadow-[0px_4px_12px_0px_rgba(0,0,0,0.08)]"
         >
           <div className="flex w-20 shrink-0 items-center justify-center bg-[#bddfff] text-xl text-black">
             {i + 1}

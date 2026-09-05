@@ -40,6 +40,7 @@ export function ToolsSlider({
       modules={[Autoplay]}
       loop
       loopAdditionalSlides={0}
+      centerInsufficientSlides={true}
       speed={800}
       autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true, }}
       slidesPerView={slidesPerView}

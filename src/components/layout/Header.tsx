@@ -22,12 +22,15 @@ export function Header() {
       className={`flex min-h-25 min-w-70 items-center justify-center pt-10 pr-5 pb-9 pl-5 ${isHome ? "bg-white" : ""}`}
     >
       <nav
+        className={`flex h-20 w-full min-w-68 max-w-300 items-center justify-between gap-5 rounded-[50px] bg-white pr-6.25 pl-6.25 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.14)] min-[768px]:min-w-70 min-[980px]:gap-12.5`}
+      >
+      {/* <nav
         className={`flex h-20 w-full min-w-68 max-w-300 items-center justify-between gap-5 rounded-[50px] bg-white pr-6.25 pl-6.25 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.14)] min-[768px]:min-w-70 min-[980px]:gap-12.5 ${
           !isHome
             ? "max-[599px]:bg-transparent max-[599px]:pl-3.75 max-[599px]:shadow-none"
             : ""
         }`}
-      >
+      > */}
         <Link
           href="/"
           className="mr-2.5 shrink-0 min-[501px]:max-w-47.5 min-[501px]:min-w-42.5 min-[951px]:mr-5 min-[951px]:max-w-none min-[951px]:min-w-0"
