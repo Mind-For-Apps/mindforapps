@@ -6,7 +6,9 @@ export default async function FaqsListPage() {
   const supabase = await createClient();
   const { data: faqs } = await supabase
     .from("faqs")
-    .select("id, question, show_on_index, real_estate_sort_order")
+    .select(
+      "id, question, show_on_index, real_estate_sort_order, service_booking_sort_order, free_seo_audit_sort_order",
+    )
     .order("sort_order");
 
   return (
@@ -39,6 +41,16 @@ export default async function FaqsListPage() {
               {f.real_estate_sort_order != null && (
                 <span className="rounded-full bg-brand-surface px-2 py-0.5 text-xs text-brand-gray">
                   Real Estate #{f.real_estate_sort_order}
+                </span>
+              )}
+              {f.service_booking_sort_order != null && (
+                <span className="rounded-full bg-brand-surface px-2 py-0.5 text-xs text-brand-gray">
+                  Service Booking #{f.service_booking_sort_order}
+                </span>
+              )}
+              {f.free_seo_audit_sort_order != null && (
+                <span className="rounded-full bg-brand-surface px-2 py-0.5 text-xs text-brand-gray">
+                  Free SEO Audit #{f.free_seo_audit_sort_order}
                 </span>
               )}
             </div>

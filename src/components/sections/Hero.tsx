@@ -1,7 +1,10 @@
 import { BookConsultationButton } from "@/components/BookConsultationButton";
 import { TrustCarousel } from "./TrustCarousel";
+import { getTrustBadges } from "@/lib/trust-badges";
 
-export function Hero() {
+export async function Hero() {
+  const badges = await getTrustBadges("index");
+
   return (
     <section className="relative overflow-hidden bg-white px-6 py-16 sm:px-25 lg:flex lg:h-170 lg:items-center lg:py-0">
       <div className="pointer-events-none absolute inset-0"
@@ -41,7 +44,7 @@ export function Hero() {
           </div>
         </div>
         <div className="pt-15">
-          <TrustCarousel />
+          <TrustCarousel badges={badges} />
         </div>
       </div>
     </section>

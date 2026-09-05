@@ -1,5 +1,62 @@
 # Changelog
 
+## 2026-09-05 — `TrustCarousel` moved from hardcoded pills to a real `trust_badges` table
+
+### Added
+- `supabase/migrations/0020_trust_badges.sql`: new `trust_badges` table
+  (`text`, `description`, `icon_url`, `type` — `index`/`solutions`/`both`,
+  `sort_order`) backing the "Certified Bubble agency partner / 50+
+  Platforms / ..." pill carousel (`TrustCarousel.tsx`), used on both the
+  homepage (inside `Hero`) and `/solutions/[slug]`. Publicly readable,
+  admin-write-only — same pattern as every other lookup table.
+- `src/lib/trust-badges.ts` (`getTrustBadges(page)`) — filters rows where
+  `type` matches the requested page or is `both`.
+- `scripts/seed-trust-badges.ts` (`npm run seed:trust-badges`): the
+  carousel's content had drifted from the real Bubble source table it was
+  copied from — this seeds the union of both: the 6 real Bubble items still
+  present on the live site, the 2 real Bubble items that had gone missing
+  ("Starting from $1,500", "Average delivery time — 4 Weeks"), and the 5
+  extra pills the site had added that aren't in the Bubble table (Full
+  client ownership, 65% cheaper, Post-launch support, NDA-friendly,
+  Fixed-price projects) — 13 rows total, all seeded as `type: 'both'`.
+  Re-uploads the existing local icon files to Storage.
+- `/admin/trust-badges` — full CRUD (list/new/edit/delete), same shape as
+  `/admin/faqs`.
+
+### Changed
+- `TrustCarousel.tsx`: dropped the hardcoded `pills` array and the `stat`
+  field/pill-badge rendering variant (used for icon-less items like "8+
+  Years") in favor of a single uniform template (bold text + optional
+  description + optional icon) — now takes a `badges` prop instead. Matches
+  the real Bubble source's 3-field shape (Text/description/Image) rather
+  than inventing an extra visual variant.
+- `Hero.tsx` and `solutions/[slug]/page.tsx` now fetch `getTrustBadges()`
+  themselves (`"index"` / `"solutions"`) and pass the result down, following
+  the existing "each section/page fetches its own data" convention.
+
+## 2026-09-05 — Wired up the Free SEO Audit request form + `audit_inquiries`
+
+### Added
+- `supabase/migrations/0019_audit_inquiries.sql`: new `audit_inquiries` table
+  (website_url, name, email, goal, win, markets, competitors, company_size,
+  is_read, created_at) — same public-insert/admin-only-read RLS pattern as
+  `project_inquiries` (`0009`), but no Storage bucket since this form has no
+  file attachments.
+- `src/app/free-seo-audit/audit-actions.ts` (`submitAuditInquiry`) and
+  `src/app/free-seo-audit/RequestAuditForm.tsx`: the `id="request"` section
+  was extracted out of `page.tsx` into its own client component so it can
+  hold submit/success local state, mirroring the Footer's "Start Your
+  Project" form (`idle`/`submitting`/`done`/`error`) — the "Continue to
+  start audit" button was previously `type="button"` and didn't submit
+  anywhere.
+- `/admin/audit-inquiries` (`page.tsx` + `actions.ts`): read-only list (mark
+  read/unread, delete) for the new table, same shape as `/admin/inquiries`.
+
+### Changed
+- Admin nav: "Inquiries" renamed to "Project Inquiries" (its heading already
+  said this) now that there are two separate inquiry tables — added "Audit
+  Inquiries" alongside it.
+
 ## 2026-09-04 — Cut Vercel Image Optimization usage further (SVGs + `fill` sizing)
 
 ### Changed
