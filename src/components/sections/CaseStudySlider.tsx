@@ -68,6 +68,7 @@ export function CaseStudySlider({ slides }: { slides: CaseStudySlide[] }) {
         slidesPerView={1}
         spaceBetween={20}
         centeredSlides={true}
+        // centerInsufficientSlides={true}
         breakpoints={{
           1500: { slidesPerView: 1.2, spaceBetween: 40 },
           1800: { slidesPerView: 1.5, spaceBetween: 80 },
