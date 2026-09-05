@@ -7,6 +7,7 @@ import { TrustCarousel } from "@/components/sections/TrustCarousel";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { getSolutionBySlug } from "@/lib/solutions";
 import { getTestimonials } from "@/lib/testimonials";
+import { getTrustBadges } from "@/lib/trust-badges";
 import { getRealEstateFaqs, getServiceBookingFaqs } from "@/lib/faqs";
 import { StickyNav } from "./StickyNav";
 import { ComparisonBlock } from "./ComparisonBlock";
@@ -51,9 +52,10 @@ export default async function SolutionDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [solution, testimonials] = await Promise.all([
+  const [solution, testimonials, trustBadges] = await Promise.all([
     getSolutionBySlug(slug),
     getTestimonials(),
+    getTrustBadges("solutions"),
   ]);
 
   if (!solution) notFound();
@@ -124,7 +126,7 @@ export default async function SolutionDetailPage({
           </div>
         </section>
 
-        <TrustCarousel />
+        <TrustCarousel badges={trustBadges} />
 
         <StickyNav />
 
