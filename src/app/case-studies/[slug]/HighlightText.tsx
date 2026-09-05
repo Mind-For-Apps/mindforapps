@@ -9,8 +9,8 @@ export function HighlightText({ raw }: { raw: string }) {
         segment.color ? (
           <strong
             key={i}
-            style={{ color: segment.color }}
-            className="font-semibold"
+            style={{ color: "rgb(45, 93, 255)" }}
+            className="text-2xl font-bold"
           >
             {segment.text}
           </strong>

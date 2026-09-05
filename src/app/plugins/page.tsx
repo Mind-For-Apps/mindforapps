@@ -24,7 +24,7 @@ export default async function PluginsPage() {
           <h1 className="text-3xl font-bold text-black sm:text-[45px]">
             Plugins
           </h1>
-          <p className="max-w-150 text-base text-black/60 sm:text-lg">
+          <p className="max-w-165 text-base text-black/80 sm:text-lg">
             Powerful No-Code Plugins for Bubble.io Applications
             <br />
             Boost functionality, improve user experience, and save

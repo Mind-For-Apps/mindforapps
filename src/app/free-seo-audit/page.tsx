@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { getFreeSeoAuditFaqs } from "@/lib/faqs";
+import { BookConsultationButton } from "@/components/BookConsultationButton";
 
 export const metadata: Metadata = {
   title: "Free SEO Audit — Mind For Apps",
@@ -257,10 +258,10 @@ export default async function FreeSeoAuditPage() {
             }}
           >
             <div className="flex flex-col gap-4">
-              <h2 className="text-3xl font-bold text-white sm:text-[40px]">
+              <h2 className="text-3xl font-semibold text-white sm:text-[40px]">
                 Search isn&rsquo;t just Google anymore.
               </h2>
-              <p className="text-lg text-white/80">
+              <p className="text-xl text-white/80">
                 More buyers ask an AI before they ever reach your site. If AI
                 engines can&rsquo;t read your business, you&rsquo;re invisible
                 in the answers that increasingly decide the sale. Every audit
@@ -295,7 +296,7 @@ export default async function FreeSeoAuditPage() {
 
         {/* <section className="mx-auto flex w-full max-w-300 flex-col items-center gap-10 rounded-[30px] bg-white py-16 text-center shadow-[0px_7px_23px_0px_rgba(0,0,0,0.14)]"> */}
         <section className="mx-auto flex w-full flex-col items-center gap-10 rounded-[30px] bg-white py-16 text-center">
-          <div className="flex flex-col items-center gap-3">
+          <div className=" px-5">
             <h2 className="text-3xl font-bold text-black sm:text-[40px]">
               Start with an audit. No surprises.
             </h2>
@@ -312,7 +313,7 @@ export default async function FreeSeoAuditPage() {
               aria-hidden
               className="absolute inset-x-0 top-0 h-85 bg-[rgba(216,239,255,0.5)]"
             />
-            <div className="relative z-10 flex flex-wrap justify-center gap-6 p-6 pt-12.5">
+            <div className="relative z-10 flex flex-wrap justify-center gap-8 p-6 pt-12.5">
               <div className="min-w-82.5 flex flex-1 flex-col gap-4 rounded-[25px] bg-white p-6.25 text-left shadow-[0px_7px_23px_0px_rgba(0,0,0,0.14)] min-[800px]:max-w-120">
                 <span className="w-fit rounded-full bg-[#e0e4ff] px-4 py-1.5 text-sm font-medium text-brand-accent">
                   Free audit
@@ -325,7 +326,7 @@ export default async function FreeSeoAuditPage() {
                   the gaps, the quick wins, and whether a deeper engagement is
                   even worth it — live, on a call.
                 </p>
-                <p className="text-3xl font-bold text-black">
+                <p className="text-[35px] font-semibold text-black">
                   Free{" "}
                   <span className="text-base font-normal text-black/50">
                     / no obligation
@@ -374,7 +375,7 @@ export default async function FreeSeoAuditPage() {
                   and prioritized into a plan you can act on. Pitched on your
                   call only if it&rsquo;s a genuine fit. No pressure.
                 </p>
-                <p className="text-3xl font-bold text-black">
+                <p className="text-[35px] font-semibold text-black">
                   $750 – $1,500{" "}
                   <span className="text-base font-normal text-black/50">
                     / project
@@ -401,12 +402,9 @@ export default async function FreeSeoAuditPage() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#request"
-                  className="mt-auto flex h-14 items-center justify-center rounded-full border border-brand-accent text-[20px] font-medium text-brand-accent transition-colors hover:border-transparent hover:bg-[linear-gradient(45deg,rgb(31,120,255),rgb(65,62,207),rgb(111,47,239))] hover:text-white"
-                >
+                <BookConsultationButton className="mt-auto flex h-14 items-center justify-center rounded-full border border-brand-accent text-[20px] font-medium text-brand-accent transition-colors hover:border-transparent hover:bg-[linear-gradient(45deg,rgb(31,120,255),rgb(65,62,207),rgb(111,47,239))] hover:text-white">
                   Book the deep-dive
-                </a>
+                </BookConsultationButton>
               </div>
             </div>
           </div>
@@ -421,12 +419,12 @@ export default async function FreeSeoAuditPage() {
             className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 w-full"
           />
           {/* <div className="relative z-10 mx-auto grid w-full max-w-300 grid-cols-1 items-start gap-10 px-6 py-16 sm:px-25 lg:grid-cols-2"> */}
-          <div className="relative z-10 mx-auto grid w-full max-w-300 grid-cols-1 items-start gap-10 px-6 py-16 sm:px-25 lg:grid-cols-[390px_1fr]">
+          <div className="relative z-10 mx-auto grid w-full max-w-300 grid-cols-1 items-start gap-10 px-6 py-16 lg:grid-cols-[390px_1fr]">
             <div className="flex flex-col gap-4">
               <h2 className="text-3xl font-bold text-black sm:text-[40px]">
                 A real person runs your audit.
               </h2>
-              <p className="max-w-125 text-lg text-black/60">
+              <p className="max-w-125 text-lg text-black/80">
                 Not a dashboard, not an automated scan. The findings come
                 from someone who&rsquo;s done this before and will be on the
                 call with you.
@@ -446,7 +444,7 @@ export default async function FreeSeoAuditPage() {
                 </div>
                 <div className="flex flex-col gap-1">
                   <p className="text-xl font-bold text-black">Jay D</p>
-                  <p className="text-base text-black/70">
+                  <p className="text-base text-black/80">
                     I&rsquo;m Jay, and I run every audit myself — live, not
                     an automated scan. I&rsquo;m here to be useful, not to
                     sell you: after 50+ service businesses, I usually see how
@@ -459,23 +457,23 @@ export default async function FreeSeoAuditPage() {
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="flex flex-col justify-between gap-6 rounded-2xl bg-white p-6 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.08)]">
-                  <p className="text-base text-black">
+                  <p className="text-base font-medium leading-[1.3] text-black">
                     &ldquo;I walked in worried about the wrong thing
                     entirely. Jay pointed at two problems I hadn&rsquo;t even
                     noticed — and those were the ones actually costing
                     me.&rdquo;
                   </p>
-                  <p className="text-right text-sm text-black/60">
+                  <p className="text-right text-sm text-black/80">
                     Diane Hovey — PhotoInsights
                   </p>
                 </div>
                 <div className="flex flex-col justify-between gap-6 rounded-2xl bg-white p-6 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.08)]">
-                  <p className="text-base text-black">
+                  <p className="text-base font-medium leading-[1.3] text-black">
                     &ldquo;Jay explained where we were losing bookings in
                     plain language. I understood it, my ops manager
                     understood it, and we fixed it that week.&rdquo;
                   </p>
-                  <p className="text-right text-sm text-black/60">
+                  <p className="text-right text-sm text-black/80">
                     Alliance for Healing
                     <br />
                     Michael Schweizer
@@ -486,20 +484,20 @@ export default async function FreeSeoAuditPage() {
           </div>
         </section>
 
-        <section id="request" className="bg-black px-6 py-16 sm:px-25">
-          <div className="mx-auto grid w-full max-w-300 grid-cols-1 overflow-hidden rounded-[30px] shadow-[0px_20px_60px_0px_rgba(0,0,0,0.4)] lg:grid-cols-2">
+        <section id="request" className="bg-black px-6 py-16">
+          <div className="mx-auto grid w-full max-w-300 grid-cols-1 overflow-hidden rounded-[30px] shadow-[0px_20px_60px_0px_rgba(0,0,0,0.4)] min-[750px]:grid-cols-[300px_1fr] min-[1200px]:grid-cols-[400px_1fr]">
             <div
-              className="flex flex-col gap-8 p-10 sm:p-14"
+              className="flex flex-col gap-8 py-10 px-5 sm:px-10"
               style={{
                 background:
                   "linear-gradient(180deg, rgb(1, 101, 253), rgb(46, 45, 153), rgb(7, 15, 103))",
               }}
             >
               <div className="flex flex-col gap-3">
-                <h2 className="text-3xl font-bold text-white sm:text-[40px]">
+                <h2 className="text-3xl font-semibold text-white sm:text-[40px]">
                   Request your free audit
                 </h2>
-                <p className="text-lg text-white/80">
+                <p className="text-xl text-white/80">
                   Tell us where to look. Next step is picking a time —
                   you&rsquo;ll get instant confirmation.
                 </p>
@@ -515,7 +513,7 @@ export default async function FreeSeoAuditPage() {
                       height={28}
                       className="mt-0.5 shrink-0"
                     />
-                    <p className="text-lg font-bold text-white">{item}</p>
+                    <p className="text-xl font-semibold text-white">{item}</p>
                   </div>
                 ))}
               </div>
@@ -538,7 +536,7 @@ export default async function FreeSeoAuditPage() {
                 />
               </div>
 
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="grid grid-cols-2 gap-6 max-[849px]:min-[750px]:grid-cols-1">
                 <div className="flex flex-col gap-1">
                   <label
                     htmlFor="name"
@@ -602,7 +600,7 @@ export default async function FreeSeoAuditPage() {
                 />
               </div>
 
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="grid grid-cols-2 gap-6 max-[849px]:min-[750px]:grid-cols-1">
                 <div className="flex flex-col gap-1">
                   <label
                     htmlFor="markets"
@@ -685,8 +683,8 @@ export default async function FreeSeoAuditPage() {
         </section>
 
         {faqs.length > 0 && (
-          <section className="flex flex-col items-center gap-10 px-6 pb-16 sm:px-25">
-            <h2 className="text-3xl font-bold text-black sm:text-[40px]">
+          <section className="flex flex-col items-center gap-10 px-6 pb-16">
+            <h2 className="text-3xl font-bold text-black sm:text-[40px] mt-12.5">
               Good to know.
             </h2>
             <FAQAccordion items={faqs} />

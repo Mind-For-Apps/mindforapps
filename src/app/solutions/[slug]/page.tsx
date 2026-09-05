@@ -78,18 +78,17 @@ export default async function SolutionDetailPage({
               <h1 className="text-[30px] min-[800px]:max-[1199px]:text-[35px] min-[1200px]:text-[45px] font-medium leading-[1.3] text-black">
                 {solution.titleLong ?? solution.title}
               </h1>
-              {solution.tags.length > 0 && (
-                <div className="flex flex-wrap items-center gap-2.5">
-                  {solution.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-[#e0e4ff] px-4 py-2 text-base font-medium text-brand-accent"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="rounded-full bg-[#cbcaff] px-4 py-2 text-[15px] font-medium">
+                  {solution.title}
+                </span>
+                <span className="rounded-full bg-[#bad6ff] px-4 py-2 text-[15px] font-medium">
+                  Bubble No-Code
+                </span>
+                <span className="rounded-full bg-[#bad6ff] px-4 py-2 text-[15px] font-medium">
+                  Fixed Price
+                </span>
+              </div>
               {solution.text0 && (
                 <p className="text-xl font-normal text-black/70">
                   {solution.text0}
@@ -573,7 +572,7 @@ export default async function SolutionDetailPage({
 
         {testimonials.length > 0 && (
           <section className="flex flex-col items-center gap-8 bg-black py-16">
-            <TestimonialsSlider items={testimonials} />
+            <TestimonialsSlider items={testimonials} hideProjectShowcase />
           </section>
         )}
 

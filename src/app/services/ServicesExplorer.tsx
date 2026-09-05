@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -843,12 +843,49 @@ export function ServicesSidebar() {
 }
 
 export function ServicesContent() {
-  const { active } = useServicesActive();
-  const isFirstRender = useRef(true);
+  const { active, setActive } = useServicesActive();
+  const prevActive = useRef(active);
+  const pendingHashScroll = useRef<string | null>(null);
 
+  // Mount-only: honor a direct link to a specific item (e.g. /services#qa-audit
+  // from another page) — that item might live in a section that isn't active
+  // by default ("core"). useLayoutEffect (not useEffect) + an empty deps
+  // array so this fires once, before the browser paints — otherwise the
+  // page would flash the default "core" section for a frame, then visibly
+  // animate-scroll to the target once the effect runs. This body is
+  // naturally safe to run twice (React Strict Mode double-invokes effects
+  // in dev): re-reading the same hash and re-calling setActive with the
+  // same value is a no-op the second time.
+  useLayoutEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+    const section = SECTIONS.find((s) => s.items.some((item) => item.id === hash));
+    if (!section) return;
+    if (section.id !== prevActive.current) {
+      pendingHashScroll.current = hash;
+      setActive(section.id);
+    } else {
+      document.getElementById(hash)?.scrollIntoView({ block: "start" });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Sidebar-driven section switches: scroll to the pending hash target (set
+  // by the effect above) or otherwise to the new section's first item.
+  // Compares against the previous value via a ref instead of an
+  // isFirstRender-style boolean flag — a boolean flag breaks under React
+  // Strict Mode's dev-only double effect invocation (the ref isn't reset
+  // between the two invocations, so the second one incorrectly falls
+  // through and fires an unwanted scroll on every page load, even with no
+  // hash). Comparing against the actual previous value stays correct no
+  // matter how many times the effect runs.
   useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
+    if (prevActive.current === active) return;
+    prevActive.current = active;
+    if (pendingHashScroll.current) {
+      const id = pendingHashScroll.current;
+      pendingHashScroll.current = null;
+      document.getElementById(id)?.scrollIntoView({ block: "start" });
       return;
     }
     const firstItemId = SECTIONS.find((section) => section.id === active)?.items[0]?.id;

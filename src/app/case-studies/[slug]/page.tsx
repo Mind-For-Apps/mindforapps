@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -9,6 +10,26 @@ import { ImagesSlider } from "@/components/ImagesSlider";
 import { ToolsSlider } from "@/components/ToolsSlider";
 import { BulletSection } from "./BulletSection";
 import { HighlightText } from "./HighlightText";
+import { FreeAudit } from "@/components/sections/FreeAudit";
+
+const TEAM_INVOLVEMENT_LINKS: Record<string, string> = {
+  "UX Design": "/services#ux-ui-design",
+  "UI Design": "/services#ux-ui-design",
+  "Bubble Development": "/services#no-code-dev",
+  "Database Architecture": "/services#no-code-dev",
+  "Project Management": "/services#product-strategy",
+  "QA Testing": "/services#qa-audit",
+};
+
+function StatCard({ raw, className = "" }: { raw: string; className?: string }) {
+  return (
+    <div
+      className={`rounded-2xl border border-black/60 px-5 py-5 text-xl text-black font-medium lg:leading-9 ${className}`}
+    >
+      <HighlightText raw={raw} />
+    </div>
+  );
+}
 
 export async function generateMetadata({
   params,
@@ -46,6 +67,7 @@ export default async function CaseStudyDetailPage({
     caseStudy.text5,
     caseStudy.text6,
   ].filter((text): text is string => !!text);
+
 
   return (
     <>
@@ -333,7 +355,7 @@ export default async function CaseStudyDetailPage({
         )}
 
         {caseStudy.tools.length > 0 && (
-          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center sm:px-25">
+          <section className="flex flex-col items-center gap-10 bg-brand-surface px-6 py-16 text-center">
             <div className="flex flex-col items-center gap-3">
               <h2 className="text-3xl font-semibold text-black sm:text-[40px]">
                 Platform &amp; Tools Used
@@ -344,47 +366,52 @@ export default async function CaseStudyDetailPage({
                 </p>
               )}
             </div>
-            <div className="w-full max-w-300">
-              <ToolsSlider
-                tools={caseStudy.tools}
-                slidesPerView={1}
-                spaceBetween={20}
-                breakpoints={{
-                  550: { slidesPerView: 1.5 },
-                  1300: { slidesPerView: 1.8 },
-                  1500: { slidesPerView: 2 },
-                  1600: { slidesPerView: 2.5 },
-                  2000: { slidesPerView: 3 },
-                  2300: { slidesPerView: 3.5 },
-                }}
-                fadeInOnReady
-              />
+            <div className="w-full">
+              <ToolsSlider tools={caseStudy.tools} />
             </div>
           </section>
         )}
 
         {highlightStats.length > 0 && (
-          <section className="bg-brand-surface px-6 py-16 sm:px-25">
-            <div className="mx-auto flex max-w-300 flex-col gap-10 lg:flex-row lg:items-start">
-              <h2 className="shrink-0 text-3xl font-semibold text-black sm:text-[40px] lg:w-65">
+          <section className="bg-brand-surface px-6 pt-5 pb-16 sm:px-25">
+            <div className="mx-auto flex max-w-300 flex-col gap-10 lg:flex-row lg:items-start min-[1200px]:gap-30 min-[1350px]:gap-40">
+              <h2 className="shrink-0 text-3xl font-semibold text-black sm:text-[40px] lg:w-50">
                 Outcome &amp; Impact
               </h2>
-              <div className="grid flex-1 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {highlightStats.map((raw, i) => (
-                  <div
-                    key={i}
-                    className="rounded-2xl border border-black/15 px-6 py-5 text-base text-black"
-                  >
-                    <HighlightText raw={raw} />
+              <div className="flex flex-1 flex-col gap-4">
+                {highlightStats.length >= 4 ? (
+                  <div className="flex flex-col gap-4 min-[900px]:flex-row">
+                    <div className="flex flex-5 flex-col gap-4">
+                      {/* <div className="grid gap-4 lg:grid-cols-[190px_1fr] min-[1150px]:grid-cols-[1fr_1fr]"> */}
+                      <div className="grid gap-4 min-[1150px]:grid-cols-[190px_1fr]">
+                        <StatCard raw={highlightStats[0]} className="flex-1" />
+                        <StatCard raw={highlightStats[1]} className="flex-1" />
+                      </div>
+                      <StatCard raw={highlightStats[2]} />
+                    </div>
+                    <StatCard raw={highlightStats[3]} className="flex-3" />
                   </div>
-                ))}
+                ) : (
+                  <div className="flex flex-col gap-4 sm:flex-row">
+                    {highlightStats.map((raw, i) => (
+                      <StatCard key={i} raw={raw} className="flex-1" />
+                    ))}
+                  </div>
+                )}
+                {highlightStats.length > 4 && (
+                  <div className="flex flex-col gap-4 sm:flex-row">
+                    {highlightStats.slice(4).map((raw, i) => (
+                      <StatCard key={i + 4} raw={raw} className="flex-1" />
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </section>
         )}
 
         {caseStudy.clientFeedback && (
-          <section className="relative overflow-hidden bg-black px-6 py-16 sm:px-25">
+          <section className="relative overflow-hidden bg-black px-6 py-16">
             <Image
               src="/images/case-study-detail/feedback-background.png"
               alt=""
@@ -392,19 +419,19 @@ export default async function CaseStudyDetailPage({
               sizes="100vw"
               className="object-cover"
             />
-            <div className="relative z-10 mx-auto flex max-w-300 flex-col gap-10 lg:flex-row lg:items-center">
+            <div className="relative z-10 mx-auto flex max-w-300 flex-col gap-10 min-[1250px]:gap-25 lg:flex-row items-center lg:items-start">
               <h2 className="shrink-0 text-3xl font-semibold text-white sm:text-[40px] lg:w-70">
                 Client Feedback
               </h2>
-              <div className="flex w-full flex-col gap-6 rounded-[25px] border border-white/15 bg-[#123250]/95 p-8 sm:p-10">
+              <div className="flex max-w-200 flex-col gap-6 rounded-[25px] border border-[rgb(255,255,255,1)] bg-[#123250]/95 p-8 sm:p-7.5 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.14)]">
                 <div className="flex items-center gap-4">
                   {caseStudy.clientPhotoUrl ? (
                     <Image
                       src={caseStudy.clientPhotoUrl}
                       alt={caseStudy.clientName ?? ""}
-                      width={64}
-                      height={64}
-                      className="size-16 shrink-0 rounded-full object-cover"
+                      width={132}
+                      height={132}
+                      className="size-16 sm:size-33 shrink-0 rounded-full object-cover"
                     />
                   ) : (
                     <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-[#d9d9d9]">
@@ -424,13 +451,13 @@ export default async function CaseStudyDetailPage({
                     </p>
                   )}
                 </div>
-                <p className="border-l-2 border-white/25 pl-5 text-lg leading-relaxed text-white">
+                <p className="border-l-4 border-white/80 pl-5 text-lg leading-[1.4] text-white">
                   {caseStudy.clientFeedback}
                 </p>
                 {(caseStudy.mainImageUrl || caseStudy.logoUrl) && (
                   <div className="flex items-center gap-4 border-t border-white/10 pt-6">
                     {caseStudy.mainImageUrl && (
-                      <div className="relative size-16 shrink-0 overflow-hidden rounded-xl">
+                      <div className="relative size-16 sm:size-20 shrink-0 overflow-hidden rounded-xl">
                         <Image
                           src={caseStudy.mainImageUrl}
                           alt=""
@@ -466,7 +493,7 @@ export default async function CaseStudyDetailPage({
 
         {caseStudy.teamInvolvement.length > 0 && (
           <section className="bg-brand-surface px-6 py-16 sm:px-25">
-            <div className="mx-auto grid max-w-300 grid-cols-1 gap-10 lg:grid-cols-[275px_1fr]">
+            <div className="mx-auto grid max-w-300 grid-cols-1 gap-10 lg:gap-25 lg:grid-cols-[275px_1fr]">
               <div className="flex flex-col gap-6">
                 <h2 className="text-3xl font-semibold text-black sm:text-[40px]">
                   Team Involvement
@@ -480,15 +507,21 @@ export default async function CaseStudyDetailPage({
                   className="hidden lg:block"
                 />
               </div>
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                {caseStudy.teamInvolvement.map((item) => (
-                  <div
-                    key={item}
-                    className="flex min-w-0 items-center justify-center wrap-break-word rounded-2xl bg-white px-6 py-10 text-center text-lg font-medium text-black"
-                  >
-                    {item}
-                  </div>
-                ))}
+              <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
+                {caseStudy.teamInvolvement.map((item) => {
+                  const href = TEAM_INVOLVEMENT_LINKS[item];
+                  const className =
+                    "flex min-w-37.5 items-center justify-center wrap-break-word rounded-[30px] min-h-41.25 bg-white px-6 py-10 text-center text-[20px] min-[1200px]:text-[22px] font-medium text-black shadow-[0px_4px_20px_0px_rgba(0,0,0,0.14)] transition-colors hover:bg-[#eaeffe]";
+                  return href ? (
+                    <Link key={item} href={href} className={className}>
+                      {item}
+                    </Link>
+                  ) : (
+                    <div key={item} className={className}>
+                      {item}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -499,11 +532,11 @@ export default async function CaseStudyDetailPage({
             <h2 className="text-3xl font-semibold text-black sm:text-[40px]">
               Suitable For:
             </h2>
-            <div className="grid w-full max-w-225 grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="grid w-full max-w-300 grid-cols-1 gap-4 sm:grid-cols-2">
               {caseStudy.suitableFor.map((item) => (
                 <div
                   key={item}
-                  className="min-w-0 wrap-break-word rounded-[30px] border border-black px-6 py-5 text-base font-medium text-black sm:text-lg"
+                  className="flex items-center justify-center min-w-0 min-h-25 wrap-break-word rounded-[30px] border border-black px-6 py-5 text-base font-medium text-black sm:text-[20px] lg:text-[21px]"
                 >
                   {item}
                 </div>
@@ -511,6 +544,8 @@ export default async function CaseStudyDetailPage({
             </div>
           </section>
         )}
+
+        <FreeAudit href="/free-seo-audit" />
       </main>
       <Footer />
     </>

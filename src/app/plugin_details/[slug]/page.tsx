@@ -99,7 +99,7 @@ export default async function PluginDetailPage({
                     href={plugin.marketUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-12.5 items-center justify-center rounded-[55px] bg-brand-accent px-6 text-center text-[20px] font-bold uppercase text-white transition-colors hover:bg-[linear-gradient(266deg,rgb(45,184,255),rgb(118,148,255),rgb(163,154,255))] hover:text-white"
+                    className="flex h-12.5 items-center justify-center rounded-[55px] bg-brand-accent px-6 text-center text-[16px] min-[365px]:text-[20px] font-bold uppercase text-white transition-colors hover:bg-[linear-gradient(266deg,rgb(45,184,255),rgb(118,148,255),rgb(163,154,255))] hover:text-white"
                   >
                     {price}
                   </a>

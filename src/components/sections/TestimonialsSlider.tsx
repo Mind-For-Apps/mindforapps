@@ -48,7 +48,13 @@ function TestimonialQuote({ quote }: { quote: string }) {
   );
 }
 
-export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
+export function TestimonialsSlider({
+  items,
+  hideProjectShowcase = false,
+}: {
+  items: Testimonial[];
+  hideProjectShowcase?: boolean;
+}) {
   const swiperRef = useRef<SwiperRef>(null);
 
   return (
@@ -141,7 +147,13 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
                 <TestimonialQuote quote={t.quote} />
               </div>
               {t.projectImageUrl || t.projectLogoUrl ? (
-                <div className="flex items-center gap-4">
+                <div
+                  className={
+                    hideProjectShowcase
+                      ? "hidden items-center gap-4"
+                      : "flex items-center gap-4"
+                  }
+                >
                   {t.projectImageUrl && (
                     <div className="relative h-19 w-25.25 shrink-0 overflow-hidden rounded-2xl shadow-[0px_2px_12px_0px_rgba(0,0,0,0.15)]">
                       <Image
